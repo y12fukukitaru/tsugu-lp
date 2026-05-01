@@ -1,0 +1,1882 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tsugu（ツグ）｜日本の中小企業を、次の世代へ。</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ===== DESIGN TOKENS ===== */
+:root {
+  /* 藍色ベース → 明るい水色 → 白 のグラデーション体系 */
+  --ink: #0A1628;           /* 深藍 — ヒーロー・暗背景 */
+  --ink-mid: #0F2A4A;       /* 藍 */
+  --ink-light: #1A4070;     /* 中藍 */
+  --blue-bright: #1E6FA8;   /* 明るい藍 */
+  --blue-mid: #2B8EC8;      /* 水色寄り */
+  --blue-light: #5BB3DC;    /* 淡い水色 */
+  --blue-pale: oklch(94% 0.04 230); /* 極淡水色 */
+  --blue-wash: oklch(97% 0.02 230); /* セクション背景 */
+
+  /* ゴールドアクセント */
+  --gold: oklch(72% 0.12 82);
+  --gold-light: oklch(82% 0.10 82);
+  --gold-pale: oklch(95% 0.04 82);
+
+  /* ニュートラル */
+  --white: #F8FBFE;           /* 青みがかった白 */
+  --white-pure: #FFFFFF;
+  --text-main: #0A1628;
+  --text-mid: #2D4A6A;
+  --text-light: #5A7A9A;
+
+  --serif: 'Noto Serif JP', serif;
+  --sans: 'Noto Sans JP', sans-serif;
+  --border: oklch(88% 0.025 220);
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 16px;
+}
+
+/* ===== RESET & BASE ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--sans);
+  background: var(--white);
+  color: var(--text-main);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+/* ===== BLUE GRADIENT DECORATION ===== */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--ink) 0%, var(--blue-mid) 50%, var(--gold) 100%);
+  z-index: 200;
+}
+img { max-width: 100%; display: block; }
+a { text-decoration: none; color: inherit; }
+
+/* ===== UTILITY ===== */
+.container { max-width: 1120px; margin: 0 auto; padding: 0 48px; }
+.container--narrow { max-width: 800px; margin: 0 auto; padding: 0 48px; }
+.serif { font-family: var(--serif); }
+
+/* ===== SCROLL ANIMATION ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal.revealed { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+.reveal-delay-5 { transition-delay: 0.5s; }
+
+/* ===== NAV ===== */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 20px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.4s, box-shadow 0.4s;
+}
+nav.scrolled {
+  background: rgba(10,22,40,0.96);
+  backdrop-filter: blur(16px);
+  box-shadow: 0 1px 0 rgba(91,179,220,0.12);
+}
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 0.08em;
+}
+.nav-logo span {
+  color: var(--gold);
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+.nav-links a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.75);
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--gold-light); }
+.nav-cta {
+  background: var(--gold);
+  color: var(--ink) !important;
+  padding: 10px 24px;
+  border-radius: var(--r-sm);
+  font-weight: 700 !important;
+  font-size: 0.875rem !important;
+  transition: background 0.2s, transform 0.15s !important;
+}
+.nav-cta:hover {
+  background: var(--gold-light) !important;
+  transform: translateY(-1px);
+}
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(150deg, var(--ink) 0%, var(--ink-mid) 45%, var(--ink-light) 100%);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Background texture — vertical kanji strokes */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+/* 水色の光彩 */
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  width: 60vw;
+  height: 60vw;
+  border-radius: 50%;
+  background: radial-gradient(circle, oklch(55% 0.18 230 / 0.18) 0%, transparent 70%);
+  top: -10%;
+  right: -10%;
+  pointer-events: none;
+}
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  width: 40vw;
+  height: 40vw;
+  border-radius: 50%;
+  background: radial-gradient(circle, oklch(65% 0.12 82 / 0.10) 0%, transparent 70%);
+  bottom: 10%;
+  left: 5%;
+  pointer-events: none;
+}
+.hero-bg-kanji {
+  position: absolute;
+  font-family: var(--serif);
+  font-weight: 700;
+  color: rgba(255,255,255,0.025);
+  user-select: none;
+  pointer-events: none;
+  line-height: 1;
+}
+.hero-bg-kanji:nth-child(1) { font-size: 28vw; top: -4%; left: -4%; }
+.hero-bg-kanji:nth-child(2) { font-size: 22vw; top: 30%; right: -2%; opacity: 0.015; }
+.hero-bg-line {
+  position: absolute;
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.08), transparent);
+}
+.hero-bg-line:nth-child(3) { height: 60%; top: 20%; left: 33%; }
+.hero-bg-line:nth-child(4) { height: 40%; top: 40%; left: 66%; opacity: 0.5; }
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  padding: 160px 48px 120px;
+  max-width: 1120px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.hero-eyebrow {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: var(--blue-light);
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  opacity: 0;
+  animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 0.3s forwards;
+}
+.hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--blue-light);
+}
+
+.hero-title {
+  font-family: var(--serif);
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.25;
+  letter-spacing: 0.04em;
+  margin-bottom: 16px;
+  opacity: 0;
+  animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 0.5s forwards;
+}
+.hero-title-accent {
+  color: var(--gold);
+  font-weight: 600;
+}
+
+.hero-subtitle {
+  font-family: var(--serif);
+  font-size: clamp(1rem, 2vw, 1.375rem);
+  font-weight: 300;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.12em;
+  margin-bottom: 56px;
+  opacity: 0;
+  animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 0.7s forwards;
+}
+
+.hero-meaning {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 64px;
+  opacity: 0;
+  animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 0.85s forwards;
+}
+.hero-meaning-item {
+  font-size: 0.8125rem;
+  color: rgba(255,255,255,0.55);
+  border: 1px solid rgba(91,179,220,0.25);
+  padding: 6px 16px;
+  border-radius: 100px;
+  letter-spacing: 0.08em;
+  font-family: var(--serif);
+  background: rgba(91,179,220,0.06);
+}
+.hero-meaning-item strong {
+  color: var(--blue-light);
+  font-weight: 600;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  opacity: 0;
+  animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 1s forwards;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--gold);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 18px 40px;
+  border-radius: var(--r-sm);
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  letter-spacing: 0.06em;
+  border: none;
+  cursor: pointer;
+}
+.btn-primary:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.3);
+}
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.7);
+  font-size: 0.9375rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  padding: 18px 0;
+  transition: color 0.2s;
+}
+.btn-ghost:hover { color: var(--gold-light); }
+.btn-arrow {
+  width: 20px;
+  height: 20px;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-stats {
+  position: absolute;
+  bottom: 60px;
+  right: 48px;
+  display: flex;
+  gap: 48px;
+  opacity: 0;
+  animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 1.2s forwards;
+}
+.hero-stat { text-align: right; }
+.hero-stat-num {
+  font-family: var(--serif);
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: var(--blue-light);
+  line-height: 1;
+  display: block;
+}
+.hero-stat-label {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.4);
+  letter-spacing: 0.1em;
+  margin-top: 6px;
+  display: block;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 48px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  opacity: 0;
+  animation: fadeIn 1s 1.5s forwards;
+}
+.hero-scroll-line {
+  width: 1px;
+  height: 48px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent);
+  animation: scrollLine 2s infinite;
+}
+.hero-scroll-text {
+  font-size: 0.6875rem;
+  color: rgba(255,255,255,0.3);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+@keyframes fadeUp {
+  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(24px); }
+}
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+@keyframes scrollLine {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  51% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+/* ===== DIVIDER GOLD LINE ===== */
+.gold-divider {
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--blue-mid), var(--gold), var(--blue-mid), transparent);
+  opacity: 0.6;
+}
+
+/* ===== SECTION LABEL ===== */
+.section-label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  color: var(--blue-light);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-label::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--blue-light);
+}
+/* On dark sections, override to gold */
+.section-crisis .section-label,
+.section-how .section-label,
+.section-company .section-label,
+.section-cta .section-label {
+  color: var(--gold);
+}
+.section-crisis .section-label::before,
+.section-how .section-label::before,
+.section-company .section-label::before,
+.section-cta .section-label::before {
+  background: var(--gold);
+}
+
+/* ===== SECTION: CRISIS ===== */
+.section-crisis {
+  background: linear-gradient(160deg, var(--ink) 0%, var(--ink-mid) 100%);
+  padding: 140px 0 120px;
+  position: relative;
+  overflow: hidden;
+}
+.crisis-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.crisis-text {}
+.crisis-headline {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.55;
+  letter-spacing: 0.04em;
+  margin-bottom: 32px;
+}
+.crisis-headline em {
+  color: var(--gold);
+  font-style: normal;
+  font-weight: 600;
+}
+.crisis-body {
+  font-size: 0.9375rem;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.8;
+}
+.crisis-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.crisis-stat-card {
+  background: rgba(91,179,220,0.07);
+  border: 1px solid rgba(91,179,220,0.18);
+  border-radius: var(--r-md);
+  padding: 32px 36px;
+  position: relative;
+  overflow: hidden;
+}
+.crisis-stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--blue-light), var(--gold));
+}
+.crisis-stat-card + .crisis-stat-card { margin-top: 2px; }
+.crisis-stat-number {
+  font-family: var(--serif);
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: var(--gold);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  display: block;
+  margin-bottom: 8px;
+}
+.crisis-stat-unit {
+  font-size: 1.25rem;
+  font-weight: 400;
+}
+.crisis-stat-desc {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.6;
+}
+.crisis-stat-source {
+  font-size: 0.6875rem;
+  color: rgba(255,255,255,0.25);
+  margin-top: 8px;
+  letter-spacing: 0.05em;
+}
+
+/* ===== SECTION: MISSION QUOTE ===== */
+.section-quote {
+  background: var(--blue-wash);
+  padding: 120px 0;
+  position: relative;
+  overflow: hidden;
+}
+.section-quote::before {
+  content: '継';
+  position: absolute;
+  font-family: var(--serif);
+  font-size: 50vw;
+  font-weight: 700;
+  color: rgba(0,0,0,0.025);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  user-select: none;
+  pointer-events: none;
+  line-height: 1;
+}
+.quote-inner {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.quote-text {
+  font-family: var(--serif);
+  font-size: clamp(1.25rem, 2.5vw, 2rem);
+  font-weight: 400;
+  color: var(--text-mid);
+  line-height: 2.0;
+  letter-spacing: 0.08em;
+  margin-bottom: 36px;
+}
+.quote-text em {
+  color: var(--ink);
+  font-style: normal;
+  font-weight: 600;
+  display: block;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  line-height: 1.6;
+}
+.quote-byline {
+  font-size: 0.8125rem;
+  color: var(--text-light);
+  letter-spacing: 0.1em;
+}
+
+/* ===== SECTION: SERVICE ===== */
+.section-service {
+  background: var(--white-pure);
+  padding: 140px 0;
+}
+.section-header {
+  margin-bottom: 80px;
+}
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(1.75rem, 3vw, 2.75rem);
+  font-weight: 400;
+  color: var(--ink);
+  letter-spacing: 0.04em;
+  line-height: 1.35;
+  margin-bottom: 20px;
+}
+.section-body {
+  font-size: 1rem;
+  color: var(--text-mid);
+  line-height: 1.8;
+  max-width: 640px;
+}
+
+/* 4 values grid */
+.values-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  background: oklch(88% 0.03 220);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+}
+.value-card {
+  background: var(--white-pure);
+  padding: 52px 48px;
+  position: relative;
+  transition: background 0.3s;
+}
+.value-card:hover { background: var(--blue-wash); }
+.value-num {
+  font-family: var(--serif);
+  font-size: 3.5rem;
+  font-weight: 300;
+  color: var(--blue-mid);
+  opacity: 0.5;
+  line-height: 1;
+  margin-bottom: 20px;
+  letter-spacing: -0.04em;
+}
+.value-tag {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--blue-bright);
+  background: var(--blue-pale);
+  padding: 4px 12px;
+  border-radius: 100px;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+.value-title {
+  font-family: var(--serif);
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 16px;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+}
+.value-desc {
+  font-size: 0.9375rem;
+  color: var(--text-mid);
+  line-height: 1.75;
+}
+
+/* ===== SECTION: HOW IT WORKS ===== */
+.section-how {
+  background: linear-gradient(160deg, var(--ink-mid) 0%, var(--ink-light) 100%);
+  padding: 140px 0;
+  overflow: hidden;
+}
+.how-header { margin-bottom: 80px; }
+.how-header .section-title { color: var(--white); }
+.how-header .section-body { color: rgba(255,255,255,0.5); }
+
+.how-steps {
+  display: flex;
+  gap: 0;
+  position: relative;
+}
+.how-steps::before {
+  content: '';
+  position: absolute;
+  top: 48px;
+  left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(91,179,220,0.25) 15%, rgba(91,179,220,0.25) 85%, transparent);
+}
+.how-step {
+  flex: 1;
+  padding: 0 32px;
+  position: relative;
+}
+.how-step-dot {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: rgba(91,179,220,0.08);
+  border: 1px solid rgba(91,179,220,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+  position: relative;
+  z-index: 1;
+  transition: border-color 0.3s, background 0.3s;
+}
+.how-step:hover .how-step-dot {
+  background: rgba(91,179,220,0.15);
+  border-color: var(--gold);
+}
+.how-step-icon {
+  font-family: var(--serif);
+  font-size: 2rem;
+  color: var(--gold);
+}
+.how-step-phase {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.how-step-title {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 16px;
+  line-height: 1.4;
+  letter-spacing: 0.04em;
+}
+.how-step-desc {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.75;
+}
+.how-step-period {
+  margin-top: 20px;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.25);
+  letter-spacing: 0.1em;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  padding-top: 16px;
+}
+
+/* ===== AI vs HUMAN ===== */
+.section-hybrid {
+  background: var(--blue-pale);
+  padding: 140px 0;
+}
+.hybrid-grid {
+  display: grid;
+  grid-template-columns: 1fr 80px 1fr;
+  gap: 0;
+  align-items: start;
+}
+.hybrid-divider {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 40px;
+  gap: 16px;
+}
+.hybrid-divider-line {
+  width: 1px;
+  flex: 1;
+  background: var(--border);
+}
+.hybrid-divider-plus {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  color: var(--gold);
+  font-weight: 300;
+}
+.hybrid-col {
+  background: var(--white-pure);
+  border-radius: var(--r-lg);
+  padding: 48px;
+  border: 1px solid var(--border);
+}
+.hybrid-col-title {
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 8px;
+  letter-spacing: 0.04em;
+}
+.hybrid-col-sub {
+  font-size: 0.8125rem;
+  color: var(--text-light);
+  margin-bottom: 32px;
+  letter-spacing: 0.04em;
+}
+.hybrid-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+.hybrid-item:last-child { border-bottom: none; }
+.hybrid-item-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  margin-top: 8px;
+  flex-shrink: 0;
+}
+.hybrid-item-text {
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  line-height: 1.6;
+}
+
+/* ===== PRICING ===== */
+.section-pricing {
+  background: var(--white-pure);
+  padding: 140px 0;
+}
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.pricing-card {
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  padding: 44px 36px;
+  position: relative;
+  transition: border-color 0.3s, box-shadow 0.3s, transform 0.2s;
+  background: var(--white);
+}
+.pricing-card:hover {
+  border-color: var(--gold);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+  transform: translateY(-4px);
+}
+.pricing-card.featured {
+  border-color: var(--gold);
+  background: var(--ink);
+}
+.pricing-featured-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  color: var(--ink);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 5px 16px;
+  border-radius: 100px;
+  white-space: nowrap;
+}
+.pricing-plan {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.pricing-name {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-bottom: 24px;
+  letter-spacing: 0.04em;
+}
+.pricing-card.featured .pricing-name { color: var(--white); }
+.pricing-price {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+.pricing-price-num {
+  font-family: var(--serif);
+  font-size: 2.75rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1;
+  letter-spacing: -0.02em;
+}
+.pricing-card.featured .pricing-price-num { color: var(--gold); }
+.pricing-price-unit {
+  font-size: 0.875rem;
+  color: var(--text-light);
+}
+.pricing-card.featured .pricing-price-unit { color: rgba(255,255,255,0.4); }
+.pricing-note {
+  font-size: 0.8125rem;
+  color: var(--text-light);
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border);
+}
+.pricing-card.featured .pricing-note {
+  color: rgba(255,255,255,0.35);
+  border-color: rgba(255,255,255,0.1);
+}
+.pricing-features { list-style: none; display: flex; flex-direction: column; gap: 14px; }
+.pricing-feature {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 0.9rem;
+  color: var(--text-mid);
+  line-height: 1.5;
+}
+.pricing-card.featured .pricing-feature { color: rgba(255,255,255,0.7); }
+.pricing-check {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--gold-pale);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+.pricing-card.featured .pricing-check { background: rgba(255,255,255,0.1); }
+.pricing-check::after {
+  content: '✓';
+  font-size: 0.6875rem;
+  color: var(--gold);
+  font-weight: 700;
+}
+.pricing-btn {
+  display: block;
+  text-align: center;
+  margin-top: 36px;
+  padding: 14px;
+  border-radius: var(--r-sm);
+  font-weight: 700;
+  font-size: 0.9375rem;
+  letter-spacing: 0.06em;
+  transition: all 0.2s;
+  cursor: pointer;
+  border: none;
+}
+.pricing-btn-ghost {
+  border: 1.5px solid var(--border);
+  color: var(--text-mid);
+  background: transparent;
+}
+.pricing-btn-ghost:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.pricing-btn-primary {
+  background: var(--gold);
+  color: var(--ink);
+}
+.pricing-btn-primary:hover {
+  background: var(--gold-light);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+/* ===== CONSULTANT SECTION ===== */
+.section-consultant {
+  background: var(--blue-wash);
+  padding: 140px 0;
+}
+.consultant-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.consultant-income {
+  background: linear-gradient(135deg, var(--ink-mid) 0%, var(--ink-light) 100%);
+  border-radius: var(--r-lg);
+  padding: 48px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(91,179,220,0.2);
+}
+.consultant-income::before {
+  content: '¥';
+  position: absolute;
+  font-family: var(--serif);
+  font-size: 20rem;
+  font-weight: 700;
+  color: rgba(91,179,220,0.04);
+  right: -40px;
+  bottom: -40px;
+  line-height: 1;
+}
+.income-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 16px 0;
+  border-bottom: 1px solid rgba(91,179,220,0.12);
+}
+.income-row:last-child { border-bottom: none; }
+.income-label {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.5);
+}
+.income-value {
+  font-family: var(--serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--blue-light);
+  letter-spacing: -0.01em;
+}
+.income-value.highlight {
+  font-size: 2rem;
+  color: var(--gold);
+}
+.income-title {
+  font-family: var(--serif);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 24px;
+  letter-spacing: 0.04em;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+/* ===== COMPANY ===== */
+.section-company {
+  background: linear-gradient(160deg, var(--ink-light) 0%, var(--ink-mid) 100%);
+  padding: 120px 0;
+}
+.company-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.company-info { display: flex; flex-direction: column; gap: 0; }
+.company-row {
+  display: flex;
+  gap: 32px;
+  padding: 20px 0;
+  border-bottom: 1px solid rgba(91,179,220,0.12);
+  font-size: 0.9375rem;
+}
+.company-row:first-child { border-top: 1px solid rgba(91,179,220,0.12); }
+.company-key {
+  width: 120px;
+  flex-shrink: 0;
+  color: rgba(255,255,255,0.4);
+  font-size: 0.875rem;
+  letter-spacing: 0.06em;
+}
+.company-val { color: rgba(255,255,255,0.75); }
+
+/* ===== CTA SECTION ===== */
+.section-cta {
+  background: linear-gradient(135deg, var(--ink-light) 0%, var(--ink) 60%);
+  padding: 140px 0;
+  position: relative;
+  overflow: hidden;
+}
+.section-cta::before {
+  content: 'Tsugu';
+  position: absolute;
+  font-family: var(--serif);
+  font-size: 28vw;
+  font-weight: 700;
+  color: rgba(255,255,255,0.02);
+  bottom: -5%;
+  right: -5%;
+  line-height: 1;
+  user-select: none;
+}
+.cta-inner { text-align: center; position: relative; z-index: 1; }
+.cta-title {
+  font-family: var(--serif);
+  font-size: clamp(1.75rem, 3vw, 3rem);
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.5;
+  letter-spacing: 0.06em;
+  margin-bottom: 24px;
+}
+.cta-sub {
+  font-size: 1.0625rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.8;
+  margin-bottom: 56px;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cta-buttons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+.btn-cta-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1.5px solid rgba(255,255,255,0.25);
+  color: rgba(255,255,255,0.7);
+  padding: 18px 40px;
+  border-radius: var(--r-sm);
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  transition: all 0.2s;
+}
+.btn-cta-outline:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: var(--ink);
+  border-top: 1px solid rgba(91,179,220,0.15);
+  padding: 60px 0 40px;
+}
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 48px;
+  margin-bottom: 48px;
+}
+.footer-brand {}
+.footer-logo {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 12px;
+  letter-spacing: 0.06em;
+}
+.footer-logo span { color: var(--gold); }
+.footer-tagline {
+  font-size: 0.8125rem;
+  color: rgba(255,255,255,0.3);
+  letter-spacing: 0.08em;
+  font-family: var(--serif);
+}
+.footer-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+.footer-links a {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.4);
+  transition: color 0.2s;
+  letter-spacing: 0.04em;
+}
+.footer-links a:hover { color: var(--gold-light); }
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.05);
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-copy {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 0.06em;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .container, .container--narrow { padding: 0 28px; }
+  nav { padding: 16px 28px; }
+  .nav-links { display: none; }
+  .hero-inner { padding: 140px 28px 100px; }
+  .crisis-inner,
+  .consultant-inner,
+  .company-grid { grid-template-columns: 1fr; gap: 48px; }
+  .values-grid { grid-template-columns: 1fr; }
+  .how-steps { flex-direction: column; gap: 40px; }
+  .how-steps::before { display: none; }
+  .hybrid-grid { grid-template-columns: 1fr; }
+  .hybrid-divider { display: none; }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .hero-stats { position: static; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 60px; }
+  .hero-stat { text-align: left; }
+  .hero-scroll { display: none; }
+  .footer-inner { flex-direction: column; }
+  .footer-links { flex-wrap: wrap; gap: 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="main-nav">
+  <div class="nav-logo">Ts<span>u</span>gu</div>
+  <ul class="nav-links">
+    <li><a href="#service">サービス</a></li>
+    <li><a href="#how">成長モデル</a></li>
+    <li><a href="#pricing">料金</a></li>
+    <li><a href="#consultant">コンサル参加</a></li>
+    <li><a href="#contact" class="nav-cta">無料相談</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg">
+    <div class="hero-bg-kanji">継</div>
+    <div class="hero-bg-kanji">ぐ</div>
+    <div class="hero-bg-line"></div>
+    <div class="hero-bg-line"></div>
+  </div>
+  <div class="hero-inner">
+    <p class="hero-eyebrow">中小企業承継エコシステム</p>
+    <h1 class="hero-title">
+      日本の中小企業を、<br>
+      <span class="hero-title-accent">次の世代へ。</span>
+    </h1>
+    <p class="hero-subtitle serif">継ぐ、接ぐ、次ぐ、注ぐ、告ぐ。</p>
+    <div class="hero-meaning">
+      <span class="hero-meaning-item"><strong>継ぐ</strong> 事業承継</span>
+      <span class="hero-meaning-item"><strong>接ぐ</strong> AIと人を繋ぐ</span>
+      <span class="hero-meaning-item"><strong>次ぐ</strong> 継続的伴走</span>
+      <span class="hero-meaning-item"><strong>注ぐ</strong> 情熱を傾ける</span>
+      <span class="hero-meaning-item"><strong>告ぐ</strong> 気づきを届ける</span>
+    </div>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">
+        無料相談を予約する
+        <span class="btn-arrow">→</span>
+      </a>
+      <a href="#service" class="btn-ghost">
+        サービスを見る
+        <span class="btn-arrow">↓</span>
+      </a>
+    </div>
+  </div>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <span class="hero-stat-num">650<span style="font-size:1.25rem">万人</span></span>
+      <span class="hero-stat-label">失われる雇用（試算）</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">22<span style="font-size:1.25rem">兆円</span></span>
+      <span class="hero-stat-label">失われるGDP</span>
+    </div>
+    <div class="hero-stat">
+      <span class="hero-stat-num">5〜10<span style="font-size:1.25rem">万円</span></span>
+      <span class="hero-stat-label">月額サービス料</span>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span class="hero-scroll-text">Scroll</span>
+    <div class="hero-scroll-line"></div>
+  </div>
+</section>
+
+<div class="gold-divider"></div>
+
+<!-- CRISIS -->
+<section class="section-crisis" id="crisis">
+  <div class="container">
+    <div class="crisis-inner">
+      <div class="crisis-text reveal">
+        <p class="section-label">社会課題</p>
+        <h2 class="crisis-headline serif">
+          黒字なのに、<br>
+          後継者がいないという<br>
+          理由だけで、<br>
+          <em>閉じなければならない。</em>
+        </h2>
+        <p class="crisis-body">
+          日本の中小企業経営者の過半数が60歳を超え、後継者が見つからないまま廃業を選択するケースが急増しています。それは経営者個人の悲劇であると同時に、日本社会全体の大きな損失です。
+        </p>
+      </div>
+      <div class="crisis-stats">
+        <div class="crisis-stat-card reveal reveal-delay-1">
+          <span class="crisis-stat-number">650<span class="crisis-stat-unit">万人</span></span>
+          <p class="crisis-stat-desc">後継者未定による廃業リスクで失われる雇用</p>
+          <p class="crisis-stat-source">経済産業省 2019年試算</p>
+        </div>
+        <div class="crisis-stat-card reveal reveal-delay-2">
+          <span class="crisis-stat-number">22<span class="crisis-stat-unit">兆円</span></span>
+          <p class="crisis-stat-desc">同じく失われる可能性のあるGDP損失額</p>
+          <p class="crisis-stat-source">経済産業省 2019年試算</p>
+        </div>
+        <div class="crisis-stat-card reveal reveal-delay-3">
+          <span class="crisis-stat-number">60<span class="crisis-stat-unit">%超</span></span>
+          <p class="crisis-stat-desc">60歳以上の中小企業経営者の割合</p>
+          <p class="crisis-stat-source">中小企業庁</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE -->
+<section class="section-quote">
+  <div class="container--narrow">
+    <div class="quote-inner reveal">
+      <p class="section-label" style="justify-content:center;">事業の志</p>
+      <p class="quote-text serif">
+        後継者がいないという理由だけで<br>
+        <em>閉じなければならない会社を、<br>一社でも多く救いたい。</em>
+        私たちは新しいビジネスモデルに<br>
+        挑戦します。
+      </p>
+      <p class="quote-byline">株式会社福來 ／ Tsugu</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE -->
+<section class="section-service" id="service">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-label">サービスの核</p>
+      <h2 class="section-title serif">AIが知識を、人が心を担う<br>新しいコンサルティング。</h2>
+      <p class="section-body">Tsuguは一つのサービスで4つの価値を統合的に提供します。従来のサービスはいずれか1つに特化するのが常でした。AIと人間のハイブリッド構造によって、4つを同時に実現します。</p>
+    </div>
+    <div class="values-grid">
+      <div class="value-card reveal">
+        <div class="value-num">01</div>
+        <span class="value-tag">伴走</span>
+        <h3 class="value-title serif">孤独をなくす</h3>
+        <p class="value-desc">経営判断は本質的に孤独です。家族にも社員にも相談できない悩みを、認定キャッシュベースコンサルタントが継続的に聴き、共に考えます。</p>
+      </div>
+      <div class="value-card reveal reveal-delay-1">
+        <div class="value-num">02</div>
+        <span class="value-tag">民主化</span>
+        <h3 class="value-title serif">専属コンサルを手の届く価格に</h3>
+        <p class="value-desc">従来の経営コンサルは月額30万円以上が相場。TsuguはAIが実務を担うことで原価構造を変え、月額5〜10万円で質の高い伴走を実現します。</p>
+      </div>
+      <div class="value-card reveal reveal-delay-2">
+        <div class="value-num">03</div>
+        <span class="value-tag">キャッシュベース</span>
+        <h3 class="value-title serif">数字が苦手でも経営できる</h3>
+        <p class="value-desc">財務諸表を読みこなせなくても、キャッシュの動きを見失わなければ経営は続きます。専門用語をAIが翻訳し、コンサルタントが意思決定を支えます。</p>
+      </div>
+      <div class="value-card reveal reveal-delay-3">
+        <div class="value-num">04</div>
+        <span class="value-tag">成長</span>
+        <h3 class="value-title serif">HD化エコシステムへの導き</h3>
+        <p class="value-desc">伴走支援に留まらず、1社目が軌道に乗った後、M&Aアドバイザリーで2社目を承継、PMI伴走、HD化を加速。承継経営者をHD経営者へと成長させます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section-how" id="how">
+  <div class="container">
+    <div class="how-header reveal">
+      <p class="section-label">成長モデル</p>
+      <h2 class="section-title serif">「承継された経営者」から<br>「HD経営者」へ。</h2>
+      <p class="section-body">Tsuguは単に経営を伴走するサービスではありません。顧客の長期的な成長設計を内包しています。</p>
+    </div>
+    <div class="how-steps">
+      <div class="how-step reveal">
+        <div class="how-step-dot">
+          <span class="how-step-icon">継</span>
+        </div>
+        <p class="how-step-phase">Phase 1</p>
+        <h3 class="how-step-title serif">承継期</h3>
+        <p class="how-step-desc">1社目を引き継ぎ、経営を軌道化。AIダッシュボードと月次伴走で、先代の経営を自分のものに。</p>
+        <p class="how-step-period">0〜2年</p>
+      </div>
+      <div class="how-step reveal reveal-delay-1">
+        <div class="how-step-dot">
+          <span class="how-step-icon">安</span>
+        </div>
+        <p class="how-step-phase">Phase 2</p>
+        <h3 class="how-step-title serif">軌道化・安定期</h3>
+        <p class="how-step-desc">経営が安定したら、成長戦略・財務最適化へ。次のステージに向けた資本政策も併走。</p>
+        <p class="how-step-period">2〜4年</p>
+      </div>
+      <div class="how-step reveal reveal-delay-2">
+        <div class="how-step-dot">
+          <span class="how-step-icon">拡</span>
+        </div>
+        <p class="how-step-phase">Phase 3</p>
+        <h3 class="how-step-title serif">拡大期</h3>
+        <p class="how-step-desc">M&Aで2社目を取得。PMIの伴走で統合を支援。グループ経営の土台を構築します。</p>
+        <p class="how-step-period">4〜6年</p>
+      </div>
+      <div class="how-step reveal reveal-delay-3">
+        <div class="how-step-dot">
+          <span class="how-step-icon">HD</span>
+        </div>
+        <p class="how-step-phase">Phase 4</p>
+        <h3 class="how-step-title serif">HD化</h3>
+        <p class="how-step-desc">3社以上を保有するHD経営へ。Tsugu Holdingsが専門的なHD経営支援を提供します。</p>
+        <p class="how-step-period">6年〜</p>
+      </div>
+      <div class="how-step reveal reveal-delay-4">
+        <div class="how-step-dot">
+          <span class="how-step-icon">次</span>
+        </div>
+        <p class="how-step-phase">Phase 5</p>
+        <h3 class="how-step-title serif">次世代承継</h3>
+        <p class="how-step-desc">自分も次の世代へ繋ぐ番。承継計画・出口戦略まで、Tsuguが最後まで伴走します。</p>
+        <p class="how-step-period">10年〜</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AI vs HUMAN -->
+<section class="section-hybrid" id="hybrid">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-label">ハイブリッドモデル</p>
+      <h2 class="section-title serif">AIと人の、明確な役割分担。</h2>
+      <p class="section-body">専門知識はAIが担うため、コンサルタントに求める素質は「聴く力」「共感力」「対話力」。これが破壊的価格と高品質を両立させる仕組みです。</p>
+    </div>
+    <div class="hybrid-grid">
+      <div class="hybrid-col reveal">
+        <p class="hybrid-col-title serif">AIが担う領域</p>
+        <p class="hybrid-col-sub">実務・分析・24時間対応</p>
+        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">経営ダッシュボードによる可視化</span></div>
+        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">キャッシュフロー予測と資金リスク警告</span></div>
+        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">補助金・助成金の自動マッチング</span></div>
+        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">会計・税務・法律用語の翻訳</span></div>
+        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">面談議事録とフォローアップ作成</span></div>
+        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">24時間365日の即時対応</span></div>
+      </div>
+      <div class="hybrid-divider reveal reveal-delay-1">
+        <div class="hybrid-divider-line"></div>
+        <span class="hybrid-divider-plus">＋</span>
+        <div class="hybrid-divider-line"></div>
+      </div>
+      <div class="hybrid-col reveal reveal-delay-2">
+        <p class="hybrid-col-title serif">認定コンサルが担う領域</p>
+        <p class="hybrid-col-sub">伴走・傾聴・心</p>
+        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">社長の悩みを傾聴する</span></div>
+        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">AIの分析を経営者の状況に翻訳</span></div>
+        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">選択肢の整理と意思決定の後押し</span></div>
+        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">不安に寄り添い、勇気を届ける</span></div>
+        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">行動の約束と継続的フォロー</span></div>
+        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">成功を一緒に喜ぶ</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section-pricing" id="pricing">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-label">料金プラン</p>
+      <h2 class="section-title serif">中小企業に、手の届く価格で。</h2>
+      <p class="section-body">従来の経営コンサルの数分の一の価格で、質の高い伴走を実現。これは大手ファームには構造的に真似できません。</p>
+    </div>
+    <div class="pricing-grid" style="grid-template-columns: repeat(2, 1fr); max-width: 860px; margin: 0 auto;">
+      <div class="pricing-card featured reveal">
+        <span class="pricing-featured-badge">主力プラン</span>
+        <p class="pricing-plan">Standard</p>
+        <h3 class="pricing-name serif">Tsugu Standard</h3>
+        <div class="pricing-price">
+          <span class="pricing-price-num">50,000</span>
+          <span class="pricing-price-unit">円／月（税抜）</span>
+        </div>
+        <p class="pricing-note">AI全機能 ＋ 月1回コンサル面談</p>
+        <ul class="pricing-features">
+          <li class="pricing-feature"><div class="pricing-check"></div>経営ダッシュボード（フル機能）</li>
+          <li class="pricing-feature"><div class="pricing-check"></div>キャッシュフロー予測・資金リスク警告</li>
+          <li class="pricing-feature"><div class="pricing-check"></div>補助金・助成金自動マッチング</li>
+          <li class="pricing-feature"><div class="pricing-check"></div>月次コンサル面談（月1回）</li>
+          <li class="pricing-feature"><div class="pricing-check"></div>月次レポート作成</li>
+          <li class="pricing-feature"><div class="pricing-check"></div>スポット相談 月2回無料<br><span style="font-size:0.8em;opacity:0.7;">（3回目以降 5,500円／30分）</span></li>
+          <li class="pricing-feature"><div class="pricing-check"></div>Tsugu Awardsへの参加資格</li>
+        </ul>
+        <a href="#contact" class="pricing-btn pricing-btn-primary">無料相談を予約</a>
+      </div>
+      <div class="pricing-card reveal reveal-delay-1">
+        <p class="pricing-plan">Premium</p>
+        <h3 class="pricing-name serif">Tsugu Premium</h3>
+        <div class="pricing-price">
+          <span class="pricing-price-num">100,000</span>
+          <span class="pricing-price-unit">円／月（税抜）</span>
+        </div>
+        <p class="pricing-note">Standard ＋ PMI支援 ＋ 月2回面談</p>
+        <ul class="pricing-features">
+          <li class="pricing-feature"><div class="pricing-check"></div>Standardの全機能</li>
+          <li class="pricing-feature"><div class="pricing-check"></div>月次面談（月2回）</li>
+          <li class="pricing-feature"><div class="pricing-check"></div>スポット相談 月2回無料<br><span style="font-size:0.8em;opacity:0.7;">（3回目以降 5,500円／30分）</span></li>
+          <li class="pricing-feature"><div class="pricing-check"></div>M&A後のPMI支援</li>
+          <li class="pricing-feature"><div class="pricing-check"></div>財務・税務専門家との連携</li>
+          <li class="pricing-feature"><div class="pricing-check"></div>HD化支援（Tsugu Holdings）</li>
+        </ul>
+        <a href="#contact" class="pricing-btn pricing-btn-ghost">詳細を問い合わせ</a>
+      </div>
+    </div>
+    <div style="margin-top:48px; text-align:center;">
+      <p style="font-size:0.875rem;color:var(--text-light);">2社目以降 ＋30,000円／月（事業ごと）｜スポット相談（単体）5,500円／30分</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONSULTANT -->
+<section class="section-consultant" id="consultant">
+  <div class="container">
+    <div class="consultant-inner">
+      <div class="reveal">
+        <p class="section-label">認定コンサル</p>
+        <h2 class="section-title serif">実力ある人に、<br>本当のキャリアを。</h2>
+        <p class="section-body" style="margin-bottom:32px;">保険営業、銀行OB、独立志望の士業補助者——「営業の仕事を続けていきたいが収入が不安定できつい、クライアントと広く浅くではなく狭く深い信頼関係を築きたい。」そんな方に、Tsuguの認定キャッシュベースコンサルタント制度は機会を提供します。</p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:16px;">
+          <li style="display:flex;gap:16px;align-items:flex-start;">
+            <span style="color:var(--gold);font-family:var(--serif);font-weight:700;font-size:1.25rem;flex-shrink:0;">01</span>
+            <div>
+              <p style="font-weight:700;color:var(--ink);margin-bottom:4px;font-size:0.9375rem;">無料研修・無料認定試験</p>
+              <p style="font-size:0.875rem;color:var(--text-mid);">初期投資ゼロ。アーカイブ動画視聴→ロールプレイ→認定試験の3ステップで、本人次第で最短1週間で認定取得可能。</p>
+            </div>
+          </li>
+          <li style="display:flex;gap:16px;align-items:flex-start;">
+            <span style="color:var(--gold);font-family:var(--serif);font-weight:700;font-size:1.25rem;flex-shrink:0;">02</span>
+            <div>
+              <p style="font-weight:700;color:var(--ink);margin-bottom:4px;font-size:0.9375rem;">初期登録料 月額300円〜</p>
+              <p style="font-size:0.875rem;color:var(--text-mid);">参入障壁を極限まで下げた設計。担当社数に応じて収入が積み上がる、ネットワーク型収益モデル。</p>
+            </div>
+          </li>
+          <li style="display:flex;gap:16px;align-items:flex-start;">
+            <span style="color:var(--gold);font-family:var(--serif);font-weight:700;font-size:1.25rem;flex-shrink:0;">03</span>
+            <div>
+              <p style="font-weight:700;color:var(--ink);margin-bottom:4px;font-size:0.9375rem;">AIが知識面を全面サポート</p>
+              <p style="font-size:0.875rem;color:var(--text-mid);">経営の専門知識はAIが担うため、「聴く力」「共感力」があれば活躍できます。</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <div class="consultant-income reveal reveal-delay-1">
+        <p class="income-title serif">認定コンサルの収支モデル（10社担当時）</p>
+        <div class="income-row">
+          <span class="income-label">担当社数</span>
+          <span class="income-value">10社</span>
+        </div>
+        <div class="income-row">
+          <span class="income-label">月次収入</span>
+          <span class="income-value">40万円</span>
+        </div>
+        <div class="income-row">
+          <span class="income-label">Tsuguへの支払</span>
+          <span class="income-value">3,300円</span>
+        </div>
+        <div class="income-row">
+          <span class="income-label">実質利益率</span>
+          <span class="income-value">99%超</span>
+        </div>
+        <div class="income-row">
+          <span class="income-label">30社担当の場合</span>
+          <span class="income-value highlight">月収100万円超</span>
+        </div>
+        <a href="#contact" class="btn-primary" style="margin-top:32px;display:block;text-align:center;">コンサル参加を問い合わせる</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPANY -->
+<section class="section-company" id="company">
+  <div class="container">
+    <div class="company-grid">
+      <div class="reveal">
+        <p class="section-label">会社情報</p>
+        <h2 class="section-title serif" style="color:var(--white);">株式会社福來</h2>
+        <p style="font-size:0.9375rem;color:rgba(255,255,255,0.5);line-height:1.8;margin-top:20px;">
+          広島の地から、日本の中小企業が抱える課題に真正面から向き合います。<br>
+          全ての中小企業経営者と労働者、そして厳しい社会で奮闘する営業マン達に安心をお届けします。
+        </p>
+      </div>
+      <div class="company-info reveal reveal-delay-1">
+        <div class="company-row">
+          <span class="company-key">会社名</span>
+          <span class="company-val">株式会社福來</span>
+        </div>
+        <div class="company-row">
+          <span class="company-key">所在地</span>
+          <span class="company-val">広島市中区西白島町</span>
+        </div>
+        <div class="company-row">
+          <span class="company-key">事業内容</span>
+          <span class="company-val">中小企業承継エコシステム「Tsugu」の開発・運営</span>
+        </div>
+        <div class="company-row">
+          <span class="company-key">サービス開始</span>
+          <span class="company-val">2026年（Stage 1 開始）</span>
+        </div>
+        <div class="company-row">
+          <span class="company-key">商標</span>
+          <span class="company-val">「Tsugu」「認定キャッシュベースコンサルタント」出願中</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-cta" id="contact">
+  <div class="container">
+    <div class="cta-inner reveal">
+      <p class="section-label" style="justify-content:center;">無料相談</p>
+      <h2 class="cta-title serif">まずは、お悩みをお聞かせください。</h2>
+      <p class="cta-sub">事業承継の悩み、営業活動の悩み、経営者としての孤独感——<br>どんなお悩みにも、Tsuguは寄り添います。</p>
+
+      <!-- Contact Form -->
+      <div class="contact-form-wrap reveal reveal-delay-1">
+        <form id="contact-form" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="fname">お名前 <span class="required">*</span></label>
+              <input class="form-input" type="text" id="fname" name="name" placeholder="山田 太郎" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="furigana">ふりがな <span class="required">*</span></label>
+              <input class="form-input" type="text" id="furigana" name="furigana" placeholder="やまだ たろう" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="company">会社名</label>
+              <input class="form-input" type="text" id="company" name="company" placeholder="株式会社〇〇">
+            </div>
+            <div class="form-group"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="femail">メールアドレス <span class="required">*</span></label>
+              <input class="form-input" type="email" id="femail" name="email" placeholder="example@mail.com" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="phone">電話番号</label>
+              <input class="form-input" type="tel" id="phone" name="phone" placeholder="090-0000-0000">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">ご相談の種別 <span class="required">*</span></label>
+            <div class="form-radio-group">
+              <label class="form-radio">
+                <input type="radio" name="inquiry_type" value="サービス利用（事業承継・経営伴走）" required>
+                <span class="radio-box">
+                  <span class="radio-label">サービス利用<br><small>事業承継・経営伴走</small></span>
+                </span>
+              </label>
+              <label class="form-radio">
+                <input type="radio" name="inquiry_type" value="認定コンサルタントへの参加">
+                <span class="radio-box">
+                  <span class="radio-label">コンサル参加<br><small>認定コンサルタントとして</small></span>
+                </span>
+              </label>
+              <label class="form-radio">
+                <input type="radio" name="inquiry_type" value="その他・パートナーシップ">
+                <span class="radio-box">
+                  <span class="radio-label">その他<br><small>パートナーシップ等</small></span>
+                </span>
+              </label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="message">お悩み・ご相談内容</label>
+            <textarea class="form-input form-textarea" id="message" name="message" rows="4" placeholder="現在の状況やご相談内容をご自由にお書きください。"></textarea>
+          </div>
+          <button type="submit" class="btn-primary form-submit">送信する →</button>
+          <p class="form-note">送信後、担当者より1〜2営業日以内にご連絡いたします。</p>
+        </form>
+        <div id="form-success" style="display:none;" class="form-success-msg">
+          <div class="success-icon">✓</div>
+          <h3 class="serif">送信が完了しました。</h3>
+          <p>お悩みをお聞かせいただきありがとうございます。<br>担当者より1〜2営業日以内にご連絡いたします。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+/* ===== CONTACT FORM ===== */
+.contact-form-wrap {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(91,179,220,0.2);
+  border-radius: var(--r-lg);
+  padding: 52px 56px;
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: left;
+  backdrop-filter: blur(8px);
+}
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.form-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
+.form-row .form-group { margin-bottom: 0; }
+.form-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.75);
+  letter-spacing: 0.06em;
+}
+.required { color: var(--gold); margin-left: 2px; }
+.form-input {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(91,179,220,0.25);
+  border-radius: var(--r-sm);
+  padding: 12px 16px;
+  font-size: 0.9375rem;
+  color: var(--white);
+  font-family: var(--sans);
+  transition: border-color 0.2s, background 0.2s;
+  outline: none;
+  width: 100%;
+}
+.form-input::placeholder { color: rgba(255,255,255,0.25); }
+.form-input:focus {
+  border-color: var(--blue-light);
+  background: rgba(255,255,255,0.1);
+}
+.form-textarea { resize: vertical; min-height: 120px; }
+.form-radio-group {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 12px;
+}
+.form-radio { cursor: pointer; }
+.form-radio input { display: none; }
+.radio-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px 12px;
+  border: 1.5px solid rgba(91,179,220,0.2);
+  border-radius: var(--r-md);
+  background: rgba(255,255,255,0.04);
+  transition: all 0.2s;
+  cursor: pointer;
+  gap: 6px;
+}
+.radio-box:hover {
+  border-color: var(--blue-light);
+  background: rgba(91,179,220,0.1);
+}
+.form-radio input:checked + .radio-box {
+  border-color: var(--gold);
+  background: rgba(255,200,80,0.08);
+}
+.radio-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.4;
+}
+.radio-label small {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.4);
+  margin-top: 2px;
+}
+.form-submit {
+  width: 100%;
+  margin-top: 8px;
+  padding: 18px;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--r-sm);
+  justify-content: center;
+}
+.form-note {
+  text-align: center;
+  font-size: 0.8125rem;
+  color: rgba(255,255,255,0.3);
+  margin-top: 16px;
+  letter-spacing: 0.04em;
+}
+.form-success-msg {
+  text-align: center;
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+.success-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(91,179,220,0.15);
+  border: 2px solid var(--blue-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: var(--blue-light);
+}
+.form-success-msg h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: 0.04em;
+}
+.form-success-msg p {
+  font-size: 0.9375rem;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.8;
+}
+@media (max-width: 900px) {
+  .contact-form-wrap { padding: 32px 24px; }
+  .form-row { grid-template-columns: 1fr; }
+  .form-radio-group { grid-template-columns: 1fr; }
+}
+</style>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <p class="footer-logo">Ts<span>u</span>gu</p>
+        <p class="footer-tagline serif">日本の中小企業を、次の世代へ。</p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="#service">サービス</a></li>
+        <li><a href="#how">成長モデル</a></li>
+        <li><a href="#pricing">料金</a></li>
+        <li><a href="#consultant">コンサル参加</a></li>
+        <li><a href="#contact">お問い合わせ</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 株式会社福來 All Rights Reserved.</p>
+      <p class="footer-copy">広島市中区西白島町</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+// CONTACT FORM SUBMIT
+function handleSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const name = form.name.value;
+  const furigana = form.furigana.value;
+  const company = form.company.value;
+  const email = form.email.value;
+  const phone = form.phone.value;
+  const type = form.inquiry_type.value;
+  const message = form.message.value;
+
+  const subject = encodeURIComponent(`【Tsugu LP お問い合わせ】${type}｜${name}`);
+  const body = encodeURIComponent(
+    `■ご相談の種別\n${type}\n\n` +
+    `■お名前\n${name}（${furigana}）\n\n` +
+    `■会社名\n${company || '未記入'}\n\n` +
+    `■メールアドレス\n${email}\n\n` +
+    `■電話番号\n${phone || '未記入'}\n\n` +
+    `■お悩み・ご相談内容\n${message || '未記入'}\n`
+  );
+
+  window.location.href = `mailto:y.ogasawara@fuku-kita.jp?subject=${subject}&body=${body}`;
+
+  // Show success message
+  setTimeout(() => {
+    document.getElementById('contact-form').style.display = 'none';
+    document.getElementById('form-success').style.display = 'flex';
+  }, 800);
+}
+
+// NAV SCROLL
+const nav = document.getElementById('main-nav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// SCROLL REVEAL
+const revealEls = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('revealed');
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+revealEls.forEach(el => observer.observe(el));
+
+// SMOOTH ANCHOR SCROLL
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const id = a.getAttribute('href').slice(1);
+    const target = document.getElementById(id);
+    if (target) {
+      e.preventDefault();
+      const offset = target.getBoundingClientRect().top + window.scrollY - 80;
+      window.scrollTo({ top: offset, behavior: 'smooth' });
+    }
+  });
+});
+</script>
+</body>
+</html>
