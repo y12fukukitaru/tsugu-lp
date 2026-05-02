@@ -795,8 +795,10 @@ nav.scrolled {
 }
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 16px;
+  max-width: 860px;
+  margin: 0 auto;
 }
 .pricing-card {
   border: 1px solid var(--border);
@@ -1155,7 +1157,11 @@ footer {
   .how-steps::before { display: none; }
   .hybrid-grid { grid-template-columns: 1fr; }
   .hybrid-divider { display: none; }
-  .pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+  .pricing-grid {
+    grid-template-columns: 1fr !important;
+    max-width: 480px;
+    margin: 0 auto;
+  }
   .pricing-card { padding: 36px 28px; }
   .hero-stats { position: static; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 60px; }
   .hero-stat { text-align: left; }
@@ -1171,16 +1177,19 @@ footer {
 }
 
 @media (max-width: 480px) {
+  html, body { overflow-x: hidden; max-width: 100%; }
   .container, .container--narrow { padding: 0 16px; }
   nav { padding: 14px 16px; }
   .hero-inner { padding: 100px 16px 60px; }
   .hero-stats { grid-template-columns: 1fr; gap: 12px; }
-  .crisis-stat-number { font-size: 2.75rem; }
-  .pricing-grid { max-width: 100%; }
+  .pricing-grid { max-width: 100% !important; }
   .value-card { padding: 36px 24px; }
   .consultant-income { padding: 32px 24px; }
   .hero-meaning-item { font-size: 0.75rem; padding: 5px 12px; }
 }
+</style>
+<style>
+html, body { max-width: 100%; overflow-x: hidden; }
 </style>
 </head>
 <body>
@@ -1446,7 +1455,7 @@ footer {
       <h2 class="section-title serif">中小企業に、手の届く価格で。</h2>
       <p class="section-body">従来の経営コンサルの数分の一の価格で、質の高い伴走を実現。これは大手ファームには構造的に真似できません。</p>
     </div>
-    <div class="pricing-grid" style="grid-template-columns: repeat(2, 1fr); max-width: 860px; margin: 0 auto;">
+    <div class="pricing-grid">
       <div class="pricing-card featured reveal">
         <span class="pricing-featured-badge">主力プラン</span>
         <p class="pricing-plan">Standard</p>
