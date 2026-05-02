@@ -1143,24 +1143,43 @@ footer {
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
-  .container, .container--narrow { padding: 0 28px; }
-  nav { padding: 16px 28px; }
+  .container, .container--narrow { padding: 0 20px; max-width: 100%; }
+  nav { padding: 16px 20px; }
   .nav-links { display: none; }
-  .hero-inner { padding: 140px 28px 100px; }
+  .hero-inner { padding: 120px 20px 80px; }
   .crisis-inner,
   .consultant-inner,
-  .company-grid { grid-template-columns: 1fr; gap: 48px; }
+  .company-grid { grid-template-columns: 1fr; gap: 40px; }
   .values-grid { grid-template-columns: 1fr; }
   .how-steps { flex-direction: column; gap: 40px; }
   .how-steps::before { display: none; }
   .hybrid-grid { grid-template-columns: 1fr; }
   .hybrid-divider { display: none; }
-  .pricing-grid { grid-template-columns: 1fr; }
+  .pricing-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+  .pricing-card { padding: 36px 28px; }
   .hero-stats { position: static; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 60px; }
   .hero-stat { text-align: left; }
   .hero-scroll { display: none; }
   .footer-inner { flex-direction: column; }
   .footer-links { flex-wrap: wrap; gap: 20px; }
+  .hero-actions { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .section-crisis, .section-service, .section-pricing,
+  .section-consultant, .section-company, .section-cta { padding: 80px 0; }
+  .section-quote { padding: 80px 0; }
+  .pricing-price-num { font-size: 2.25rem; }
+  .contact-form-wrap { padding: 28px 16px; }
+}
+
+@media (max-width: 480px) {
+  .container, .container--narrow { padding: 0 16px; }
+  nav { padding: 14px 16px; }
+  .hero-inner { padding: 100px 16px 60px; }
+  .hero-stats { grid-template-columns: 1fr; gap: 12px; }
+  .crisis-stat-number { font-size: 2.75rem; }
+  .pricing-grid { max-width: 100%; }
+  .value-card { padding: 36px 24px; }
+  .consultant-income { padding: 32px 24px; }
+  .hero-meaning-item { font-size: 0.75rem; padding: 5px 12px; }
 }
 </style>
 </head>
