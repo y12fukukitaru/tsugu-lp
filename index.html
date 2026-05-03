@@ -1609,7 +1609,7 @@ html, body { max-width: 100%; overflow-x: hidden; }
 
       <!-- Contact Form -->
       <div class="contact-form-wrap reveal reveal-delay-1">
-        <form id="contact-form" onsubmit="handleSubmit(event)">
+        <form id="contact-form" onsubmit="handleSubmit(event)" action="https://formspree.io/f/mrejeqej" method="POST">
           <div class="form-row">
             <div class="form-group">
               <label class="form-label" for="fname">お名前 <span class="required">*</span></label>
@@ -1845,34 +1845,44 @@ html, body { max-width: 100%; overflow-x: hidden; }
 
 <script>
 // CONTACT FORM SUBMIT
-function handleSubmit(e) {
+async function handleSubmit(e) {
   e.preventDefault();
   const form = e.target;
-  const name = form.name.value;
-  const furigana = form.furigana.value;
-  const company = form.company.value;
-  const email = form.email.value;
-  const phone = form.phone.value;
-  const type = form.inquiry_type.value;
-  const message = form.message.value;
+  const submitBtn = form.querySelector('.form-submit');
 
-  const subject = encodeURIComponent(`【Tsugu LP お問い合わせ】${type}｜${name}`);
-  const body = encodeURIComponent(
-    `■ご相談の種別\n${type}\n\n` +
-    `■お名前\n${name}（${furigana}）\n\n` +
-    `■会社名\n${company || '未記入'}\n\n` +
-    `■メールアドレス\n${email}\n\n` +
-    `■電話番号\n${phone || '未記入'}\n\n` +
-    `■お悩み・ご相談内容\n${message || '未記入'}\n`
-  );
+  // ボタンを送信中状態に
+  submitBtn.textContent = '送信中...';
+  submitBtn.disabled = true;
 
-  window.location.href = `mailto:y.ogasawara@fuku-kita.jp?subject=${subject}&body=${body}`;
+  const formData = new FormData(form);
 
-  // Show success message
-  setTimeout(() => {
-    document.getElementById('contact-form').style.display = 'none';
-    document.getElementById('form-success').style.display = 'flex';
-  }, 800);
+  try {
+    const response = await fetch('https://formspree.io/f/mrejeqej', {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    });
+
+    if (response.ok) {
+      // 送信成功：フォームを隠して完了メッセージを表示
+      form.style.display = 'none';
+      document.getElementById('form-success').style.display = 'flex';
+    } else {
+      // エラー時
+      const data = await response.json();
+      if (data.errors) {
+        alert('送信に失敗しました。入力内容をご確認ください。');
+      } else {
+        alert('送信に失敗しました。しばらく時間をおいて再度お試しください。');
+      }
+      submitBtn.textContent = '送信する →';
+      submitBtn.disabled = false;
+    }
+  } catch (error) {
+    alert('通信エラーが発生しました。インターネット接続をご確認ください。');
+    submitBtn.textContent = '送信する →';
+    submitBtn.disabled = false;
+  }
 }
 
 // NAV SCROLL
