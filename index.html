@@ -795,10 +795,8 @@ nav.scrolled {
 }
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 16px;
-  max-width: 860px;
-  margin: 0 auto;
 }
 .pricing-card {
   border: 1px solid var(--border);
@@ -1157,12 +1155,7 @@ footer {
   .how-steps::before { display: none; }
   .hybrid-grid { grid-template-columns: 1fr; }
   .hybrid-divider { display: none; }
-  .pricing-grid {
-    grid-template-columns: 1fr !important;
-    max-width: 480px;
-    margin: 0 auto;
-  }
-  .pricing-card { padding: 36px 28px; }
+  .pricing-grid { grid-template-columns: 1fr !important; max-width: 480px; margin: 0 auto; }
   .hero-stats { position: static; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 60px; }
   .hero-stat { text-align: left; }
   .hero-scroll { display: none; }
@@ -1171,7 +1164,6 @@ footer {
   .hero-actions { flex-direction: column; align-items: flex-start; gap: 16px; }
   .section-crisis, .section-service, .section-pricing,
   .section-consultant, .section-company, .section-cta { padding: 80px 0; }
-  .section-quote { padding: 80px 0; }
   .pricing-price-num { font-size: 2.25rem; }
   .contact-form-wrap { padding: 28px 16px; }
 }
@@ -1182,7 +1174,6 @@ footer {
   nav { padding: 14px 16px; }
   .hero-inner { padding: 100px 16px 60px; }
   .hero-stats { grid-template-columns: 1fr; gap: 12px; }
-  .pricing-grid { max-width: 100% !important; }
   .value-card { padding: 36px 24px; }
   .consultant-income { padding: 32px 24px; }
   .hero-meaning-item { font-size: 0.75rem; padding: 5px 12px; }
@@ -1249,7 +1240,7 @@ html, body { max-width: 100%; overflow-x: hidden; }
       <span class="hero-stat-label">失われるGDP</span>
     </div>
     <div class="hero-stat">
-      <span class="hero-stat-num">5〜10<span style="font-size:1.25rem">万円</span></span>
+      <span class="hero-stat-num">5<span style="font-size:1.25rem">万円</span></span>
       <span class="hero-stat-label">月額サービス料</span>
     </div>
   </div>
@@ -1333,7 +1324,7 @@ html, body { max-width: 100%; overflow-x: hidden; }
         <div class="value-num">02</div>
         <span class="value-tag">民主化</span>
         <h3 class="value-title serif">専属コンサルを手の届く価格に</h3>
-        <p class="value-desc">従来の経営コンサルは月額30万円以上が相場。TsuguはAIが実務を担うことで原価構造を変え、月額5〜10万円で質の高い伴走を実現します。</p>
+        <p class="value-desc">従来の経営コンサルは月額30万円以上が相場。TsuguはAIが実務を担うことで原価構造を変え、導入初期費用10万円・月額5万円という価格で質の高い伴走を実現します。</p>
       </div>
       <div class="value-card reveal reveal-delay-2">
         <div class="value-num">03</div>
@@ -1452,52 +1443,147 @@ html, body { max-width: 100%; overflow-x: hidden; }
   <div class="container">
     <div class="section-header reveal">
       <p class="section-label">料金プラン</p>
-      <h2 class="section-title serif">中小企業に、手の届く価格で。</h2>
-      <p class="section-body">従来の経営コンサルの数分の一の価格で、質の高い伴走を実現。これは大手ファームには構造的に真似できません。</p>
+      <h2 class="section-title serif">透明で、シンプルな料金体系。</h2>
+      <p class="section-body">初期費用と月額のシンプルな2本立て。承継する会社が増えるほど、お得になる設計です。</p>
     </div>
-    <div class="pricing-grid">
-      <div class="pricing-card featured reveal">
-        <span class="pricing-featured-badge">主力プラン</span>
-        <p class="pricing-plan">Standard</p>
-        <h3 class="pricing-name serif">Tsugu Standard</h3>
-        <div class="pricing-price">
-          <span class="pricing-price-num">50,000</span>
-          <span class="pricing-price-unit">円／月（税抜）</span>
+
+    <!-- クライアント料金 -->
+    <div style="max-width:720px; margin:0 auto 64px;">
+      <p style="font-size:0.8125rem;letter-spacing:0.1em;color:var(--gold);font-weight:700;margin-bottom:24px;text-align:center;">CLIENT PLAN ／ 顧客料金</p>
+      <div class="pricing-card featured reveal" style="max-width:100%;">
+        <span class="pricing-featured-badge">スタンダードプラン（1プランのみ）</span>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin:32px 0;">
+          <div style="text-align:center; padding:24px; background:rgba(255,255,255,0.05); border-radius:12px;">
+            <p style="font-size:0.8125rem;color:rgba(255,255,255,0.5);margin-bottom:8px;">導入初期費用（初回のみ）</p>
+            <p style="font-family:var(--serif);font-size:2.25rem;font-weight:700;color:var(--gold);">100,000</p>
+            <p style="font-size:0.875rem;color:rgba(255,255,255,0.4);">円（税抜）</p>
+          </div>
+          <div style="text-align:center; padding:24px; background:rgba(255,255,255,0.05); border-radius:12px;">
+            <p style="font-size:0.8125rem;color:rgba(255,255,255,0.5);margin-bottom:8px;">月額利用料金</p>
+            <p style="font-family:var(--serif);font-size:2.25rem;font-weight:700;color:var(--gold);">50,000</p>
+            <p style="font-size:0.875rem;color:rgba(255,255,255,0.4);">円／月（税抜）</p>
+          </div>
         </div>
-        <p class="pricing-note">AI全機能 ＋ 月1回コンサル面談</p>
+        <div style="background:rgba(201,169,97,0.1); border:1px solid rgba(201,169,97,0.3); border-radius:12px; padding:20px 24px; margin-bottom:24px;">
+          <p style="font-size:0.875rem;color:var(--gold);font-weight:700;margin-bottom:8px;">※ 初月のお支払い</p>
+          <p style="font-size:0.9375rem;color:rgba(255,255,255,0.85);">初期費用10万円 ＋ 月額5万円 ＝ <strong style="color:var(--gold);">初月合計15万円</strong></p>
+        </div>
         <ul class="pricing-features">
-          <li class="pricing-feature"><div class="pricing-check"></div>経営ダッシュボード（フル機能）</li>
-          <li class="pricing-feature"><div class="pricing-check"></div>キャッシュフロー予測・資金リスク警告</li>
-          <li class="pricing-feature"><div class="pricing-check"></div>補助金・助成金自動マッチング</li>
-          <li class="pricing-feature"><div class="pricing-check"></div>月次コンサル面談（月1回）</li>
-          <li class="pricing-feature"><div class="pricing-check"></div>月次レポート作成</li>
-          <li class="pricing-feature"><div class="pricing-check"></div>スポット相談 月2回無料<br><span style="font-size:0.8em;opacity:0.7;">（3回目以降 5,500円／30分）</span></li>
+          <li class="pricing-feature"><div class="pricing-check"></div>AIプラットフォーム全機能（経営ダッシュボード・CF予測・補助金マッチング）</li>
+          <li class="pricing-feature"><div class="pricing-check"></div>認定キャッシュベースコンサルタントによる月次伴走面談</li>
+          <li class="pricing-feature"><div class="pricing-check"></div>月次レポート作成・フォローアップ</li>
           <li class="pricing-feature"><div class="pricing-check"></div>Tsugu Awardsへの参加資格</li>
         </ul>
-        <a href="#contact" class="pricing-btn pricing-btn-primary">無料相談を予約</a>
+        <a href="#contact" class="pricing-btn pricing-btn-primary" style="margin-top:32px;">無料相談を予約する</a>
       </div>
-      <div class="pricing-card reveal reveal-delay-1">
-        <p class="pricing-plan">Premium</p>
-        <h3 class="pricing-name serif">Tsugu Premium</h3>
-        <div class="pricing-price">
-          <span class="pricing-price-num">100,000</span>
-          <span class="pricing-price-unit">円／月（税抜）</span>
+
+      <!-- 複数社割引 -->
+      <div style="margin-top:32px; background:var(--white-pure); border:1px solid var(--border); border-radius:16px; padding:32px; reveal">
+        <p style="font-weight:700;color:var(--ink);font-size:1rem;margin-bottom:20px;">M&A承継による複数社契約割引</p>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:16px;background:var(--surface);border-radius:10px;">
+            <div>
+              <p style="font-weight:700;color:var(--ink);font-size:0.9375rem;">2社目〜4社目</p>
+              <p style="font-size:0.8125rem;color:var(--text-mid);margin-top:4px;">M&Aで承継した追加契約</p>
+            </div>
+            <p style="font-family:var(--serif);font-size:1.75rem;font-weight:700;color:var(--ink);">10<span style="font-size:1rem;">% OFF</span></p>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:16px;background:var(--ink);border-radius:10px;">
+            <div>
+              <p style="font-weight:700;color:var(--white);font-size:0.9375rem;">5社目以降（全社適用）</p>
+              <p style="font-size:0.8125rem;color:rgba(255,255,255,0.5);margin-top:4px;">5社目から全社に永続適用</p>
+            </div>
+            <p style="font-family:var(--serif);font-size:1.75rem;font-weight:700;color:var(--gold);">20<span style="font-size:1rem;">% OFF</span></p>
+          </div>
         </div>
-        <p class="pricing-note">Standard ＋ PMI支援 ＋ 月2回面談</p>
-        <ul class="pricing-features">
-          <li class="pricing-feature"><div class="pricing-check"></div>Standardの全機能</li>
-          <li class="pricing-feature"><div class="pricing-check"></div>月次面談（月2回）</li>
-          <li class="pricing-feature"><div class="pricing-check"></div>スポット相談 月2回無料<br><span style="font-size:0.8em;opacity:0.7;">（3回目以降 5,500円／30分）</span></li>
-          <li class="pricing-feature"><div class="pricing-check"></div>M&A後のPMI支援</li>
-          <li class="pricing-feature"><div class="pricing-check"></div>財務・税務専門家との連携</li>
-          <li class="pricing-feature"><div class="pricing-check"></div>HD化支援（Tsugu Holdings）</li>
-        </ul>
-        <a href="#contact" class="pricing-btn pricing-btn-ghost">詳細を問い合わせ</a>
+      </div>
+
+      <!-- PMI -->
+      <div style="margin-top:24px; background:var(--white-pure); border:1px solid var(--border); border-radius:16px; padding:32px;">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:16px;">
+          <div>
+            <p style="font-weight:700;color:var(--ink);font-size:1rem;margin-bottom:8px;">PMI支援（オプション）</p>
+            <p style="font-size:0.875rem;color:var(--text-mid);max-width:400px;">M&A後の統合支援。別途年間契約が必要です。<br>※ AI伴走支援システムは現在開発中です。</p>
+          </div>
+          <div style="text-align:right;">
+            <p style="font-family:var(--serif);font-size:1.75rem;font-weight:700;color:var(--ink);">100,000</p>
+            <p style="font-size:0.875rem;color:var(--text-light);">円／月（年間契約・税抜）</p>
+          </div>
+        </div>
       </div>
     </div>
-    <div style="margin-top:48px; text-align:center;">
-      <p style="font-size:0.875rem;color:var(--text-light);">2社目以降 ＋30,000円／月（事業ごと）｜スポット相談（単体）5,500円／30分</p>
+
+    <!-- 認定コンサルタント料金 -->
+    <div style="max-width:720px; margin:0 auto;">
+      <p style="font-size:0.8125rem;letter-spacing:0.1em;color:var(--gold);font-weight:700;margin-bottom:24px;text-align:center;">CONSULTANT PLAN ／ 認定コンサルタント料金</p>
+      <div class="pricing-card reveal" style="max-width:100%;">
+        <p class="pricing-plan">認定キャッシュベースコンサルタント</p>
+        <h3 class="pricing-name serif">参入障壁を極限まで下げた設計</h3>
+
+        <div style="margin:28px 0; display:flex;flex-direction:column;gap:16px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;background:var(--surface);border-radius:10px;">
+            <p style="font-weight:700;color:var(--ink);font-size:0.9375rem;">初期登録料（一括）</p>
+            <p style="font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--ink);">3,000<span style="font-size:0.875rem;font-weight:400;color:var(--text-mid);">円</span></p>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;background:var(--surface);border-radius:10px;">
+            <p style="font-weight:700;color:var(--ink);font-size:0.9375rem;">基本月額利用料金</p>
+            <p style="font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--ink);">1,500<span style="font-size:0.875rem;font-weight:400;color:var(--text-mid);">円／月</span></p>
+          </div>
+        </div>
+
+        <p style="font-weight:700;color:var(--ink);font-size:0.9375rem;margin-bottom:16px;">顧問契約数による月額料金（3段階・固定）</p>
+        <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:28px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border:1px solid var(--border);border-radius:10px;">
+            <div>
+              <p style="font-weight:700;color:var(--ink);font-size:0.9375rem;">顧問契約なし</p>
+              <p style="font-size:0.8125rem;color:var(--text-mid);margin-top:2px;">登録のみ（顧問先ゼロ）</p>
+            </div>
+            <p style="font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--ink);">1,500<span style="font-size:0.875rem;font-weight:400;color:var(--text-mid);">円／月</span></p>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border:2px solid var(--gold);border-radius:10px;background:rgba(201,169,97,0.05);">
+            <div>
+              <p style="font-weight:700;color:var(--ink);font-size:0.9375rem;">顧問契約 1社〜4社</p>
+              <p style="font-size:0.8125rem;color:var(--text-mid);margin-top:2px;">何社でも同じ月額・変わらない</p>
+            </div>
+            <p style="font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--ink);">3,000<span style="font-size:0.875rem;font-weight:400;color:var(--text-mid);">円／月</span></p>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 20px;background:var(--ink);border-radius:10px;">
+            <div>
+              <p style="font-weight:700;color:var(--white);font-size:0.9375rem;">顧問契約 5社以上</p>
+              <p style="font-size:0.8125rem;color:rgba(255,255,255,0.5);margin-top:2px;">6社以降も変わらず・永続固定</p>
+            </div>
+            <p style="font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--gold);">5,000<span style="font-size:0.875rem;font-weight:400;color:rgba(255,255,255,0.5);">円／月</span></p>
+          </div>
+        </div>
+
+        <div style="background:rgba(201,169,97,0.08);border:1px solid rgba(201,169,97,0.25);border-radius:12px;padding:20px 24px;margin-bottom:28px;">
+          <p style="font-size:0.8125rem;color:var(--gold);font-weight:700;margin-bottom:12px;">月額料金まとめ</p>
+          <div style="display:flex;flex-direction:column;gap:10px;font-size:0.875rem;color:var(--text-mid);">
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);">
+              <span>顧問先なし（登録のみ）</span>
+              <span style="font-weight:700;color:var(--ink);">月額 1,500円</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);">
+              <span>1社担当〜4社担当</span>
+              <span style="font-weight:700;color:var(--ink);">月額 3,000円（固定）</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;">
+              <span>5社以上担当（6社・10社・30社も同じ）</span>
+              <span style="font-weight:700;color:var(--gold);">月額 5,000円（固定）</span>
+            </div>
+          </div>
+        </div>
+
+        <ul class="pricing-features">
+          <li class="pricing-feature"><div class="pricing-check"></div>無料研修（アーカイブ動画）＋ 無料認定試験</li>
+          <li class="pricing-feature"><div class="pricing-check"></div>AIプラットフォームの全機能を利用可能</li>
+          <li class="pricing-feature"><div class="pricing-check"></div>担当社数に応じた収入が積み上がる設計</li>
+          <li class="pricing-feature"><div class="pricing-check"></div>コンプライアンス・ライセンス契約の締結</li>
+        </ul>
+        <a href="#contact" class="pricing-btn pricing-btn-ghost" style="margin-top:32px;">コンサル参加を問い合わせる</a>
+      </div>
     </div>
+
   </div>
 </section>
 
@@ -1520,7 +1606,7 @@ html, body { max-width: 100%; overflow-x: hidden; }
           <li style="display:flex;gap:16px;align-items:flex-start;">
             <span style="color:var(--gold);font-family:var(--serif);font-weight:700;font-size:1.25rem;flex-shrink:0;">02</span>
             <div>
-              <p style="font-weight:700;color:var(--ink);margin-bottom:4px;font-size:0.9375rem;">初期登録料 月額300円〜</p>
+              <p style="font-weight:700;color:var(--ink);margin-bottom:4px;font-size:0.9375rem;">初期登録料 3,000円（一括）</p>
               <p style="font-size:0.875rem;color:var(--text-mid);">参入障壁を極限まで下げた設計。担当社数に応じて収入が積み上がる、ネットワーク型収益モデル。</p>
             </div>
           </li>
@@ -1534,26 +1620,22 @@ html, body { max-width: 100%; overflow-x: hidden; }
         </ul>
       </div>
       <div class="consultant-income reveal reveal-delay-1">
-        <p class="income-title serif">認定コンサルの収支モデル（10社担当時）</p>
+        <p class="income-title serif">認定コンサルの月額料金（3段階固定）</p>
         <div class="income-row">
-          <span class="income-label">担当社数</span>
-          <span class="income-value">10社</span>
+          <span class="income-label">顧問先なし</span>
+          <span class="income-value">月額 1,500円</span>
         </div>
         <div class="income-row">
-          <span class="income-label">月次収入</span>
-          <span class="income-value">40万円</span>
+          <span class="income-label">1〜4社担当</span>
+          <span class="income-value">月額 3,000円</span>
         </div>
         <div class="income-row">
-          <span class="income-label">Tsuguへの支払</span>
-          <span class="income-value">3,300円</span>
+          <span class="income-label">5社以上担当</span>
+          <span class="income-value highlight">月額 5,000円</span>
         </div>
         <div class="income-row">
-          <span class="income-label">実質利益率</span>
-          <span class="income-value">99%超</span>
-        </div>
-        <div class="income-row">
-          <span class="income-label">30社担当の場合</span>
-          <span class="income-value highlight">月収100万円超</span>
+          <span class="income-label">6社・10社・30社も</span>
+          <span class="income-value">5,000円で変わらず</span>
         </div>
         <a href="#contact" class="btn-primary" style="margin-top:32px;display:block;text-align:center;">コンサル参加を問い合わせる</a>
       </div>
@@ -1849,32 +1931,20 @@ async function handleSubmit(e) {
   e.preventDefault();
   const form = e.target;
   const submitBtn = form.querySelector('.form-submit');
-
-  // ボタンを送信中状態に
   submitBtn.textContent = '送信中...';
   submitBtn.disabled = true;
-
   const formData = new FormData(form);
-
   try {
     const response = await fetch('https://formspree.io/f/mrejeqej', {
       method: 'POST',
       body: formData,
       headers: { 'Accept': 'application/json' }
     });
-
     if (response.ok) {
-      // 送信成功：フォームを隠して完了メッセージを表示
       form.style.display = 'none';
       document.getElementById('form-success').style.display = 'flex';
     } else {
-      // エラー時
-      const data = await response.json();
-      if (data.errors) {
-        alert('送信に失敗しました。入力内容をご確認ください。');
-      } else {
-        alert('送信に失敗しました。しばらく時間をおいて再度お試しください。');
-      }
+      alert('送信に失敗しました。入力内容をご確認ください。');
       submitBtn.textContent = '送信する →';
       submitBtn.disabled = false;
     }
