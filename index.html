@@ -1182,6 +1182,154 @@ footer {
 </style>
 <style>
 html, body { max-width: 100%; overflow-x: hidden; }
+
+/* ハンバーガーメニューボタン */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  flex-direction: column;
+  gap: 5px;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  z-index: 102;
+  position: relative;
+}
+.nav-toggle-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--white);
+  transition: transform 0.3s, opacity 0.3s;
+  border-radius: 2px;
+}
+.nav-toggle.is-open .nav-toggle-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle.is-open .nav-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle.is-open .nav-toggle-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* モバイルメニュー本体 */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 320px;
+  height: 100vh;
+  background: rgba(10,22,40,0.98);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 201;
+  padding: 90px 32px 32px;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  box-shadow: -4px 0 24px rgba(0,0,0,0.3);
+}
+.mobile-menu.is-open {
+  transform: translateX(0);
+}
+
+/* メニュー内の×閉じるボタン */
+.mobile-menu-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+}
+.mobile-menu-close:hover {
+  background: rgba(255,255,255,0.15);
+}
+.mobile-menu-close-bar {
+  position: absolute;
+  display: block;
+  width: 18px;
+  height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+}
+.mobile-menu-close-bar:nth-child(1) { transform: rotate(45deg); }
+.mobile-menu-close-bar:nth-child(2) { transform: rotate(-45deg); }
+
+/* オーバーレイ（メニュー外側） */
+.mobile-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  z-index: 200;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.mobile-menu-overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.mobile-menu-link {
+  display: block;
+  padding: 16px 20px;
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 10px;
+  transition: background 0.2s, color 0.2s;
+}
+.mobile-menu-link:hover {
+  background: rgba(255,255,255,0.06);
+  color: var(--white);
+}
+.mobile-menu-cta {
+  margin-top: 12px;
+  background: var(--gold);
+  color: var(--ink) !important;
+  text-align: center;
+  font-weight: 700 !important;
+}
+.mobile-menu-cta:hover {
+  background: var(--gold-light);
+}
+
+/* 900px以下でハンバーガーボタンを表示 */
+@media (max-width: 900px) {
+  .nav-toggle {
+    display: flex;
+  }
+}
+
+/* メニュー開いている時のbodyスクロールロック */
+body.menu-open {
+  overflow: hidden;
+}
 </style>
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
@@ -1195,10 +1343,33 @@ html, body { max-width: 100%; overflow-x: hidden; }
     <li><a href="#service">サービス</a></li>
     <li><a href="#how">成長モデル</a></li>
     <li><a href="#pricing">料金</a></li>
-    <li><a href="#consultant">コンサル参加</a></li>
+    <li><a href="#consultant">FDE参加</a></li>
     <li><a href="#contact" class="nav-cta">無料相談</a></li>
   </ul>
+  <button class="nav-toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false">
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+    <span class="nav-toggle-bar"></span>
+  </button>
 </nav>
+
+<!-- MOBILE MENU OVERLAY -->
+<div class="mobile-menu-overlay" id="mobileMenuOverlay" aria-hidden="true"></div>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <button class="mobile-menu-close" id="mobileMenuClose" aria-label="メニューを閉じる">
+    <span class="mobile-menu-close-bar"></span>
+    <span class="mobile-menu-close-bar"></span>
+  </button>
+  <ul class="mobile-menu-list">
+    <li><a href="#service" class="mobile-menu-link">サービス</a></li>
+    <li><a href="#how" class="mobile-menu-link">成長モデル</a></li>
+    <li><a href="#pricing" class="mobile-menu-link">料金</a></li>
+    <li><a href="#consultant" class="mobile-menu-link">FDE参加</a></li>
+    <li><a href="#contact" class="mobile-menu-link mobile-menu-cta">無料相談</a></li>
+  </ul>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -1321,19 +1492,19 @@ html, body { max-width: 100%; overflow-x: hidden; }
         <div class="value-num">01</div>
         <span class="value-tag">伴走</span>
         <h3 class="value-title serif">孤独をなくす</h3>
-        <p class="value-desc">経営判断は本質的に孤独です。家族にも社員にも相談できない悩みを、認定キャッシュベースコンサルタントが継続的に聴き、共に考えます。</p>
+        <p class="value-desc">経営判断は本質的に孤独です。家族にも社員にも相談できない悩みを、認定キャッシュベースFDEが継続的に聴き、共に考えます。</p>
       </div>
       <div class="value-card reveal reveal-delay-1">
         <div class="value-num">02</div>
         <span class="value-tag">民主化</span>
-        <h3 class="value-title serif">専属コンサルを手の届く価格に</h3>
+        <h3 class="value-title serif">専属FDEを手の届く価格に</h3>
         <p class="value-desc">従来の経営コンサルは月額30万円以上が相場。TsuguはAIが実務を担うことで原価構造を変え、導入初期費用10万円・月額5万円という価格で質の高い伴走を実現します。</p>
       </div>
       <div class="value-card reveal reveal-delay-2">
         <div class="value-num">03</div>
         <span class="value-tag">キャッシュベース</span>
         <h3 class="value-title serif">数字が苦手でも経営できる</h3>
-        <p class="value-desc">財務諸表を読みこなせなくても、キャッシュの動きを見失わなければ経営は続きます。専門用語をAIが翻訳し、コンサルタントが意思決定を支えます。</p>
+        <p class="value-desc">財務諸表を読みこなせなくても、キャッシュの動きを見失わなければ経営は続きます。専門用語をAIが翻訳し、FDEが意思決定を支えます。</p>
       </div>
       <div class="value-card reveal reveal-delay-3">
         <div class="value-num">04</div>
@@ -1409,7 +1580,7 @@ html, body { max-width: 100%; overflow-x: hidden; }
     <div class="section-header reveal">
       <p class="section-label">ハイブリッドモデル</p>
       <h2 class="section-title serif">AIと人の、明確な役割分担。</h2>
-      <p class="section-body">専門知識はAIが担うため、コンサルタントに求める素質は「聴く力」「共感力」「対話力」。これが破壊的価格と高品質を両立させる仕組みです。</p>
+      <p class="section-body">専門知識はAIが担うため、FDEに求める素質は「聴く力」「共感力」「対話力」。これが破壊的価格と高品質を両立させる仕組みです。</p>
     </div>
     <div class="hybrid-grid">
       <div class="hybrid-col reveal">
@@ -1418,6 +1589,7 @@ html, body { max-width: 100%; overflow-x: hidden; }
         <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">経営ダッシュボードによる可視化</span></div>
         <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">キャッシュフロー予測と資金リスク警告</span></div>
         <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">補助金・助成金の自動マッチング</span></div>
+        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">業務自動化の提案・実装支援</span></div>
         <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">会計・税務・法律用語の翻訳</span></div>
         <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">面談議事録とフォローアップ作成</span></div>
         <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">24時間365日の即時対応</span></div>
@@ -1428,10 +1600,11 @@ html, body { max-width: 100%; overflow-x: hidden; }
         <div class="hybrid-divider-line"></div>
       </div>
       <div class="hybrid-col reveal reveal-delay-2">
-        <p class="hybrid-col-title serif">認定コンサルが担う領域</p>
+        <p class="hybrid-col-title serif">認定FDEが担う領域</p>
         <p class="hybrid-col-sub">伴走・傾聴・心</p>
         <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">社長の悩みを傾聴する</span></div>
         <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">AIの分析を経営者の状況に翻訳</span></div>
+        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">AI活用による業務自動化を提案</span></div>
         <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">選択肢の整理と意思決定の後押し</span></div>
         <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">不安に寄り添い、勇気を届ける</span></div>
         <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">行動の約束と継続的フォロー</span></div>
@@ -1473,7 +1646,7 @@ html, body { max-width: 100%; overflow-x: hidden; }
         </div>
         <ul class="pricing-features">
           <li class="pricing-feature"><div class="pricing-check"></div>AIプラットフォーム全機能（経営ダッシュボード・CF予測・補助金マッチング）</li>
-          <li class="pricing-feature"><div class="pricing-check"></div>認定キャッシュベースコンサルタントによる月次伴走面談</li>
+          <li class="pricing-feature"><div class="pricing-check"></div>認定キャッシュベースFDEによる月次伴走面談</li>
           <li class="pricing-feature"><div class="pricing-check"></div>月次レポート作成・フォローアップ</li>
           <li class="pricing-feature"><div class="pricing-check"></div>Tsugu Awardsへの参加資格</li>
         </ul>
@@ -1482,23 +1655,31 @@ html, body { max-width: 100%; overflow-x: hidden; }
 
       <!-- 複数社割引 -->
       <div style="margin-top:32px; background:var(--white-pure); border:1px solid var(--border); border-radius:16px; padding:32px; reveal">
-        <p style="font-weight:700;color:var(--ink);font-size:1rem;margin-bottom:20px;">M&A承継による複数社契約割引</p>
+        <p style="font-weight:700;color:var(--ink);font-size:1rem;margin-bottom:20px;">複数社契約・HD化による割引制度</p>
         <div style="display:flex;flex-direction:column;gap:16px;">
           <div style="display:flex;justify-content:space-between;align-items:center;padding:16px;background:var(--surface);border-radius:10px;">
             <div>
               <p style="font-weight:700;color:var(--ink);font-size:0.9375rem;">2社目〜4社目</p>
               <p style="font-size:0.8125rem;color:var(--text-mid);margin-top:4px;">M&Aで承継した追加契約</p>
             </div>
-            <p style="font-family:var(--serif);font-size:1.75rem;font-weight:700;color:var(--ink);">10<span style="font-size:1rem;">% OFF</span></p>
+            <p style="font-family:var(--serif);font-size:1.75rem;font-weight:700;color:var(--ink);">3<span style="font-size:1rem;">% OFF</span></p>
+          </div>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:16px;background:var(--surface);border-radius:10px;">
+            <div>
+              <p style="font-weight:700;color:var(--ink);font-size:0.9375rem;">5社目以降（全社適用）</p>
+              <p style="font-size:0.8125rem;color:var(--text-mid);margin-top:4px;">5社目から全社に永続適用</p>
+            </div>
+            <p style="font-family:var(--serif);font-size:1.75rem;font-weight:700;color:var(--ink);">5<span style="font-size:1rem;">% OFF</span></p>
           </div>
           <div style="display:flex;justify-content:space-between;align-items:center;padding:16px;background:var(--ink);border-radius:10px;">
             <div>
-              <p style="font-weight:700;color:var(--white);font-size:0.9375rem;">5社目以降（全社適用）</p>
-              <p style="font-size:0.8125rem;color:rgba(255,255,255,0.5);margin-top:4px;">5社目から全社に永続適用</p>
+              <p style="font-weight:700;color:var(--white);font-size:0.9375rem;">HD化（ホールディングス化）</p>
+              <p style="font-size:0.8125rem;color:rgba(255,255,255,0.5);margin-top:4px;">グループ経営移行時の追加割引</p>
             </div>
-            <p style="font-family:var(--serif);font-size:1.75rem;font-weight:700;color:var(--gold);">20<span style="font-size:1rem;">% OFF</span></p>
+            <p style="font-family:var(--serif);font-size:1.75rem;font-weight:700;color:var(--gold);">5<span style="font-size:1rem;">% OFF</span></p>
           </div>
         </div>
+        <p style="font-size:0.75rem;color:var(--text-light);margin-top:16px;">※ 上記割引は併用可能です（5社以上＋HD化で最大10%OFF）</p>
       </div>
 
       <!-- PMI -->
@@ -1516,63 +1697,61 @@ html, body { max-width: 100%; overflow-x: hidden; }
       </div>
     </div>
 
-    <!-- 認定コンサルタント料金 -->
+    <!-- 認定FDE料金 -->
     <div style="max-width:720px; margin:0 auto;">
-      <p style="font-size:0.8125rem;letter-spacing:0.1em;color:var(--gold);font-weight:700;margin-bottom:24px;text-align:center;">CONSULTANT PLAN ／ 認定コンサルタント料金</p>
+      <p style="font-size:0.8125rem;letter-spacing:0.1em;color:var(--gold);font-weight:700;margin-bottom:24px;text-align:center;">FDE PLAN ／ 認定FDE料金</p>
       <div class="pricing-card reveal" style="max-width:100%;">
-        <p class="pricing-plan">認定キャッシュベースコンサルタント</p>
-        <h3 class="pricing-name serif">参入障壁を極限まで下げた設計</h3>
+        <p class="pricing-plan">認定キャッシュベースFDE</p>
+        <h3 class="pricing-name serif">日本初の認定FDE制度</h3>
+        <p style="font-size:0.875rem;color:var(--text-mid);margin-top:8px;margin-bottom:24px;">参入障壁を極限まで下げ、AI時代の新しい士業として活躍できる仕組みです。</p>
 
         <div style="margin:28px 0; display:flex;flex-direction:column;gap:16px;">
-          <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;background:var(--surface);border-radius:10px;">
-            <p style="font-weight:700;color:var(--ink);font-size:0.9375rem;">初期登録料（一括）</p>
-            <p style="font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--ink);">3,000<span style="font-size:0.875rem;font-weight:400;color:var(--text-mid);">円</span></p>
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;background:rgba(201,169,97,0.1);border:1px solid rgba(201,169,97,0.3);border-radius:10px;">
+            <p style="font-weight:700;color:var(--ink);font-size:0.9375rem;">初期登録料</p>
+            <p style="font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--gold);">無料</p>
           </div>
           <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;background:var(--surface);border-radius:10px;">
             <p style="font-weight:700;color:var(--ink);font-size:0.9375rem;">基本月額利用料金</p>
-            <p style="font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--ink);">1,500<span style="font-size:0.875rem;font-weight:400;color:var(--text-mid);">円／月</span></p>
+            <p style="font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--ink);">3,000<span style="font-size:0.875rem;font-weight:400;color:var(--text-mid);">円／月〜</span></p>
           </div>
         </div>
 
-        <p style="font-weight:700;color:var(--ink);font-size:0.9375rem;margin-bottom:16px;">顧問契約数による月額料金（3段階・固定）</p>
+        <p style="font-weight:700;color:var(--ink);font-size:0.9375rem;margin-bottom:16px;">顧問契約数に応じた月額料金</p>
         <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:28px;">
           <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border:1px solid var(--border);border-radius:10px;">
             <div>
-              <p style="font-weight:700;color:var(--ink);font-size:0.9375rem;">顧問契約なし</p>
-              <p style="font-size:0.8125rem;color:var(--text-mid);margin-top:2px;">登録のみ（顧問先ゼロ）</p>
-            </div>
-            <p style="font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--ink);">1,500<span style="font-size:0.875rem;font-weight:400;color:var(--text-mid);">円／月</span></p>
-          </div>
-          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border:2px solid var(--gold);border-radius:10px;background:rgba(201,169,97,0.05);">
-            <div>
-              <p style="font-weight:700;color:var(--ink);font-size:0.9375rem;">顧問契約 1社〜4社</p>
-              <p style="font-size:0.8125rem;color:var(--text-mid);margin-top:2px;">何社でも同じ月額・変わらない</p>
+              <p style="font-weight:700;color:var(--ink);font-size:0.9375rem;">登録時（顧問契約なし）</p>
+              <p style="font-size:0.8125rem;color:var(--text-mid);margin-top:2px;">スタート料金</p>
             </div>
             <p style="font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--ink);">3,000<span style="font-size:0.875rem;font-weight:400;color:var(--text-mid);">円／月</span></p>
           </div>
           <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 20px;background:var(--ink);border-radius:10px;">
             <div>
-              <p style="font-weight:700;color:var(--white);font-size:0.9375rem;">顧問契約 5社以上</p>
-              <p style="font-size:0.8125rem;color:rgba(255,255,255,0.5);margin-top:2px;">6社以降も変わらず・永続固定</p>
+              <p style="font-weight:700;color:var(--white);font-size:0.9375rem;">1社契約後（1社ごと加算）</p>
+              <p style="font-size:0.8125rem;color:rgba(255,255,255,0.5);margin-top:2px;">担当社数に応じて積み上げ</p>
             </div>
-            <p style="font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--gold);">5,000<span style="font-size:0.875rem;font-weight:400;color:rgba(255,255,255,0.5);">円／月</span></p>
+            <p style="font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--gold);">＋2,000<span style="font-size:0.875rem;font-weight:400;color:rgba(255,255,255,0.5);">円／社</span></p>
           </div>
         </div>
 
         <div style="background:rgba(201,169,97,0.08);border:1px solid rgba(201,169,97,0.25);border-radius:12px;padding:20px 24px;margin-bottom:28px;">
-          <p style="font-size:0.8125rem;color:var(--gold);font-weight:700;margin-bottom:12px;">月額料金まとめ</p>
+          <p style="font-size:0.8125rem;color:var(--gold);font-weight:700;margin-bottom:12px;">月額シミュレーション例</p>
           <div style="display:flex;flex-direction:column;gap:10px;font-size:0.875rem;color:var(--text-mid);">
             <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);">
-              <span>顧問先なし（登録のみ）</span>
-              <span style="font-weight:700;color:var(--ink);">月額 1,500円</span>
+              <span>登録のみ（顧問先ゼロ）</span>
+              <span style="font-weight:700;color:var(--ink);">月額 3,000円</span>
             </div>
             <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);">
-              <span>1社担当〜4社担当</span>
-              <span style="font-weight:700;color:var(--ink);">月額 3,000円（固定）</span>
+              <span>1社担当：3,000＋2,000</span>
+              <span style="font-weight:700;color:var(--ink);">月額 5,000円</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);">
+              <span>5社担当：3,000＋2,000×5</span>
+              <span style="font-weight:700;color:var(--ink);">月額 13,000円</span>
             </div>
             <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;">
-              <span>5社以上担当（6社・10社・30社も同じ）</span>
-              <span style="font-weight:700;color:var(--gold);">月額 5,000円（固定）</span>
+              <span>10社担当：3,000＋2,000×10</span>
+              <span style="font-weight:700;color:var(--gold);">月額 23,000円</span>
             </div>
           </div>
         </div>
@@ -1580,10 +1759,83 @@ html, body { max-width: 100%; overflow-x: hidden; }
         <ul class="pricing-features">
           <li class="pricing-feature"><div class="pricing-check"></div>無料研修（アーカイブ動画）＋ 無料認定試験</li>
           <li class="pricing-feature"><div class="pricing-check"></div>AIプラットフォームの全機能を利用可能</li>
+          <li class="pricing-feature"><div class="pricing-check"></div>AI活用による業務自動化提案機能</li>
           <li class="pricing-feature"><div class="pricing-check"></div>担当社数に応じた収入が積み上がる設計</li>
           <li class="pricing-feature"><div class="pricing-check"></div>コンプライアンス・ライセンス契約の締結</li>
         </ul>
-        <a href="#contact" class="pricing-btn pricing-btn-ghost" style="margin-top:32px;">コンサル参加を問い合わせる</a>
+        <a href="#contact" class="pricing-btn pricing-btn-ghost" style="margin-top:32px;">FDE参加を問い合わせる</a>
+      </div>
+
+      <!-- 4階層パートナー制度 -->
+      <div style="margin-top:48px;">
+        <p style="font-size:0.8125rem;letter-spacing:0.1em;color:var(--gold);font-weight:700;margin-bottom:8px;text-align:center;">PARTNER TIERS ／ 4階層パートナー制度</p>
+        <p style="font-size:0.875rem;color:var(--text-mid);text-align:center;margin-bottom:32px;">実績に応じて昇格し、顧問先への割引提供力で信頼を深めます</p>
+
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <!-- 1期：アソシエイト -->
+          <div style="background:var(--white-pure);border:1px solid var(--border);border-radius:14px;padding:24px 28px;">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;">
+              <div style="flex:1;min-width:200px;">
+                <p style="font-size:0.75rem;letter-spacing:0.1em;color:var(--gold);font-weight:700;margin-bottom:6px;">1期</p>
+                <p style="font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--ink);">アソシエイト・パートナー</p>
+                <p style="font-size:0.8125rem;color:var(--text-mid);margin-top:6px;">登録後・未契約期</p>
+              </div>
+              <div style="text-align:right;">
+                <p style="font-size:0.75rem;color:var(--text-light);">顧問料割引提供</p>
+                <p style="font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--text-mid);">—</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2期：シニア -->
+          <div style="background:var(--white-pure);border:1px solid var(--border);border-radius:14px;padding:24px 28px;">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;">
+              <div style="flex:1;min-width:200px;">
+                <p style="font-size:0.75rem;letter-spacing:0.1em;color:var(--gold);font-weight:700;margin-bottom:6px;">2期</p>
+                <p style="font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--ink);">シニア・パートナー</p>
+                <p style="font-size:0.8125rem;color:var(--text-mid);margin-top:6px;">1社顧問契約達成後</p>
+              </div>
+              <div style="text-align:right;">
+                <p style="font-size:0.75rem;color:var(--text-light);">顧問料割引提供</p>
+                <p style="font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--ink);">2<span style="font-size:0.875rem;">% OFF</span></p>
+                <p style="font-size:0.75rem;color:var(--text-light);margin-top:2px;">全顧問先に適用</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3期：エグゼクティブ -->
+          <div style="background:var(--white-pure);border:2px solid var(--gold);border-radius:14px;padding:24px 28px;">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;">
+              <div style="flex:1;min-width:200px;">
+                <p style="font-size:0.75rem;letter-spacing:0.1em;color:var(--gold);font-weight:700;margin-bottom:6px;">3期</p>
+                <p style="font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--ink);">エグゼクティブ・パートナー</p>
+                <p style="font-size:0.8125rem;color:var(--text-mid);margin-top:6px;">5顧問契約 ＋ HD化経験1社</p>
+              </div>
+              <div style="text-align:right;">
+                <p style="font-size:0.75rem;color:var(--text-light);">顧問料割引提供</p>
+                <p style="font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--ink);">5<span style="font-size:0.875rem;">% OFF</span></p>
+                <p style="font-size:0.75rem;color:var(--text-light);margin-top:2px;">全顧問先に適用</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4期：プレミアム -->
+          <div style="background:var(--ink);border:1px solid var(--gold);border-radius:14px;padding:24px 28px;">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;">
+              <div style="flex:1;min-width:200px;">
+                <p style="font-size:0.75rem;letter-spacing:0.1em;color:var(--gold);font-weight:700;margin-bottom:6px;">4期（最上位）</p>
+                <p style="font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--white);">プレミアム・パートナー</p>
+                <p style="font-size:0.8125rem;color:rgba(255,255,255,0.5);margin-top:6px;">10顧問契約 ＋ HD化経験2社</p>
+              </div>
+              <div style="text-align:right;">
+                <p style="font-size:0.75rem;color:rgba(255,255,255,0.5);">顧問料割引提供</p>
+                <p style="font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--gold);">10<span style="font-size:0.875rem;">% OFF</span></p>
+                <p style="font-size:0.75rem;color:rgba(255,255,255,0.5);margin-top:2px;">全顧問先に適用</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p style="font-size:0.75rem;color:var(--text-light);margin-top:16px;text-align:center;">※ 上位パートナーに昇格すると、顧問先により有利な条件を提供できます。</p>
       </div>
     </div>
 
@@ -1595,9 +1847,9 @@ html, body { max-width: 100%; overflow-x: hidden; }
   <div class="container">
     <div class="consultant-inner">
       <div class="reveal">
-        <p class="section-label">認定コンサル</p>
-        <h2 class="section-title serif">実力ある人に、<br>本当のキャリアを。</h2>
-        <p class="section-body" style="margin-bottom:32px;">保険営業、銀行OB、独立志望の士業補助者——「営業の仕事を続けていきたいが収入が不安定できつい、クライアントと広く浅くではなく狭く深い信頼関係を築きたい。」そんな方に、Tsuguの認定キャッシュベースコンサルタント制度は機会を提供します。</p>
+        <p class="section-label">日本初の認定キャッシュベースFDE</p>
+        <h2 class="section-title serif">AI時代の<br>新しいキャリアを、<br>あなたに。</h2>
+        <p class="section-body" style="margin-bottom:32px;">保険営業、銀行OB、独立志望の士業補助者、AI時代に新しい働き方を模索するすべての人へ──「広く浅くではなく、狭く深い信頼関係を経営者と築きたい」「AIを味方に、自分の力で稼ぐ仕事をしたい」。Tsuguの認定キャッシュベースFDE制度は、日本初の取り組みとして、その機会を提供します。</p>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:16px;">
           <li style="display:flex;gap:16px;align-items:flex-start;">
             <span style="color:var(--gold);font-family:var(--serif);font-weight:700;font-size:1.25rem;flex-shrink:0;">01</span>
@@ -1609,8 +1861,8 @@ html, body { max-width: 100%; overflow-x: hidden; }
           <li style="display:flex;gap:16px;align-items:flex-start;">
             <span style="color:var(--gold);font-family:var(--serif);font-weight:700;font-size:1.25rem;flex-shrink:0;">02</span>
             <div>
-              <p style="font-weight:700;color:var(--ink);margin-bottom:4px;font-size:0.9375rem;">初期登録料 3,000円（一括）</p>
-              <p style="font-size:0.875rem;color:var(--text-mid);">参入障壁を極限まで下げた設計。担当社数に応じて収入が積み上がる、ネットワーク型収益モデル。</p>
+              <p style="font-weight:700;color:var(--ink);margin-bottom:4px;font-size:0.9375rem;">初期登録料 無料・月額3,000円スタート</p>
+              <p style="font-size:0.875rem;color:var(--text-mid);">参入障壁を極限まで下げた設計。1社契約毎に＋2,000円、担当社数に応じて収入が積み上がるネットワーク型収益モデル。</p>
             </div>
           </li>
           <li style="display:flex;gap:16px;align-items:flex-start;">
@@ -1623,24 +1875,61 @@ html, body { max-width: 100%; overflow-x: hidden; }
         </ul>
       </div>
       <div class="consultant-income reveal reveal-delay-1">
-        <p class="income-title serif">認定コンサルの月額料金（3段階固定）</p>
-        <div class="income-row">
-          <span class="income-label">顧問先なし</span>
-          <span class="income-value">月額 1,500円</span>
+        <p style="font-size:0.75rem;letter-spacing:0.15em;color:var(--gold);font-weight:700;margin-bottom:6px;text-align:center;">CAREER & REWARD</p>
+        <p class="income-title serif" style="margin-bottom:6px;">あなたの未来を描く<br>4つのステージ</p>
+        <p style="font-size:0.8125rem;color:rgba(255,255,255,0.65);margin-bottom:24px;text-align:center;line-height:1.6;">日本初の認定キャッシュベースFDEとして、<br>副業から始め、独立、そして業界リーダーへ。</p>
+
+        <!-- 1期：アソシエイト -->
+        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:18px 20px;margin-bottom:12px;">
+          <p style="font-size:0.6875rem;letter-spacing:0.1em;color:var(--gold);font-weight:700;margin-bottom:4px;">1期 ─ START</p>
+          <p style="font-family:var(--serif);font-size:1.0625rem;font-weight:700;color:var(--white);margin-bottom:6px;">アソシエイト・パートナー</p>
+          <p style="font-size:0.75rem;color:rgba(255,255,255,0.55);">初期投資ゼロでスタート。プラットフォーム全機能を活用し、初の顧問契約獲得を目指します。</p>
         </div>
-        <div class="income-row">
-          <span class="income-label">1〜4社担当</span>
-          <span class="income-value">月額 3,000円</span>
+
+        <!-- 2期：シニア -->
+        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.15);border-radius:12px;padding:18px 20px;margin-bottom:12px;">
+          <p style="font-size:0.6875rem;letter-spacing:0.1em;color:var(--gold);font-weight:700;margin-bottom:4px;">2期 ─ 副業から独立準備へ</p>
+          <p style="font-family:var(--serif);font-size:1.0625rem;font-weight:700;color:var(--white);margin-bottom:8px;">シニア・パートナー</p>
+          <p style="font-size:0.7rem;color:rgba(255,255,255,0.55);margin-bottom:10px;">1社顧問契約獲得後 ─ 報酬体系の対象に</p>
+          <div style="font-size:0.8125rem;color:rgba(255,255,255,0.85);line-height:1.7;">
+            <div style="display:flex;justify-content:space-between;"><span>顧問先1社</span><strong style="color:var(--gold);">月額 約3万円</strong></div>
+            <div style="display:flex;justify-content:space-between;"><span>顧問先3社</span><strong style="color:var(--gold);">月額 約9万円</strong></div>
+            <div style="display:flex;justify-content:space-between;"><span>顧問先4社</span><strong style="color:var(--gold);">月額 約12万円</strong></div>
+            <p style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,0.1);text-align:right;font-size:0.875rem;color:var(--gold);font-weight:700;">年収目安 約140万円</p>
+          </div>
         </div>
-        <div class="income-row">
-          <span class="income-label">5社以上担当</span>
-          <span class="income-value highlight">月額 5,000円</span>
+
+        <!-- 3期：エグゼクティブ -->
+        <div style="background:linear-gradient(135deg, rgba(201,169,97,0.18) 0%, rgba(201,169,97,0.05) 100%);border:1px solid var(--gold);border-radius:12px;padding:18px 20px;margin-bottom:12px;">
+          <p style="font-size:0.6875rem;letter-spacing:0.1em;color:var(--gold);font-weight:700;margin-bottom:4px;">3期 ─ 独立確立期</p>
+          <p style="font-family:var(--serif);font-size:1.0625rem;font-weight:700;color:var(--white);margin-bottom:8px;">エグゼクティブ・パートナー</p>
+          <p style="font-size:0.7rem;color:rgba(255,255,255,0.6);margin-bottom:10px;">顧問先5社 ＋ HD化案件1社経験 ─ 報酬比率アップ</p>
+          <div style="font-size:0.8125rem;color:rgba(255,255,255,0.9);line-height:1.7;">
+            <div style="display:flex;justify-content:space-between;"><span>顧問先5社</span><strong style="color:var(--gold);">月額 約17万円</strong></div>
+            <div style="display:flex;justify-content:space-between;"><span>＋HD化PMI支援報酬</span><strong style="color:var(--gold);">月額 約7万円</strong></div>
+            <div style="display:flex;justify-content:space-between;margin-top:8px;padding-top:8px;border-top:1px solid rgba(201,169,97,0.3);"><span style="font-weight:700;">合計</span><strong style="color:var(--gold);font-size:1rem;">月額 約24万円</strong></div>
+            <p style="margin-top:6px;text-align:right;font-size:0.875rem;color:var(--gold);font-weight:700;">年収目安 約280万円</p>
+          </div>
+          <p style="font-size:0.7rem;color:rgba(255,255,255,0.6);margin-top:10px;line-height:1.5;">＋ 戦略アドバイザー権限／HD化アドバイザリー業務／顧問先への割引特典提供権</p>
         </div>
-        <div class="income-row">
-          <span class="income-label">6社・10社・30社も</span>
-          <span class="income-value">5,000円で変わらず</span>
+
+        <!-- 4期：プレミアム -->
+        <div style="background:linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);border-radius:12px;padding:18px 20px;margin-bottom:18px;">
+          <p style="font-size:0.6875rem;letter-spacing:0.1em;color:var(--ink);font-weight:700;margin-bottom:4px;">4期 ─ 業界リーダー期（最上位）</p>
+          <p style="font-family:var(--serif);font-size:1.125rem;font-weight:700;color:var(--ink);margin-bottom:8px;">プレミアム・パートナー</p>
+          <p style="font-size:0.7rem;color:var(--ink);opacity:0.75;margin-bottom:10px;">顧問先10社 ＋ HD化案件2社経験 ─ 最上位の報酬比率</p>
+          <div style="font-size:0.8125rem;color:var(--ink);line-height:1.7;">
+            <div style="display:flex;justify-content:space-between;"><span>顧問先10社</span><strong>月額 約38万円</strong></div>
+            <div style="display:flex;justify-content:space-between;"><span>＋HD化PMI支援（2社継続）</span><strong>月額 約16万円</strong></div>
+            <div style="display:flex;justify-content:space-between;margin-top:8px;padding-top:8px;border-top:1px solid rgba(15,27,60,0.25);"><span style="font-weight:700;">合計</span><strong style="font-size:1.0625rem;">月額 約54万円</strong></div>
+            <p style="margin-top:6px;text-align:right;font-size:0.9375rem;font-weight:700;">年収目安 約650万円超</p>
+          </div>
+          <p style="font-size:0.7rem;color:var(--ink);opacity:0.75;margin-top:10px;line-height:1.5;">＋ 後進FDE育成権限／Tsuguブランド認定権限／業界アドバイザー</p>
         </div>
-        <a href="#contact" class="btn-primary" style="margin-top:32px;display:block;text-align:center;">コンサル参加を問い合わせる</a>
+
+        <p style="font-size:0.6875rem;color:rgba(255,255,255,0.5);margin-bottom:16px;text-align:center;line-height:1.5;">※ 上記は試算例です。実際の収入は顧客契約状況により変動します。<br>※ AIが知識面を全面サポート。「聴く力」「共感力」があれば誰でも挑戦可能。</p>
+
+        <a href="#contact" class="btn-primary" style="margin-top:8px;display:block;text-align:center;">日本初の認定FDEに登録してみる</a>
       </div>
     </div>
   </div>
@@ -1677,7 +1966,7 @@ html, body { max-width: 100%; overflow-x: hidden; }
         </div>
         <div class="company-row">
           <span class="company-key">商標</span>
-          <span class="company-val">「Tsugu」「認定キャッシュベースコンサルタント」出願中</span>
+          <span class="company-val">「Tsugu」「認定キャッシュベースFDE」出願中</span>
         </div>
       </div>
     </div>
@@ -1732,9 +2021,9 @@ html, body { max-width: 100%; overflow-x: hidden; }
                 </span>
               </label>
               <label class="form-radio">
-                <input type="radio" name="inquiry_type" value="認定コンサルタントへの参加">
+                <input type="radio" name="inquiry_type" value="認定FDEへの参加">
                 <span class="radio-box">
-                  <span class="radio-label">コンサル参加<br><small>認定コンサルタントとして</small></span>
+                  <span class="radio-label">FDE参加<br><small>認定FDEとして</small></span>
                 </span>
               </label>
               <label class="form-radio">
@@ -1917,7 +2206,7 @@ html, body { max-width: 100%; overflow-x: hidden; }
         <li><a href="#service">サービス</a></li>
         <li><a href="#how">成長モデル</a></li>
         <li><a href="#pricing">料金</a></li>
-        <li><a href="#consultant">コンサル参加</a></li>
+        <li><a href="#consultant">FDE参加</a></li>
         <li><a href="#contact">お問い合わせ</a></li>
       </ul>
     </div>
@@ -1929,6 +2218,64 @@ html, body { max-width: 100%; overflow-x: hidden; }
 </footer>
 
 <script>
+// MOBILE MENU TOGGLE
+(function() {
+  const toggle = document.getElementById('navToggle');
+  const menu = document.getElementById('mobileMenu');
+  const closeBtn = document.getElementById('mobileMenuClose');
+  const overlay = document.getElementById('mobileMenuOverlay');
+  if (!toggle || !menu) return;
+
+  function closeMenu() {
+    toggle.classList.remove('is-open');
+    menu.classList.remove('is-open');
+    if (overlay) overlay.classList.remove('is-open');
+    document.body.classList.remove('menu-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    menu.setAttribute('aria-hidden', 'true');
+  }
+
+  function openMenu() {
+    toggle.classList.add('is-open');
+    menu.classList.add('is-open');
+    if (overlay) overlay.classList.add('is-open');
+    document.body.classList.add('menu-open');
+    toggle.setAttribute('aria-expanded', 'true');
+    menu.setAttribute('aria-hidden', 'false');
+  }
+
+  // ハンバーガーボタンのトグル
+  toggle.addEventListener('click', function() {
+    if (menu.classList.contains('is-open')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  // 閉じる×ボタン
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeMenu);
+  }
+
+  // オーバーレイをタップしたら閉じる
+  if (overlay) {
+    overlay.addEventListener('click', closeMenu);
+  }
+
+  // メニュー内のリンクをクリックしたら自動で閉じる
+  menu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+
+  // ESCキーで閉じる
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && menu.classList.contains('is-open')) {
+      closeMenu();
+    }
+  });
+})();
+
 // CONTACT FORM SUBMIT
 async function handleSubmit(e) {
   e.preventDefault();
