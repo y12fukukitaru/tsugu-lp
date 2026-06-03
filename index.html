@@ -395,6 +395,130 @@ nav.scrolled {
   opacity: 0.6;
 }
 
+/* ENTRY BRANCH SECTION */
+.section-branch {
+  padding: 80px 0;
+  background: var(--ink);
+  position: relative;
+}
+.branch-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.branch-card {
+  display: flex;
+  flex-direction: column;
+  padding: 40px 36px;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  text-decoration: none;
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+.branch-card:hover {
+  transform: translateY(-4px);
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.2);
+}
+.branch-card-fde {
+  background: linear-gradient(160deg, rgba(201,169,97,0.12) 0%, rgba(201,169,97,0.03) 100%);
+  border-color: rgba(201,169,97,0.35);
+}
+.branch-card-fde:hover {
+  border-color: var(--gold);
+  background: linear-gradient(160deg, rgba(201,169,97,0.18) 0%, rgba(201,169,97,0.05) 100%);
+}
+.branch-card-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  margin-bottom: 24px;
+}
+.branch-card-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.branch-card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+.branch-accent {
+  color: var(--gold);
+}
+.branch-card-desc {
+  font-size: 0.9375rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.8;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+.branch-points {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.branch-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.5;
+}
+.branch-point-dot {
+  flex-shrink: 0;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  margin-top: 7px;
+}
+.branch-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-top: auto;
+}
+.branch-card-cta-gold {
+  color: var(--gold);
+}
+.branch-arrow {
+  transition: transform 0.25s ease;
+  display: inline-block;
+}
+.branch-card:hover .branch-arrow {
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .section-branch { padding: 48px 0; }
+  .branch-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .branch-card { padding: 32px 28px; }
+  .branch-card-title { font-size: 1.25rem; }
+}
+
 /* ===== SECTION LABEL ===== */
 .section-label {
   font-size: 0.75rem;
@@ -1421,6 +1545,40 @@ body.menu-open {
   <div class="hero-scroll">
     <span class="hero-scroll-text">Scroll</span>
     <div class="hero-scroll-line"></div>
+  </div>
+</section>
+
+<!-- ENTRY BRANCH -->
+<section class="section-branch">
+  <div class="container">
+    <div class="branch-grid">
+      <!-- 経営者の方へ -->
+      <a href="#service" class="branch-card">
+        <div class="branch-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 9v.01M9 12v.01M9 15v.01M9 18v.01" stroke-linecap="round"/></svg>
+        </div>
+        <p class="branch-card-label">経営者の方へ</p>
+        <h3 class="branch-card-title serif">会社の未来を、<br>次の世代へ繋ぎたい。</h3>
+        <p class="branch-card-desc">後継者不在、資金繰り、M&A——一人で抱える経営の悩みに、AIと認定FDEが伴走します。</p>
+        <span class="branch-card-cta">サービスを見る <span class="branch-arrow">→</span></span>
+      </a>
+
+      <!-- FDEを目指す方へ -->
+      <a href="#consultant" class="branch-card branch-card-fde">
+        <div class="branch-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 21l-4.9-2.6.9-5.5-4-3.9 5.5-.8z" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <p class="branch-card-label">FDEという生き方</p>
+        <h3 class="branch-card-title serif">経営者を<span class="branch-accent">"支える側"</span>に<br>なる、という選択。</h3>
+        <p class="branch-card-desc">営業で培った「聴く力」を、もっと深く意味のある仕事に。日本初の認定キャッシュベースFDEとして、経営者の隣に立つ新しいキャリアを。</p>
+        <div class="branch-points">
+          <div class="branch-point"><span class="branch-point-dot"></span>初期投資ゼロ — 登録・研修・認定試験すべて無料</div>
+          <div class="branch-point"><span class="branch-point-dot"></span>知識はAIが担当 — 必要なのは聴く力・共感力</div>
+          <div class="branch-point"><span class="branch-point-dot"></span>積み上がる収入 — 実績次第で年収650万円超へ</div>
+        </div>
+        <span class="branch-card-cta branch-card-cta-gold">FDEという生き方を詳しく見る <span class="branch-arrow">→</span></span>
+      </a>
+    </div>
   </div>
 </section>
 
