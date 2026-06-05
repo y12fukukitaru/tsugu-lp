@@ -519,6 +519,106 @@ nav.scrolled {
   .branch-card-title { font-size: 1.25rem; }
 }
 
+/* FDE EXPLAINER */
+.fde-explainer {
+  max-width: 1000px;
+  margin: 0 auto 80px;
+  padding: 56px 56px 48px;
+  border-radius: 24px;
+  background: linear-gradient(160deg, rgba(201,169,97,0.1) 0%, rgba(255,255,255,0.02) 100%);
+  border: 1px solid rgba(201,169,97,0.3);
+}
+.fde-explainer-head {
+  text-align: center;
+  margin-bottom: 36px;
+}
+.fde-explainer-eyebrow {
+  font-size: 0.8125rem;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+.fde-explainer-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--white);
+}
+.fde-explainer-lead {
+  font-size: 1.0625rem;
+  color: rgba(255,255,255,0.88);
+  line-height: 2;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.fde-explainer-text {
+  font-size: 1.0625rem;
+  color: rgba(255,255,255,0.88);
+  line-height: 2;
+  margin-bottom: 40px;
+  text-align: center;
+}
+.fde-hl {
+  color: var(--gold);
+  font-weight: 700;
+}
+.fde-explainer-points {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.fde-ep-item {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+  padding: 28px 24px;
+  text-align: center;
+}
+.fde-ep-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: var(--ink);
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 1.125rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+.fde-ep-title {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 10px;
+}
+.fde-ep-desc {
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .fde-explainer {
+    padding: 36px 24px 32px;
+    margin-bottom: 48px;
+    border-radius: 18px;
+  }
+  .fde-explainer-title { font-size: 1.875rem; }
+  .fde-explainer-lead, .fde-explainer-text {
+    font-size: 0.9375rem;
+    line-height: 1.9;
+    text-align: left;
+  }
+  .fde-explainer-points {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .fde-ep-item { padding: 24px 20px; }
+}
+
 /* ===== SECTION LABEL ===== */
 .section-label {
   font-size: 0.75rem;
@@ -1570,7 +1670,7 @@ body.menu-open {
         </div>
         <p class="branch-card-label">FDEという生き方</p>
         <h3 class="branch-card-title serif">経営者を<span class="branch-accent">"支える側"</span>に<br>なる、という選択。</h3>
-        <p class="branch-card-desc">営業で培った「聴く力」を、もっと深く意味のある仕事に。日本初の認定キャッシュベースFDEとして、経営者の隣に立つ新しいキャリアを。</p>
+        <p class="branch-card-desc">FDE（Forward Deployed Engineer）とは、現場に深く入り込み技術で課題を解決する専門人材。営業で培った「聴く力」を活かし、日本初の認定キャッシュベースFDEとして経営者の隣に立つ、新しいキャリアです。</p>
         <div class="branch-points">
           <div class="branch-point"><span class="branch-point-dot"></span>初期投資ゼロ — 登録・研修・認定試験すべて無料</div>
           <div class="branch-point"><span class="branch-point-dot"></span>知識はAIが担当 — 必要なのは聴く力・共感力</div>
@@ -2003,6 +2103,40 @@ body.menu-open {
 <!-- CONSULTANT -->
 <section class="section-consultant" id="consultant">
   <div class="container">
+
+    <!-- FDEとは 説明ブロック -->
+    <div class="fde-explainer reveal">
+      <div class="fde-explainer-head">
+        <p class="fde-explainer-eyebrow">WHAT IS FDE?</p>
+        <h2 class="fde-explainer-title serif">FDEとは。</h2>
+      </div>
+      <div class="fde-explainer-body">
+        <p class="fde-explainer-lead">
+          FDE＝<span class="fde-hl">Forward Deployed Engineer（フォワード・デプロイド・エンジニア）</span>。シリコンバレーの最先端テック企業で生まれた、「顧客の現場に深く入り込み、テクノロジーを武器に課題を解決する専門人材」を指す言葉です。
+        </p>
+        <p class="fde-explainer-text">
+          Tsuguはこの考え方を経営支援に応用しました。<span class="fde-hl">認定キャッシュベースFDE</span>とは、AIという最先端の武器を携えて経営者の現場に深く入り込み、キャッシュフロー（お金の流れ）の改善と事業承継を伴走支援する、まったく新しい専門人材です。
+        </p>
+        <div class="fde-explainer-points">
+          <div class="fde-ep-item">
+            <div class="fde-ep-icon">AI</div>
+            <p class="fde-ep-title">知識はAIが担う</p>
+            <p class="fde-ep-desc">難解な財務・税務・法律の知識はAIが引き受けます。だから未経験からでも挑戦できます。</p>
+          </div>
+          <div class="fde-ep-item">
+            <div class="fde-ep-icon">心</div>
+            <p class="fde-ep-title">人が心を担う</p>
+            <p class="fde-ep-desc">経営者の孤独に寄り添い、対話を通じて意思決定を支える。これがFDEの本質です。</p>
+          </div>
+          <div class="fde-ep-item">
+            <div class="fde-ep-icon">¥</div>
+            <p class="fde-ep-title">キャッシュを守る</p>
+            <p class="fde-ep-desc">財務諸表が読めなくても、お金の流れさえ見失わなければ経営は続く。その視点で会社を支えます。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div class="consultant-inner">
       <div class="reveal">
         <p class="section-label">日本初の認定キャッシュベースFDE</p>
