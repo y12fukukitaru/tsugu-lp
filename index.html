@@ -1571,6 +1571,7 @@ body.menu-open {
     <li><a href="#how">成長モデル</a></li>
     <li><a href="#pricing">料金</a></li>
     <li><a href="#consultant">FDE参加</a></li>
+    <li><a href="https://www.fuku-kita.jp/">福來HP</a></li>
     <li><a href="#contact" class="nav-cta">無料相談</a></li>
   </ul>
   <button class="nav-toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false">
@@ -1594,6 +1595,7 @@ body.menu-open {
     <li><a href="#how" class="mobile-menu-link">成長モデル</a></li>
     <li><a href="#pricing" class="mobile-menu-link">料金</a></li>
     <li><a href="#consultant" class="mobile-menu-link">FDE参加</a></li>
+    <li><a href="https://www.fuku-kita.jp/" class="mobile-menu-link">福來HP</a></li>
     <li><a href="#contact" class="mobile-menu-link mobile-menu-cta">無料相談</a></li>
   </ul>
 </div>
@@ -2503,6 +2505,7 @@ body.menu-open {
         <li><a href="#pricing">料金</a></li>
         <li><a href="#consultant">FDE参加</a></li>
         <li><a href="#contact">お問い合わせ</a></li>
+        <li><a href="https://www.fuku-kita.jp/">福來HP</a></li>
       </ul>
     </div>
     <div class="footer-bottom">
@@ -2606,17 +2609,41 @@ window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 60);
 });
 
-// SCROLL REVEAL
-const revealEls = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('revealed');
-    }
-  });
-}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+// SCROLL REVEAL（スマホ・iframe埋め込みでも消えないようフェイルセーフ付き）
+(function() {
+  const revealEls = document.querySelectorAll('.reveal');
+  function revealAll() {
+    revealEls.forEach(el => el.classList.add('revealed'));
+  }
 
-revealEls.forEach(el => observer.observe(el));
+  // IntersectionObserver非対応環境では、最初からすべて表示する
+  if (!('IntersectionObserver' in window)) {
+    revealAll();
+    return;
+  }
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -8% 0px' });
+
+  revealEls.forEach(el => observer.observe(el));
+
+  // フェイルセーフ：
+  // WordPress等にiframeで埋め込まれた場合、iframe内がスクロールしないと
+  // 画面外の要素の監視が発火せず、コンテンツが非表示のまま固まることがある。
+  // 読み込み完了の少し後に、まだ隠れている要素を強制的に表示して
+  // どのセクションも消えないようにする。
+  function failSafe() { setTimeout(revealAll, 2000); }
+  if (document.readyState === 'complete') {
+    failSafe();
+  } else {
+    window.addEventListener('load', failSafe);
+  }
+})();
 
 // SMOOTH ANCHOR SCROLL
 document.querySelectorAll('a[href^="#"]').forEach(a => {
