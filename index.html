@@ -1454,9 +1454,108 @@ footer {
   .hero-meaning-item { font-size: 0.75rem; padding: 5px 12px; }
 }
 
+
+/* ===== PARTNER FUNNEL ===== */
+.pn-hook { max-width: 1000px; margin: 0 auto 72px; text-align: center; }
+.pn-hook .section-title { margin: 16px auto 40px; }
+.pn-hook-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; text-align: left; }
+.pn-hook-item {
+  background: var(--white-pure);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold);
+  border-radius: var(--r-md);
+  padding: 22px 24px;
+  font-size: 0.9375rem;
+  color: var(--text-mid);
+  line-height: 1.75;
+}
+.pn-hook-item strong { color: var(--text-main); font-weight: 700; }
+.pn-hook-lead {
+  margin-top: 36px;
+  font-family: var(--serif);
+  font-size: clamp(1.125rem, 2vw, 1.375rem);
+  color: var(--text-main);
+  line-height: 1.9;
+}
+.pn-hook-lead em { font-style: normal; color: var(--blue-bright); border-bottom: 2px solid var(--gold); }
+
+.pn-flow { max-width: 1000px; margin: 88px auto 0; }
+.pn-flow-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 32px; }
+.pn-flow-step {
+  background: var(--white-pure);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 28px 24px;
+  position: relative;
+}
+.pn-flow-num {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 14px;
+}
+.pn-flow-title { font-weight: 700; font-size: 1rem; color: var(--text-main); margin-bottom: 8px; }
+.pn-flow-desc { font-size: 0.875rem; color: var(--text-mid); line-height: 1.7; }
+
+.pn-faq { max-width: 800px; margin: 88px auto 0; }
+.pn-faq-item {
+  background: var(--white-pure);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+.pn-faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 20px 52px 20px 24px;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  color: var(--text-main);
+  position: relative;
+  line-height: 1.6;
+}
+.pn-faq-item summary::-webkit-details-marker { display: none; }
+.pn-faq-item summary::before { content: 'Q'; font-family: var(--serif); color: var(--gold); font-weight: 700; margin-right: 12px; }
+.pn-faq-item summary::after {
+  content: '＋';
+  position: absolute;
+  right: 20px; top: 50%;
+  transform: translateY(-50%);
+  color: var(--blue-bright);
+  font-size: 1rem;
+  transition: transform 0.25s;
+}
+.pn-faq-item[open] summary::after { content: '－'; }
+.pn-faq-item summary:hover { background: var(--blue-wash); }
+.pn-faq-a {
+  padding: 0 24px 22px 24px;
+  font-size: 0.9375rem;
+  color: var(--text-mid);
+  line-height: 1.85;
+}
+.pn-cta-band {
+  margin-top: 56px;
+  text-align: center;
+  background: linear-gradient(160deg, var(--ink) 0%, var(--ink-mid) 100%);
+  border: 1px solid rgba(201,169,97,0.35);
+  border-radius: var(--r-lg);
+  padding: 48px 32px;
+}
+.pn-cta-band p.serif { font-size: clamp(1.25rem, 2.2vw, 1.625rem); color: var(--white); line-height: 1.8; margin-bottom: 24px; }
+.pn-cta-band .pn-cta-sub { font-size: 0.875rem; color: rgba(255,255,255,0.7); margin-top: 14px; }
+@media (max-width: 768px) {
+  .pn-hook-grid { grid-template-columns: 1fr; }
+  .pn-flow-grid { grid-template-columns: 1fr; }
+}
+
 /* ===== QUALITY FLOOR ===== */
 /* 固定ナビ分のアンカーオフセット */
 section[id] { scroll-margin-top: 84px; }
+.sp-only { display: none; }
+@media (max-width: 768px) { .sp-only { display: inline; } }
 /* キーボード操作時のフォーカス可視化 */
 a:focus-visible, button:focus-visible, .form-input:focus-visible {
   outline: 2px solid var(--gold);
@@ -1985,27 +2084,20 @@ body.menu-open {
         <div style="display:flex;flex-direction:column;gap:16px;">
           <div style="display:flex;justify-content:space-between;align-items:center;padding:16px;background:var(--surface);border-radius:10px;">
             <div>
-              <p style="font-weight:700;color:var(--ink);font-size:0.9375rem;">2社目〜4社目</p>
-              <p style="font-size:0.8125rem;color:var(--text-mid);margin-top:4px;">M&Aで承継した追加契約</p>
-            </div>
-            <p style="font-family:var(--serif);font-size:1.75rem;font-weight:700;color:var(--ink);">3<span style="font-size:1rem;">% OFF</span></p>
-          </div>
-          <div style="display:flex;justify-content:space-between;align-items:center;padding:16px;background:var(--surface);border-radius:10px;">
-            <div>
               <p style="font-weight:700;color:var(--ink);font-size:0.9375rem;">5社目以降（全社適用）</p>
               <p style="font-size:0.8125rem;color:var(--text-mid);margin-top:4px;">5社目から全社に永続適用</p>
             </div>
-            <p style="font-family:var(--serif);font-size:1.75rem;font-weight:700;color:var(--ink);">5<span style="font-size:1rem;">% OFF</span></p>
+            <p style="font-family:var(--serif);font-size:1.75rem;font-weight:700;color:var(--ink);">3<span style="font-size:1rem;">% OFF</span></p>
           </div>
           <div style="display:flex;justify-content:space-between;align-items:center;padding:16px;background:var(--ink);border-radius:10px;">
             <div>
               <p style="font-weight:700;color:var(--white);font-size:0.9375rem;">HD化（ホールディングス化）</p>
               <p style="font-size:0.8125rem;color: rgba(255,255,255,0.7);margin-top:4px;">グループ経営移行時の追加割引</p>
             </div>
-            <p style="font-family:var(--serif);font-size:1.75rem;font-weight:700;color:var(--gold);">5<span style="font-size:1rem;">% OFF</span></p>
+            <p style="font-family:var(--serif);font-size:1.75rem;font-weight:700;color:var(--gold);">2<span style="font-size:1rem;">% OFF</span></p>
           </div>
         </div>
-        <p style="font-size:0.75rem;color:var(--text-light);margin-top:16px;">※ 上記割引は併用可能です（5社以上＋HD化で最大10%OFF）</p>
+        <p style="font-size:0.75rem;color:var(--text-light);margin-top:16px;">※ 区分割引と併用可能です。割引の合計上限は10%OFF（プレミアム＋5社以上＋HD化で上限に到達）。</p>
       </div>
 
       <!-- PMI -->
@@ -2123,8 +2215,8 @@ body.menu-open {
               </div>
               <div style="text-align:right;">
                 <p style="font-size:0.75rem;color:var(--text-light);">顧問料割引提供</p>
-                <p style="font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--ink);">2<span style="font-size:0.875rem;">% OFF</span></p>
-                <p style="font-size:0.75rem;color:var(--text-light);margin-top:2px;">全顧問先に適用</p>
+                <p style="font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--text-mid);">—</p>
+                <p style="font-size:0.75rem;color:var(--text-light);margin-top:2px;">複数社割引は適用可</p>
               </div>
             </div>
           </div>
@@ -2139,7 +2231,7 @@ body.menu-open {
               </div>
               <div style="text-align:right;">
                 <p style="font-size:0.75rem;color:var(--text-light);">顧問料割引提供</p>
-                <p style="font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--ink);">5<span style="font-size:0.875rem;">% OFF</span></p>
+                <p style="font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--ink);">3<span style="font-size:0.875rem;">% OFF</span></p>
                 <p style="font-size:0.75rem;color:var(--text-light);margin-top:2px;">全顧問先に適用</p>
               </div>
             </div>
@@ -2155,7 +2247,7 @@ body.menu-open {
               </div>
               <div style="text-align:right;">
                 <p style="font-size:0.75rem;color: rgba(255,255,255,0.7);">顧問料割引提供</p>
-                <p style="font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--gold);">10<span style="font-size:0.875rem;">% OFF</span></p>
+                <p style="font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--gold);">5<span style="font-size:0.875rem;">% OFF</span></p>
                 <p style="font-size:0.75rem;color: rgba(255,255,255,0.7);margin-top:2px;">全顧問先に適用</p>
               </div>
             </div>
@@ -2171,6 +2263,19 @@ body.menu-open {
 <!-- CONSULTANT -->
 <section class="section-consultant" id="consultant">
   <div class="container">
+
+    <!-- パートナー向けニード喚起 -->
+    <div class="pn-hook reveal">
+      <p class="section-label" style="justify-content:center;">FOR FUTURE PARTNERS</p>
+      <h2 class="section-title serif">いまの働き方に、<br class="sp-only">こんな思いはありませんか。</h2>
+      <div class="pn-hook-grid">
+        <div class="pn-hook-item"><strong>「売って終わり」の関係に、疲れていませんか。</strong><br>契約のたびに次の新規を追う毎日ではなく、同じお客様と長く深く付き合い、頼られ続ける仕事がしたい。</div>
+        <div class="pn-hook-item"><strong>ノルマの数字ではなく、「ありがとう」で報われたい。</strong><br>目の前の経営者の悩みに本気で向き合い、その成果が自分の報酬として正当に積み上がる働き方へ。</div>
+        <div class="pn-hook-item"><strong>AIに仕事を奪われる側ではなく、使いこなす側に。</strong><br>AI時代の到来は脅威ではなくチャンス。難しい知識はAIに任せ、人にしかできない仕事に集中する。</div>
+        <div class="pn-hook-item"><strong>培った経験と人脈を、地元企業の力に変えたい。</strong><br>保険営業、銀行、士業事務所──これまでのキャリアで築いた信頼は、承継に悩む経営者が求めているものです。</div>
+      </div>
+      <p class="pn-hook-lead">その思いに応えるのが、<em>認定パートナー</em>という新しい仕事です。</p>
+    </div>
 
     <!-- パートナーとは 説明ブロック -->
     <div class="fde-explainer reveal">
@@ -2305,7 +2410,69 @@ body.menu-open {
 
         <p style="font-size:0.78125rem;color: rgba(255,255,255,0.7);margin-bottom:16px;text-align:center;line-height:1.6;">※ 上記は試算例です。実際の収入は顧客契約状況により変動します。<br>※ AIが知識面を全面サポート。「聴く力」「共感力」があれば誰でも挑戦可能。</p>
 
-        <a href="#contact" class="btn-primary" style="margin-top:8px;display:block;text-align:center;">日本初の認定パートナーに登録してみる</a>
+        <a href="#contact" class="btn-primary js-partner-cta" style="margin-top:8px;display:block;text-align:center;">日本初の認定パートナーに登録してみる</a>
+      </div>
+    </div>
+
+    <!-- 登録までの流れ -->
+    <div class="pn-flow reveal">
+      <p class="section-label">HOW TO JOIN</p>
+      <h2 class="section-title serif">登録までは、3ステップ。</h2>
+      <div class="pn-flow-grid">
+        <div class="pn-flow-step">
+          <p class="pn-flow-num">1</p>
+          <p class="pn-flow-title">フォームから応募する</p>
+          <p class="pn-flow-desc">このページ下部のフォームから約1分で完了。「パートナー参加」を選んで送信してください。1〜2営業日以内にご連絡します。</p>
+        </div>
+        <div class="pn-flow-step">
+          <p class="pn-flow-num">2</p>
+          <p class="pn-flow-title">オンライン面談</p>
+          <p class="pn-flow-desc">仕事内容・料金・報酬・働き方を運営が直接ご説明します。疑問や不安はここですべて解消してください。無理な勧誘は一切ありません。</p>
+        </div>
+        <div class="pn-flow-step">
+          <p class="pn-flow-num">3</p>
+          <p class="pn-flow-title">認定研修 → 活動開始</p>
+          <p class="pn-flow-desc">納得いただけたら登録し、認定研修へ。AIの使い方から顧問先との向き合い方まで習得し、認定パートナーとして活動を開始します。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- よくあるご質問 -->
+    <div class="pn-faq reveal" id="partner-faq">
+      <p class="section-label">FAQ</p>
+      <h2 class="section-title serif">よくあるご質問</h2>
+      <div style="margin-top:32px;">
+        <details class="pn-faq-item">
+          <summary>経営や財務の知識がなくても始められますか？</summary>
+          <p class="pn-faq-a">はい。難解な財務・税務の知識はAIが担い、認定研修と運営のサポートがあります。認定パートナーに求められるのは、経営者の話に耳を傾ける「聴く力」と「共感力」です。</p>
+        </details>
+        <details class="pn-faq-item">
+          <summary>副業から始めることはできますか？</summary>
+          <p class="pn-faq-a">できます。キャリア設計の1期は副業前提のスタートを想定しており、初めての顧問契約獲得まで運営が伴走します。手応えを得てから独立進出を判断できます。</p>
+        </details>
+        <details class="pn-faq-item">
+          <summary>登録に費用はかかりますか？</summary>
+          <p class="pn-faq-a">初期登録料は無料です。月額利用料は3,000円〜で、顧問先が増えるごとに1社あたり2,000円が加算される仕組みです。詳細は本ページの料金セクションをご覧ください。</p>
+        </details>
+        <details class="pn-faq-item">
+          <summary>AIを使ったことがなくても大丈夫ですか？</summary>
+          <p class="pn-faq-a">大丈夫です。Tsugu Aiはチャット感覚で使える専用設計で、認定研修でゼロから習得できます。むしろ「AIが苦手な経営者にAIの恩恵を届ける」ことこそ、認定パートナーの役割です。</p>
+        </details>
+        <details class="pn-faq-item">
+          <summary>特別な資格は必要ですか？</summary>
+          <p class="pn-faq-a">国家資格は不要です。Tsuguの認定研修を修了することが活動の要件です。これまでの営業経験・金融経験・士業事務所での経験などは、大きな強みとして活きます。</p>
+        </details>
+        <details class="pn-faq-item" id="faq-cancel">
+          <summary>解約・退会はできますか？</summary>
+          <p class="pn-faq-a">いつでも可能です。お問い合わせフォームで「その他」を選択してご連絡いただければ、運営が手続きをご案内します。無理な引き止めは一切ありません。解約条件の詳細は、ご登録時の利用規約に明記しています。</p>
+        </details>
+      </div>
+
+      <!-- 最終CTA -->
+      <div class="pn-cta-band reveal">
+        <p class="serif">迷っているなら、まず話を聞いてみませんか。<br>応募は約1分。面談で納得してから決められます。</p>
+        <a href="#contact" class="btn-primary js-partner-cta" style="display:inline-block;">認定パートナーに応募する →</a>
+        <p class="pn-cta-sub">しつこい勧誘は一切ありません。話を聞いて合わなければ、それで終わりにして構いません。</p>
       </div>
     </div>
   </div>
@@ -2372,8 +2539,8 @@ body.menu-open {
           </div>
           <div class="form-row">
             <div class="form-group">
-              <label class="form-label" for="company">会社名</label>
-              <input class="form-input" type="text" id="company" name="company" placeholder="株式会社〇〇">
+              <label class="form-label" for="fcompany">会社名</label>
+              <input class="form-input" type="text" id="fcompany" name="company" placeholder="株式会社〇〇">
             </div>
             <div class="form-group"></div>
           </div>
@@ -2403,9 +2570,9 @@ body.menu-open {
                 </span>
               </label>
               <label class="form-radio">
-                <input type="radio" name="inquiry_type" value="その他・パートナーシップ">
+                <input type="radio" name="inquiry_type" value="その他（解約・各種お手続き・パートナーシップ等）">
                 <span class="radio-box">
-                  <span class="radio-label">その他<br><small>パートナーシップ等</small></span>
+                  <span class="radio-label">その他<br><small>解約・各種お手続き等</small></span>
                 </span>
               </label>
             </div>
@@ -2583,6 +2750,7 @@ body.menu-open {
         <li><a href="#how">成長モデル</a></li>
         <li><a href="#pricing">料金</a></li>
         <li><a href="#consultant">パートナー参加</a></li>
+        <li><a href="#partner-faq">よくあるご質問</a></li>
         <li><a href="#contact">お問い合わせ</a></li>
         <li><a href="https://www.fuku-kita.jp/">福來HP</a></li>
       </ul>
@@ -2716,6 +2884,14 @@ window.addEventListener('scroll', () => {
   // 画面外の要素の監視が発火せず、コンテンツが非表示のまま固まることがある。
   // 読み込み完了の少し後に、まだ隠れている要素を強制的に表示して
   // どのセクションも消えないようにする。
+// パートナーCTA: フォームの「パートナー参加」を自動選択
+document.querySelectorAll('.js-partner-cta').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    var radio = document.querySelector('input[name="inquiry_type"][value="認定パートナーへの参加"]');
+    if (radio) { radio.checked = true; }
+  });
+});
+
   function failSafe() { setTimeout(revealAll, 2000); }
   if (document.readyState === 'complete') {
     failSafe();
