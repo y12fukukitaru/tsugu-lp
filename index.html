@@ -1569,6 +1569,109 @@ a:focus-visible, button:focus-visible, .form-input:focus-visible {
   .hero-scroll-line, .nav-toggle-bar { animation: none !important; transition: none !important; }
   * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
+/* ===== MISSION ===== */
+.section-mission {
+  background: linear-gradient(165deg, var(--ink) 0%, var(--ink-mid) 55%, var(--ink-light) 100%);
+  padding: 120px 0 128px;
+  position: relative;
+  overflow: hidden;
+}
+.section-mission::before {
+  content: '継';
+  position: absolute;
+  font-family: var(--serif);
+  font-size: 46vw;
+  font-weight: 700;
+  color: rgba(255,255,255,0.02);
+  bottom: -18%;
+  right: -6%;
+  line-height: 1;
+  pointer-events: none;
+  user-select: none;
+}
+.mission-inner { max-width: 1080px; margin: 0 auto; padding: 0 32px; position: relative; z-index: 1; }
+.mission-eyebrow {
+  display: inline-flex; align-items: center; gap: 12px;
+  font-size: 0.8125rem; letter-spacing: 0.28em; font-weight: 700;
+  color: var(--gold-light); margin-bottom: 28px;
+}
+.mission-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--gold); }
+.mission-lead {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 3.4vw, 2.375rem);
+  font-weight: 600;
+  line-height: 1.7;
+  color: var(--white);
+  letter-spacing: 0.02em;
+  margin-bottom: 16px;
+}
+.mission-lead .mission-hl {
+  background: linear-gradient(transparent 62%, rgba(201,169,97,0.32) 62%);
+  padding: 0 2px;
+}
+.mission-sub {
+  font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
+  color: rgba(255,255,255,0.72);
+  line-height: 1.9;
+  margin-bottom: 64px;
+  max-width: 760px;
+}
+.mission-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.mission-card {
+  background: rgba(255,255,255,0.045);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-top: 2px solid var(--gold);
+  border-radius: var(--r-lg);
+  padding: 40px 36px;
+  position: relative;
+}
+.mission-card-num {
+  font-family: var(--serif);
+  font-size: 0.875rem;
+  letter-spacing: 0.2em;
+  color: var(--gold-light);
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+.mission-card-title {
+  font-family: var(--serif);
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: 600;
+  color: var(--white);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+.mission-card-title .mission-accent { color: var(--gold-light); }
+.mission-card-desc {
+  font-size: 0.9375rem;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.85;
+}
+.mission-close {
+  margin-top: 56px;
+  text-align: center;
+  font-family: var(--serif);
+  font-size: clamp(1.0625rem, 1.8vw, 1.25rem);
+  color: var(--white);
+  line-height: 1.9;
+  letter-spacing: 0.03em;
+}
+.mission-close em {
+  font-style: normal;
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 2px;
+}
+@media (max-width: 768px) {
+  .section-mission { padding: 88px 0 92px; }
+  .mission-grid { grid-template-columns: 1fr; }
+  .mission-sub { margin-bottom: 44px; }
+  .mission-card { padding: 32px 26px; }
+}
+
 </style>
 <style>
 html, body { max-width: 100%; overflow-x: hidden; }
@@ -1817,6 +1920,39 @@ body.menu-open {
 </section>
 
 <!-- ENTRY BRANCH -->
+
+<!-- MISSION -->
+<section class="section-mission">
+  <div class="mission-inner reveal">
+    <p class="mission-eyebrow">OUR MISSION</p>
+    <p class="mission-lead">
+      その<span class="mission-hl">技術と情熱</span>が、報われる社会へ。<br>
+      その<span class="mission-hl">会社と歴史</span>が、続いていく社会へ。
+    </p>
+    <p class="mission-sub">
+      Tsugu Aiは、日本の中小企業が直面する2つの社会課題に、正面から挑みます。売って終わりではなく、続いていく。それが私たちの信じる、これからの経営支援のかたちです。
+    </p>
+
+    <div class="mission-grid">
+      <div class="mission-card">
+        <p class="mission-card-num">ISSUE 01</p>
+        <h3 class="mission-card-title serif">フルコミッション営業に、<br><span class="mission-accent">ストック収入</span>という土台を。</h3>
+        <p class="mission-card-desc">成果がすべての世界で走り続けてきた営業のプロフェッショナル。その「聴く力」と実績を、契約のたびに消える収入ではなく、積み上がり続ける安定した収入へ。挑戦する人が、安心して腰を据えられる働き方をつくります。</p>
+      </div>
+      <div class="mission-card">
+        <p class="mission-card-num">ISSUE 02</p>
+        <h3 class="mission-card-title serif">後継者不在で消えゆく会社の、<br><span class="mission-accent">受け皿</span>になる。</h3>
+        <p class="mission-card-desc">黒字なのに、継ぐ人がいないだけで畳まれていく会社が、日本には数多くあります。そこにある技術・雇用・信用を、次の世代へ。閉じるしかなかった選択肢に、「継ぐ」という道を差し出します。</p>
+      </div>
+    </div>
+
+    <p class="mission-close">
+      挑む人に<em>安定</em>を。続けたい会社に<em>未来</em>を。<br>
+      その両方を、AIと人の力で。
+    </p>
+  </div>
+</section>
+
 <section class="section-branch">
   <div class="container">
     <div class="branch-grid">
