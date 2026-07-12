@@ -1392,14 +1392,20 @@ footer {
 }
 .footer-links {
   display: flex;
-  gap: 32px;
+  flex-wrap: wrap;
+  gap: 14px 28px;
   list-style: none;
+  justify-content: flex-end;
+  align-content: flex-start;
+  max-width: 660px;
 }
+.footer-links li { white-space: nowrap; }
 .footer-links a {
   font-size: 0.875rem;
   color: rgba(255,255,255,0.62);
   transition: color 0.2s;
   letter-spacing: 0.04em;
+  white-space: nowrap;
 }
 .footer-links a:hover { color: var(--gold-light); }
 .footer-bottom {
@@ -1408,6 +1414,8 @@ footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 10px 16px;
 }
 .footer-copy {
   font-size: 0.75rem;
@@ -1435,7 +1443,7 @@ footer {
   .hero-stat { text-align: left; }
   .hero-scroll { display: none; }
   .footer-inner { flex-direction: column; }
-  .footer-links { flex-wrap: wrap; gap: 20px; }
+  .footer-links { flex-wrap: wrap; gap: 12px 22px; justify-content: flex-start; max-width: none; }
   .hero-actions { flex-direction: column; align-items: flex-start; gap: 16px; }
   .section-crisis, .section-service, .section-pricing,
   .section-consultant, .section-company, .section-cta { padding: 80px 0; }
