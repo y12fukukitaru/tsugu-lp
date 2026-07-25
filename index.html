@@ -53,7 +53,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700;800&family=Noto+Serif+JP:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
 <style>
 /* ===== DESIGN TOKENS ===== */
 :root {
@@ -81,7 +81,7 @@
 
   --serif: 'Noto Serif JP', serif;
   --sans: 'Noto Sans JP', sans-serif;
-  --border: oklch(88% 0.025 220);
+  --border: #E2E7EF;
   --r-sm: 4px;
   --r-md: 8px;
   --r-lg: 16px;
@@ -140,9 +140,9 @@ nav {
   transition: background 0.4s, box-shadow 0.4s;
 }
 nav.scrolled {
-  background: rgba(10,22,40,0.96);
+  background: rgba(14,27,51,0.96);
   backdrop-filter: blur(16px);
-  box-shadow: 0 1px 0 rgba(91,179,220,0.12);
+  box-shadow: 0 1px 0 rgba(91,132,196,0.12);
 }
 .nav-logo {
   font-family: var(--serif);
@@ -308,12 +308,12 @@ nav.scrolled {
 .hero-meaning-item {
   font-size: 0.8125rem;
   color: rgba(255,255,255,0.72);
-  border: 1px solid rgba(91,179,220,0.25);
+  border: 1px solid rgba(91,132,196,0.25);
   padding: 6px 16px;
   border-radius: 100px;
   letter-spacing: 0.08em;
   font-family: var(--serif);
-  background: rgba(91,179,220,0.06);
+  background: rgba(91,132,196,0.06);
 }
 .hero-meaning-item strong {
   color: var(--blue-light);
@@ -471,12 +471,12 @@ nav.scrolled {
   border-color: rgba(255,255,255,0.2);
 }
 .branch-card-fde {
-  background: linear-gradient(160deg, rgba(201,169,97,0.12) 0%, rgba(201,169,97,0.03) 100%);
-  border-color: rgba(201,169,97,0.35);
+  background: linear-gradient(160deg, rgba(195,155,63,0.12) 0%, rgba(195,155,63,0.03) 100%);
+  border-color: rgba(195,155,63,0.35);
 }
 .branch-card-fde:hover {
   border-color: var(--gold);
-  background: linear-gradient(160deg, rgba(201,169,97,0.18) 0%, rgba(201,169,97,0.05) 100%);
+  background: linear-gradient(160deg, rgba(195,155,63,0.18) 0%, rgba(195,155,63,0.05) 100%);
 }
 .branch-card-icon {
   width: 56px;
@@ -573,8 +573,8 @@ nav.scrolled {
   padding: 56px 56px 48px;
   border-radius: 24px;
   background: linear-gradient(160deg, var(--ink) 0%, var(--ink-mid) 100%);
-  border: 1px solid rgba(201,169,97,0.35);
-  box-shadow: 0 30px 60px rgba(10,22,40,0.18);
+  border: 1px solid rgba(195,155,63,0.35);
+  box-shadow: 0 30px 60px rgba(14,27,51,0.18);
 }
 .fde-explainer-head {
   text-align: center;
@@ -741,8 +741,8 @@ nav.scrolled {
   gap: 2px;
 }
 .crisis-stat-card {
-  background: rgba(91,179,220,0.07);
-  border: 1px solid rgba(91,179,220,0.18);
+  background: rgba(91,132,196,0.07);
+  border: 1px solid rgba(91,132,196,0.18);
   border-radius: var(--r-md);
   padding: 32px 36px;
   position: relative;
@@ -861,7 +861,7 @@ nav.scrolled {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2px;
-  background: oklch(88% 0.03 220);
+  background: #E2E7EF;
   border-radius: var(--r-lg);
   overflow: hidden;
 }
@@ -930,7 +930,7 @@ nav.scrolled {
   top: 48px;
   left: 0; right: 0;
   height: 1px;
-  background: linear-gradient(to right, transparent, rgba(91,179,220,0.25) 15%, rgba(91,179,220,0.25) 85%, transparent);
+  background: linear-gradient(to right, transparent, rgba(91,132,196,0.25) 15%, rgba(91,132,196,0.25) 85%, transparent);
 }
 .how-step {
   flex: 1;
@@ -941,8 +941,8 @@ nav.scrolled {
   width: 96px;
   height: 96px;
   border-radius: 50%;
-  background: rgba(91,179,220,0.08);
-  border: 1px solid rgba(91,179,220,0.25);
+  background: rgba(91,132,196,0.08);
+  border: 1px solid rgba(91,132,196,0.25);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -952,7 +952,7 @@ nav.scrolled {
   transition: border-color 0.3s, background 0.3s;
 }
 .how-step:hover .how-step-dot {
-  background: rgba(91,179,220,0.15);
+  background: rgba(91,132,196,0.15);
   border-color: var(--gold);
 }
 .how-step-icon {
@@ -1228,7 +1228,7 @@ nav.scrolled {
   padding: 48px;
   position: relative;
   overflow: hidden;
-  border: 1px solid rgba(91,179,220,0.2);
+  border: 1px solid rgba(91,132,196,0.2);
 }
 .consultant-income::before {
   content: '¥';
@@ -1236,7 +1236,7 @@ nav.scrolled {
   font-family: var(--serif);
   font-size: 20rem;
   font-weight: 700;
-  color: rgba(91,179,220,0.04);
+  color: rgba(91,132,196,0.04);
   right: -40px;
   bottom: -40px;
   line-height: 1;
@@ -1246,7 +1246,7 @@ nav.scrolled {
   justify-content: space-between;
   align-items: baseline;
   padding: 16px 0;
-  border-bottom: 1px solid rgba(91,179,220,0.12);
+  border-bottom: 1px solid rgba(91,132,196,0.12);
 }
 .income-row:last-child { border-bottom: none; }
 .income-label {
@@ -1291,10 +1291,10 @@ nav.scrolled {
   display: flex;
   gap: 32px;
   padding: 20px 0;
-  border-bottom: 1px solid rgba(91,179,220,0.12);
+  border-bottom: 1px solid rgba(91,132,196,0.12);
   font-size: 0.9375rem;
 }
-.company-row:first-child { border-top: 1px solid rgba(91,179,220,0.12); }
+.company-row:first-child { border-top: 1px solid rgba(91,132,196,0.12); }
 .company-key {
   width: 120px;
   flex-shrink: 0;
@@ -1364,7 +1364,7 @@ nav.scrolled {
 /* ===== FOOTER ===== */
 footer {
   background: var(--ink);
-  border-top: 1px solid rgba(91,179,220,0.15);
+  border-top: 1px solid rgba(91,132,196,0.15);
   padding: 60px 0 40px;
 }
 .footer-inner {
@@ -1540,7 +1540,7 @@ footer {
   margin-top: 56px;
   text-align: center;
   background: linear-gradient(160deg, var(--ink) 0%, var(--ink-mid) 100%);
-  border: 1px solid rgba(201,169,97,0.35);
+  border: 1px solid rgba(195,155,63,0.35);
   border-radius: var(--r-lg);
   padding: 48px 32px;
 }
@@ -1606,7 +1606,7 @@ a:focus-visible, button:focus-visible, .form-input:focus-visible {
   margin-bottom: 16px;
 }
 .mission-lead .mission-hl {
-  background: linear-gradient(transparent 62%, rgba(201,169,97,0.32) 62%);
+  background: linear-gradient(transparent 62%, rgba(195,155,63,0.32) 62%);
   padding: 0 2px;
 }
 .mission-sub {
@@ -1718,7 +1718,7 @@ html, body { max-width: 100%; overflow-x: hidden; }
   width: 100%;
   max-width: 320px;
   height: 100vh;
-  background: rgba(10,22,40,0.98);
+  background: rgba(14,27,51,0.98);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   z-index: 201;
@@ -1824,11 +1824,698 @@ body.menu-open {
   overflow: hidden;
 }
 </style>
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<style>
+/* =====================================================
+   TSUGU STORY LP — 「継」= 糸を、結び直す。
+   配色は Tsugu 本体アプリのコーポレートカラーに準拠
+   紺 #0E1B33 / ネイビー #1E3A66 / ブルー #2C5DA8
+   スカイ #5B84C4 / ゴールド #C39B3F
+   ===================================================== */
+
+:root {
+  --ink: #0E1B33;            /* 紺（コーポレート deep） */
+  --ink-mid: #16294A;
+  --ink-light: #1E3A66;      /* ネイビー */
+  --blue-bright: #2C5DA8;    /* ブルー */
+  --blue-mid: #4674BC;
+  --blue-light: #5B84C4;     /* スカイ */
+  --blue-pale: #E2E7EF;
+  --blue-wash: #F5F7FA;
+  --gold: #C39B3F;           /* ゴールド */
+  --gold-light: #D9B863;
+  --gold-pale: #F7F1E1;
+  --white: #F5F7FA;
+  --white-pure: #FFFFFF;
+  --text-main: #18202E;
+  --text-mid: #3D4A5F;
+  --text-light: #5A6981;
+  --thread: #2C5DA8;         /* 糸：藍 */
+  --thread-soft: #5B84C4;
+  --serif: 'Shippori Mincho B1', 'Noto Serif JP', serif;
+  --border: #E2E7EF;
+  --surface: #F8F9FC;
+}
+body { background: var(--white); }
+body::before {
+  background: linear-gradient(90deg, var(--ink) 0%, var(--blue-bright) 50%, var(--gold) 100%);
+}
+
+/* 明セクションの地色 */
+.st-light {
+  background-color: var(--blue-wash);
+  background-image:
+    radial-gradient(ellipse 800px 400px at 20% 0%, rgba(44,93,168,0.06), transparent 60%),
+    radial-gradient(ellipse 700px 500px at 90% 100%, rgba(195,155,63,0.07), transparent 60%);
+}
+
+/* ===== 糸ナビ（画面左固定・スクロール進捗） ===== */
+.st-thread {
+  position: fixed;
+  left: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 90;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.st-thread-line {
+  position: relative;
+  width: 1px;
+  height: 200px;
+  background: rgba(24,32,46,0.18);
+  overflow: hidden;
+}
+.st-hero-on .st-thread-line { background: rgba(255,255,255,0.18); }
+.st-thread-line span {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 0%;
+  background: linear-gradient(to bottom, var(--thread-soft), var(--gold));
+}
+.st-knots { list-style: none; display: flex; flex-direction: column; gap: 12px; margin: 0; padding: 0; }
+.st-knots a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  font-family: var(--serif);
+  font-size: 0.6875rem;
+  color: var(--text-light);
+  border: 1px solid transparent;
+  transition: all 0.25s;
+}
+.st-hero-on .st-knots a { color: rgba(255,255,255,0.55); }
+.st-knots a.is-active {
+  color: var(--blue-bright);
+  border-color: var(--blue-bright);
+  background: rgba(44,93,168,0.07);
+}
+.st-hero-on .st-knots a.is-active { color: var(--gold); border-color: var(--gold); background: rgba(195,155,63,0.12); }
+@media (max-width: 1180px) { .st-thread { display: none; } }
+
+/* ===== HERO（序） ===== */
+.st-hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 60vw 60vw at 85% 15%, rgba(91,132,196,0.20), transparent 65%),
+    radial-gradient(ellipse 50vw 50vw at 8% 90%, rgba(195,155,63,0.12), transparent 65%),
+    linear-gradient(155deg, #0A1428 0%, var(--ink) 45%, #1E3A66 100%);
+}
+.st-hero-kanji {
+  position: absolute;
+  font-family: var(--serif);
+  font-weight: 800;
+  font-size: 58vh;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255,255,255,0.06);
+  right: 22%;
+  top: 50%;
+  transform: translateY(-50%);
+  user-select: none;
+  pointer-events: none;
+}
+.st-hero-thread {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.st-hero-thread path {
+  fill: none;
+  stroke: var(--thread-soft);
+  stroke-width: 1.6;
+  opacity: 0.55;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: stDraw 3.2s cubic-bezier(0.4,0,0.2,1) 0.6s forwards;
+}
+.st-hero-thread path.st-gold { stroke: var(--gold); opacity: 0.42; animation-delay: 1.1s; }
+@keyframes stDraw { to { stroke-dashoffset: 0; } }
+
+.st-hero-inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 140px 48px 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 48px;
+}
+/* 縦書きタイトル */
+.st-hero-title {
+  writing-mode: vertical-rl;
+  font-family: var(--serif);
+  font-weight: 600;
+  font-size: clamp(2rem, 3vw, 2.875rem);
+  color: var(--white-pure);
+  letter-spacing: 0.16em;
+  line-height: 2.0;
+  height: min(74vh, 660px);
+  margin: 0;
+  opacity: 0;
+  animation: fadeUp 1.2s cubic-bezier(0.16,1,0.3,1) 0.3s forwards;
+  flex-shrink: 0;
+}
+.st-hero-title span { display: block; }
+.st-hero-title .st-bouten {
+  font-style: normal;
+  text-emphasis: filled sesame var(--gold);
+  -webkit-text-emphasis: filled sesame var(--gold);
+}
+.st-hero-left { max-width: 560px; }
+.st-hero-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  color: var(--gold-light);
+  margin-bottom: 32px;
+  opacity: 0;
+  animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 0.6s forwards;
+}
+.st-hero-eyebrow::before { content: ''; width: 36px; height: 1px; background: var(--gold); }
+.st-hero-copy {
+  font-family: var(--serif);
+  font-size: clamp(1rem, 1.6vw, 1.1875rem);
+  color: rgba(255,255,255,0.87);
+  line-height: 2.3;
+  letter-spacing: 0.06em;
+  margin-bottom: 28px;
+  opacity: 0;
+  animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 0.8s forwards;
+}
+.st-hero-copy em {
+  font-style: normal;
+  color: var(--gold-light);
+}
+.st-hero-brand {
+  font-size: 0.8125rem;
+  color: rgba(255,255,255,0.58);
+  letter-spacing: 0.1em;
+  margin-bottom: 40px;
+  opacity: 0;
+  animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 0.95s forwards;
+}
+.st-hero-left .hero-meaning { margin-bottom: 44px; animation-delay: 1.1s; }
+.st-hero-left .hero-actions { animation-delay: 1.25s; }
+
+.st-stats {
+  position: absolute;
+  bottom: 40px;
+  left: 0; right: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  opacity: 0;
+  animation: fadeIn 1.2s 1.6s forwards;
+}
+.st-stat {
+  padding: 0 44px;
+  text-align: center;
+  border-left: 1px solid rgba(255,255,255,0.12);
+}
+.st-stat:first-child { border-left: none; }
+.st-stat-num {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--gold);
+  line-height: 1;
+  display: block;
+}
+.st-stat-num small { font-size: 1rem; margin-left: 2px; }
+.st-stat-label {
+  display: block;
+  font-size: 0.71875rem;
+  color: rgba(255,255,255,0.58);
+  letter-spacing: 0.12em;
+  margin-top: 8px;
+}
+
+/* ===== 章立て共通 ===== */
+.st-chapter {
+  position: relative;
+  overflow: hidden;
+  padding: 130px 0 120px;
+}
+.st-chapter::before {
+  content: attr(data-kanji);
+  position: absolute;
+  font-family: var(--serif);
+  font-weight: 800;
+  font-size: 44vw;
+  line-height: 1;
+  right: -6%;
+  bottom: -14%;
+  color: rgba(30,58,102,0.035);
+  pointer-events: none;
+  user-select: none;
+}
+.st-dark { background: linear-gradient(165deg, #0A1428 0%, var(--ink) 50%, #16294A 100%); }
+.st-dark::before { color: rgba(255,255,255,0.025); }
+
+.st-ch-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 36px;
+  margin-bottom: 72px;
+}
+.st-ch-num {
+  writing-mode: vertical-rl;
+  font-family: var(--serif);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: 0.5em;
+  color: var(--blue-bright);
+  padding-top: 6px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-shrink: 0;
+}
+.st-ch-num::after {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 56px;
+  background: linear-gradient(to bottom, var(--blue-bright), transparent);
+  margin: 16px auto 0;
+}
+.st-dark .st-ch-num { color: var(--gold-light); }
+.st-dark .st-ch-num::after { background: linear-gradient(to bottom, var(--gold), transparent); }
+.st-ch-titles { padding-top: 2px; }
+.st-ch-title {
+  font-family: var(--serif);
+  font-size: clamp(1.75rem, 3.4vw, 2.875rem);
+  font-weight: 600;
+  color: var(--text-main);
+  letter-spacing: 0.06em;
+  line-height: 1.45;
+  margin: 0 0 14px;
+}
+.st-dark .st-ch-title { color: var(--white-pure); }
+.st-ch-sub {
+  font-size: 0.875rem;
+  letter-spacing: 0.16em;
+  color: var(--text-light);
+  margin: 0;
+}
+.st-dark .st-ch-sub { color: rgba(255,255,255,0.58); }
+
+/* ===== 第一章 物語（独白） ===== */
+.st-story-body {
+  max-width: 680px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.st-story-body p {
+  font-family: var(--serif);
+  font-size: clamp(1rem, 1.5vw, 1.1875rem);
+  color: rgba(255,255,255,0.87);
+  line-height: 2.5;
+  letter-spacing: 0.07em;
+  margin: 0 0 2.2em;
+}
+.st-story-body p:last-of-type { margin-bottom: 0; }
+.st-story-body .st-monologue {
+  font-size: clamp(1.25rem, 2.2vw, 1.625rem);
+  color: var(--white-pure);
+  font-weight: 600;
+}
+.st-story-body em {
+  font-style: normal;
+  color: var(--gold-light);
+  text-emphasis: filled sesame var(--gold);
+  -webkit-text-emphasis: filled sesame var(--gold);
+}
+.st-sign {
+  margin-top: 56px !important;
+  text-align: right;
+  font-size: 0.875rem !important;
+  color: rgba(255,255,255,0.58) !important;
+  letter-spacing: 0.14em !important;
+  line-height: 1.8 !important;
+}
+.st-sign::before {
+  content: '';
+  display: inline-block;
+  width: 48px;
+  height: 1px;
+  background: var(--gold);
+  vertical-align: middle;
+  margin-right: 16px;
+}
+
+/* ===== 第二章 ふたつの問題 ===== */
+.st-lead {
+  font-family: var(--serif);
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  color: var(--text-main);
+  letter-spacing: 0.08em;
+  line-height: 2.1;
+  margin: 0 0 64px;
+}
+.st-lead em {
+  font-style: normal;
+  text-emphasis: filled sesame var(--blue-bright);
+  -webkit-text-emphasis: filled sesame var(--blue-bright);
+}
+.st-problems {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-bottom: 72px;
+}
+.st-problem {
+  background: var(--white-pure);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 48px 44px 44px;
+  position: relative;
+}
+.st-problem::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+}
+.st-problem-sell::before { background: linear-gradient(to right, var(--gold), transparent); }
+.st-problem-buy::before { background: linear-gradient(to right, var(--blue-bright), transparent); }
+.st-problem-tag {
+  display: inline-block;
+  font-family: var(--serif);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  margin-bottom: 20px;
+  padding-bottom: 6px;
+}
+.st-problem-sell .st-problem-tag { color: #9A7724; border-bottom: 1px solid rgba(195,155,63,0.5); }
+.st-problem-buy .st-problem-tag { color: var(--blue-bright); border-bottom: 1px solid rgba(44,93,168,0.4); }
+.st-problem-title {
+  font-family: var(--serif);
+  font-size: clamp(1.25rem, 1.9vw, 1.5rem);
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+  margin: 0 0 12px;
+}
+.st-problem-sub {
+  font-size: 0.8125rem;
+  color: var(--text-light);
+  letter-spacing: 0.1em;
+  margin: 0 0 28px;
+}
+.st-problem-list { list-style: none; margin: 0; padding: 0; }
+.st-problem-list li {
+  position: relative;
+  padding: 20px 0 20px 24px;
+  border-top: 1px dashed var(--border);
+}
+.st-problem-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 32px;
+  width: 7px; height: 7px;
+  border-radius: 50%;
+}
+.st-problem-sell .st-problem-list li::before { background: var(--gold); }
+.st-problem-buy .st-problem-list li::before { background: var(--blue-bright); }
+.st-pl-head {
+  font-family: var(--serif);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 1.75;
+  letter-spacing: 0.03em;
+  margin: 0 0 8px;
+}
+.st-pl-body {
+  font-size: 0.9375rem;
+  color: var(--text-mid);
+  line-height: 1.95;
+  margin: 0;
+}
+
+.st-crisis-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 72px;
+}
+.st-crisis-card {
+  background: var(--ink);
+  border-radius: 4px;
+  padding: 36px 32px 30px;
+  position: relative;
+  overflow: hidden;
+}
+.st-crisis-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px; height: 100%;
+  background: linear-gradient(to bottom, var(--blue-light), var(--gold));
+}
+.st-crisis-num {
+  font-family: var(--serif);
+  font-size: 3.25rem;
+  font-weight: 600;
+  color: var(--gold);
+  line-height: 1;
+  display: block;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+.st-crisis-num small { font-size: 1.375rem; margin-left: 2px; }
+.st-crisis-desc { font-size: 0.875rem; color: rgba(255,255,255,0.78); line-height: 1.7; margin: 0 0 10px; }
+.st-crisis-src { font-size: 0.71875rem; color: rgba(255,255,255,0.45); letter-spacing: 0.06em; margin: 0; }
+
+.st-conclusion {
+  text-align: center;
+  font-family: var(--serif);
+  font-size: clamp(1.25rem, 2.4vw, 1.75rem);
+  color: var(--text-main);
+  letter-spacing: 0.08em;
+  line-height: 2.1;
+  margin: 0;
+}
+.st-conclusion em {
+  font-style: normal;
+  font-weight: 700;
+  text-emphasis: filled sesame var(--blue-bright);
+  -webkit-text-emphasis: filled sesame var(--blue-bright);
+}
+
+/* ===== 第三章 結び直す ===== */
+.st-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 88px;
+}
+.st-step {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 4px;
+  padding: 44px 36px 40px;
+  position: relative;
+}
+.st-step::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -24px;
+  width: 24px;
+  height: 1px;
+  background: linear-gradient(to right, var(--blue-light), var(--gold));
+  opacity: 0.6;
+}
+.st-step:last-child::after { display: none; }
+.st-step-num {
+  font-family: var(--serif);
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  color: var(--blue-light);
+  display: block;
+  margin-bottom: 20px;
+}
+.st-step-title {
+  font-family: var(--serif);
+  font-size: 1.3125rem;
+  font-weight: 600;
+  color: var(--white-pure);
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+  margin: 0 0 18px;
+}
+.st-step-title .st-gold-hl { color: var(--gold-light); }
+.st-step-desc {
+  font-size: 0.9375rem;
+  color: rgba(255,255,255,0.74);
+  line-height: 1.95;
+  margin: 0;
+}
+
+/* 結びのSVG（2本の糸が1本に） */
+.st-conv-wrap { max-width: 880px; margin: 0 auto; position: relative; z-index: 1; }
+.st-conv { width: 100%; height: auto; display: block; }
+.st-conv .st-path {
+  fill: none;
+  stroke-width: 2;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 2.4s cubic-bezier(0.4,0,0.2,1);
+}
+.st-conv .st-p-sell { stroke: var(--gold); }
+.st-conv .st-p-buy { stroke: var(--blue-light); }
+.st-conv .st-p-join { stroke: url(#stJoinGrad); stroke-width: 2.6; transition-delay: 1.6s; }
+.st-conv.drawn .st-path { stroke-dashoffset: 0; }
+.st-conv-label { font-family: var(--sans); font-size: 13.5px; fill: rgba(255,255,255,0.78); letter-spacing: 0.08em; }
+.st-conv-knot-circle { fill: rgba(195,155,63,0.14); stroke: var(--gold); stroke-width: 1.5; }
+.st-conv-knot-kanji { font-family: var(--serif); font-size: 30px; font-weight: 700; fill: var(--gold); }
+.st-conv-close {
+  text-align: center;
+  font-family: var(--serif);
+  font-size: clamp(1.1875rem, 2.2vw, 1.625rem);
+  color: var(--white-pure);
+  letter-spacing: 0.1em;
+  line-height: 2.1;
+  margin: 40px 0 0;
+}
+.st-conv-close em {
+  font-style: normal;
+  color: var(--gold-light);
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 3px;
+}
+
+/* ===== 分岐（あなたの物語へ） ===== */
+.st-branch-head {
+  text-align: center;
+  margin-bottom: 56px;
+}
+.st-branch-head .st-ch-title { color: var(--white-pure); margin-bottom: 16px; }
+.st-branch-head p {
+  font-size: 0.9375rem;
+  color: rgba(255,255,255,0.68);
+  letter-spacing: 0.08em;
+  margin: 0;
+}
+
+/* ===== 終章 誓い ===== */
+.st-vow {
+  position: relative;
+  padding: 120px 0;
+  text-align: center;
+  overflow: hidden;
+}
+.st-vow::before {
+  content: '結';
+  position: absolute;
+  font-family: var(--serif);
+  font-weight: 800;
+  font-size: 34vw;
+  line-height: 1;
+  color: rgba(30,58,102,0.035);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  user-select: none;
+}
+.st-vow-label {
+  font-family: var(--serif);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.5em;
+  color: var(--blue-bright);
+  display: block;
+  margin-bottom: 36px;
+}
+.st-vow-text {
+  position: relative;
+  z-index: 1;
+  font-family: var(--serif);
+  font-size: clamp(1.3125rem, 2.6vw, 2rem);
+  color: var(--text-main);
+  letter-spacing: 0.1em;
+  line-height: 2.2;
+  margin: 0 0 32px;
+}
+.st-vow-text em {
+  font-style: normal;
+  font-weight: 700;
+  background: linear-gradient(transparent 68%, rgba(195,155,63,0.42) 68%);
+  padding: 0 2px;
+}
+.st-vow-by { font-size: 0.8125rem; color: var(--text-light); letter-spacing: 0.16em; margin: 0; }
+
+/* ===== レスポンシブ（物語パート） ===== */
+@media (max-width: 1024px) {
+  .st-hero-kanji { right: 8%; opacity: 0.7; }
+  .st-steps { grid-template-columns: 1fr; max-width: 560px; margin-left: auto; margin-right: auto; }
+  .st-step::after { display: none; }
+}
+@media (max-width: 900px) {
+  .st-hero { min-height: auto; }
+  .st-hero-inner {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    padding: 120px 20px 140px;
+    gap: 40px;
+  }
+  .st-hero-title {
+    writing-mode: horizontal-tb;
+    height: auto;
+    line-height: 1.6;
+    letter-spacing: 0.1em;
+    font-size: clamp(1.9rem, 7.4vw, 2.6rem);
+  }
+  .st-hero-kanji { font-size: 70vw; right: -12%; top: 30%; }
+  .st-stats { position: absolute; bottom: 32px; flex-wrap: wrap; padding: 0 16px; }
+  .st-stat { padding: 0 20px; }
+  .st-stat-num { font-size: 1.5rem; }
+  .st-chapter { padding: 84px 0 80px; }
+  .st-ch-head { gap: 20px; margin-bottom: 48px; }
+  .st-problems { grid-template-columns: 1fr; }
+  .st-problem { padding: 36px 26px 32px; }
+  .st-crisis-stats { grid-template-columns: 1fr; }
+  .st-story-body p { line-height: 2.3; }
+  .st-vow { padding: 84px 0; }
+  .st-steps { margin-bottom: 48px; }
+  .st-conv-label { font-size: 22px; }
+  .st-conv-knot-kanji { font-size: 34px; }
+  .st-conv-close { margin-top: 24px; }
+}
+@media (max-width: 480px) {
+  .st-conv-label { display: none; }
+  .st-hero-inner { padding: 104px 16px 150px; }
+  .st-stats { gap: 12px; }
+  .st-stat { border-left: none; padding: 0 8px; }
+}
+</style>
 </head>
 <body>
-
 <!-- NAV -->
 <nav id="main-nav">
   <div class="nav-logo">Tsugu <span>Ai</span> -<span>継</span>-</div>
@@ -1866,115 +2553,245 @@ body.menu-open {
   </ul>
 </div>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-bg">
-    <div class="hero-bg-kanji">継</div>
-    <div class="hero-bg-kanji">ぐ</div>
-    <div class="hero-bg-line"></div>
-    <div class="hero-bg-line"></div>
-  </div>
-  <div class="hero-inner">
-    <p class="hero-eyebrow">Tsugu Ai -継-</p>
-    <h1 class="hero-title">
-      日本の中小企業を、<br>
-      <span class="hero-title-accent">次の世代へ。</span>
+<!-- 糸ナビ（スクロール進捗） -->
+<aside class="st-thread" aria-hidden="true">
+  <ul class="st-knots">
+    <li><a href="#top" data-knot="top">序</a></li>
+    <li><a href="#story" data-knot="story">一</a></li>
+    <li><a href="#problem" data-knot="problem">二</a></li>
+    <li><a href="#solution" data-knot="solution">三</a></li>
+    <li><a href="#contact" data-knot="contact">結</a></li>
+  </ul>
+  <div class="st-thread-line"><span id="threadProgress"></span></div>
+</aside>
+
+<!-- 序章 HERO -->
+<section class="st-hero" id="top">
+  <div class="st-hero-kanji" aria-hidden="true">継</div>
+  <svg class="st-hero-thread" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <path pathLength="1" d="M-40,760 C260,700 340,520 560,540 C780,560 820,340 1060,300 C1240,270 1360,180 1500,160"/>
+    <path pathLength="1" class="st-gold" d="M-40,830 C300,790 420,640 640,650 C860,660 920,470 1140,430 C1300,400 1400,330 1500,300"/>
+  </svg>
+  <div class="st-hero-inner">
+    <div class="st-hero-left">
+      <p class="st-hero-eyebrow">TSUGU AI ─ 継 ─</p>
+      <p class="st-hero-copy">
+        黒字のまま、静かに幕を下ろす会社がある。<br>
+        売るために、心をすり減らす営業がいる。<br>
+        ──ふたつの痛みは、<em>一本の糸</em>で結び直せる。
+      </p>
+      <p class="st-hero-brand">AIと認定パートナーが経営者に伴走する、中小企業承継エコシステム｜株式会社福來</p>
+      <div class="hero-meaning">
+        <span class="hero-meaning-item"><strong>継ぐ</strong> 事業承継</span>
+        <span class="hero-meaning-item"><strong>接ぐ</strong> AIと人を繋ぐ</span>
+        <span class="hero-meaning-item"><strong>次ぐ</strong> 継続的伴走</span>
+        <span class="hero-meaning-item"><strong>注ぐ</strong> 情熱を傾ける</span>
+        <span class="hero-meaning-item"><strong>告ぐ</strong> 気づきを届ける</span>
+      </div>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">
+          無料相談を予約する
+          <span class="btn-arrow">→</span>
+        </a>
+        <a href="#story" class="btn-ghost">
+          物語を読む
+          <span class="btn-arrow">↓</span>
+        </a>
+      </div>
+    </div>
+    <h1 class="st-hero-title">
+      <span>その会社の物語を、</span><span>まだ、<em class="st-bouten">終わらせない</em>。</span>
     </h1>
-    <p class="hero-subtitle serif">継ぐ、接ぐ、次ぐ、注ぐ、告ぐ。</p>
-    <div class="hero-meaning">
-      <span class="hero-meaning-item"><strong>継ぐ</strong> 事業承継</span>
-      <span class="hero-meaning-item"><strong>接ぐ</strong> AIと人を繋ぐ</span>
-      <span class="hero-meaning-item"><strong>次ぐ</strong> 継続的伴走</span>
-      <span class="hero-meaning-item"><strong>注ぐ</strong> 情熱を傾ける</span>
-      <span class="hero-meaning-item"><strong>告ぐ</strong> 気づきを届ける</span>
-    </div>
-    <div class="hero-actions">
-      <a href="#contact" class="btn-primary">
-        無料相談を予約する
-        <span class="btn-arrow">→</span>
-      </a>
-      <a href="#service" class="btn-ghost">
-        サービスを見る
-        <span class="btn-arrow">↓</span>
-      </a>
-    </div>
   </div>
-  <div class="hero-stats">
-    <div class="hero-stat">
-      <span class="hero-stat-num">650<span style="font-size:1.25rem">万人</span></span>
-      <span class="hero-stat-label">失われる雇用（試算）</span>
+  <div class="st-stats">
+    <div class="st-stat">
+      <span class="st-stat-num"><span data-count="650">0</span><small>万人</small></span>
+      <span class="st-stat-label">失われる雇用（試算）</span>
     </div>
-    <div class="hero-stat">
-      <span class="hero-stat-num">22<span style="font-size:1.25rem">兆円</span></span>
-      <span class="hero-stat-label">失われるGDP</span>
+    <div class="st-stat">
+      <span class="st-stat-num"><span data-count="22">0</span><small>兆円</small></span>
+      <span class="st-stat-label">失われるGDP</span>
     </div>
-    <div class="hero-stat">
-      <span class="hero-stat-num">60<span style="font-size:1.25rem">%超</span></span>
-      <span class="hero-stat-label">60歳以上の経営者</span>
+    <div class="st-stat">
+      <span class="st-stat-num"><span data-count="60">0</span><small>%超</small></span>
+      <span class="st-stat-label">60歳以上の経営者</span>
     </div>
-  </div>
-  <div class="hero-scroll">
-    <span class="hero-scroll-text">Scroll</span>
-    <div class="hero-scroll-line"></div>
   </div>
 </section>
 
-<!-- ENTRY BRANCH -->
-
-<!-- MISSION -->
-<section class="section-mission">
-  <div class="mission-inner reveal">
-    <p class="mission-eyebrow">OUR MISSION</p>
-    <p class="mission-lead">
-      その<span class="mission-hl">技術と情熱</span>が、報われる社会へ。<br>
-      その<span class="mission-hl">会社と歴史</span>が、続いていく社会へ。
-    </p>
-    <p class="mission-sub">
-      Tsugu Aiは、日本の中小企業が直面する2つの社会課題に、正面から挑みます。売って終わりではなく、続いていく。それが私たちの信じる、これからの経営支援のかたちです。
-    </p>
-
-    <div class="mission-grid">
-      <div class="mission-card">
-        <p class="mission-card-num">ISSUE 01</p>
-        <h3 class="mission-card-title serif">フルコミッション営業に、<br><span class="mission-accent">ストック収入</span>という土台を。</h3>
-        <p class="mission-card-desc">成果がすべての世界で走り続けてきた営業のプロフェッショナル。その「聴く力」と実績を、契約のたびに消える収入ではなく、積み上がり続ける安定した収入へ。挑戦する人が、安心して腰を据えられる働き方をつくります。</p>
-      </div>
-      <div class="mission-card">
-        <p class="mission-card-num">ISSUE 02</p>
-        <h3 class="mission-card-title serif">後継者不在で消えゆく会社の、<br><span class="mission-accent">受け皿</span>になる。</h3>
-        <p class="mission-card-desc">黒字なのに、継ぐ人がいないだけで畳まれていく会社が、日本には数多くあります。そこにある技術・雇用・信用を、次の世代へ。閉じるしかなかった選択肢に、「継ぐ」という道を差し出します。</p>
+<!-- 第一章 或る営業の、記憶。 -->
+<section class="st-chapter st-dark" id="story" data-kanji="記">
+  <div class="container">
+    <div class="st-ch-head reveal">
+      <span class="st-ch-num">第一章</span>
+      <div class="st-ch-titles">
+        <h2 class="st-ch-title">或る営業の、記憶。</h2>
+        <p class="st-ch-sub">なぜ、私たちはこの事業を始めるのか</p>
       </div>
     </div>
-
-    <p class="mission-close">
-      挑む人に<em>安定</em>を。続けたい会社に<em>未来</em>を。<br>
-      その両方を、AIと人の力で。
-    </p>
+    <div class="st-story-body">
+      <p class="st-monologue reveal">「今月も、売らなければ──。」</p>
+      <p class="reveal">フルコミッションの世界で、私は長く走り続けてきた。売れば認められ、売れなければ収入はない。成果がすべての世界で、確かな実績も積み上げた。それでも心のどこかに、ずっと引っかかりがあった。</p>
+      <p class="reveal">「お客様のために」。その言葉を疑ったことはない。だが、明日の生活が懸かった商談の席で、<em>フォー・ユーの精神</em>を貫き通せる人間が、どれほどいるだろうか。気づけば「この会社に本当に必要か」ではなく、「今月の数字になるか」で提案を選んでいる自分がいた。</p>
+      <p class="reveal">そのしわ寄せは、いつも目の前の経営者に──この国の中小企業に、向かっていた。</p>
+      <p class="reveal">これは、私ひとりの記憶ではない。日本中の営業現場で、いまも同じことが起きている。悪いのは、人ではない。<em>仕組み</em>だ。だから私たちは、仕組みそのものを変えることにした。</p>
+      <p class="st-sign reveal">Tsugu Ai -継- 発起人<br>株式会社福來</p>
+    </div>
   </div>
 </section>
 
+<!-- 第二章 ふたつの社会問題 -->
+<section class="st-chapter st-light" id="problem" data-kanji="構">
+  <div class="container">
+    <div class="st-ch-head reveal">
+      <span class="st-ch-num">第二章</span>
+      <div class="st-ch-titles">
+        <h2 class="st-ch-title">構造という、見えない敵。</h2>
+        <p class="st-ch-sub">日本が抱える、ふたつの社会問題</p>
+      </div>
+    </div>
+    <p class="st-lead reveal">売る側は、売らなければ生きられない。<br>買う側は、望まぬ営業に未来を削られていく。<br>──この国の商いは、<em>同じ構造</em>の上で、両側から疲弊している。</p>
+
+    <div class="st-problems">
+      <div class="st-problem st-problem-sell reveal">
+        <span class="st-problem-tag">問題 壱</span>
+        <h3 class="st-problem-title">売る側の疲弊。</h3>
+        <p class="st-problem-sub">フルコミッション営業という構造</p>
+        <ul class="st-problem-list">
+          <li>
+            <p class="st-pl-head">売れなければ、収入はゼロ。</p>
+            <p class="st-pl-body">明日の生活が懸かった商談では、「本当に必要か」より「今月の数字になるか」が優先される。売るための提案が、構造として生まれてしまいます。</p>
+          </li>
+          <li>
+            <p class="st-pl-head">不安定なまま、歳を重ねる。</p>
+            <p class="st-pl-body">契約のたびに収入はリセットされ、何も積み上がらない。それは老後の備え──年金・貯蓄という、この国全体の課題に直結しています。</p>
+          </li>
+          <li>
+            <p class="st-pl-head">「聴く力」が、活かされない。</p>
+            <p class="st-pl-body">営業のプロが持つ最大の武器は、相手の話を深く聴く力です。その力を顧客のために使う余裕を、いまの仕組みは与えてくれません。</p>
+          </li>
+        </ul>
+      </div>
+      <div class="st-problem st-problem-buy reveal reveal-delay-1">
+        <span class="st-problem-tag">問題 弐</span>
+        <h3 class="st-problem-title">買う側のしわ寄せ。</h3>
+        <p class="st-problem-sub">中小企業の、失われていく未来</p>
+        <ul class="st-problem-list">
+          <li>
+            <p class="st-pl-head">必要なものが、見えなくなる。</p>
+            <p class="st-pl-body">次々に持ち込まれる提案への対応に、時間も資金も削られていく。その結果、本当に必要な投資は何かという判断が濁ってしまいます。</p>
+          </li>
+          <li>
+            <p class="st-pl-head">出せたはずの黒字を、逃す。</p>
+            <p class="st-pl-body">世の中小企業は、本当はもっと黒字を出せるし、成長できる。その足枷になっているのが、売るための営業という構造そのものです。</p>
+          </li>
+          <li>
+            <p class="st-pl-head">そして、継ぐ人がいない。</p>
+            <p class="st-pl-body">十分な利益を出しながら、後継者がいないという理由だけで廃業を選ぶ会社が増え続けている。技術も雇用も信用も、そこで途切れます。</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="st-crisis-stats">
+      <div class="st-crisis-card reveal">
+        <span class="st-crisis-num"><span data-count="650">0</span><small>万人</small></span>
+        <p class="st-crisis-desc">後継者未定による廃業リスクで失われる雇用</p>
+        <p class="st-crisis-src">経済産業省 2019年試算</p>
+      </div>
+      <div class="st-crisis-card reveal reveal-delay-1">
+        <span class="st-crisis-num"><span data-count="22">0</span><small>兆円</small></span>
+        <p class="st-crisis-desc">同じく失われる可能性のあるGDP損失額</p>
+        <p class="st-crisis-src">経済産業省 2019年試算</p>
+      </div>
+      <div class="st-crisis-card reveal reveal-delay-2">
+        <span class="st-crisis-num"><span data-count="60">0</span><small>%超</small></span>
+        <p class="st-crisis-desc">60歳以上の中小企業経営者の割合</p>
+        <p class="st-crisis-src">中小企業庁</p>
+      </div>
+    </div>
+
+    <p class="st-conclusion reveal">ふたつは、別々の問題ではない。<br><em>同じひとつの構造</em>が生んだ、表と裏である。</p>
+  </div>
+</section>
+
+<!-- 第三章 結び直す -->
+<section class="st-chapter st-dark" id="solution" data-kanji="結">
+  <div class="container">
+    <div class="st-ch-head reveal">
+      <span class="st-ch-num">第三章</span>
+      <div class="st-ch-titles">
+        <h2 class="st-ch-title">結び直す。</h2>
+        <p class="st-ch-sub">ふたつの問題を、ひとつの仕組みで解く</p>
+      </div>
+    </div>
+
+    <div class="st-steps">
+      <div class="st-step reveal">
+        <span class="st-step-num">壱</span>
+        <h3 class="st-step-title"><span class="st-gold-hl">ストック収入</span>という、土台。</h3>
+        <p class="st-step-desc">認定パートナー（営業のプロ）は、顧問先が増えるほど毎月の収入が積み上がるストック型。「今月売らなければ」という焦りから、人を解放します。</p>
+      </div>
+      <div class="st-step reveal reveal-delay-1">
+        <span class="st-step-num">弐</span>
+        <h3 class="st-step-title">売り込みが、<span class="st-gold-hl">消える</span>。</h3>
+        <p class="st-step-desc">収入の土台があるから、提案の基準が「数字になるか」から「本当に必要か」へ変わる。フォー・ユーの精神が、根性論ではなく仕組みとして成立します。</p>
+      </div>
+      <div class="st-step reveal reveal-delay-2">
+        <span class="st-step-num">参</span>
+        <h3 class="st-step-title">必要なものだけが、<span class="st-gold-hl">届く</span>。</h3>
+        <p class="st-step-desc">無駄な営業が消えた先で、AIが知識を、人が心を担う伴走が始まる。キャッシュを守り、黒字を伸ばし、事業承継へ。会社の物語は、続いていきます。</p>
+      </div>
+    </div>
+
+    <div class="st-conv-wrap reveal">
+      <svg class="st-conv" id="convSvg" viewBox="0 0 900 340" aria-label="営業のプロと中小企業経営者を、継が結ぶ図">
+        <defs>
+          <linearGradient id="stJoinGrad" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="#5B84C4"/>
+            <stop offset="100%" stop-color="#C39B3F"/>
+          </linearGradient>
+        </defs>
+        <text class="st-conv-label" x="36" y="66">営業のプロ ─ 安定という土台を</text>
+        <text class="st-conv-label" x="36" y="292">中小企業経営者 ─ 伴走という安心を</text>
+        <path pathLength="1" class="st-path st-p-sell" d="M36,84 C220,84 300,168 440,168"/>
+        <path pathLength="1" class="st-path st-p-buy" d="M36,258 C220,258 300,172 440,170"/>
+        <path pathLength="1" class="st-path st-p-join" d="M440,169 C560,169 610,169 830,169"/>
+        <circle class="st-conv-knot-circle" cx="690" cy="169" r="30"/>
+        <text class="st-conv-knot-kanji" x="675" y="180">継</text>
+      </svg>
+      <p class="st-conv-close reveal reveal-delay-2">挑む人に<em>安定</em>を。続けたい会社に<em>未来</em>を。<br>その両方を、AIと人の力で。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 分岐：あなたの物語へ -->
 <section class="section-branch">
   <div class="container">
+    <div class="st-branch-head reveal">
+      <h2 class="st-ch-title serif">ここからは、あなたの物語。</h2>
+      <p>お立場に合わせて、続きをお読みください。</p>
+    </div>
     <div class="branch-grid">
       <!-- 経営者の方へ -->
-      <a href="#service" class="branch-card">
+      <a href="#service" class="branch-card reveal">
         <div class="branch-card-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 9v.01M9 12v.01M9 15v.01M9 18v.01" stroke-linecap="round"/></svg>
         </div>
         <p class="branch-card-label">経営者の方へ</p>
         <h3 class="branch-card-title serif">会社の未来を、<br>次の世代へ繋ぎたい。</h3>
-        <p class="branch-card-desc">後継者不在、資金繰り、M&A——一人で抱える経営の悩みに、AIと認定パートナーが伴走します。</p>
+        <p class="branch-card-desc">後継者不在、資金繰り、M&A──一人で抱える経営の悩みに、AIと認定パートナーが伴走します。売り込みは、しません。</p>
         <span class="branch-card-cta">サービスを見る <span class="branch-arrow">→</span></span>
       </a>
 
       <!-- パートナーを目指す方へ -->
-      <a href="#consultant" class="branch-card branch-card-fde">
+      <a href="#consultant" class="branch-card branch-card-fde reveal reveal-delay-1">
         <div class="branch-card-icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 21l-4.9-2.6.9-5.5-4-3.9 5.5-.8z" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </div>
         <p class="branch-card-label">認定パートナーという生き方</p>
-        <h3 class="branch-card-title serif">経営者を<span class="branch-accent">"支える側"</span>に<br>なる、という選択。</h3>
-        <p class="branch-card-desc">認定パートナーは、AIを最先端の武器に、お客様のご意見・ご意向に寄り添いながら経営に伴走する存在です。営業で培った「聴く力」を活かし、日本初の認定パートナーとして経営者の隣に立つ、新しいキャリアです。</p>
+        <h3 class="branch-card-title serif">売る側から、<br>経営者を<span class="branch-accent">"支える側"</span>へ。</h3>
+        <p class="branch-card-desc">認定パートナーは、AIを最先端の武器に、経営者の隣で伴走する存在です。営業で培った「聴く力」を、ストック収入という土台の上で活かす、新しいキャリアです。</p>
         <div class="branch-points">
           <div class="branch-point"><span class="branch-point-dot"></span>初期投資ゼロ — 登録・研修・認定試験すべて無料</div>
           <div class="branch-point"><span class="branch-point-dot"></span>知識はAIが担当 — 必要なのは聴く力・共感力</div>
@@ -1987,60 +2804,6 @@ body.menu-open {
 </section>
 
 <div class="gold-divider"></div>
-
-<!-- CRISIS -->
-<section class="section-crisis" id="crisis">
-  <div class="container">
-    <div class="crisis-inner">
-      <div class="crisis-text reveal">
-        <p class="section-label">社会課題</p>
-        <h2 class="crisis-headline serif">
-          黒字なのに、<br>
-          後継者がいないという<br>
-          理由だけで、<br>
-          <em>閉じなければならない。</em>
-        </h2>
-        <p class="crisis-body">
-          日本の中小企業経営者の過半数が60歳を超え、後継者が見つからないまま廃業を選択するケースが急増しています。それは経営者個人の悲劇であると同時に、日本社会全体の大きな損失です。
-        </p>
-      </div>
-      <div class="crisis-stats">
-        <div class="crisis-stat-card reveal reveal-delay-1">
-          <span class="crisis-stat-number">650<span class="crisis-stat-unit">万人</span></span>
-          <p class="crisis-stat-desc">後継者未定による廃業リスクで失われる雇用</p>
-          <p class="crisis-stat-source">経済産業省 2019年試算</p>
-        </div>
-        <div class="crisis-stat-card reveal reveal-delay-2">
-          <span class="crisis-stat-number">22<span class="crisis-stat-unit">兆円</span></span>
-          <p class="crisis-stat-desc">同じく失われる可能性のあるGDP損失額</p>
-          <p class="crisis-stat-source">経済産業省 2019年試算</p>
-        </div>
-        <div class="crisis-stat-card reveal reveal-delay-3">
-          <span class="crisis-stat-number">60<span class="crisis-stat-unit">%超</span></span>
-          <p class="crisis-stat-desc">60歳以上の中小企業経営者の割合</p>
-          <p class="crisis-stat-source">中小企業庁</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- QUOTE -->
-<section class="section-quote">
-  <div class="container--narrow">
-    <div class="quote-inner reveal">
-      <p class="section-label" style="justify-content:center;">事業の志</p>
-      <p class="quote-text serif">
-        後継者がいないという理由だけで<br>
-        <em>閉じなければならない会社を、<br>一社でも多く救いたい。</em>
-        私たちは新しいビジネスモデルに<br>
-        挑戦します。
-      </p>
-      <p class="quote-byline">株式会社福來 ／ Tsugu Ai -継-</p>
-    </div>
-  </div>
-</section>
-
 <!-- SERVICE -->
 <section class="section-service" id="service">
   <div class="container">
@@ -2175,7 +2938,6 @@ body.menu-open {
     </div>
   </div>
 </section>
-
 <!-- PRICING -->
 <section class="section-pricing" id="pricing">
   <div class="container">
@@ -2202,7 +2964,7 @@ body.menu-open {
             <p style="font-size:0.875rem;color: rgba(255,255,255,0.62);">円／月（税抜）</p>
           </div>
         </div>
-        <div style="background:rgba(201,169,97,0.1); border:1px solid rgba(201,169,97,0.3); border-radius:12px; padding:20px 24px; margin-bottom:24px;">
+        <div style="background:rgba(195,155,63,0.1); border:1px solid rgba(195,155,63,0.3); border-radius:12px; padding:20px 24px; margin-bottom:24px;">
           <p style="font-size:0.875rem;color:var(--gold);font-weight:700;margin-bottom:8px;">※ 初月のお支払い</p>
           <p style="font-size:0.9375rem;color:rgba(255,255,255,0.85);">初期費用10万円 ＋ 月額5万円 ＝ <strong style="color:var(--gold);">初月合計15万円</strong></p>
         </div>
@@ -2263,7 +3025,7 @@ body.menu-open {
         <p style="font-size:0.875rem;color:var(--text-mid);margin-top:8px;margin-bottom:24px;">参入障壁を極限まで下げ、AI時代の新しい士業として活躍できる仕組みです。</p>
 
         <div style="margin:28px 0; display:flex;flex-direction:column;gap:16px;">
-          <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;background:rgba(201,169,97,0.1);border:1px solid rgba(201,169,97,0.3);border-radius:10px;">
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;background:rgba(195,155,63,0.1);border:1px solid rgba(195,155,63,0.3);border-radius:10px;">
             <p style="font-weight:700;color:var(--ink);font-size:0.9375rem;">初期登録料</p>
             <p style="font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--gold);">無料</p>
           </div>
@@ -2291,7 +3053,7 @@ body.menu-open {
           </div>
         </div>
 
-        <div style="background:rgba(201,169,97,0.08);border:1px solid rgba(201,169,97,0.25);border-radius:12px;padding:20px 24px;margin-bottom:28px;">
+        <div style="background:rgba(195,155,63,0.08);border:1px solid rgba(195,155,63,0.25);border-radius:12px;padding:20px 24px;margin-bottom:28px;">
           <p style="font-size:0.8125rem;color:var(--gold);font-weight:700;margin-bottom:12px;">月額シミュレーション例</p>
           <div style="display:flex;flex-direction:column;gap:10px;font-size:0.875rem;color:var(--text-mid);">
             <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);">
@@ -2399,7 +3161,6 @@ body.menu-open {
 
   </div>
 </section>
-
 <!-- CONSULTANT -->
 <section class="section-consultant" id="consultant">
   <div class="container">
@@ -2505,14 +3266,14 @@ body.menu-open {
         </div>
 
         <!-- 3期：エグゼクティブ -->
-        <div style="background:linear-gradient(135deg, rgba(201,169,97,0.18) 0%, rgba(201,169,97,0.05) 100%);border:1px solid var(--gold);border-radius:12px;padding:18px 20px;margin-bottom:12px;">
+        <div style="background:linear-gradient(135deg, rgba(195,155,63,0.18) 0%, rgba(195,155,63,0.05) 100%);border:1px solid var(--gold);border-radius:12px;padding:18px 20px;margin-bottom:12px;">
           <p style="font-size:0.6875rem;letter-spacing:0.1em;color:var(--gold);font-weight:700;margin-bottom:4px;">3期 ─ 独立確立期</p>
           <p style="font-family:var(--serif);font-size:1.0625rem;font-weight:700;color:var(--white);margin-bottom:8px;">エグゼクティブ・パートナー</p>
           <p style="font-size:0.78125rem;color: rgba(255,255,255,0.75);margin-bottom:10px;">顧問先5社 ＋ HD化案件1社経験 ─ 報酬比率アップ</p>
           <div style="font-size:0.8125rem;color:rgba(255,255,255,0.9);line-height:1.7;">
             <div style="display:flex;justify-content:space-between;"><span>顧問先5社</span><strong style="color:var(--gold);">月額 約15万円</strong></div>
             <div style="display:flex;justify-content:space-between;"><span>＋HD化PMI支援報酬</span><strong style="color:var(--gold);">月額 約6万円</strong></div>
-            <div style="display:flex;justify-content:space-between;margin-top:8px;padding-top:8px;border-top:1px solid rgba(201,169,97,0.3);"><span style="font-weight:700;">合計</span><strong style="color:var(--gold);font-size:1rem;">月額 約21万円</strong></div>
+            <div style="display:flex;justify-content:space-between;margin-top:8px;padding-top:8px;border-top:1px solid rgba(195,155,63,0.3);"><span style="font-weight:700;">合計</span><strong style="color:var(--gold);font-size:1rem;">月額 約21万円</strong></div>
             <p style="margin-top:6px;text-align:right;font-size:0.875rem;color:var(--gold);font-weight:700;">年収目安 約250万円</p>
           </div>
           <p style="font-size:0.78125rem;color: rgba(255,255,255,0.75);margin-top:10px;line-height:1.5;">＋ 戦略アドバイザー権限／HD化アドバイザリー業務</p>
@@ -2526,14 +3287,14 @@ body.menu-open {
           <div style="font-size:0.8125rem;color:var(--ink);line-height:1.7;">
             <div style="display:flex;justify-content:space-between;"><span>顧問先10社</span><strong>月額 約35万円</strong></div>
             <div style="display:flex;justify-content:space-between;"><span>＋HD化PMI支援（2社継続）</span><strong>月額 約14万円</strong></div>
-            <div style="display:flex;justify-content:space-between;margin-top:8px;padding-top:8px;border-top:1px solid rgba(15,27,60,0.25);"><span style="font-weight:700;">合計</span><strong style="font-size:1.0625rem;">月額 約49万円</strong></div>
+            <div style="display:flex;justify-content:space-between;margin-top:8px;padding-top:8px;border-top:1px solid rgba(14,27,51,0.25);"><span style="font-weight:700;">合計</span><strong style="font-size:1.0625rem;">月額 約49万円</strong></div>
             <p style="margin-top:6px;text-align:right;font-size:0.9375rem;font-weight:700;">年収目安 約580万円超</p>
           </div>
           <p style="font-size:0.78125rem;color:var(--ink);opacity:0.88;margin-top:10px;line-height:1.5;">＋ 後進パートナー育成権限／Tsugu Ai -継-ブランド認定権限／業界アドバイザー</p>
         </div>
 
         <!-- その他の報酬 -->
-        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(201,169,97,0.35);border-radius:12px;padding:18px 20px;margin-bottom:18px;">
+        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(195,155,63,0.35);border-radius:12px;padding:18px 20px;margin-bottom:18px;">
           <p style="font-size:0.6875rem;letter-spacing:0.1em;color:var(--gold);font-weight:700;margin-bottom:10px;">OTHER REWARDS ─ 顧問報酬以外の収入源</p>
           <div style="font-size:0.8125rem;color:rgba(255,255,255,0.85);line-height:1.7;display:flex;flex-direction:column;gap:8px;">
             <div style="display:flex;gap:10px;align-items:flex-start;">
@@ -2621,7 +3382,16 @@ body.menu-open {
     </div>
   </div>
 </section>
-
+<!-- 終章 誓い -->
+<section class="st-vow st-light">
+  <div class="container--narrow">
+    <div class="reveal">
+      <span class="st-vow-label">終章</span>
+      <p class="st-vow-text">後継者がいないという理由だけで<br>閉じなければならない会社を、<br><em>一社でも多く、救いたい。</em></p>
+      <p class="st-vow-by">株式会社福來 ／ Tsugu Ai -継-</p>
+    </div>
+  </div>
+</section>
 <!-- COMPANY -->
 <section class="section-company" id="company">
   <div class="container">
@@ -2655,7 +3425,6 @@ body.menu-open {
     </div>
   </div>
 </section>
-
 <!-- CTA -->
 <section class="section-cta" id="contact">
   <div class="container">
@@ -2733,12 +3502,11 @@ body.menu-open {
     </div>
   </div>
 </section>
-
 <style>
 /* ===== CONTACT FORM ===== */
 .contact-form-wrap {
   background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(91,179,220,0.2);
+  border: 1px solid rgba(91,132,196,0.2);
   border-radius: var(--r-lg);
   padding: 52px 56px;
   max-width: 780px;
@@ -2763,7 +3531,7 @@ body.menu-open {
 .required { color: var(--gold); margin-left: 2px; }
 .form-input {
   background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(91,179,220,0.25);
+  border: 1px solid rgba(91,132,196,0.25);
   border-radius: var(--r-sm);
   padding: 12px 16px;
   font-size: 1rem;
@@ -2793,7 +3561,7 @@ body.menu-open {
   justify-content: center;
   text-align: center;
   padding: 20px 12px;
-  border: 1.5px solid rgba(91,179,220,0.2);
+  border: 1.5px solid rgba(91,132,196,0.2);
   border-radius: var(--r-md);
   background: rgba(255,255,255,0.04);
   transition: all 0.2s;
@@ -2802,11 +3570,11 @@ body.menu-open {
 }
 .radio-box:hover {
   border-color: var(--blue-light);
-  background: rgba(91,179,220,0.1);
+  background: rgba(91,132,196,0.1);
 }
 .form-radio input:checked + .radio-box {
   border-color: var(--gold);
-  background: rgba(255,200,80,0.08);
+  background: rgba(195,155,63,0.08);
 }
 .radio-label {
   font-size: 0.875rem;
@@ -2851,7 +3619,7 @@ body.menu-open {
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  background: rgba(91,179,220,0.15);
+  background: rgba(91,132,196,0.15);
   border: 2px solid var(--blue-light);
   display: flex;
   align-items: center;
@@ -2876,7 +3644,6 @@ body.menu-open {
   .form-radio-group { grid-template-columns: 1fr; }
 }
 </style>
-
 <!-- FOOTER -->
 <footer>
   <div class="container">
@@ -2903,7 +3670,7 @@ body.menu-open {
 </footer>
 
 <script>
-// MOBILE MENU TOGGLE
+// ===== MOBILE MENU TOGGLE =====
 (function() {
   const toggle = document.getElementById('navToggle');
   const menu = document.getElementById('mobileMenu');
@@ -2919,7 +3686,6 @@ body.menu-open {
     toggle.setAttribute('aria-expanded', 'false');
     menu.setAttribute('aria-hidden', 'true');
   }
-
   function openMenu() {
     toggle.classList.add('is-open');
     menu.classList.add('is-open');
@@ -2928,40 +3694,18 @@ body.menu-open {
     toggle.setAttribute('aria-expanded', 'true');
     menu.setAttribute('aria-hidden', 'false');
   }
-
-  // ハンバーガーボタンのトグル
   toggle.addEventListener('click', function() {
-    if (menu.classList.contains('is-open')) {
-      closeMenu();
-    } else {
-      openMenu();
-    }
+    menu.classList.contains('is-open') ? closeMenu() : openMenu();
   });
-
-  // 閉じる×ボタン
-  if (closeBtn) {
-    closeBtn.addEventListener('click', closeMenu);
-  }
-
-  // オーバーレイをタップしたら閉じる
-  if (overlay) {
-    overlay.addEventListener('click', closeMenu);
-  }
-
-  // メニュー内のリンクをクリックしたら自動で閉じる
-  menu.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', closeMenu);
-  });
-
-  // ESCキーで閉じる
+  if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+  if (overlay) overlay.addEventListener('click', closeMenu);
+  menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
   document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && menu.classList.contains('is-open')) {
-      closeMenu();
-    }
+    if (e.key === 'Escape' && menu.classList.contains('is-open')) closeMenu();
   });
 })();
 
-// CONTACT FORM SUBMIT
+// ===== CONTACT FORM SUBMIT =====
 async function handleSubmit(e) {
   e.preventDefault();
   const form = e.target;
@@ -2990,57 +3734,118 @@ async function handleSubmit(e) {
   }
 }
 
-// NAV SCROLL
+// ===== NAV SCROLL =====
 const nav = document.getElementById('main-nav');
 window.addEventListener('scroll', () => {
   nav.classList.toggle('scrolled', window.scrollY > 60);
 });
 
-// SCROLL REVEAL（スマホ・iframe埋め込みでも消えないようフェイルセーフ付き）
+// ===== SCROLL REVEAL（フェイルセーフ付き） =====
 (function() {
   const revealEls = document.querySelectorAll('.reveal');
-  function revealAll() {
-    revealEls.forEach(el => el.classList.add('revealed'));
-  }
+  function revealAll() { revealEls.forEach(el => el.classList.add('revealed')); }
 
-  // IntersectionObserver非対応環境では、最初からすべて表示する
-  if (!('IntersectionObserver' in window)) {
-    revealAll();
-    return;
-  }
+  if (!('IntersectionObserver' in window)) { revealAll(); return; }
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('revealed');
-      }
+      if (entry.isIntersecting) entry.target.classList.add('revealed');
     });
   }, { threshold: 0.08, rootMargin: '0px 0px -8% 0px' });
-
   revealEls.forEach(el => observer.observe(el));
 
-  // フェイルセーフ：
-  // WordPress等にiframeで埋め込まれた場合、iframe内がスクロールしないと
-  // 画面外の要素の監視が発火せず、コンテンツが非表示のまま固まることがある。
-  // 読み込み完了の少し後に、まだ隠れている要素を強制的に表示して
-  // どのセクションも消えないようにする。
-// パートナーCTA: フォームの「パートナー参加」を自動選択
+  // iframe埋め込み等で発火しない場合に備え、読み込み後に全表示
+  function failSafe() { setTimeout(revealAll, 2500); }
+  if (document.readyState === 'complete') failSafe();
+  else window.addEventListener('load', failSafe);
+})();
+
+// ===== カウントアップ（統計数字） =====
+(function() {
+  const els = document.querySelectorAll('[data-count]');
+  if (!els.length) return;
+  function animate(el) {
+    const target = parseInt(el.getAttribute('data-count'), 10);
+    const dur = 1600;
+    const start = performance.now();
+    function tick(now) {
+      const p = Math.min((now - start) / dur, 1);
+      const eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * eased);
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(el => el.textContent = el.getAttribute('data-count'));
+    return;
+  }
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animate(entry.target);
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+  els.forEach(el => obs.observe(el));
+})();
+
+// ===== 結びのSVG描画（第三章） =====
+(function() {
+  const svg = document.getElementById('convSvg');
+  if (!svg) return;
+  if (!('IntersectionObserver' in window)) { svg.classList.add('drawn'); return; }
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        svg.classList.add('drawn');
+        obs.disconnect();
+      }
+    });
+  }, { threshold: 0.3 });
+  obs.observe(svg);
+})();
+
+// ===== 糸ナビ：進捗と現在章 =====
+(function() {
+  const progress = document.getElementById('threadProgress');
+  if (!progress) return;
+  const knots = document.querySelectorAll('.st-knots a');
+  const sections = ['top', 'story', 'problem', 'solution', 'contact']
+    .map(id => document.getElementById(id))
+    .filter(Boolean);
+
+  function update() {
+    const doc = document.documentElement;
+    const max = doc.scrollHeight - window.innerHeight;
+    const p = max > 0 ? (window.scrollY / max) * 100 : 0;
+    progress.style.height = p + '%';
+
+    // ヒーロー上では白系配色に
+    document.body.classList.toggle('st-hero-on', window.scrollY < window.innerHeight * 0.7);
+
+    // 現在の章をハイライト
+    let current = sections[0];
+    for (const sec of sections) {
+      if (sec.getBoundingClientRect().top <= window.innerHeight * 0.45) current = sec;
+    }
+    knots.forEach(a => a.classList.toggle('is-active', a.getAttribute('data-knot') === current.id));
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
+})();
+
+// ===== パートナーCTA: フォームの「パートナー参加」を自動選択 =====
 document.querySelectorAll('.js-partner-cta').forEach(function(btn) {
   btn.addEventListener('click', function() {
     var radio = document.querySelector('input[name="inquiry_type"][value="認定パートナーへの参加"]');
-    if (radio) { radio.checked = true; }
+    if (radio) radio.checked = true;
   });
 });
 
-  function failSafe() { setTimeout(revealAll, 2000); }
-  if (document.readyState === 'complete') {
-    failSafe();
-  } else {
-    window.addEventListener('load', failSafe);
-  }
-})();
-
-// SMOOTH ANCHOR SCROLL
+// ===== SMOOTH ANCHOR SCROLL =====
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const id = a.getAttribute('href').slice(1);
