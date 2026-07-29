@@ -3,29 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tsugu Ai -継-｜AIと認定パートナーによる事業承継・伴走型経営支援｜株式会社福來</title>
-<meta name="description" content="Tsugu（ツグ／TsuguAi）は、AIと認定パートナーが中小企業経営者に伴走する新しい経営支援プロダクト。後継者不在・資金繰り・M&Aによる事業承継の悩みに、月額5万円から寄り添います。運営：広島・株式会社福來。">
+<title>Tsugu Ai -継-｜後継者不在・資金繰りに伴走する事業承継パートナー｜株式会社福來</title>
+<meta name="description" content="黒字なのに継ぐ人がいない。その悩みに、AIと認定パートナーが月額5万円で伴走します。後継者不在・資金繰り・M&Aによる事業承継を、広島の株式会社福來が支えます。無料相談受付中。">
 <meta name="robots" content="index, follow">
 <meta name="google-site-verification" content="T-_mOmDc7onO2FWyD5-ocFWxblI2OrbaJ0izFI3A6F4">
 <link rel="canonical" href="https://www.fuku-tsugu.jp/">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="/favicon-512.png">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
 <!-- OGP（SNSシェア時の表示） -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Tsugu Ai -継-">
-<meta property="og:title" content="Tsugu Ai -継-｜AIと認定パートナーによる事業承継・伴走型経営支援">
-<meta property="og:description" content="後継者不在・資金繰り・M&Aの悩みに、AIと認定パートナーが伴走。広島・株式会社福來が運営する中小企業承継エコシステム。">
+<meta property="og:title" content="Tsugu Ai -継-｜その会社の物語を、まだ、終わらせない。">
+<meta property="og:description" content="黒字なのに継ぐ人がいない。その悩みに、AIと認定パートナーが月額5万円で伴走します。運営：広島・株式会社福來。">
 <meta property="og:url" content="https://www.fuku-tsugu.jp/">
-<meta property="og:image" content="https://www.fuku-tsugu.jp/ogp.png">
+<meta property="og:image" content="https://www.fuku-tsugu.jp/og-image.png">
 <meta property="og:locale" content="ja_JP">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Tsugu Ai -継-｜AIと認定パートナーによる事業承継・伴走型経営支援">
-<meta name="twitter:description" content="後継者不在・資金繰り・M&Aの悩みに、AIと認定パートナーが伴走。広島・株式会社福來が運営。">
-<meta name="twitter:image" content="https://www.fuku-tsugu.jp/ogp.png">
+<meta name="twitter:title" content="Tsugu Ai -継-｜その会社の物語を、まだ、終わらせない。">
+<meta name="twitter:description" content="黒字なのに継ぐ人がいない。その悩みに、AIと認定パートナーが伴走します。広島・株式会社福來が運営。">
+<meta name="twitter:image" content="https://www.fuku-tsugu.jp/og-image.png">
 
 <!-- 構造化データ（運営会社・プロダクト情報） -->
 <script type="application/ld+json">
@@ -37,16 +38,20 @@
   "url": "https://www.fuku-tsugu.jp/",
   "description": "AIと認定パートナーによる、中小企業向けの伴走型経営支援・事業承継プロダクト。",
   "areaServed": "JP",
+  "telephone": "+81-82-548-2224",
   "provider": {
     "@type": "Organization",
     "name": "株式会社福來",
     "url": "https://www.fuku-kita.jp/",
+    "telephone": "+81-82-548-2224",
+    "founder": { "@type": "Person", "name": "小笠原 陽介" },
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "JP",
+      "postalCode": "730-0005",
       "addressRegion": "広島県",
       "addressLocality": "広島市中区",
-      "streetAddress": "西白島町"
+      "streetAddress": "西白島町18-6-203号"
     }
   }
 }
@@ -54,2477 +59,19 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@400;500;600;700;800&family=Noto+Serif+JP:wght@300;400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
-<style>
-/* ===== DESIGN TOKENS ===== */
-:root {
-  /* 藍色ベース → 明るい水色 → 白 のグラデーション体系 */
-  --ink: #0A1628;           /* 深藍 — ヒーロー・暗背景 */
-  --ink-mid: #0F2A4A;       /* 藍 */
-  --ink-light: #1A4070;     /* 中藍 */
-  --blue-bright: #1E6FA8;   /* 明るい藍 */
-  --blue-mid: #2B8EC8;      /* 水色寄り */
-  --blue-light: #5BB3DC;    /* 淡い水色 */
-  --blue-pale: oklch(94% 0.04 230); /* 極淡水色 */
-  --blue-wash: oklch(97% 0.02 230); /* セクション背景 */
-
-  /* ゴールドアクセント */
-  --gold: oklch(72% 0.12 82);
-  --gold-light: oklch(82% 0.10 82);
-  --gold-pale: oklch(95% 0.04 82);
-
-  /* ニュートラル */
-  --white: #F8FBFE;           /* 青みがかった白 */
-  --white-pure: #FFFFFF;
-  --text-main: #0A1628;
-  --text-mid: #2D4A6A;
-  --text-light: #4C6B8A;
-
-  --serif: 'Noto Serif JP', serif;
-  --sans: 'Noto Sans JP', sans-serif;
-  --border: #E2E7EF;
-  --r-sm: 4px;
-  --r-md: 8px;
-  --r-lg: 16px;
-}
-
-/* ===== RESET & BASE ===== */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
-body {
-  font-family: var(--sans);
-  background: var(--white);
-  color: var(--text-main);
-  line-height: 1.7;
-  overflow-x: hidden;
-}
-
-/* ===== BLUE GRADIENT DECORATION ===== */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--ink) 0%, var(--blue-mid) 50%, var(--gold) 100%);
-  z-index: 200;
-}
-img { max-width: 100%; display: block; }
-a { text-decoration: none; color: inherit; }
-
-/* ===== UTILITY ===== */
-.container { max-width: 1120px; margin: 0 auto; padding: 0 48px; }
-.container--narrow { max-width: 800px; margin: 0 auto; padding: 0 48px; }
-.serif { font-family: var(--serif); }
-
-/* ===== SCROLL ANIMATION ===== */
-.reveal {
-  opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
-}
-.reveal.revealed { opacity: 1; transform: translateY(0); }
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-.reveal-delay-4 { transition-delay: 0.4s; }
-.reveal-delay-5 { transition-delay: 0.5s; }
-
-/* ===== NAV ===== */
-nav {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 100;
-  padding: 20px 48px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  transition: background 0.4s, box-shadow 0.4s;
-}
-nav.scrolled {
-  background: rgba(14,27,51,0.96);
-  backdrop-filter: blur(16px);
-  box-shadow: 0 1px 0 rgba(91,132,196,0.12);
-}
-.nav-logo {
-  font-family: var(--serif);
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--white);
-  letter-spacing: 0.08em;
-}
-.nav-logo span {
-  color: var(--gold);
-}
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 36px;
-  list-style: none;
-}
-.nav-links a {
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: rgba(255,255,255,0.75);
-  letter-spacing: 0.05em;
-  transition: color 0.2s;
-}
-.nav-links a:hover { color: var(--gold-light); }
-.nav-cta {
-  background: var(--gold);
-  color: var(--ink) !important;
-  padding: 10px 24px;
-  border-radius: var(--r-sm);
-  font-weight: 700 !important;
-  font-size: 0.875rem !important;
-  transition: background 0.2s, transform 0.15s !important;
-}
-.nav-cta:hover {
-  background: var(--gold-light) !important;
-  transform: translateY(-1px);
-}
-
-/* ===== HERO ===== */
-.hero {
-  min-height: 100vh;
-  background: linear-gradient(150deg, var(--ink) 0%, var(--ink-mid) 45%, var(--ink-light) 100%);
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  overflow: hidden;
-}
-
-/* Background texture — vertical kanji strokes */
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  overflow: hidden;
-}
-/* 水色の光彩 */
-.hero-bg::before {
-  content: '';
-  position: absolute;
-  width: 60vw;
-  height: 60vw;
-  border-radius: 50%;
-  background: radial-gradient(circle, oklch(55% 0.18 230 / 0.18) 0%, transparent 70%);
-  top: -10%;
-  right: -10%;
-  pointer-events: none;
-}
-.hero-bg::after {
-  content: '';
-  position: absolute;
-  width: 40vw;
-  height: 40vw;
-  border-radius: 50%;
-  background: radial-gradient(circle, oklch(65% 0.12 82 / 0.10) 0%, transparent 70%);
-  bottom: 10%;
-  left: 5%;
-  pointer-events: none;
-}
-.hero-bg-kanji {
-  position: absolute;
-  font-family: var(--serif);
-  font-weight: 700;
-  color: rgba(255,255,255,0.025);
-  user-select: none;
-  pointer-events: none;
-  line-height: 1;
-}
-.hero-bg-kanji:nth-child(1) { font-size: 28vw; top: -4%; left: -4%; }
-.hero-bg-kanji:nth-child(2) { font-size: 22vw; top: 30%; right: -2%; opacity: 0.015; }
-.hero-bg-line {
-  position: absolute;
-  width: 1px;
-  background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.08), transparent);
-}
-.hero-bg-line:nth-child(3) { height: 60%; top: 20%; left: 33%; }
-.hero-bg-line:nth-child(4) { height: 40%; top: 40%; left: 66%; opacity: 0.5; }
-
-.hero-inner {
-  position: relative;
-  z-index: 2;
-  padding: 160px 48px 120px;
-  max-width: 1120px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-.hero-eyebrow {
-  font-size: 0.8125rem;
-  font-weight: 500;
-  letter-spacing: 0.2em;
-  color: var(--blue-light);
-  margin-bottom: 28px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  opacity: 0;
-  animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 0.3s forwards;
-}
-.hero-eyebrow::before {
-  content: '';
-  display: block;
-  width: 32px;
-  height: 1px;
-  background: var(--blue-light);
-}
-
-.hero-title {
-  font-family: var(--serif);
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
-  font-weight: 400;
-  color: var(--white);
-  line-height: 1.25;
-  letter-spacing: 0.04em;
-  margin-bottom: 16px;
-  opacity: 0;
-  animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 0.5s forwards;
-}
-.hero-title-accent {
-  color: var(--gold);
-  font-weight: 600;
-}
-
-.hero-subtitle {
-  font-family: var(--serif);
-  font-size: clamp(1rem, 2vw, 1.375rem);
-  font-weight: 300;
-  color: rgba(255,255,255,0.72);
-  letter-spacing: 0.12em;
-  margin-bottom: 56px;
-  opacity: 0;
-  animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 0.7s forwards;
-}
-
-.hero-meaning {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-  margin-bottom: 64px;
-  opacity: 0;
-  animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 0.85s forwards;
-}
-.hero-meaning-item {
-  font-size: 0.8125rem;
-  color: rgba(255,255,255,0.72);
-  border: 1px solid rgba(91,132,196,0.25);
-  padding: 6px 16px;
-  border-radius: 100px;
-  letter-spacing: 0.08em;
-  font-family: var(--serif);
-  background: rgba(91,132,196,0.06);
-}
-.hero-meaning-item strong {
-  color: var(--blue-light);
-  font-weight: 600;
-}
-
-.hero-actions {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  opacity: 0;
-  animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 1s forwards;
-}
-.btn-primary {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  background: var(--gold);
-  color: var(--ink);
-  font-family: var(--sans);
-  font-weight: 700;
-  font-size: 1rem;
-  padding: 18px 40px;
-  border-radius: var(--r-sm);
-  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
-  letter-spacing: 0.06em;
-  border: none;
-  cursor: pointer;
-}
-.btn-primary:hover {
-  background: var(--gold-light);
-  transform: translateY(-2px);
-  box-shadow: 0 12px 32px rgba(0,0,0,0.3);
-}
-.btn-ghost {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: rgba(255,255,255,0.7);
-  font-size: 0.9375rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  padding: 18px 0;
-  transition: color 0.2s;
-}
-.btn-ghost:hover { color: var(--gold-light); }
-.btn-arrow {
-  width: 20px;
-  height: 20px;
-  border: 1.5px solid currentColor;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-stats {
-  position: absolute;
-  bottom: 60px;
-  right: 48px;
-  display: flex;
-  gap: 48px;
-  opacity: 0;
-  animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 1.2s forwards;
-}
-.hero-stat { text-align: right; }
-.hero-stat-num {
-  font-family: var(--serif);
-  font-size: 2.25rem;
-  font-weight: 600;
-  color: var(--blue-light);
-  line-height: 1;
-  display: block;
-}
-.hero-stat-label {
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.62);
-  letter-spacing: 0.1em;
-  margin-top: 6px;
-  display: block;
-}
-
-.hero-scroll {
-  position: absolute;
-  bottom: 48px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  opacity: 0;
-  animation: fadeIn 1s 1.5s forwards;
-}
-.hero-scroll-line {
-  width: 1px;
-  height: 48px;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent);
-  animation: scrollLine 2s infinite;
-}
-.hero-scroll-text {
-  font-size: 0.6875rem;
-  color: rgba(255,255,255,0.5);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-}
-
-@keyframes fadeUp {
-  to { opacity: 1; transform: translateY(0); }
-  from { opacity: 0; transform: translateY(24px); }
-}
-@keyframes fadeIn {
-  to { opacity: 1; }
-}
-@keyframes scrollLine {
-  0% { transform: scaleY(0); transform-origin: top; }
-  50% { transform: scaleY(1); transform-origin: top; }
-  51% { transform: scaleY(1); transform-origin: bottom; }
-  100% { transform: scaleY(0); transform-origin: bottom; }
-}
-
-/* ===== DIVIDER GOLD LINE ===== */
-.gold-divider {
-  height: 2px;
-  background: linear-gradient(to right, transparent, var(--blue-mid), var(--gold), var(--blue-mid), transparent);
-  opacity: 0.6;
-}
-
-/* ENTRY BRANCH SECTION */
-.section-branch {
-  padding: 80px 0;
-  background: var(--ink);
-  position: relative;
-}
-.branch-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 24px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-.branch-card {
-  display: flex;
-  flex-direction: column;
-  padding: 40px 36px;
-  border-radius: 20px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.1);
-  text-decoration: none;
-  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
-}
-.branch-card:hover {
-  transform: translateY(-4px);
-  background: rgba(255,255,255,0.06);
-  border-color: rgba(255,255,255,0.2);
-}
-.branch-card-fde {
-  background: linear-gradient(160deg, rgba(195,155,63,0.12) 0%, rgba(195,155,63,0.03) 100%);
-  border-color: rgba(195,155,63,0.35);
-}
-.branch-card-fde:hover {
-  border-color: var(--gold);
-  background: linear-gradient(160deg, rgba(195,155,63,0.18) 0%, rgba(195,155,63,0.05) 100%);
-}
-.branch-card-icon {
-  width: 56px;
-  height: 56px;
-  border-radius: 14px;
-  background: rgba(255,255,255,0.06);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--gold);
-  margin-bottom: 24px;
-}
-.branch-card-label {
-  font-size: 0.75rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--gold);
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-.branch-card-title {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--white);
-  line-height: 1.4;
-  margin-bottom: 16px;
-}
-.branch-accent {
-  color: var(--gold);
-}
-.branch-card-desc {
-  font-size: 0.9375rem;
-  color: rgba(255,255,255,0.7);
-  line-height: 1.8;
-  margin-bottom: 24px;
-  flex-grow: 1;
-}
-.branch-points {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-bottom: 28px;
-}
-.branch-point {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 0.875rem;
-  color: rgba(255,255,255,0.85);
-  line-height: 1.5;
-}
-.branch-point-dot {
-  flex-shrink: 0;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--gold);
-  margin-top: 7px;
-}
-.branch-card-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.9375rem;
-  font-weight: 700;
-  color: var(--white);
-  margin-top: auto;
-}
-.branch-card-cta-gold {
-  color: var(--gold);
-}
-.branch-arrow {
-  transition: transform 0.25s ease;
-  display: inline-block;
-}
-.branch-card:hover .branch-arrow {
-  transform: translateX(4px);
-}
-
-@media (max-width: 768px) {
-  .section-branch { padding: 48px 0; }
-  .branch-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  .branch-card { padding: 32px 28px; }
-  .branch-card-title { font-size: 1.25rem; }
-}
-
-/* パートナー EXPLAINER */
-.fde-explainer {
-  max-width: 1000px;
-  margin: 0 auto 80px;
-  padding: 56px 56px 48px;
-  border-radius: 24px;
-  background: linear-gradient(160deg, var(--ink) 0%, var(--ink-mid) 100%);
-  border: 1px solid rgba(195,155,63,0.35);
-  box-shadow: 0 30px 60px rgba(14,27,51,0.18);
-}
-.fde-explainer-head {
-  text-align: center;
-  margin-bottom: 36px;
-}
-.fde-explainer-eyebrow {
-  font-size: 0.8125rem;
-  letter-spacing: 0.2em;
-  color: var(--gold);
-  font-weight: 700;
-  margin-bottom: 12px;
-}
-.fde-explainer-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--white);
-}
-.fde-explainer-lead {
-  font-size: 1.0625rem;
-  color: rgba(255,255,255,0.9);
-  line-height: 1.95;
-  margin: 0 auto 20px;
-  max-width: 720px;
-  text-align: left;
-}
-.fde-explainer-text {
-  font-size: 1.0625rem;
-  color: rgba(255,255,255,0.9);
-  line-height: 1.95;
-  margin: 0 auto 40px;
-  max-width: 720px;
-  text-align: left;
-}
-.fde-hl {
-  color: var(--gold);
-  font-weight: 700;
-}
-.fde-explainer-points {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-.fde-ep-item {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 14px;
-  padding: 28px 24px;
-  text-align: center;
-}
-.fde-ep-icon {
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: var(--gold);
-  color: var(--ink);
-  font-family: var(--serif);
-  font-weight: 700;
-  font-size: 1.125rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 16px;
-}
-.fde-ep-title {
-  font-size: 1.0625rem;
-  font-weight: 700;
-  color: var(--white);
-  margin-bottom: 10px;
-}
-.fde-ep-desc {
-  font-size: 0.875rem;
-  color: rgba(255,255,255,0.78);
-  line-height: 1.7;
-}
-
-@media (max-width: 768px) {
-  .fde-explainer {
-    padding: 36px 24px 32px;
-    margin-bottom: 48px;
-    border-radius: 18px;
-  }
-  .fde-explainer-title { font-size: 1.875rem; }
-  .fde-explainer-lead, .fde-explainer-text {
-    font-size: 0.9375rem;
-    line-height: 1.9;
-    text-align: left;
-  }
-  .fde-explainer-points {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-  .fde-ep-item { padding: 24px 20px; }
-}
-
-/* ===== SECTION LABEL ===== */
-.section-label {
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.25em;
-  color: var(--blue-light);
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.section-label::before {
-  content: '';
-  display: block;
-  width: 24px;
-  height: 1px;
-  background: var(--blue-light);
-}
-/* On dark sections, override to gold */
-.section-crisis .section-label,
-.section-how .section-label,
-.section-company .section-label,
-.section-cta .section-label {
-  color: var(--gold);
-}
-.section-crisis .section-label::before,
-.section-how .section-label::before,
-.section-company .section-label::before,
-.section-cta .section-label::before {
-  background: var(--gold);
-}
-
-/* ===== SECTION: CRISIS ===== */
-.section-crisis {
-  background: linear-gradient(160deg, var(--ink) 0%, var(--ink-mid) 100%);
-  padding: 140px 0 120px;
-  position: relative;
-  overflow: hidden;
-}
-.crisis-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-.crisis-text {}
-.crisis-headline {
-  font-family: var(--serif);
-  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
-  font-weight: 400;
-  color: var(--white);
-  line-height: 1.55;
-  letter-spacing: 0.04em;
-  margin-bottom: 32px;
-}
-.crisis-headline em {
-  color: var(--gold);
-  font-style: normal;
-  font-weight: 600;
-}
-.crisis-body {
-  font-size: 0.9375rem;
-  color: rgba(255,255,255,0.75);
-  line-height: 1.8;
-}
-.crisis-stats {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-.crisis-stat-card {
-  background: rgba(91,132,196,0.07);
-  border: 1px solid rgba(91,132,196,0.18);
-  border-radius: var(--r-md);
-  padding: 32px 36px;
-  position: relative;
-  overflow: hidden;
-}
-.crisis-stat-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 3px;
-  height: 100%;
-  background: linear-gradient(to bottom, var(--blue-light), var(--gold));
-}
-.crisis-stat-card + .crisis-stat-card { margin-top: 2px; }
-.crisis-stat-number {
-  font-family: var(--serif);
-  font-size: 3.5rem;
-  font-weight: 600;
-  color: var(--gold);
-  line-height: 1;
-  letter-spacing: -0.02em;
-  display: block;
-  margin-bottom: 8px;
-}
-.crisis-stat-unit {
-  font-size: 1.25rem;
-  font-weight: 400;
-}
-.crisis-stat-desc {
-  font-size: 0.9375rem;
-  color: rgba(255,255,255,0.7);
-  line-height: 1.6;
-}
-.crisis-stat-source {
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.5);
-  margin-top: 8px;
-  letter-spacing: 0.05em;
-}
-
-/* ===== SECTION: MISSION QUOTE ===== */
-.section-quote {
-  background: var(--blue-wash);
-  padding: 120px 0;
-  position: relative;
-  overflow: hidden;
-}
-.section-quote::before {
-  content: '継';
-  position: absolute;
-  font-family: var(--serif);
-  font-size: 50vw;
-  font-weight: 700;
-  color: rgba(0,0,0,0.025);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  user-select: none;
-  pointer-events: none;
-  line-height: 1;
-}
-.quote-inner {
-  text-align: center;
-  position: relative;
-  z-index: 1;
-}
-.quote-text {
-  font-family: var(--serif);
-  font-size: clamp(1.25rem, 2.5vw, 2rem);
-  font-weight: 400;
-  color: var(--text-mid);
-  line-height: 2.0;
-  letter-spacing: 0.08em;
-  margin-bottom: 36px;
-}
-.quote-text em {
-  color: var(--ink);
-  font-style: normal;
-  font-weight: 600;
-  display: block;
-  font-size: clamp(1.5rem, 3vw, 2.5rem);
-  line-height: 1.6;
-}
-.quote-byline {
-  font-size: 0.8125rem;
-  color: var(--text-light);
-  letter-spacing: 0.1em;
-}
-
-/* ===== SECTION: SERVICE ===== */
-.section-service {
-  background: var(--white-pure);
-  padding: 140px 0;
-}
-.section-header {
-  margin-bottom: 80px;
-}
-.section-title {
-  font-family: var(--serif);
-  font-size: clamp(1.75rem, 3vw, 2.75rem);
-  font-weight: 400;
-  color: var(--ink);
-  letter-spacing: 0.04em;
-  line-height: 1.35;
-  margin-bottom: 20px;
-}
-.section-body {
-  font-size: 1rem;
-  color: var(--text-mid);
-  line-height: 1.8;
-  max-width: 640px;
-}
-
-/* 4 values grid */
-.values-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2px;
-  background: #E2E7EF;
-  border-radius: var(--r-lg);
-  overflow: hidden;
-}
-.value-card {
-  background: var(--white-pure);
-  padding: 52px 48px;
-  position: relative;
-  transition: background 0.3s;
-}
-.value-card:hover { background: var(--blue-wash); }
-.value-num {
-  font-family: var(--serif);
-  font-size: 3.5rem;
-  font-weight: 300;
-  color: var(--blue-mid);
-  opacity: 0.5;
-  line-height: 1;
-  margin-bottom: 20px;
-  letter-spacing: -0.04em;
-}
-.value-tag {
-  display: inline-block;
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.15em;
-  color: var(--blue-bright);
-  background: var(--blue-pale);
-  padding: 4px 12px;
-  border-radius: 100px;
-  margin-bottom: 16px;
-  text-transform: uppercase;
-}
-.value-title {
-  font-family: var(--serif);
-  font-size: 1.375rem;
-  font-weight: 600;
-  color: var(--ink);
-  margin-bottom: 16px;
-  line-height: 1.4;
-  letter-spacing: 0.04em;
-}
-.value-desc {
-  font-size: 0.9375rem;
-  color: var(--text-mid);
-  line-height: 1.75;
-}
-
-/* ===== SECTION: HOW IT WORKS ===== */
-.section-how {
-  background: linear-gradient(160deg, var(--ink-mid) 0%, var(--ink-light) 100%);
-  padding: 140px 0;
-  overflow: hidden;
-}
-.how-header { margin-bottom: 80px; }
-.how-header .section-title { color: var(--white); }
-.how-header .section-body { color: rgba(255,255,255,0.7); }
-
-.how-steps {
-  display: flex;
-  gap: 0;
-  position: relative;
-}
-.how-steps::before {
-  content: '';
-  position: absolute;
-  top: 48px;
-  left: 0; right: 0;
-  height: 1px;
-  background: linear-gradient(to right, transparent, rgba(91,132,196,0.25) 15%, rgba(91,132,196,0.25) 85%, transparent);
-}
-.how-step {
-  flex: 1;
-  padding: 0 32px;
-  position: relative;
-}
-.how-step-dot {
-  width: 96px;
-  height: 96px;
-  border-radius: 50%;
-  background: rgba(91,132,196,0.08);
-  border: 1px solid rgba(91,132,196,0.25);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 32px;
-  position: relative;
-  z-index: 1;
-  transition: border-color 0.3s, background 0.3s;
-}
-.how-step:hover .how-step-dot {
-  background: rgba(91,132,196,0.15);
-  border-color: var(--gold);
-}
-.how-step-icon {
-  font-family: var(--serif);
-  font-size: 2rem;
-  color: var(--gold);
-}
-.how-step-phase {
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  color: var(--gold);
-  text-transform: uppercase;
-  margin-bottom: 12px;
-}
-.how-step-title {
-  font-family: var(--serif);
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--white);
-  margin-bottom: 16px;
-  line-height: 1.4;
-  letter-spacing: 0.04em;
-}
-.how-step-desc {
-  font-size: 0.875rem;
-  color: rgba(255,255,255,0.7);
-  line-height: 1.75;
-}
-.how-step-period {
-  margin-top: 20px;
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.55);
-  letter-spacing: 0.1em;
-  border-top: 1px solid rgba(255,255,255,0.06);
-  padding-top: 16px;
-}
-
-/* ===== AI vs HUMAN ===== */
-.section-hybrid {
-  background: var(--blue-pale);
-  padding: 140px 0;
-}
-.hybrid-grid {
-  display: grid;
-  grid-template-columns: 1fr 80px 1fr;
-  gap: 0;
-  align-items: start;
-}
-.hybrid-divider {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 40px;
-  gap: 16px;
-}
-.hybrid-divider-line {
-  width: 1px;
-  flex: 1;
-  background: var(--border);
-}
-.hybrid-divider-plus {
-  font-family: var(--serif);
-  font-size: 1.25rem;
-  color: var(--gold);
-  font-weight: 300;
-}
-.hybrid-col {
-  background: var(--white-pure);
-  border-radius: var(--r-lg);
-  padding: 48px;
-  border: 1px solid var(--border);
-}
-.hybrid-col-title {
-  font-family: var(--serif);
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: var(--ink);
-  margin-bottom: 8px;
-  letter-spacing: 0.04em;
-}
-.hybrid-col-sub {
-  font-size: 0.8125rem;
-  color: var(--text-light);
-  margin-bottom: 32px;
-  letter-spacing: 0.04em;
-}
-.hybrid-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  padding: 14px 0;
-  border-bottom: 1px solid var(--border);
-}
-.hybrid-item:last-child { border-bottom: none; }
-.hybrid-item-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--gold);
-  margin-top: 8px;
-  flex-shrink: 0;
-}
-.hybrid-item-text {
-  font-size: 0.9375rem;
-  color: var(--text-mid);
-  line-height: 1.6;
-}
-
-/* ===== PRICING ===== */
-.section-pricing {
-  background: var(--white-pure);
-  padding: 140px 0;
-}
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
-.pricing-card {
-  border: 1px solid var(--border);
-  border-radius: var(--r-lg);
-  padding: 44px 36px;
-  position: relative;
-  transition: border-color 0.3s, box-shadow 0.3s, transform 0.2s;
-  background: var(--white);
-}
-.pricing-card:hover {
-  border-color: var(--gold);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.08);
-  transform: translateY(-4px);
-}
-.pricing-card.featured {
-  border-color: var(--gold);
-  background: var(--ink);
-}
-.pricing-featured-badge {
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--gold);
-  color: var(--ink);
-  font-size: 0.6875rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  padding: 5px 16px;
-  border-radius: 100px;
-  white-space: nowrap;
-}
-.pricing-plan {
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  color: var(--gold);
-  text-transform: uppercase;
-  margin-bottom: 12px;
-}
-.pricing-name {
-  font-family: var(--serif);
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--ink);
-  margin-bottom: 24px;
-  letter-spacing: 0.04em;
-}
-.pricing-card.featured .pricing-name { color: var(--white); }
-.pricing-price {
-  display: flex;
-  align-items: baseline;
-  gap: 4px;
-  margin-bottom: 8px;
-}
-.pricing-price-num {
-  font-family: var(--serif);
-  font-size: 2.75rem;
-  font-weight: 600;
-  color: var(--ink);
-  line-height: 1;
-  letter-spacing: -0.02em;
-}
-.pricing-card.featured .pricing-price-num { color: var(--gold); }
-.pricing-price-unit {
-  font-size: 0.875rem;
-  color: var(--text-light);
-}
-.pricing-card.featured .pricing-price-unit { color: rgba(255,255,255,0.62); }
-.pricing-note {
-  font-size: 0.8125rem;
-  color: var(--text-light);
-  margin-bottom: 32px;
-  padding-bottom: 32px;
-  border-bottom: 1px solid var(--border);
-}
-.pricing-card.featured .pricing-note {
-  color: rgba(255,255,255,0.6);
-  border-color: rgba(255,255,255,0.1);
-}
-.pricing-features { list-style: none; display: flex; flex-direction: column; gap: 14px; }
-.pricing-feature {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  font-size: 0.9rem;
-  color: var(--text-mid);
-  line-height: 1.5;
-}
-.pricing-card.featured .pricing-feature { color: rgba(255,255,255,0.7); }
-.pricing-check {
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: var(--gold-pale);
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 1px;
-}
-.pricing-card.featured .pricing-check { background: rgba(255,255,255,0.1); }
-.pricing-check::after {
-  content: '✓';
-  font-size: 0.6875rem;
-  color: var(--gold);
-  font-weight: 700;
-}
-.pricing-btn {
-  display: block;
-  text-align: center;
-  margin-top: 36px;
-  padding: 14px;
-  border-radius: var(--r-sm);
-  font-weight: 700;
-  font-size: 0.9375rem;
-  letter-spacing: 0.06em;
-  transition: all 0.2s;
-  cursor: pointer;
-  border: none;
-}
-.pricing-btn-ghost {
-  border: 1.5px solid var(--border);
-  color: var(--text-mid);
-  background: transparent;
-}
-.pricing-btn-ghost:hover {
-  border-color: var(--gold);
-  color: var(--gold);
-}
-.pricing-btn-primary {
-  background: var(--gold);
-  color: var(--ink);
-}
-.pricing-btn-primary:hover {
-  background: var(--gold-light);
-  transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-}
-
-/* ===== CONSULTANT SECTION ===== */
-.section-consultant {
-  background: var(--blue-wash);
-  padding: 140px 0;
-}
-.consultant-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-.consultant-income {
-  background: linear-gradient(135deg, var(--ink-mid) 0%, var(--ink-light) 100%);
-  border-radius: var(--r-lg);
-  padding: 48px;
-  position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(91,132,196,0.2);
-}
-.consultant-income::before {
-  content: '¥';
-  position: absolute;
-  font-family: var(--serif);
-  font-size: 20rem;
-  font-weight: 700;
-  color: rgba(91,132,196,0.04);
-  right: -40px;
-  bottom: -40px;
-  line-height: 1;
-}
-.income-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  padding: 16px 0;
-  border-bottom: 1px solid rgba(91,132,196,0.12);
-}
-.income-row:last-child { border-bottom: none; }
-.income-label {
-  font-size: 0.875rem;
-  color: rgba(255,255,255,0.7);
-}
-.income-value {
-  font-family: var(--serif);
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: var(--blue-light);
-  letter-spacing: -0.01em;
-}
-.income-value.highlight {
-  font-size: 2rem;
-  color: var(--gold);
-}
-.income-title {
-  font-family: var(--serif);
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--white);
-  margin-bottom: 24px;
-  letter-spacing: 0.04em;
-  padding-bottom: 16px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-/* ===== COMPANY ===== */
-.section-company {
-  background: linear-gradient(160deg, var(--ink-light) 0%, var(--ink-mid) 100%);
-  padding: 120px 0;
-}
-.company-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-.company-info { display: flex; flex-direction: column; gap: 0; }
-.company-row {
-  display: flex;
-  gap: 32px;
-  padding: 20px 0;
-  border-bottom: 1px solid rgba(91,132,196,0.12);
-  font-size: 0.9375rem;
-}
-.company-row:first-child { border-top: 1px solid rgba(91,132,196,0.12); }
-.company-key {
-  width: 120px;
-  flex-shrink: 0;
-  color: rgba(255,255,255,0.62);
-  font-size: 0.875rem;
-  letter-spacing: 0.06em;
-}
-.company-val { color: rgba(255,255,255,0.75); }
-
-/* ===== CTA SECTION ===== */
-.section-cta {
-  background: linear-gradient(135deg, var(--ink-light) 0%, var(--ink) 60%);
-  padding: 140px 0;
-  position: relative;
-  overflow: hidden;
-}
-.section-cta::before {
-  content: 'Tsugu';
-  position: absolute;
-  font-family: var(--serif);
-  font-size: 28vw;
-  font-weight: 700;
-  color: rgba(255,255,255,0.02);
-  bottom: -5%;
-  right: -5%;
-  line-height: 1;
-  user-select: none;
-}
-.cta-inner { text-align: center; position: relative; z-index: 1; }
-.cta-title {
-  font-family: var(--serif);
-  font-size: clamp(1.75rem, 3vw, 3rem);
-  font-weight: 400;
-  color: var(--white);
-  line-height: 1.5;
-  letter-spacing: 0.06em;
-  margin-bottom: 24px;
-}
-.cta-sub {
-  font-size: 1.0625rem;
-  color: rgba(255,255,255,0.7);
-  line-height: 1.8;
-  margin-bottom: 56px;
-  max-width: 520px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.cta-buttons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-.btn-cta-outline {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  border: 1.5px solid rgba(255,255,255,0.25);
-  color: rgba(255,255,255,0.7);
-  padding: 18px 40px;
-  border-radius: var(--r-sm);
-  font-weight: 500;
-  font-size: 1rem;
-  letter-spacing: 0.06em;
-  transition: all 0.2s;
-}
-.btn-cta-outline:hover {
-  border-color: var(--gold);
-  color: var(--gold);
-}
-
-/* ===== FOOTER ===== */
-footer {
-  background: var(--ink);
-  border-top: 1px solid rgba(91,132,196,0.15);
-  padding: 60px 0 40px;
-}
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 48px;
-  margin-bottom: 48px;
-}
-.footer-brand {}
-.footer-logo {
-  font-family: var(--serif);
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--white);
-  margin-bottom: 12px;
-  letter-spacing: 0.06em;
-}
-.footer-logo span { color: var(--gold); }
-.footer-tagline {
-  font-size: 0.8125rem;
-  color: rgba(255,255,255,0.55);
-  letter-spacing: 0.08em;
-  font-family: var(--serif);
-}
-.footer-links {
-  display: flex;
-  gap: 32px;
-  list-style: none;
-}
-.footer-links a {
-  font-size: 0.875rem;
-  color: rgba(255,255,255,0.62);
-  transition: color 0.2s;
-  letter-spacing: 0.04em;
-}
-.footer-links a:hover { color: var(--gold-light); }
-.footer-bottom {
-  border-top: 1px solid rgba(255,255,255,0.05);
-  padding-top: 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.footer-copy {
-  font-size: 0.75rem;
-  color: rgba(255,255,255,0.45);
-  letter-spacing: 0.06em;
-}
-
-/* ===== RESPONSIVE ===== */
-@media (max-width: 900px) {
-  .container, .container--narrow { padding: 0 20px; max-width: 100%; }
-  nav { padding: 16px 20px; }
-  .nav-links { display: none; }
-  .hero-inner { padding: 120px 20px 80px; }
-  .crisis-inner,
-  .consultant-inner,
-  .company-grid { grid-template-columns: 1fr; gap: 40px; }
-  .values-grid { grid-template-columns: 1fr; }
-  .how-steps { flex-direction: column; gap: 40px; }
-  .how-steps::before { display: none; }
-  .hybrid-grid { grid-template-columns: 1fr; }
-  .hybrid-divider { display: none; }
-  .pricing-grid { grid-template-columns: 1fr !important; max-width: 480px; margin: 0 auto; }
-  .client-fee-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
-  .hero-stats { position: static; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 60px; }
-  .hero-stat { text-align: left; }
-  .hero-scroll { display: none; }
-  .footer-inner { flex-direction: column; }
-  .footer-links { flex-wrap: wrap; gap: 20px; }
-  .hero-actions { flex-direction: column; align-items: flex-start; gap: 16px; }
-  .section-crisis, .section-service, .section-pricing,
-  .section-consultant, .section-company, .section-cta { padding: 80px 0; }
-  .pricing-price-num { font-size: 2.25rem; }
-  .contact-form-wrap { padding: 28px 16px; }
-}
-
-@media (max-width: 480px) {
-  html, body { overflow-x: hidden; max-width: 100%; }
-  .container, .container--narrow { padding: 0 16px; }
-  nav { padding: 14px 16px; }
-  .hero-inner { padding: 100px 16px 60px; }
-  .hero-stats { grid-template-columns: 1fr; gap: 12px; }
-  .value-card { padding: 36px 24px; }
-  .consultant-income { padding: 32px 24px; }
-  .hero-meaning-item { font-size: 0.75rem; padding: 5px 12px; }
-}
-
-
-/* ===== PARTNER FUNNEL ===== */
-.pn-hook { max-width: 1000px; margin: 0 auto 72px; text-align: center; }
-.pn-hook .section-title { margin: 16px auto 40px; }
-.pn-hook-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; text-align: left; }
-.pn-hook-item {
-  background: var(--white-pure);
-  border: 1px solid var(--border);
-  border-left: 3px solid var(--gold);
-  border-radius: var(--r-md);
-  padding: 22px 24px;
-  font-size: 0.9375rem;
-  color: var(--text-mid);
-  line-height: 1.75;
-}
-.pn-hook-item strong { color: var(--text-main); font-weight: 700; }
-.pn-hook-lead {
-  margin-top: 36px;
-  font-family: var(--serif);
-  font-size: clamp(1.125rem, 2vw, 1.375rem);
-  color: var(--text-main);
-  line-height: 1.9;
-}
-.pn-hook-lead em { font-style: normal; color: var(--blue-bright); border-bottom: 2px solid var(--gold); }
-
-.pn-flow { max-width: 1000px; margin: 88px auto 0; }
-.pn-flow-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-top: 32px; }
-.pn-flow-step {
-  background: var(--white-pure);
-  border: 1px solid var(--border);
-  border-radius: var(--r-md);
-  padding: 28px 24px;
-  position: relative;
-}
-.pn-flow-num {
-  font-family: var(--serif);
-  font-size: 2rem;
-  font-weight: 700;
-  color: var(--gold);
-  line-height: 1;
-  margin-bottom: 14px;
-}
-.pn-flow-title { font-weight: 700; font-size: 1rem; color: var(--text-main); margin-bottom: 8px; }
-.pn-flow-desc { font-size: 0.875rem; color: var(--text-mid); line-height: 1.7; }
-
-.pn-faq { max-width: 800px; margin: 88px auto 0; }
-.pn-faq-item {
-  background: var(--white-pure);
-  border: 1px solid var(--border);
-  border-radius: var(--r-md);
-  margin-bottom: 12px;
-  overflow: hidden;
-}
-.pn-faq-item summary {
-  list-style: none;
-  cursor: pointer;
-  padding: 20px 52px 20px 24px;
-  font-weight: 700;
-  font-size: 0.9375rem;
-  color: var(--text-main);
-  position: relative;
-  line-height: 1.6;
-}
-.pn-faq-item summary::-webkit-details-marker { display: none; }
-.pn-faq-item summary::before { content: 'Q'; font-family: var(--serif); color: var(--gold); font-weight: 700; margin-right: 12px; }
-.pn-faq-item summary::after {
-  content: '＋';
-  position: absolute;
-  right: 20px; top: 50%;
-  transform: translateY(-50%);
-  color: var(--blue-bright);
-  font-size: 1rem;
-  transition: transform 0.25s;
-}
-.pn-faq-item[open] summary::after { content: '－'; }
-.pn-faq-item summary:hover { background: var(--blue-wash); }
-.pn-faq-a {
-  padding: 0 24px 22px 24px;
-  font-size: 0.9375rem;
-  color: var(--text-mid);
-  line-height: 1.85;
-}
-.pn-cta-band {
-  margin-top: 56px;
-  text-align: center;
-  background: linear-gradient(160deg, var(--ink) 0%, var(--ink-mid) 100%);
-  border: 1px solid rgba(195,155,63,0.35);
-  border-radius: var(--r-lg);
-  padding: 48px 32px;
-}
-.pn-cta-band p.serif { font-size: clamp(1.25rem, 2.2vw, 1.625rem); color: var(--white); line-height: 1.8; margin-bottom: 24px; }
-.pn-cta-band .pn-cta-sub { font-size: 0.875rem; color: rgba(255,255,255,0.7); margin-top: 14px; }
-@media (max-width: 768px) {
-  .pn-hook-grid { grid-template-columns: 1fr; }
-  .pn-flow-grid { grid-template-columns: 1fr; }
-}
-
-/* ===== QUALITY FLOOR ===== */
-/* 固定ナビ分のアンカーオフセット */
-section[id] { scroll-margin-top: 84px; }
-.sp-only { display: none; }
-@media (max-width: 768px) { .sp-only { display: inline; } }
-/* キーボード操作時のフォーカス可視化 */
-a:focus-visible, button:focus-visible, .form-input:focus-visible {
-  outline: 2px solid var(--gold);
-  outline-offset: 3px;
-  border-radius: var(--r-sm);
-}
-/* モーション低減設定の尊重 */
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .reveal { opacity: 1; transform: none; transition: none; }
-  .hero-scroll-line, .nav-toggle-bar { animation: none !important; transition: none !important; }
-  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
-}
-/* ===== MISSION ===== */
-.section-mission {
-  background: linear-gradient(165deg, var(--ink) 0%, var(--ink-mid) 55%, var(--ink-light) 100%);
-  padding: 120px 0 128px;
-  position: relative;
-  overflow: hidden;
-}
-.section-mission::before {
-  content: '継';
-  position: absolute;
-  font-family: var(--serif);
-  font-size: 46vw;
-  font-weight: 700;
-  color: rgba(255,255,255,0.02);
-  bottom: -18%;
-  right: -6%;
-  line-height: 1;
-  pointer-events: none;
-  user-select: none;
-}
-.mission-inner { max-width: 1080px; margin: 0 auto; padding: 0 32px; position: relative; z-index: 1; }
-.mission-eyebrow {
-  display: inline-flex; align-items: center; gap: 12px;
-  font-size: 0.8125rem; letter-spacing: 0.28em; font-weight: 700;
-  color: var(--gold-light); margin-bottom: 28px;
-}
-.mission-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--gold); }
-.mission-lead {
-  font-family: var(--serif);
-  font-size: clamp(1.5rem, 3.4vw, 2.375rem);
-  font-weight: 600;
-  line-height: 1.7;
-  color: var(--white);
-  letter-spacing: 0.02em;
-  margin-bottom: 16px;
-}
-.mission-lead .mission-hl {
-  background: linear-gradient(transparent 62%, rgba(195,155,63,0.32) 62%);
-  padding: 0 2px;
-}
-.mission-sub {
-  font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
-  color: rgba(255,255,255,0.72);
-  line-height: 1.9;
-  margin-bottom: 64px;
-  max-width: 760px;
-}
-.mission-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-.mission-card {
-  background: rgba(255,255,255,0.045);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-top: 2px solid var(--gold);
-  border-radius: var(--r-lg);
-  padding: 40px 36px;
-  position: relative;
-}
-.mission-card-num {
-  font-family: var(--serif);
-  font-size: 0.875rem;
-  letter-spacing: 0.2em;
-  color: var(--gold-light);
-  font-weight: 700;
-  margin-bottom: 18px;
-}
-.mission-card-title {
-  font-family: var(--serif);
-  font-size: clamp(1.25rem, 2vw, 1.5rem);
-  font-weight: 600;
-  color: var(--white);
-  line-height: 1.6;
-  margin-bottom: 16px;
-}
-.mission-card-title .mission-accent { color: var(--gold-light); }
-.mission-card-desc {
-  font-size: 0.9375rem;
-  color: rgba(255,255,255,0.7);
-  line-height: 1.85;
-}
-.mission-close {
-  margin-top: 56px;
-  text-align: center;
-  font-family: var(--serif);
-  font-size: clamp(1.0625rem, 1.8vw, 1.25rem);
-  color: var(--white);
-  line-height: 1.9;
-  letter-spacing: 0.03em;
-}
-.mission-close em {
-  font-style: normal;
-  border-bottom: 2px solid var(--gold);
-  padding-bottom: 2px;
-}
-@media (max-width: 768px) {
-  .section-mission { padding: 88px 0 92px; }
-  .mission-grid { grid-template-columns: 1fr; }
-  .mission-sub { margin-bottom: 44px; }
-  .mission-card { padding: 32px 26px; }
-}
-
-</style>
-<style>
-html, body { max-width: 100%; overflow-x: hidden; }
-
-/* ハンバーガーメニューボタン */
-.nav-toggle {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 8px;
-  flex-direction: column;
-  gap: 5px;
-  width: 40px;
-  height: 40px;
-  justify-content: center;
-  align-items: center;
-  z-index: 102;
-  position: relative;
-}
-.nav-toggle-bar {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background: var(--white);
-  transition: transform 0.3s, opacity 0.3s;
-  border-radius: 2px;
-}
-.nav-toggle.is-open .nav-toggle-bar:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-}
-.nav-toggle.is-open .nav-toggle-bar:nth-child(2) {
-  opacity: 0;
-}
-.nav-toggle.is-open .nav-toggle-bar:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
-}
-
-/* モバイルメニュー本体 */
-.mobile-menu {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  max-width: 320px;
-  height: 100vh;
-  background: rgba(14,27,51,0.98);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  z-index: 201;
-  padding: 90px 32px 32px;
-  transform: translateX(100%);
-  transition: transform 0.3s ease;
-  box-shadow: -4px 0 24px rgba(0,0,0,0.3);
-}
-.mobile-menu.is-open {
-  transform: translateX(0);
-}
-
-/* メニュー内の×閉じるボタン */
-.mobile-menu-close {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 44px;
-  height: 44px;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.2s;
-}
-.mobile-menu-close:hover {
-  background: rgba(255,255,255,0.15);
-}
-.mobile-menu-close-bar {
-  position: absolute;
-  display: block;
-  width: 18px;
-  height: 2px;
-  background: var(--white);
-  border-radius: 2px;
-}
-.mobile-menu-close-bar:nth-child(1) { transform: rotate(45deg); }
-.mobile-menu-close-bar:nth-child(2) { transform: rotate(-45deg); }
-
-/* オーバーレイ（メニュー外側） */
-.mobile-menu-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background: rgba(0,0,0,0.5);
-  z-index: 200;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
-.mobile-menu-overlay.is-open {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.mobile-menu-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-.mobile-menu-link {
-  display: block;
-  padding: 16px 20px;
-  color: rgba(255,255,255,0.85);
-  text-decoration: none;
-  font-size: 1rem;
-  font-weight: 500;
-  border-radius: 10px;
-  transition: background 0.2s, color 0.2s;
-}
-.mobile-menu-link:hover {
-  background: rgba(255,255,255,0.06);
-  color: var(--white);
-}
-.mobile-menu-cta {
-  margin-top: 12px;
-  background: var(--gold);
-  color: var(--ink) !important;
-  text-align: center;
-  font-weight: 700 !important;
-}
-.mobile-menu-cta:hover {
-  background: var(--gold-light);
-}
-
-/* 900px以下でハンバーガーボタンを表示 */
-@media (max-width: 900px) {
-  .nav-toggle {
-    display: flex;
-  }
-}
-
-/* メニュー開いている時のbodyスクロールロック */
-body.menu-open {
-  overflow: hidden;
-}
-</style>
-<style>
-/* =====================================================
-   TSUGU STORY LP — 「継」= 糸を、結び直す。
-   配色は Tsugu 本体アプリのコーポレートカラーに準拠
-   紺 #0E1B33 / ネイビー #1E3A66 / ブルー #2C5DA8
-   スカイ #5B84C4 / ゴールド #C39B3F
-   ===================================================== */
-
-:root {
-  --ink: #0E1B33;            /* 紺（コーポレート deep） */
-  --ink-mid: #16294A;
-  --ink-light: #1E3A66;      /* ネイビー */
-  --blue-bright: #2C5DA8;    /* ブルー */
-  --blue-mid: #4674BC;
-  --blue-light: #5B84C4;     /* スカイ */
-  --blue-pale: #E2E7EF;
-  --blue-wash: #F5F7FA;
-  --gold: #C39B3F;           /* ゴールド */
-  --gold-light: #D9B863;
-  --gold-pale: #F7F1E1;
-  --white: #F5F7FA;
-  --white-pure: #FFFFFF;
-  --text-main: #18202E;
-  --text-mid: #3D4A5F;
-  --text-light: #5A6981;
-  --thread: #2C5DA8;         /* 糸：藍 */
-  --thread-soft: #5B84C4;
-  --serif: 'Shippori Mincho B1', 'Noto Serif JP', serif;
-  --border: #E2E7EF;
-  --surface: #F8F9FC;
-}
-body { background: var(--white); }
-body::before {
-  background: linear-gradient(90deg, var(--ink) 0%, var(--blue-bright) 50%, var(--gold) 100%);
-}
-
-/* 明セクションの地色 */
-.st-light {
-  background-color: var(--blue-wash);
-  background-image:
-    radial-gradient(ellipse 800px 400px at 20% 0%, rgba(44,93,168,0.06), transparent 60%),
-    radial-gradient(ellipse 700px 500px at 90% 100%, rgba(195,155,63,0.07), transparent 60%);
-}
-
-/* ===== 糸ナビ（画面左固定・スクロール進捗） ===== */
-.st-thread {
-  position: fixed;
-  left: 28px;
-  top: 50%;
-  transform: translateY(-50%);
-  z-index: 90;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
-}
-.st-thread-line {
-  position: relative;
-  width: 1px;
-  height: 200px;
-  background: rgba(24,32,46,0.18);
-  overflow: hidden;
-}
-.st-hero-on .st-thread-line { background: rgba(255,255,255,0.18); }
-.st-thread-line span {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 0%;
-  background: linear-gradient(to bottom, var(--thread-soft), var(--gold));
-}
-.st-knots { list-style: none; display: flex; flex-direction: column; gap: 12px; margin: 0; padding: 0; }
-.st-knots a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 26px; height: 26px;
-  border-radius: 50%;
-  font-family: var(--serif);
-  font-size: 0.6875rem;
-  color: var(--text-light);
-  border: 1px solid transparent;
-  transition: all 0.25s;
-}
-.st-hero-on .st-knots a { color: rgba(255,255,255,0.55); }
-.st-knots a.is-active {
-  color: var(--blue-bright);
-  border-color: var(--blue-bright);
-  background: rgba(44,93,168,0.07);
-}
-.st-hero-on .st-knots a.is-active { color: var(--gold); border-color: var(--gold); background: rgba(195,155,63,0.12); }
-@media (max-width: 1180px) { .st-thread { display: none; } }
-
-/* ===== HERO（序） ===== */
-.st-hero {
-  min-height: 100vh;
-  position: relative;
-  display: flex;
-  align-items: stretch;
-  overflow: hidden;
-  background:
-    radial-gradient(ellipse 60vw 60vw at 85% 15%, rgba(91,132,196,0.20), transparent 65%),
-    radial-gradient(ellipse 50vw 50vw at 8% 90%, rgba(195,155,63,0.12), transparent 65%),
-    linear-gradient(155deg, #0A1428 0%, var(--ink) 45%, #1E3A66 100%);
-}
-.st-hero-kanji {
-  position: absolute;
-  font-family: var(--serif);
-  font-weight: 800;
-  font-size: 58vh;
-  line-height: 1;
-  color: transparent;
-  -webkit-text-stroke: 1px rgba(255,255,255,0.06);
-  right: 22%;
-  top: 50%;
-  transform: translateY(-50%);
-  user-select: none;
-  pointer-events: none;
-}
-.st-hero-thread {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-}
-.st-hero-thread path {
-  fill: none;
-  stroke: var(--thread-soft);
-  stroke-width: 1.6;
-  opacity: 0.55;
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-  animation: stDraw 3.2s cubic-bezier(0.4,0,0.2,1) 0.6s forwards;
-}
-.st-hero-thread path.st-gold { stroke: var(--gold); opacity: 0.42; animation-delay: 1.1s; }
-@keyframes stDraw { to { stroke-dashoffset: 0; } }
-
-.st-hero-inner {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 140px 48px 90px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 48px;
-}
-/* 縦書きタイトル */
-.st-hero-title {
-  writing-mode: vertical-rl;
-  font-family: var(--serif);
-  font-weight: 600;
-  font-size: clamp(2rem, 3vw, 2.875rem);
-  color: var(--white-pure);
-  letter-spacing: 0.16em;
-  line-height: 2.0;
-  height: min(74vh, 660px);
-  margin: 0;
-  opacity: 0;
-  animation: fadeUp 1.2s cubic-bezier(0.16,1,0.3,1) 0.3s forwards;
-  flex-shrink: 0;
-}
-.st-hero-title span { display: block; }
-.st-hero-title .st-bouten {
-  font-style: normal;
-  text-emphasis: filled sesame var(--gold);
-  -webkit-text-emphasis: filled sesame var(--gold);
-}
-.st-hero-left { max-width: 560px; }
-.st-hero-eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 0.8125rem;
-  font-weight: 500;
-  letter-spacing: 0.24em;
-  color: var(--gold-light);
-  margin-bottom: 32px;
-  opacity: 0;
-  animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 0.6s forwards;
-}
-.st-hero-eyebrow::before { content: ''; width: 36px; height: 1px; background: var(--gold); }
-.st-hero-copy {
-  font-family: var(--serif);
-  font-size: clamp(1rem, 1.6vw, 1.1875rem);
-  color: rgba(255,255,255,0.87);
-  line-height: 2.3;
-  letter-spacing: 0.06em;
-  margin-bottom: 28px;
-  opacity: 0;
-  animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 0.8s forwards;
-}
-.st-hero-copy em {
-  font-style: normal;
-  color: var(--gold-light);
-}
-.st-hero-brand {
-  font-size: 0.8125rem;
-  color: rgba(255,255,255,0.58);
-  letter-spacing: 0.1em;
-  margin-bottom: 40px;
-  opacity: 0;
-  animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) 0.95s forwards;
-}
-.st-hero-left .hero-meaning { margin-bottom: 44px; animation-delay: 1.1s; }
-.st-hero-left .hero-actions { animation-delay: 1.25s; }
-
-.st-stats {
-  position: absolute;
-  bottom: 40px;
-  left: 0; right: 0;
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-  gap: 0;
-  opacity: 0;
-  animation: fadeIn 1.2s 1.6s forwards;
-}
-.st-stat {
-  padding: 0 44px;
-  text-align: center;
-  border-left: 1px solid rgba(255,255,255,0.12);
-}
-.st-stat:first-child { border-left: none; }
-.st-stat-num {
-  font-family: var(--serif);
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--gold);
-  line-height: 1;
-  display: block;
-}
-.st-stat-num small { font-size: 1rem; margin-left: 2px; }
-.st-stat-label {
-  display: block;
-  font-size: 0.71875rem;
-  color: rgba(255,255,255,0.58);
-  letter-spacing: 0.12em;
-  margin-top: 8px;
-}
-
-/* ===== 章立て共通 ===== */
-.st-chapter {
-  position: relative;
-  overflow: hidden;
-  padding: 130px 0 120px;
-}
-.st-chapter::before {
-  content: attr(data-kanji);
-  position: absolute;
-  font-family: var(--serif);
-  font-weight: 800;
-  font-size: 44vw;
-  line-height: 1;
-  right: -6%;
-  bottom: -14%;
-  color: rgba(30,58,102,0.035);
-  pointer-events: none;
-  user-select: none;
-}
-.st-dark { background: linear-gradient(165deg, #0A1428 0%, var(--ink) 50%, #16294A 100%); }
-.st-dark::before { color: rgba(255,255,255,0.025); }
-
-.st-ch-head {
-  display: flex;
-  align-items: flex-start;
-  gap: 36px;
-  margin-bottom: 72px;
-}
-.st-ch-num {
-  writing-mode: vertical-rl;
-  font-family: var(--serif);
-  font-size: 0.9375rem;
-  font-weight: 600;
-  letter-spacing: 0.5em;
-  color: var(--blue-bright);
-  padding-top: 6px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-shrink: 0;
-}
-.st-ch-num::after {
-  content: '';
-  display: block;
-  width: 1px;
-  height: 56px;
-  background: linear-gradient(to bottom, var(--blue-bright), transparent);
-  margin: 16px auto 0;
-}
-.st-dark .st-ch-num { color: var(--gold-light); }
-.st-dark .st-ch-num::after { background: linear-gradient(to bottom, var(--gold), transparent); }
-.st-ch-titles { padding-top: 2px; }
-.st-ch-title {
-  font-family: var(--serif);
-  font-size: clamp(1.75rem, 3.4vw, 2.875rem);
-  font-weight: 600;
-  color: var(--text-main);
-  letter-spacing: 0.06em;
-  line-height: 1.45;
-  margin: 0 0 14px;
-}
-.st-dark .st-ch-title { color: var(--white-pure); }
-.st-ch-sub {
-  font-size: 0.875rem;
-  letter-spacing: 0.16em;
-  color: var(--text-light);
-  margin: 0;
-}
-.st-dark .st-ch-sub { color: rgba(255,255,255,0.58); }
-
-/* ===== 第一章 物語（独白） ===== */
-.st-story-body {
-  max-width: 680px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-}
-.st-story-body p {
-  font-family: var(--serif);
-  font-size: clamp(1rem, 1.5vw, 1.1875rem);
-  color: rgba(255,255,255,0.87);
-  line-height: 2.5;
-  letter-spacing: 0.07em;
-  margin: 0 0 2.2em;
-}
-.st-story-body p:last-of-type { margin-bottom: 0; }
-.st-story-body .st-monologue {
-  font-size: clamp(1.25rem, 2.2vw, 1.625rem);
-  color: var(--white-pure);
-  font-weight: 600;
-}
-.st-story-body em {
-  font-style: normal;
-  color: var(--gold-light);
-  text-emphasis: filled sesame var(--gold);
-  -webkit-text-emphasis: filled sesame var(--gold);
-}
-.st-sign {
-  margin-top: 56px !important;
-  text-align: right;
-  font-size: 0.875rem !important;
-  color: rgba(255,255,255,0.58) !important;
-  letter-spacing: 0.14em !important;
-  line-height: 1.8 !important;
-}
-.st-sign::before {
-  content: '';
-  display: inline-block;
-  width: 48px;
-  height: 1px;
-  background: var(--gold);
-  vertical-align: middle;
-  margin-right: 16px;
-}
-
-/* ===== 第二章 ふたつの問題 ===== */
-.st-lead {
-  font-family: var(--serif);
-  font-size: clamp(1.125rem, 2vw, 1.5rem);
-  color: var(--text-main);
-  letter-spacing: 0.08em;
-  line-height: 2.1;
-  margin: 0 0 64px;
-}
-.st-lead em {
-  font-style: normal;
-  text-emphasis: filled sesame var(--blue-bright);
-  -webkit-text-emphasis: filled sesame var(--blue-bright);
-}
-.st-problems {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px;
-  margin-bottom: 72px;
-}
-.st-problem {
-  background: var(--white-pure);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  padding: 48px 44px 44px;
-  position: relative;
-}
-.st-problem::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 3px;
-}
-.st-problem-sell::before { background: linear-gradient(to right, var(--gold), transparent); }
-.st-problem-buy::before { background: linear-gradient(to right, var(--blue-bright), transparent); }
-.st-problem-tag {
-  display: inline-block;
-  font-family: var(--serif);
-  font-size: 0.8125rem;
-  font-weight: 700;
-  letter-spacing: 0.3em;
-  margin-bottom: 20px;
-  padding-bottom: 6px;
-}
-.st-problem-sell .st-problem-tag { color: #9A7724; border-bottom: 1px solid rgba(195,155,63,0.5); }
-.st-problem-buy .st-problem-tag { color: var(--blue-bright); border-bottom: 1px solid rgba(44,93,168,0.4); }
-.st-problem-title {
-  font-family: var(--serif);
-  font-size: clamp(1.25rem, 1.9vw, 1.5rem);
-  font-weight: 600;
-  color: var(--text-main);
-  line-height: 1.6;
-  letter-spacing: 0.04em;
-  margin: 0 0 12px;
-}
-.st-problem-sub {
-  font-size: 0.8125rem;
-  color: var(--text-light);
-  letter-spacing: 0.1em;
-  margin: 0 0 28px;
-}
-.st-problem-list { list-style: none; margin: 0; padding: 0; }
-.st-problem-list li {
-  position: relative;
-  padding: 20px 0 20px 24px;
-  border-top: 1px dashed var(--border);
-}
-.st-problem-list li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 32px;
-  width: 7px; height: 7px;
-  border-radius: 50%;
-}
-.st-problem-sell .st-problem-list li::before { background: var(--gold); }
-.st-problem-buy .st-problem-list li::before { background: var(--blue-bright); }
-.st-pl-head {
-  font-family: var(--serif);
-  font-size: 1.0625rem;
-  font-weight: 600;
-  color: var(--text-main);
-  line-height: 1.75;
-  letter-spacing: 0.03em;
-  margin: 0 0 8px;
-}
-.st-pl-body {
-  font-size: 0.9375rem;
-  color: var(--text-mid);
-  line-height: 1.95;
-  margin: 0;
-}
-
-.st-crisis-stats {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-bottom: 72px;
-}
-.st-crisis-card {
-  background: var(--ink);
-  border-radius: 4px;
-  padding: 36px 32px 30px;
-  position: relative;
-  overflow: hidden;
-}
-.st-crisis-card::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0;
-  width: 3px; height: 100%;
-  background: linear-gradient(to bottom, var(--blue-light), var(--gold));
-}
-.st-crisis-num {
-  font-family: var(--serif);
-  font-size: 3.25rem;
-  font-weight: 600;
-  color: var(--gold);
-  line-height: 1;
-  display: block;
-  margin-bottom: 12px;
-  letter-spacing: -0.02em;
-}
-.st-crisis-num small { font-size: 1.375rem; margin-left: 2px; }
-.st-crisis-desc { font-size: 0.875rem; color: rgba(255,255,255,0.78); line-height: 1.7; margin: 0 0 10px; }
-.st-crisis-src { font-size: 0.71875rem; color: rgba(255,255,255,0.45); letter-spacing: 0.06em; margin: 0; }
-
-.st-conclusion {
-  text-align: center;
-  font-family: var(--serif);
-  font-size: clamp(1.25rem, 2.4vw, 1.75rem);
-  color: var(--text-main);
-  letter-spacing: 0.08em;
-  line-height: 2.1;
-  margin: 0;
-}
-.st-conclusion em {
-  font-style: normal;
-  font-weight: 700;
-  text-emphasis: filled sesame var(--blue-bright);
-  -webkit-text-emphasis: filled sesame var(--blue-bright);
-}
-
-/* ===== 第三章 結び直す ===== */
-.st-steps {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-bottom: 88px;
-}
-.st-step {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 4px;
-  padding: 44px 36px 40px;
-  position: relative;
-}
-.st-step::after {
-  content: '';
-  position: absolute;
-  top: 50%;
-  right: -24px;
-  width: 24px;
-  height: 1px;
-  background: linear-gradient(to right, var(--blue-light), var(--gold));
-  opacity: 0.6;
-}
-.st-step:last-child::after { display: none; }
-.st-step-num {
-  font-family: var(--serif);
-  font-size: 0.875rem;
-  font-weight: 700;
-  letter-spacing: 0.3em;
-  color: var(--blue-light);
-  display: block;
-  margin-bottom: 20px;
-}
-.st-step-title {
-  font-family: var(--serif);
-  font-size: 1.3125rem;
-  font-weight: 600;
-  color: var(--white-pure);
-  line-height: 1.6;
-  letter-spacing: 0.04em;
-  margin: 0 0 18px;
-}
-.st-step-title .st-gold-hl { color: var(--gold-light); }
-.st-step-desc {
-  font-size: 0.9375rem;
-  color: rgba(255,255,255,0.74);
-  line-height: 1.95;
-  margin: 0;
-}
-
-/* 結びのSVG（2本の糸が1本に） */
-.st-conv-wrap { max-width: 880px; margin: 0 auto; position: relative; z-index: 1; }
-.st-conv { width: 100%; height: auto; display: block; }
-.st-conv .st-path {
-  fill: none;
-  stroke-width: 2;
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-  transition: stroke-dashoffset 2.4s cubic-bezier(0.4,0,0.2,1);
-}
-.st-conv .st-p-sell { stroke: var(--gold); }
-.st-conv .st-p-buy { stroke: var(--blue-light); }
-.st-conv .st-p-join { stroke: url(#stJoinGrad); stroke-width: 2.6; transition-delay: 1.6s; }
-.st-conv.drawn .st-path { stroke-dashoffset: 0; }
-.st-conv-label { font-family: var(--sans); font-size: 13.5px; fill: rgba(255,255,255,0.78); letter-spacing: 0.08em; }
-.st-conv-knot-circle { fill: rgba(195,155,63,0.14); stroke: var(--gold); stroke-width: 1.5; }
-.st-conv-knot-kanji { font-family: var(--serif); font-size: 30px; font-weight: 700; fill: var(--gold); }
-.st-conv-close {
-  text-align: center;
-  font-family: var(--serif);
-  font-size: clamp(1.1875rem, 2.2vw, 1.625rem);
-  color: var(--white-pure);
-  letter-spacing: 0.1em;
-  line-height: 2.1;
-  margin: 40px 0 0;
-}
-.st-conv-close em {
-  font-style: normal;
-  color: var(--gold-light);
-  border-bottom: 1px solid var(--gold);
-  padding-bottom: 3px;
-}
-
-/* ===== 分岐（あなたの物語へ） ===== */
-.st-branch-head {
-  text-align: center;
-  margin-bottom: 56px;
-}
-.st-branch-head .st-ch-title { color: var(--white-pure); margin-bottom: 16px; }
-.st-branch-head p {
-  font-size: 0.9375rem;
-  color: rgba(255,255,255,0.68);
-  letter-spacing: 0.08em;
-  margin: 0;
-}
-
-/* ===== 終章 誓い ===== */
-.st-vow {
-  position: relative;
-  padding: 120px 0;
-  text-align: center;
-  overflow: hidden;
-}
-.st-vow::before {
-  content: '結';
-  position: absolute;
-  font-family: var(--serif);
-  font-weight: 800;
-  font-size: 34vw;
-  line-height: 1;
-  color: rgba(30,58,102,0.035);
-  top: 50%; left: 50%;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  user-select: none;
-}
-.st-vow-label {
-  font-family: var(--serif);
-  font-size: 0.875rem;
-  font-weight: 600;
-  letter-spacing: 0.5em;
-  color: var(--blue-bright);
-  display: block;
-  margin-bottom: 36px;
-}
-.st-vow-text {
-  position: relative;
-  z-index: 1;
-  font-family: var(--serif);
-  font-size: clamp(1.3125rem, 2.6vw, 2rem);
-  color: var(--text-main);
-  letter-spacing: 0.1em;
-  line-height: 2.2;
-  margin: 0 0 32px;
-}
-.st-vow-text em {
-  font-style: normal;
-  font-weight: 700;
-  background: linear-gradient(transparent 68%, rgba(195,155,63,0.42) 68%);
-  padding: 0 2px;
-}
-.st-vow-by { font-size: 0.8125rem; color: var(--text-light); letter-spacing: 0.16em; margin: 0; }
-
-/* ===== レスポンシブ（物語パート） ===== */
-@media (max-width: 1024px) {
-  .st-hero-kanji { right: 8%; opacity: 0.7; }
-  .st-steps { grid-template-columns: 1fr; max-width: 560px; margin-left: auto; margin-right: auto; }
-  .st-step::after { display: none; }
-}
-@media (max-width: 900px) {
-  .st-hero { min-height: auto; }
-  .st-hero-inner {
-    flex-direction: column-reverse;
-    align-items: flex-start;
-    padding: 120px 20px 140px;
-    gap: 40px;
-  }
-  .st-hero-title {
-    writing-mode: horizontal-tb;
-    height: auto;
-    line-height: 1.6;
-    letter-spacing: 0.1em;
-    font-size: clamp(1.9rem, 7.4vw, 2.6rem);
-  }
-  .st-hero-kanji { font-size: 70vw; right: -12%; top: 30%; }
-  .st-stats { position: absolute; bottom: 32px; flex-wrap: wrap; padding: 0 16px; }
-  .st-stat { padding: 0 20px; }
-  .st-stat-num { font-size: 1.5rem; }
-  .st-chapter { padding: 84px 0 80px; }
-  .st-ch-head { gap: 20px; margin-bottom: 48px; }
-  .st-problems { grid-template-columns: 1fr; }
-  .st-problem { padding: 36px 26px 32px; }
-  .st-crisis-stats { grid-template-columns: 1fr; }
-  .st-story-body p { line-height: 2.3; }
-  .st-vow { padding: 84px 0; }
-  .st-steps { margin-bottom: 48px; }
-  .st-conv-label { font-size: 22px; }
-  .st-conv-knot-kanji { font-size: 34px; }
-  .st-conv-close { margin-top: 24px; }
-}
-@media (max-width: 480px) {
-  .st-conv-label { display: none; }
-  .st-hero-inner { padding: 104px 16px 150px; }
-  .st-stats { gap: 12px; }
-  .st-stat { border-left: none; padding: 0 8px; }
-}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
+
 <!-- NAV -->
 <nav id="main-nav">
-  <div class="nav-logo">Tsugu <span>Ai</span> -<span>継</span>-</div>
+  <a class="nav-logo" href="./">Tsugu <span>Ai</span> -<span>継</span>-</a>
   <ul class="nav-links">
+    <li><a href="#problem">課題</a></li>
     <li><a href="#service">プロダクト</a></li>
-    <li><a href="#how">成長モデル</a></li>
     <li><a href="#pricing">料金</a></li>
-    <li><a href="#consultant">パートナー参加</a></li>
-    <li><a href="https://www.fuku-kita.jp/">福來HP</a></li>
+    <li><a href="#faq">よくある質問</a></li>
+    <li><a href="partner.html">パートナー募集</a></li>
     <li><a href="#contact" class="nav-cta">無料相談</a></li>
   </ul>
   <button class="nav-toggle" id="navToggle" aria-label="メニューを開く" aria-expanded="false">
@@ -2534,23 +81,30 @@ body::before {
   </button>
 </nav>
 
-<!-- MOBILE MENU OVERLAY -->
 <div class="mobile-menu-overlay" id="mobileMenuOverlay" aria-hidden="true"></div>
 
-<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
   <button class="mobile-menu-close" id="mobileMenuClose" aria-label="メニューを閉じる">
     <span class="mobile-menu-close-bar"></span>
     <span class="mobile-menu-close-bar"></span>
   </button>
   <ul class="mobile-menu-list">
+    <li><a href="#problem" class="mobile-menu-link">課題</a></li>
     <li><a href="#service" class="mobile-menu-link">プロダクト</a></li>
-    <li><a href="#how" class="mobile-menu-link">成長モデル</a></li>
+    <li><a href="#check" class="mobile-menu-link">承継リスク診断</a></li>
     <li><a href="#pricing" class="mobile-menu-link">料金</a></li>
-    <li><a href="#consultant" class="mobile-menu-link">パートナー参加</a></li>
-    <li><a href="https://www.fuku-kita.jp/" class="mobile-menu-link">福來HP</a></li>
+    <li><a href="#ceo" class="mobile-menu-link">代表メッセージ</a></li>
+    <li><a href="#faq" class="mobile-menu-link">よくある質問</a></li>
+    <li><a href="#company" class="mobile-menu-link">会社情報</a></li>
+    <li><a href="partner.html" class="mobile-menu-link">パートナー募集</a></li>
     <li><a href="#contact" class="mobile-menu-link mobile-menu-cta">無料相談</a></li>
   </ul>
+</div>
+
+<!-- 追従CTA（モバイル） -->
+<div class="sticky-cta">
+  <a href="#contact" class="sticky-cta-main">無料で相談する</a>
+  <a href="tel:0825482224" class="sticky-cta-tel">電話する<small>082-548-2224</small></a>
 </div>
 
 <!-- 糸ナビ（スクロール進捗） -->
@@ -2574,13 +128,13 @@ body::before {
   </svg>
   <div class="st-hero-inner">
     <div class="st-hero-left">
-      <p class="st-hero-eyebrow">TSUGU AI ─ 継 ─</p>
+      <p class="st-hero-eyebrow">中小企業の経営者・後継者の方へ</p>
       <p class="st-hero-copy">
-        黒字のまま、静かに幕を下ろす会社がある。<br>
-        売るために、心をすり減らす営業がいる。<br>
-        ──ふたつの痛みは、<em>一本の糸</em>で結び直せる。
+        帳簿は黒い。社員も、取引先もいる。<br>
+        それでも「あと何年続けられるか」が頭をよぎる。<br>
+        ──その悩みを、<em>一人で抱えなくていい</em>。
       </p>
-      <p class="st-hero-brand">AIと認定パートナーが経営者に伴走する、中小企業承継エコシステム｜株式会社福來</p>
+      <p class="st-hero-brand">AIと認定パートナーが経営者に伴走する、中小企業承継エコシステム「Tsugu Ai -継-」｜株式会社福來</p>
       <div class="hero-meaning">
         <span class="hero-meaning-item"><strong>継ぐ</strong> 事業承継</span>
         <span class="hero-meaning-item"><strong>接ぐ</strong> AIと人を繋ぐ</span>
@@ -2590,11 +144,11 @@ body::before {
       </div>
       <div class="hero-actions">
         <a href="#contact" class="btn-primary">
-          無料相談を予約する
+          無料で相談する
           <span class="btn-arrow">→</span>
         </a>
-        <a href="#story" class="btn-ghost">
-          物語を読む
+        <a href="#check" class="btn-ghost">
+          1分で承継リスクを診断する
           <span class="btn-arrow">↓</span>
         </a>
       </div>
@@ -2605,37 +159,49 @@ body::before {
   </div>
   <div class="st-stats">
     <div class="st-stat">
-      <span class="st-stat-num"><span data-count="650">0</span><small>万人</small></span>
-      <span class="st-stat-label">失われる雇用（試算）</span>
+      <span class="st-stat-num"><span data-count="49.1" data-decimals="1">0</span><small>%</small></span>
+      <span class="st-stat-label">廃業企業のうち黒字だった割合</span>
     </div>
     <div class="st-stat">
-      <span class="st-stat-num"><span data-count="22">0</span><small>兆円</small></span>
-      <span class="st-stat-label">失われるGDP</span>
+      <span class="st-stat-num"><span data-count="6.8" data-decimals="1">0</span><small>万件</small></span>
+      <span class="st-stat-label">2025年の休廃業・解散</span>
     </div>
     <div class="st-stat">
-      <span class="st-stat-num"><span data-count="60">0</span><small>%超</small></span>
-      <span class="st-stat-label">60歳以上の経営者</span>
+      <span class="st-stat-num"><span data-count="13.8" data-decimals="1">0</span><small>万社</small></span>
+      <span class="st-stat-label">後継者が決まっていない会社</span>
     </div>
   </div>
 </section>
 
-<!-- 第一章 或る営業の、記憶。 -->
-<section class="st-chapter st-dark" id="story" data-kanji="記">
+<!-- 信頼バッジ -->
+<div class="trust-strip">
+  <div class="container">
+    <div class="trust-strip-inner">
+      <span class="trust-item">相談は何度でも無料</span>
+      <span class="trust-item">月額5万円・初期費用10万円のみ</span>
+      <span class="trust-item">しつこい勧誘はしません</span>
+      <span class="trust-item">広島の会社が直接対応</span>
+    </div>
+  </div>
+</div>
+
+<!-- 第一章：読者（経営者）の痛み -->
+<section class="st-chapter st-dark" id="story" data-kanji="黒">
   <div class="container">
     <div class="st-ch-head reveal">
       <span class="st-ch-num">第一章</span>
       <div class="st-ch-titles">
-        <h2 class="st-ch-title">或る営業の、記憶。</h2>
-        <p class="st-ch-sub">なぜ、私たちはこの事業を始めるのか</p>
+        <h2 class="st-ch-title">その帳簿は、黒い。</h2>
+        <p class="st-ch-sub">それでも眠れない夜が、たしかにある</p>
       </div>
     </div>
     <div class="st-story-body">
-      <p class="st-monologue reveal">「今月も、売らなければ──。」</p>
-      <p class="reveal">フルコミッションの世界で、私は長く走り続けてきた。売れば認められ、売れなければ収入はない。成果がすべての世界で、確かな実績も積み上げた。それでも心のどこかに、ずっと引っかかりがあった。</p>
-      <p class="reveal">「お客様のために」。その言葉を疑ったことはない。だが、明日の生活が懸かった商談の席で、<em>フォー・ユーの精神</em>を貫き通せる人間が、どれほどいるだろうか。気づけば「この会社に本当に必要か」ではなく、「今月の数字になるか」で提案を選んでいる自分がいた。</p>
-      <p class="reveal">そのしわ寄せは、いつも目の前の経営者に──この国の中小企業に、向かっていた。</p>
-      <p class="reveal">これは、私ひとりの記憶ではない。日本中の営業現場で、いまも同じことが起きている。悪いのは、人ではない。<em>仕組み</em>だ。だから私たちは、仕組みそのものを変えることにした。</p>
-      <p class="st-sign reveal">Tsugu Ai -継- 発起人<br>株式会社福來</p>
+      <p class="st-monologue reveal">「この会社を、あと何年続けられるだろうか。」</p>
+      <p class="reveal">決算は黒字。取引先も、長く働いてくれている社員もいる。数字の上では、何ひとつ問題はない。それでも、ふとした瞬間にその問いが頭をよぎる。</p>
+      <p class="reveal">継ぐ人が、決まっていない。息子には別の道がある。番頭格の社員に株を持たせる話は、お金の問題で止まったままだ。<em>相談しようにも、相手がいない。</em></p>
+      <p class="reveal">銀行には、強気の顔を見せなければならない。社員の前で弱音は吐けない。家族には、心配をかけたくない。気づけば、会社のことを本音で話せる相手が、ひとりもいなくなっていた。</p>
+      <p class="reveal">そこへ、次から次へと営業がやってくる。保険、システム、M&Aの提案。どれも「御社のために」と言う。だが本当に必要なものが何なのかは、誰も教えてくれない。</p>
+      <p class="reveal">──この状況を、経営者の責任だと言う人がいます。私たちは、そうは考えません。</p>
     </div>
   </div>
 </section>
@@ -2647,34 +213,15 @@ body::before {
       <span class="st-ch-num">第二章</span>
       <div class="st-ch-titles">
         <h2 class="st-ch-title">構造という、見えない敵。</h2>
-        <p class="st-ch-sub">日本が抱える、ふたつの社会問題</p>
+        <p class="st-ch-sub">悪いのは、人ではありません</p>
       </div>
     </div>
-    <p class="st-lead reveal">売る側は、売らなければ生きられない。<br>買う側は、望まぬ営業に未来を削られていく。<br>──この国の商いは、<em>同じ構造</em>の上で、両側から疲弊している。</p>
+    <p class="st-lead reveal">売る側は、売らなければ生きられない。<br>買う側は、望まぬ営業に未来を削られていく。<br>──この国の商いは、<em>同じ構造</em>の上で、両側から疲弊しています。</p>
 
     <div class="st-problems">
-      <div class="st-problem st-problem-sell reveal">
+      <div class="st-problem st-problem-buy reveal">
         <span class="st-problem-tag">問題 壱</span>
-        <h3 class="st-problem-title">売る側の疲弊。</h3>
-        <p class="st-problem-sub">フルコミッション営業という構造</p>
-        <ul class="st-problem-list">
-          <li>
-            <p class="st-pl-head">売れなければ、収入はゼロ。</p>
-            <p class="st-pl-body">明日の生活が懸かった商談では、「本当に必要か」より「今月の数字になるか」が優先される。売るための提案が、構造として生まれてしまいます。</p>
-          </li>
-          <li>
-            <p class="st-pl-head">不安定なまま、歳を重ねる。</p>
-            <p class="st-pl-body">契約のたびに収入はリセットされ、何も積み上がらない。それは老後の備え──年金・貯蓄という、この国全体の課題に直結しています。</p>
-          </li>
-          <li>
-            <p class="st-pl-head">「聴く力」が、活かされない。</p>
-            <p class="st-pl-body">営業のプロが持つ最大の武器は、相手の話を深く聴く力です。その力を顧客のために使う余裕を、いまの仕組みは与えてくれません。</p>
-          </li>
-        </ul>
-      </div>
-      <div class="st-problem st-problem-buy reveal reveal-delay-1">
-        <span class="st-problem-tag">問題 弐</span>
-        <h3 class="st-problem-title">買う側のしわ寄せ。</h3>
+        <h3 class="st-problem-title">経営者に、しわ寄せがいく。</h3>
         <p class="st-problem-sub">中小企業の、失われていく未来</p>
         <ul class="st-problem-list">
           <li>
@@ -2691,31 +238,48 @@ body::before {
           </li>
         </ul>
       </div>
+      <div class="st-problem st-problem-sell reveal reveal-delay-1">
+        <span class="st-problem-tag">問題 弐</span>
+        <h3 class="st-problem-title">売る側も、疲弊している。</h3>
+        <p class="st-problem-sub">フルコミッション営業という構造</p>
+        <ul class="st-problem-list">
+          <li>
+            <p class="st-pl-head">売れなければ、収入はゼロ。</p>
+            <p class="st-pl-body">明日の生活が懸かった商談では、「本当に必要か」より「今月の数字になるか」が優先される。売るための提案が、構造として生まれてしまいます。</p>
+          </li>
+          <li>
+            <p class="st-pl-head">不安定なまま、歳を重ねる。</p>
+            <p class="st-pl-body">契約のたびに収入はリセットされ、何も積み上がらない。それは老後の備え──年金・貯蓄という、この国全体の課題に直結しています。</p>
+          </li>
+          <li>
+            <p class="st-pl-head">「聴く力」が、活かされない。</p>
+            <p class="st-pl-body">営業のプロが持つ最大の武器は、相手の話を深く聴く力です。その力を顧客のために使う余裕を、いまの仕組みは与えてくれません。</p>
+          </li>
+        </ul>
+      </div>
     </div>
 
     <div class="st-crisis-stats">
       <div class="st-crisis-card reveal">
-        <span class="st-crisis-num"><span data-count="650">0</span><small>万人</small></span>
-        <p class="st-crisis-desc">後継者未定による廃業リスクで失われる雇用</p>
-        <p class="st-crisis-src">経済産業省 2019年試算</p>
+        <span class="st-crisis-num"><span data-count="49.1" data-decimals="1">0</span><small>%</small></span>
+        <p class="st-crisis-desc">休廃業・解散した企業のうち、直前期の決算が<strong style="color:var(--gold-light);">黒字</strong>だった割合</p>
+        <p class="st-crisis-src">帝国データバンク 2025年調査</p>
       </div>
       <div class="st-crisis-card reveal reveal-delay-1">
-        <span class="st-crisis-num"><span data-count="22">0</span><small>兆円</small></span>
-        <p class="st-crisis-desc">同じく失われる可能性のあるGDP損失額</p>
-        <p class="st-crisis-src">経済産業省 2019年試算</p>
+        <span class="st-crisis-num"><span data-count="6.8" data-decimals="1">0</span><small>万件</small></span>
+        <p class="st-crisis-desc">2025年の休廃業・解散件数。過去10年で2番目に多い水準です</p>
+        <p class="st-crisis-src">帝国データバンク 2025年調査</p>
       </div>
       <div class="st-crisis-card reveal reveal-delay-2">
-        <span class="st-crisis-num"><span data-count="60">0</span><small>%超</small></span>
-        <p class="st-crisis-desc">60歳以上の中小企業経営者の割合</p>
-        <p class="st-crisis-src">中小企業庁</p>
+        <span class="st-crisis-num"><span data-count="13.8" data-decimals="1">0</span><small>万社</small></span>
+        <p class="st-crisis-desc">後継者が決まっていない企業数。調査対象の約27万社中、半数にのぼります</p>
+        <p class="st-crisis-src">帝国データバンク 2025年調査</p>
       </div>
     </div>
 
-    <p class="st-conclusion reveal">ふたつは、別々の問題ではない。<br><em>同じひとつの構造</em>が生んだ、表と裏である。</p>
+    <p class="st-conclusion reveal">黒字のまま消えていく会社は、<em>1日およそ91社</em>。<br>ふたつは別々の問題ではなく、同じひとつの構造が生んだ、表と裏です。</p>
   </div>
 </section>
-
-<!-- 第三章 結び直す -->
 <section class="st-chapter st-dark" id="solution" data-kanji="結">
   <div class="container">
     <div class="st-ch-head reveal">
@@ -2765,46 +329,20 @@ body::before {
   </div>
 </section>
 
-<!-- 分岐：あなたの物語へ -->
-<section class="section-branch">
+<!-- 中間CTA① -->
+<section class="section-ctaband">
   <div class="container">
-    <div class="st-branch-head reveal">
-      <h2 class="st-ch-title serif">ここからは、あなたの物語。</h2>
-      <p>お立場に合わせて、続きをお読みください。</p>
-    </div>
-    <div class="branch-grid">
-      <!-- 経営者の方へ -->
-      <a href="#service" class="branch-card reveal">
-        <div class="branch-card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-4" stroke-linecap="round" stroke-linejoin="round"/><path d="M9 9v.01M9 12v.01M9 15v.01M9 18v.01" stroke-linecap="round"/></svg>
-        </div>
-        <p class="branch-card-label">経営者の方へ</p>
-        <h3 class="branch-card-title serif">会社の未来を、<br>次の世代へ繋ぎたい。</h3>
-        <p class="branch-card-desc">後継者不在、資金繰り、M&A──一人で抱える経営の悩みに、AIと認定パートナーが伴走します。売り込みは、しません。</p>
-        <span class="branch-card-cta">プロダクトを見る <span class="branch-arrow">→</span></span>
-      </a>
-
-      <!-- パートナーを目指す方へ -->
-      <a href="#consultant" class="branch-card branch-card-fde reveal reveal-delay-1">
-        <div class="branch-card-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 21l-4.9-2.6.9-5.5-4-3.9 5.5-.8z" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </div>
-        <p class="branch-card-label">認定パートナーという生き方</p>
-        <h3 class="branch-card-title serif">売る側から、<br>経営者を<span class="branch-accent">"支える側"</span>へ。</h3>
-        <p class="branch-card-desc">認定パートナーは、AIを最先端の武器に、経営者の隣で伴走する存在です。営業で培った「聴く力」を、ストック収入という土台の上で活かす、新しいキャリアです。</p>
-        <div class="branch-points">
-          <div class="branch-point"><span class="branch-point-dot"></span>初期投資ゼロ — 登録・研修・認定試験すべて無料</div>
-          <div class="branch-point"><span class="branch-point-dot"></span>知識はAIが担当 — 必要なのは聴く力・共感力</div>
-          <div class="branch-point"><span class="branch-point-dot"></span>積み上がる収入 — 実績次第で年収580万円超へ</div>
-        </div>
-        <span class="branch-card-cta branch-card-cta-gold">認定パートナーという生き方を詳しく見る <span class="branch-arrow">→</span></span>
-      </a>
+    <div class="cta-band reveal">
+      <p class="cta-band-lead">「うちの場合はどうだろう」と思われたら。</p>
+      <p class="cta-band-sub">相談は無料です。売り込みはしません。<br>現状をお聞きして、何から手をつけるべきかだけをお伝えします。</p>
+      <div class="cta-band-actions">
+        <a href="#contact" class="btn-primary">無料で相談する <span class="btn-arrow">→</span></a>
+        <a href="tel:0825482224" class="cta-tel-inline">082-548-2224 <small>平日 9:00-18:00</small></a>
+      </div>
+      <p class="cta-band-note">お電話でもフォームでも、担当者が直接お話をうかがいます。</p>
     </div>
   </div>
 </section>
-
-<div class="gold-divider"></div>
-<!-- SERVICE -->
 <section class="section-service" id="service">
   <div class="container">
     <div class="section-header reveal">
@@ -2840,8 +378,44 @@ body::before {
     </div>
   </div>
 </section>
-
-<!-- HOW IT WORKS -->
+<section class="section-hybrid" id="hybrid">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="section-label">ハイブリッドモデル</p>
+      <h2 class="section-title serif">AIと人の、明確な役割分担。</h2>
+      <p class="section-body">専門知識はAIが担うため、パートナーに求める素質は「聴く力」「共感力」「対話力」。これが破壊的価格と高品質を両立させる仕組みです。</p>
+    </div>
+    <div class="hybrid-grid">
+      <div class="hybrid-col reveal">
+        <p class="hybrid-col-title serif">AIが担う領域</p>
+        <p class="hybrid-col-sub">実務・分析・24時間対応</p>
+        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">経営ダッシュボードによる可視化</span></div>
+        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">キャッシュフロー予測と資金リスク警告</span></div>
+        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">補助金・助成金の自動マッチング</span></div>
+        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">業務自動化の提案・実装支援</span></div>
+        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">会計・税務・法律用語の翻訳</span></div>
+        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">面談議事録とフォローアップ作成</span></div>
+        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">24時間365日の即時対応</span></div>
+      </div>
+      <div class="hybrid-divider reveal reveal-delay-1">
+        <div class="hybrid-divider-line"></div>
+        <span class="hybrid-divider-plus">＋</span>
+        <div class="hybrid-divider-line"></div>
+      </div>
+      <div class="hybrid-col reveal reveal-delay-2">
+        <p class="hybrid-col-title serif">認定パートナーが担う領域</p>
+        <p class="hybrid-col-sub">伴走・傾聴・心</p>
+        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">社長の悩みを傾聴する</span></div>
+        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">AIの分析を経営者の状況に翻訳</span></div>
+        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">AI活用による業務自動化を提案</span></div>
+        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">選択肢の整理と意思決定の後押し</span></div>
+        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">不安に寄り添い、勇気を届ける</span></div>
+        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">行動の約束と継続的フォロー</span></div>
+        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">成功を一緒に喜ぶ</span></div>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="section-how" id="how">
   <div class="container">
     <div class="how-header reveal">
@@ -2899,54 +473,71 @@ body::before {
   </div>
 </section>
 
-<!-- AI vs HUMAN -->
-<section class="section-hybrid" id="hybrid">
+<!-- 事業承継リスク診断（ソフトCV） -->
+<section class="section-check" id="check">
   <div class="container">
-    <div class="section-header reveal">
-      <p class="section-label">ハイブリッドモデル</p>
-      <h2 class="section-title serif">AIと人の、明確な役割分担。</h2>
-      <p class="section-body">専門知識はAIが担うため、パートナーに求める素質は「聴く力」「共感力」「対話力」。これが破壊的価格と高品質を両立させる仕組みです。</p>
-    </div>
-    <div class="hybrid-grid">
-      <div class="hybrid-col reveal">
-        <p class="hybrid-col-title serif">AIが担う領域</p>
-        <p class="hybrid-col-sub">実務・分析・24時間対応</p>
-        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">経営ダッシュボードによる可視化</span></div>
-        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">キャッシュフロー予測と資金リスク警告</span></div>
-        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">補助金・助成金の自動マッチング</span></div>
-        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">業務自動化の提案・実装支援</span></div>
-        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">会計・税務・法律用語の翻訳</span></div>
-        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">面談議事録とフォローアップ作成</span></div>
-        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">24時間365日の即時対応</span></div>
+    <div class="check-card reveal" id="riskCheck">
+      <div class="check-head">
+        <p class="check-eyebrow">1分でわかる</p>
+        <h2 class="check-title serif">事業承継リスク診断</h2>
+        <p class="check-sub">5つの質問に答えるだけ。入力も登録も不要です。<br>いま会社がどの段階にあるかを、その場で確認できます。</p>
       </div>
-      <div class="hybrid-divider reveal reveal-delay-1">
-        <div class="hybrid-divider-line"></div>
-        <span class="hybrid-divider-plus">＋</span>
-        <div class="hybrid-divider-line"></div>
+
+      <div class="check-q">
+        <p class="check-q-text">1. 会社を継ぐ人が、具体的に決まっていますか。</p>
+        <div class="check-q-btns">
+          <button type="button" class="check-btn" data-value="safe">はい</button>
+          <button type="button" class="check-btn" data-value="risk">いいえ</button>
+        </div>
       </div>
-      <div class="hybrid-col reveal reveal-delay-2">
-        <p class="hybrid-col-title serif">認定パートナーが担う領域</p>
-        <p class="hybrid-col-sub">伴走・傾聴・心</p>
-        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">社長の悩みを傾聴する</span></div>
-        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">AIの分析を経営者の状況に翻訳</span></div>
-        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">AI活用による業務自動化を提案</span></div>
-        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">選択肢の整理と意思決定の後押し</span></div>
-        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">不安に寄り添い、勇気を届ける</span></div>
-        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">行動の約束と継続的フォロー</span></div>
-        <div class="hybrid-item"><div class="hybrid-item-dot"></div><span class="hybrid-item-text">成功を一緒に喜ぶ</span></div>
+      <div class="check-q">
+        <p class="check-q-text">2. ご自身の会社の株式評価額を、把握していますか。</p>
+        <div class="check-q-btns">
+          <button type="button" class="check-btn" data-value="safe">はい</button>
+          <button type="button" class="check-btn" data-value="risk">いいえ</button>
+        </div>
       </div>
+      <div class="check-q">
+        <p class="check-q-text">3. 3か月先の資金繰りを、数字で説明できますか。</p>
+        <div class="check-q-btns">
+          <button type="button" class="check-btn" data-value="safe">はい</button>
+          <button type="button" class="check-btn" data-value="risk">いいえ</button>
+        </div>
+      </div>
+      <div class="check-q">
+        <p class="check-q-text">4. 経営の悩みを本音で相談できる相手が、社外にいますか。</p>
+        <div class="check-q-btns">
+          <button type="button" class="check-btn" data-value="safe">はい</button>
+          <button type="button" class="check-btn" data-value="risk">いいえ</button>
+        </div>
+      </div>
+      <div class="check-q">
+        <p class="check-q-text">5. ご自身が退いた後の会社の姿を、具体的に描けていますか。</p>
+        <div class="check-q-btns">
+          <button type="button" class="check-btn" data-value="safe">はい</button>
+          <button type="button" class="check-btn" data-value="risk">いいえ</button>
+        </div>
+      </div>
+
+      <div class="check-result">
+        <p class="check-result-score"></p>
+        <p class="check-result-text"></p>
+        <a href="#contact" class="btn-primary">この結果をもとに無料で相談する <span class="btn-arrow">→</span></a>
+      </div>
+
+      <p class="check-note">※ 本診断は現状を整理するための簡易的な目安です。回答内容が送信されることはありません。</p>
     </div>
   </div>
 </section>
-<!-- PRICING -->
+
+<!-- PRICING（顧客料金のみ） -->
 <section class="section-pricing" id="pricing">
   <div class="container">
     <div class="section-header reveal">
       <p class="section-label">料金プラン</p>
       <h2 class="section-title serif">透明で、シンプルな料金体系。</h2>
-      <p class="section-body">初期費用と月額のシンプルな2本立て。承継する会社が増えるほど、お得になる設計です。</p>
+      <p class="section-body">プランは1つだけ。初期費用と月額の2本立てで、追加料金はありません。承継する会社が増えるほど、お得になる設計です。</p>
     </div>
-
     <!-- クライアント料金 -->
     <div style="max-width:720px; margin:0 auto 64px;">
       <p style="font-size:0.8125rem;letter-spacing:0.1em;color:var(--gold);font-weight:700;margin-bottom:24px;text-align:center;">CLIENT PLAN ／ 顧客料金</p>
@@ -3015,374 +606,95 @@ body::before {
         </div>
       </div>
     </div>
-
-    <!-- 認定パートナー料金 -->
-    <div style="max-width:720px; margin:0 auto;">
-      <p style="font-size:0.8125rem;letter-spacing:0.1em;color:var(--gold);font-weight:700;margin-bottom:24px;text-align:center;">PARTNER PLAN ／ 認定パートナー料金</p>
-      <div class="pricing-card reveal" style="max-width:100%;">
-        <p class="pricing-plan">認定パートナー</p>
-        <h3 class="pricing-name serif">日本初の認定パートナー制度</h3>
-        <p style="font-size:0.875rem;color:var(--text-mid);margin-top:8px;margin-bottom:24px;">参入障壁を極限まで下げ、AI時代の新しい士業として活躍できる仕組みです。</p>
-
-        <div style="margin:28px 0; display:flex;flex-direction:column;gap:16px;">
-          <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;background:rgba(195,155,63,0.1);border:1px solid rgba(195,155,63,0.3);border-radius:10px;">
-            <p style="font-weight:700;color:var(--ink);font-size:0.9375rem;">初期登録料</p>
-            <p style="font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--gold);">無料</p>
-          </div>
-          <div style="display:flex;justify-content:space-between;align-items:center;padding:16px 20px;background:var(--surface);border-radius:10px;">
-            <p style="font-weight:700;color:var(--ink);font-size:0.9375rem;">基本月額利用料金</p>
-            <p style="font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--ink);">3,000<span style="font-size:0.875rem;font-weight:400;color:var(--text-mid);">円／月〜</span></p>
-          </div>
-        </div>
-
-        <p style="font-weight:700;color:var(--ink);font-size:0.9375rem;margin-bottom:16px;">顧問契約数に応じた月額料金</p>
-        <div style="display:flex;flex-direction:column;gap:12px;margin-bottom:28px;">
-          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 20px;border:1px solid var(--border);border-radius:10px;">
-            <div>
-              <p style="font-weight:700;color:var(--ink);font-size:0.9375rem;">登録時（顧問契約なし）</p>
-              <p style="font-size:0.8125rem;color:var(--text-mid);margin-top:2px;">スタート料金</p>
-            </div>
-            <p style="font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--ink);">3,000<span style="font-size:0.875rem;font-weight:400;color:var(--text-mid);">円／月</span></p>
-          </div>
-          <div style="display:flex;justify-content:space-between;align-items:center;padding:14px 20px;background:var(--ink);border-radius:10px;">
-            <div>
-              <p style="font-weight:700;color:var(--white);font-size:0.9375rem;">1社契約後（1社ごと加算）</p>
-              <p style="font-size:0.8125rem;color: rgba(255,255,255,0.7);margin-top:2px;">担当社数に応じて積み上げ</p>
-            </div>
-            <p style="font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--gold);">＋2,000<span style="font-size:0.875rem;font-weight:400;color: rgba(255,255,255,0.7);">円／社</span></p>
-          </div>
-        </div>
-
-        <div style="background:rgba(195,155,63,0.08);border:1px solid rgba(195,155,63,0.25);border-radius:12px;padding:20px 24px;margin-bottom:28px;">
-          <p style="font-size:0.8125rem;color:var(--gold);font-weight:700;margin-bottom:12px;">月額シミュレーション例</p>
-          <div style="display:flex;flex-direction:column;gap:10px;font-size:0.875rem;color:var(--text-mid);">
-            <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);">
-              <span>登録のみ（顧問先ゼロ）</span>
-              <span style="font-weight:700;color:var(--ink);">月額 3,000円</span>
-            </div>
-            <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);">
-              <span>1社担当：3,000＋2,000</span>
-              <span style="font-weight:700;color:var(--ink);">月額 5,000円</span>
-            </div>
-            <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);">
-              <span>5社担当：3,000＋2,000×5</span>
-              <span style="font-weight:700;color:var(--ink);">月額 13,000円</span>
-            </div>
-            <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;">
-              <span>10社担当：3,000＋2,000×10</span>
-              <span style="font-weight:700;color:var(--gold);">月額 23,000円</span>
-            </div>
-          </div>
-        </div>
-
-        <ul class="pricing-features">
-          <li class="pricing-feature"><div class="pricing-check"></div>無料研修（アーカイブ動画）＋ 無料認定試験</li>
-          <li class="pricing-feature"><div class="pricing-check"></div>AIプラットフォームの全機能を利用可能</li>
-          <li class="pricing-feature"><div class="pricing-check"></div>AI活用による業務自動化提案機能</li>
-          <li class="pricing-feature"><div class="pricing-check"></div>担当社数に応じた収入が積み上がる設計</li>
-          <li class="pricing-feature"><div class="pricing-check"></div>コンプライアンス・ライセンス契約の締結</li>
-        </ul>
-        <a href="#contact" class="pricing-btn pricing-btn-ghost" style="margin-top:32px;">パートナー参加を問い合わせる</a>
-      </div>
-
-      <!-- 4階層パートナー制度 -->
-      <div style="margin-top:48px;">
-        <p style="font-size:0.8125rem;letter-spacing:0.1em;color:var(--gold);font-weight:700;margin-bottom:8px;text-align:center;">PARTNER TIERS ／ 4階層パートナー制度</p>
-        <p style="font-size:0.875rem;color:var(--text-mid);text-align:center;margin-bottom:32px;">実績に応じて昇格し、報酬還元率が段階的に上がります</p>
-
-        <div style="display:flex;flex-direction:column;gap:16px;">
-          <!-- 1期：アソシエイト -->
-          <div style="background:var(--white-pure);border:1px solid var(--border);border-radius:14px;padding:24px 28px;">
-            <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;">
-              <div style="flex:1;min-width:200px;">
-                <p style="font-size:0.75rem;letter-spacing:0.1em;color:var(--gold);font-weight:700;margin-bottom:6px;">1期</p>
-                <p style="font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--ink);">アソシエイト・パートナー</p>
-                <p style="font-size:0.8125rem;color:var(--text-mid);margin-top:6px;">登録後・未契約期</p>
-              </div>
-              <div style="text-align:right;">
-                <p style="font-size:0.75rem;color:var(--text-light);">報酬ステージ</p>
-                <p style="font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--text-mid);">START</p>
-                <p style="font-size:0.75rem;color:var(--text-light);margin-top:2px;">初契約獲得で昇格</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- 2期：シニア -->
-          <div style="background:var(--white-pure);border:1px solid var(--border);border-radius:14px;padding:24px 28px;">
-            <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;">
-              <div style="flex:1;min-width:200px;">
-                <p style="font-size:0.75rem;letter-spacing:0.1em;color:var(--gold);font-weight:700;margin-bottom:6px;">2期</p>
-                <p style="font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--ink);">シニア・パートナー</p>
-                <p style="font-size:0.8125rem;color:var(--text-mid);margin-top:6px;">1社顧問契約達成後</p>
-              </div>
-              <div style="text-align:right;">
-                <p style="font-size:0.75rem;color:var(--text-light);">報酬ステージ</p>
-                <p style="font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--ink);">STEP 1</p>
-                <p style="font-size:0.75rem;color:var(--text-light);margin-top:2px;">報酬分配の対象に</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- 3期：エグゼクティブ -->
-          <div style="background:var(--white-pure);border:2px solid var(--gold);border-radius:14px;padding:24px 28px;">
-            <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;">
-              <div style="flex:1;min-width:200px;">
-                <p style="font-size:0.75rem;letter-spacing:0.1em;color:var(--gold);font-weight:700;margin-bottom:6px;">3期</p>
-                <p style="font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--ink);">エグゼクティブ・パートナー</p>
-                <p style="font-size:0.8125rem;color:var(--text-mid);margin-top:6px;">5顧問契約 ＋ HD化経験1社</p>
-              </div>
-              <div style="text-align:right;">
-                <p style="font-size:0.75rem;color:var(--text-light);">報酬ステージ</p>
-                <p style="font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--ink);">STEP 2</p>
-                <p style="font-size:0.75rem;color:var(--text-light);margin-top:2px;">還元率がアップ</p>
-              </div>
-            </div>
-          </div>
-
-          <!-- 4期：プレミアム -->
-          <div style="background:var(--ink);border:1px solid var(--gold);border-radius:14px;padding:24px 28px;">
-            <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;">
-              <div style="flex:1;min-width:200px;">
-                <p style="font-size:0.75rem;letter-spacing:0.1em;color:var(--gold);font-weight:700;margin-bottom:6px;">4期（最上位）</p>
-                <p style="font-family:var(--serif);font-size:1.25rem;font-weight:700;color:var(--white);">プレミアム・パートナー</p>
-                <p style="font-size:0.8125rem;color: rgba(255,255,255,0.7);margin-top:6px;">10顧問契約 ＋ HD化経験2社</p>
-              </div>
-              <div style="text-align:right;">
-                <p style="font-size:0.75rem;color: rgba(255,255,255,0.7);">報酬ステージ</p>
-                <p style="font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--gold);">STEP 3</p>
-                <p style="font-size:0.75rem;color: rgba(255,255,255,0.7);margin-top:2px;">最上位の還元率</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <p style="font-size:0.75rem;color:var(--text-light);margin-top:16px;text-align:center;">※ 実績に応じて報酬還元率が段階的に上がります。詳細な条件は、面談時に概要書面でご説明します。</p>
-      </div>
-    </div>
-
   </div>
 </section>
-<!-- CONSULTANT -->
-<section class="section-consultant" id="consultant">
+
+<!-- 中間CTA② -->
+<section class="section-ctaband on-wash">
   <div class="container">
-
-    <!-- パートナー向けニード喚起 -->
-    <div class="pn-hook reveal">
-      <p class="section-label" style="justify-content:center;">FOR FUTURE PARTNERS</p>
-      <h2 class="section-title serif">いまの働き方に、<br class="sp-only">こんな思いはありませんか。</h2>
-      <div class="pn-hook-grid">
-        <div class="pn-hook-item"><strong>「売って終わり」の関係に、疲れていませんか。</strong><br>契約のたびに次の新規を追う毎日ではなく、同じお客様と長く深く付き合い、頼られ続ける仕事がしたい。</div>
-        <div class="pn-hook-item"><strong>ノルマの数字ではなく、「ありがとう」で報われたい。</strong><br>目の前の経営者の悩みに本気で向き合い、その成果が自分の報酬として正当に積み上がる働き方へ。</div>
-        <div class="pn-hook-item"><strong>AIに仕事を奪われる側ではなく、使いこなす側に。</strong><br>AI時代の到来は脅威ではなくチャンス。難しい知識はAIに任せ、人にしかできない仕事に集中する。</div>
-        <div class="pn-hook-item"><strong>培った経験と人脈を、地元企業の力に変えたい。</strong><br>保険営業、銀行、士業事務所──これまでのキャリアで築いた信頼は、承継に悩む経営者が求めているものです。</div>
-      </div>
-      <p class="pn-hook-lead">その思いに応えるのが、<em>認定パートナー</em>という新しい仕事です。</p>
-    </div>
-
-    <!-- パートナーとは 説明ブロック -->
-    <div class="fde-explainer reveal">
-      <div class="fde-explainer-head">
-        <p class="fde-explainer-eyebrow">WHAT IS A PARTNER?</p>
-        <h2 class="fde-explainer-title serif">認定パートナーとは。</h2>
-      </div>
-      <div class="fde-explainer-body">
-        <p class="fde-explainer-lead">
-          認定パートナーは、<span class="fde-hl">AIを活用し、お客様のご意見・ご意向に寄り添い、経営に伴走するパートナー</span>です。AIを使えない、使ったことがない経営者も、Tsugu Aiを利用することで、<span class="fde-hl">血の通ったAI</span>を活用することが可能になります。
-        </p>
-        <p class="fde-explainer-text">
-          Tsugu Ai -継-は、最先端のAIを「武器」として経営者の現場に深く入り込みます。認定パートナーは、キャッシュフロー（お金の流れ）の改善と事業承継を、経営者の隣で伴走支援する、まったく新しい専門人材です。
-        </p>
-        <div class="fde-explainer-points">
-          <div class="fde-ep-item">
-            <div class="fde-ep-icon">AI</div>
-            <p class="fde-ep-title">知識はAIが担う</p>
-            <p class="fde-ep-desc">難解な財務・税務・法律の知識はAIが引き受けます。だから未経験からでも挑戦できます。</p>
-          </div>
-          <div class="fde-ep-item">
-            <div class="fde-ep-icon">心</div>
-            <p class="fde-ep-title">人が心を担う</p>
-            <p class="fde-ep-desc">経営者の孤独に寄り添い、対話を通じて意思決定を支える。これが認定パートナーの本質です。</p>
-          </div>
-          <div class="fde-ep-item">
-            <div class="fde-ep-icon">¥</div>
-            <p class="fde-ep-title">キャッシュを守る</p>
-            <p class="fde-ep-desc">財務諸表が読めなくても、お金の流れさえ見失わなければ経営は続く。その視点で会社を支えます。</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="consultant-inner">
-      <div class="reveal">
-        <p class="section-label">日本初の認定パートナー</p>
-        <h2 class="section-title serif">AI時代の<br>新しいキャリアを、<br>あなたに。</h2>
-        <p class="section-body" style="margin-bottom:32px;">保険営業、銀行OB、独立志望の士業補助者、AI時代に新しい働き方を模索するすべての人へ──「広く浅くではなく、狭く深い信頼関係を経営者と築きたい」「AIを味方に、自分の力で稼ぐ仕事をしたい」。Tsugu Ai -継-の認定パートナー制度は、日本初の取り組みとして、その機会を提供します。</p>
-        <ul style="list-style:none;display:flex;flex-direction:column;gap:16px;">
-          <li style="display:flex;gap:16px;align-items:flex-start;">
-            <span style="color:var(--gold);font-family:var(--serif);font-weight:700;font-size:1.25rem;flex-shrink:0;">01</span>
-            <div>
-              <p style="font-weight:700;color:var(--ink);margin-bottom:4px;font-size:0.9375rem;">無料研修・無料認定試験</p>
-              <p style="font-size:0.875rem;color:var(--text-mid);">初期投資ゼロ。アーカイブ動画視聴→ロールプレイ→認定試験の3ステップで、本人次第で最短1週間で認定取得可能。</p>
-            </div>
-          </li>
-          <li style="display:flex;gap:16px;align-items:flex-start;">
-            <span style="color:var(--gold);font-family:var(--serif);font-weight:700;font-size:1.25rem;flex-shrink:0;">02</span>
-            <div>
-              <p style="font-weight:700;color:var(--ink);margin-bottom:4px;font-size:0.9375rem;">初期登録料 無料・月額3,000円スタート</p>
-              <p style="font-size:0.875rem;color:var(--text-mid);">参入障壁を極限まで下げた設計。1社契約毎に＋2,000円、担当社数に応じて収入が積み上がるネットワーク型収益モデル。</p>
-            </div>
-          </li>
-          <li style="display:flex;gap:16px;align-items:flex-start;">
-            <span style="color:var(--gold);font-family:var(--serif);font-weight:700;font-size:1.25rem;flex-shrink:0;">03</span>
-            <div>
-              <p style="font-weight:700;color:var(--ink);margin-bottom:4px;font-size:0.9375rem;">AIが知識面を全面サポート</p>
-              <p style="font-size:0.875rem;color:var(--text-mid);">経営の専門知識はAIが担うため、「聴く力」「共感力」があれば活躍できます。</p>
-            </div>
-          </li>
-        </ul>
-      </div>
-      <div class="consultant-income reveal reveal-delay-1">
-        <p style="font-size:0.75rem;letter-spacing:0.15em;color:var(--gold);font-weight:700;margin-bottom:6px;text-align:center;">CAREER & REWARD</p>
-        <p class="income-title serif" style="margin-bottom:6px;">あなたの未来を描く<br>4つのステージ</p>
-        <p style="font-size:0.8125rem;color: rgba(255,255,255,0.78);margin-bottom:24px;text-align:center;line-height:1.6;">日本初の認定パートナーとして、<br>副業から始め、独立、そして業界リーダーへ。</p>
-
-        <!-- 1期：アソシエイト -->
-        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:18px 20px;margin-bottom:12px;">
-          <p style="font-size:0.6875rem;letter-spacing:0.1em;color:var(--gold);font-weight:700;margin-bottom:4px;">1期 ─ START</p>
-          <p style="font-family:var(--serif);font-size:1.0625rem;font-weight:700;color:var(--white);margin-bottom:6px;">アソシエイト・パートナー</p>
-          <p style="font-size:0.75rem;color: rgba(255,255,255,0.72);">初期投資ゼロでスタート。プラットフォーム全機能を活用し、初の顧問契約獲得を目指します。</p>
-        </div>
-
-        <!-- 2期：シニア -->
-        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.15);border-radius:12px;padding:18px 20px;margin-bottom:12px;">
-          <p style="font-size:0.6875rem;letter-spacing:0.1em;color:var(--gold);font-weight:700;margin-bottom:4px;">2期 ─ 副業から独立準備へ</p>
-          <p style="font-family:var(--serif);font-size:1.0625rem;font-weight:700;color:var(--white);margin-bottom:8px;">シニア・パートナー</p>
-          <p style="font-size:0.78125rem;color: rgba(255,255,255,0.72);margin-bottom:10px;">1社顧問契約獲得後 ─ 報酬体系の対象に</p>
-          <div style="font-size:0.8125rem;color:rgba(255,255,255,0.85);line-height:1.7;">
-            <div style="display:flex;justify-content:space-between;"><span>顧問先1社</span><strong style="color:var(--gold);">月額 約2.5万円</strong></div>
-            <div style="display:flex;justify-content:space-between;"><span>顧問先3社</span><strong style="color:var(--gold);">月額 約7.5万円</strong></div>
-            <div style="display:flex;justify-content:space-between;"><span>顧問先4社</span><strong style="color:var(--gold);">月額 約10万円</strong></div>
-            <p style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,0.1);text-align:right;font-size:0.875rem;color:var(--gold);font-weight:700;">年収目安 約120万円</p>
-          </div>
-        </div>
-
-        <!-- 3期：エグゼクティブ -->
-        <div style="background:linear-gradient(135deg, rgba(195,155,63,0.18) 0%, rgba(195,155,63,0.05) 100%);border:1px solid var(--gold);border-radius:12px;padding:18px 20px;margin-bottom:12px;">
-          <p style="font-size:0.6875rem;letter-spacing:0.1em;color:var(--gold);font-weight:700;margin-bottom:4px;">3期 ─ 独立確立期</p>
-          <p style="font-family:var(--serif);font-size:1.0625rem;font-weight:700;color:var(--white);margin-bottom:8px;">エグゼクティブ・パートナー</p>
-          <p style="font-size:0.78125rem;color: rgba(255,255,255,0.75);margin-bottom:10px;">顧問先5社 ＋ HD化案件1社経験 ─ 報酬比率アップ</p>
-          <div style="font-size:0.8125rem;color:rgba(255,255,255,0.9);line-height:1.7;">
-            <div style="display:flex;justify-content:space-between;"><span>顧問先5社</span><strong style="color:var(--gold);">月額 約15万円</strong></div>
-            <div style="display:flex;justify-content:space-between;"><span>＋HD化PMI支援報酬</span><strong style="color:var(--gold);">月額 約6万円</strong></div>
-            <div style="display:flex;justify-content:space-between;margin-top:8px;padding-top:8px;border-top:1px solid rgba(195,155,63,0.3);"><span style="font-weight:700;">合計</span><strong style="color:var(--gold);font-size:1rem;">月額 約21万円</strong></div>
-            <p style="margin-top:6px;text-align:right;font-size:0.875rem;color:var(--gold);font-weight:700;">年収目安 約250万円</p>
-          </div>
-          <p style="font-size:0.78125rem;color: rgba(255,255,255,0.75);margin-top:10px;line-height:1.5;">＋ 戦略アドバイザー権限／HD化アドバイザリー業務</p>
-        </div>
-
-        <!-- 4期：プレミアム -->
-        <div style="background:linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);border-radius:12px;padding:18px 20px;margin-bottom:18px;">
-          <p style="font-size:0.6875rem;letter-spacing:0.1em;color:var(--ink);font-weight:700;margin-bottom:4px;">4期 ─ 業界リーダー期（最上位）</p>
-          <p style="font-family:var(--serif);font-size:1.125rem;font-weight:700;color:var(--ink);margin-bottom:8px;">プレミアム・パートナー</p>
-          <p style="font-size:0.78125rem;color:var(--ink);opacity:0.88;margin-bottom:10px;">顧問先10社 ＋ HD化案件2社経験 ─ 最上位の報酬比率</p>
-          <div style="font-size:0.8125rem;color:var(--ink);line-height:1.7;">
-            <div style="display:flex;justify-content:space-between;"><span>顧問先10社</span><strong>月額 約35万円</strong></div>
-            <div style="display:flex;justify-content:space-between;"><span>＋HD化PMI支援（2社継続）</span><strong>月額 約14万円</strong></div>
-            <div style="display:flex;justify-content:space-between;margin-top:8px;padding-top:8px;border-top:1px solid rgba(14,27,51,0.25);"><span style="font-weight:700;">合計</span><strong style="font-size:1.0625rem;">月額 約49万円</strong></div>
-            <p style="margin-top:6px;text-align:right;font-size:0.9375rem;font-weight:700;">年収目安 約580万円超</p>
-          </div>
-          <p style="font-size:0.78125rem;color:var(--ink);opacity:0.88;margin-top:10px;line-height:1.5;">＋ 後進パートナー育成権限／Tsugu Ai -継-ブランド認定権限／業界アドバイザー</p>
-        </div>
-
-        <!-- その他の報酬 -->
-        <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(195,155,63,0.35);border-radius:12px;padding:18px 20px;margin-bottom:18px;">
-          <p style="font-size:0.6875rem;letter-spacing:0.1em;color:var(--gold);font-weight:700;margin-bottom:10px;">OTHER REWARDS ─ 顧問報酬以外の収入源</p>
-          <div style="font-size:0.8125rem;color:rgba(255,255,255,0.85);line-height:1.7;display:flex;flex-direction:column;gap:8px;">
-            <div style="display:flex;gap:10px;align-items:flex-start;">
-              <span style="color:var(--gold);flex-shrink:0;">●</span>
-              <span><strong style="color:var(--white);">PMI支援報酬</strong> ─ HD化・PMI伴走時には、顧問報酬に加えて追加の月額報酬をお支払いします。</span>
-            </div>
-            <div style="display:flex;gap:10px;align-items:flex-start;">
-              <span style="color:var(--gold);flex-shrink:0;">●</span>
-              <span><strong style="color:var(--white);">M&amp;A紹介料</strong> ─ パートナーのご紹介でM&amp;Aが成約した場合、当社が受領する紹介料を運営とパートナーで折半します。</span>
-            </div>
-            <div style="display:flex;gap:10px;align-items:flex-start;">
-              <span style="color:var(--gold);flex-shrink:0;">●</span>
-              <span><strong style="color:var(--white);">スケールロイヤリティ</strong> ─ 顧問契約が30社に到達すると、全契約の報酬還元率がさらに引き上がります（詳細は面談時にご説明します）。</span>
-            </div>
-          </div>
-          <p style="font-size:0.78125rem;color: rgba(255,255,255,0.72);margin-top:12px;line-height:1.6;">※ 顧問報酬・PMI支援報酬の還元率はパートナーランクにより一定です。M&amp;A紹介料は運営とパートナーの折半です。</p>
-        </div>
-
-        <p style="font-size:0.78125rem;color: rgba(255,255,255,0.7);margin-bottom:16px;text-align:center;line-height:1.6;">※ 上記は試算例です。実際の収入は顧客契約状況により変動します。<br>※ AIが知識面を全面サポート。「聴く力」「共感力」があれば誰でも挑戦可能。</p>
-
-        <a href="#contact" class="btn-primary js-partner-cta" style="margin-top:8px;display:block;text-align:center;">日本初の認定パートナーに登録してみる</a>
-      </div>
-    </div>
-
-    <!-- 登録までの流れ -->
-    <div class="pn-flow reveal">
-      <p class="section-label">HOW TO JOIN</p>
-      <h2 class="section-title serif">登録までは、3ステップ。</h2>
-      <div class="pn-flow-grid">
-        <div class="pn-flow-step">
-          <p class="pn-flow-num">1</p>
-          <p class="pn-flow-title">フォームから応募する</p>
-          <p class="pn-flow-desc">このページ下部のフォームから約1分で完了。「パートナー参加」を選んで送信してください。1〜2営業日以内にご連絡します。</p>
-        </div>
-        <div class="pn-flow-step">
-          <p class="pn-flow-num">2</p>
-          <p class="pn-flow-title">オンライン面談</p>
-          <p class="pn-flow-desc">仕事内容・料金・報酬・働き方を運営が直接ご説明します。疑問や不安はここですべて解消してください。無理な勧誘は一切ありません。</p>
-        </div>
-        <div class="pn-flow-step">
-          <p class="pn-flow-num">3</p>
-          <p class="pn-flow-title">認定研修 → 活動開始</p>
-          <p class="pn-flow-desc">納得いただけたら登録し、認定研修へ。AIの使い方から顧問先との向き合い方まで習得し、認定パートナーとして活動を開始します。</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- よくあるご質問 -->
-    <div class="pn-faq reveal" id="partner-faq">
-      <p class="section-label">FAQ</p>
-      <h2 class="section-title serif">よくあるご質問</h2>
-      <div style="margin-top:32px;">
-        <details class="pn-faq-item">
-          <summary>経営や財務の知識がなくても始められますか？</summary>
-          <p class="pn-faq-a">はい。難解な財務・税務の知識はAIが担い、認定研修と運営のサポートがあります。認定パートナーに求められるのは、経営者の話に耳を傾ける「聴く力」と「共感力」です。</p>
-        </details>
-        <details class="pn-faq-item">
-          <summary>副業から始めることはできますか？</summary>
-          <p class="pn-faq-a">できます。キャリア設計の1期は副業前提のスタートを想定しており、初めての顧問契約獲得まで運営が伴走します。手応えを得てから独立進出を判断できます。</p>
-        </details>
-        <details class="pn-faq-item">
-          <summary>登録に費用はかかりますか？</summary>
-          <p class="pn-faq-a">初期登録料は無料です。月額利用料は3,000円〜で、顧問先が増えるごとに1社あたり2,000円が加算される仕組みです。詳細は本ページの料金セクションをご覧ください。</p>
-        </details>
-        <details class="pn-faq-item">
-          <summary>AIを使ったことがなくても大丈夫ですか？</summary>
-          <p class="pn-faq-a">大丈夫です。Tsugu Aiはチャット感覚で使える専用設計で、認定研修でゼロから習得できます。むしろ「AIが苦手な経営者にAIの恩恵を届ける」ことこそ、認定パートナーの役割です。</p>
-        </details>
-        <details class="pn-faq-item">
-          <summary>特別な資格は必要ですか？</summary>
-          <p class="pn-faq-a">国家資格は不要です。Tsugu Ai -継-の認定研修を修了することが活動の要件です。これまでの営業経験・金融経験・士業事務所での経験などは、大きな強みとして活きます。</p>
-        </details>
-        <details class="pn-faq-item" id="faq-cancel">
-          <summary>解約・退会はできますか？</summary>
-          <p class="pn-faq-a">いつでも可能です。お問い合わせフォームで「その他」を選択してご連絡いただければ、運営が手続きをご案内します。無理な引き止めは一切ありません。解約条件の詳細は、ご登録時の利用規約に明記しています。</p>
-        </details>
-      </div>
-
-      <!-- 最終CTA -->
-      <div class="pn-cta-band reveal">
-        <p class="serif">迷っているなら、まず話を聞いてみませんか。<br>応募は約1分。面談で納得してから決められます。</p>
-        <a href="#contact" class="btn-primary js-partner-cta" style="display:inline-block;">認定パートナーに応募する →</a>
-        <p class="pn-cta-sub">しつこい勧誘は一切ありません。話を聞いて合わなければ、それで終わりにして構いません。</p>
+    <div class="cta-band reveal">
+      <p class="cta-band-lead">月額5万円が高いか安いかは、<br>話を聞いてから決めてください。</p>
+      <p class="cta-band-sub">初回のご相談では、費用も契約も発生しません。<br>「いまは検討段階」という段階でのお問い合わせを歓迎しています。</p>
+      <div class="cta-band-actions">
+        <a href="#contact" class="btn-primary">無料で相談する <span class="btn-arrow">→</span></a>
+        <a href="tel:0825482224" class="cta-tel-inline">082-548-2224 <small>平日 9:00-18:00</small></a>
       </div>
     </div>
   </div>
 </section>
-<!-- 終章 誓い -->
+
+<!-- 代表メッセージ -->
+<section class="section-ceo" id="ceo">
+  <div class="container">
+    <div class="st-ch-head reveal" style="max-width:960px;margin:0 auto 56px;">
+      <span class="st-ch-num">代表より</span>
+      <div class="st-ch-titles">
+        <h2 class="st-ch-title">なぜ、私がこの事業を始めたか。</h2>
+        <p class="st-ch-sub">或る営業マンの、記憶</p>
+      </div>
+    </div>
+    <div class="ceo-inner reveal">
+      <div class="ceo-photo-wrap">
+        <img class="ceo-photo" src="ceo-ogasawara.jpg" width="200" height="200"
+             alt="株式会社福來 CEO 小笠原 陽介" loading="lazy" decoding="async">
+        <p class="ceo-name serif">小笠原 陽介</p>
+        <p class="ceo-role">株式会社福來 CEO</p>
+      </div>
+      <div class="ceo-body">
+        <p class="ceo-quote">「今月も、売らなければ──。」</p>
+        <p>フルコミッションの世界で、私は長く走り続けてきました。売れば認められ、売れなければ収入はない。成果がすべての世界で、確かな実績も積み上げました。それでも心のどこかに、ずっと引っかかりがありました。</p>
+        <p>「お客様のために」。その言葉を疑ったことはありません。ですが、明日の生活が懸かった商談の席で、<em>フォー・ユーの精神</em>を貫き通せる人間が、どれほどいるでしょうか。気づけば「この会社に本当に必要か」ではなく、「今月の数字になるか」で提案を選んでいる自分がいました。</p>
+        <p>そのしわ寄せは、いつも目の前の経営者に──この国の中小企業に、向かっていました。</p>
+        <p>これは、私ひとりの記憶ではありません。日本中の営業現場で、いまも同じことが起きています。悪いのは、人ではない。<em>仕組み</em>です。だから私たちは、仕組みそのものを変えることにしました。</p>
+        <p>売り込まなくても生きていける土台を、営業のプロに。本当に必要なものだけが届く環境を、経営者に。その両方を実現するのが、Tsugu Ai -継- です。まずは一度、御社のお話を聞かせてください。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 経営者向けFAQ -->
+<section class="section-service" id="faq" style="background:var(--blue-wash);">
+  <div class="container">
+    <div class="pn-faq" style="margin-top:0;">
+      <p class="section-label" style="justify-content:center;">FAQ</p>
+      <h2 class="section-title serif" style="text-align:center;">よくあるご質問</h2>
+      <div style="margin-top:36px;">
+        <details class="pn-faq-item">
+          <summary>相談したら、契約を勧められませんか。</summary>
+          <p class="pn-faq-a">いいえ。初回のご相談は現状をうかがい、何から着手すべきかをお伝えする場です。その場で契約をお願いすることはありません。私たちは「売り込まなくても成り立つ仕組み」をつくるために創業した会社です。合わないと感じられたら、それで終わりにしていただいて構いません。</p>
+        </details>
+        <details class="pn-faq-item">
+          <summary>後継者がまだ決まっていない段階でも相談できますか。</summary>
+          <p class="pn-faq-a">むしろ、その段階でのご相談がいちばん有効です。後継者が決まっていない時期こそ、親族内承継・従業員承継・M&Aという選択肢がすべて残っています。時間が経つほど選べる道は狭まりますので、「まだ何も決まっていない」状態でお越しください。</p>
+        </details>
+        <details class="pn-faq-item">
+          <summary>月額5万円で、具体的に何をしてもらえるのですか。</summary>
+          <p class="pn-faq-a">AIプラットフォームの全機能（経営ダッシュボード・キャッシュフロー予測・補助金マッチング）に加え、認定パートナーによる月次の伴走面談と、月次レポートの作成・フォローアップが含まれます。従来の経営コンサルティングは月額30万円以上が相場ですが、実務をAIが担うことで原価構造を変え、この価格を実現しています。</p>
+        </details>
+        <details class="pn-faq-item">
+          <summary>財務や数字が苦手でも大丈夫でしょうか。</summary>
+          <p class="pn-faq-a">問題ありません。財務諸表を読みこなせなくても、キャッシュ（お金の流れ）さえ見失わなければ経営は続きます。専門用語はAIがかみ砕いて翻訳し、認定パートナーが「次に何をすればいいか」という行動レベルまで一緒に整理します。</p>
+        </details>
+        <details class="pn-faq-item">
+          <summary>AIを使ったことがないのですが、扱えますか。</summary>
+          <p class="pn-faq-a">ご安心ください。経営者ご自身が操作に習熟する必要はありません。AIを扱うのは認定パートナーの役割で、経営者の方には対話を通じて結果をお伝えします。「AIが苦手な経営者にこそ、AIの恩恵を届ける」ことがこのプロダクトの目的です。</p>
+        </details>
+        <details class="pn-faq-item">
+          <summary>小規模な会社ですが、対象になりますか。</summary>
+          <p class="pn-faq-a">はい。従業員数や売上規模による制限は設けていません。むしろ、専門の管理部門を持てない規模の会社ほど、経営者ひとりに判断が集中しがちです。そうした会社を支えることを想定して設計しています。</p>
+        </details>
+        <details class="pn-faq-item">
+          <summary>広島県外でも対応できますか。</summary>
+          <p class="pn-faq-a">対応しています。AIプラットフォームと認定パートナーによる面談はオンラインで完結するため、所在地を問いません。全国の地域に認定パートナーが立ち、その地域の会社をその地域の人が継いでいく——それが私たちの目指す姿です。</p>
+        </details>
+        <details class="pn-faq-item">
+          <summary>途中で解約できますか。</summary>
+          <p class="pn-faq-a">いつでも可能です。お問い合わせフォームからご連絡いただければ、運営が手続きをご案内します。無理な引き止めは一切ありません。解約条件の詳細は、ご契約時の利用規約に明記しています。</p>
+        </details>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="st-vow st-light">
   <div class="container--narrow">
     <div class="reveal">
@@ -3392,6 +704,7 @@ body::before {
     </div>
   </div>
 </section>
+
 <!-- COMPANY -->
 <section class="section-company" id="company">
   <div class="container">
@@ -3403,19 +716,28 @@ body::before {
           広島の地から、日本の中小企業が抱える課題に真正面から向き合います。<br>
           全ての中小企業経営者と労働者、そして厳しい社会で奮闘する営業マン達に安心をお届けします。
         </p>
+        <a href="https://www.fuku-kita.jp/" class="btn-ghost" style="padding-top:24px;">運営会社のホームページ <span class="btn-arrow">→</span></a>
       </div>
       <div class="company-info reveal reveal-delay-1">
         <div class="company-row">
           <span class="company-key">会社名</span>
-          <span class="company-val">株式会社福來</span>
+          <span class="company-val">株式会社福來（ふくきたる）</span>
+        </div>
+        <div class="company-row">
+          <span class="company-key">代表者</span>
+          <span class="company-val">CEO　小笠原 陽介</span>
         </div>
         <div class="company-row">
           <span class="company-key">所在地</span>
-          <span class="company-val">広島市中区西白島町</span>
+          <span class="company-val">〒730-0005<br>広島県広島市中区西白島町18-6-203号</span>
+        </div>
+        <div class="company-row">
+          <span class="company-key">電話番号</span>
+          <span class="company-val"><a href="tel:0825482224" style="color:var(--gold-light);">082-548-2224</a>（平日 9:00-18:00）</span>
         </div>
         <div class="company-row">
           <span class="company-key">事業内容</span>
-          <span class="company-val">中小企業承継エコシステム「Tsugu Ai -継-」の開発・運営</span>
+          <span class="company-val">中小企業承継エコシステム「Tsugu Ai -継-」の開発・運営<br>M&Aアドバイザリー（PMI支援含む）<br>終活・相続支援／認定パートナーの育成・認定研修</span>
         </div>
         <div class="company-row">
           <span class="company-key">提供開始</span>
@@ -3425,15 +747,28 @@ body::before {
     </div>
   </div>
 </section>
-<!-- CTA -->
+
+<!-- CTA / お問い合わせ -->
 <section class="section-cta" id="contact">
   <div class="container">
     <div class="cta-inner reveal">
       <p class="section-label" style="justify-content:center;">無料相談</p>
       <h2 class="cta-title serif">まずは、お悩みをお聞かせください。</h2>
-      <p class="cta-sub">事業承継の悩み、営業活動の悩み、経営者としての孤独感——<br>どんなお悩みにも、Tsugu Ai -継-は寄り添います。</p>
+      <p class="cta-sub">後継者のこと、資金繰りのこと、経営者としての孤独——<br>どんな段階のご相談でも、Tsugu Ai -継- は寄り添います。</p>
 
-      <!-- Contact Form -->
+      <div class="form-assurance">
+        <span>相談は無料</span>
+        <span>その場での契約はなし</span>
+        <span>しつこい勧誘はしません</span>
+        <span>入力は約1分</span>
+      </div>
+
+      <div class="contact-tel">
+        <p class="contact-tel-label">お電話でのご相談はこちら</p>
+        <a href="tel:0825482224" class="contact-tel-num">082-548-2224</a>
+        <p class="contact-tel-hours">平日 9:00-18:00／土日祝を除く</p>
+      </div>
+
       <div class="contact-form-wrap reveal reveal-delay-1">
         <form id="contact-form" onsubmit="handleSubmit(event)" action="https://formspree.io/f/mrejeqej" method="POST">
           <div class="form-row">
@@ -3442,24 +777,17 @@ body::before {
               <input class="form-input" type="text" id="fname" name="name" placeholder="山田 太郎" required>
             </div>
             <div class="form-group">
-              <label class="form-label" for="furigana">ふりがな <span class="required">*</span></label>
-              <input class="form-input" type="text" id="furigana" name="furigana" placeholder="やまだ たろう" required>
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label" for="fcompany">会社名</label>
-              <input class="form-input" type="text" id="fcompany" name="company" placeholder="株式会社〇〇">
-            </div>
-            <div class="form-group"></div>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
               <label class="form-label" for="femail">メールアドレス <span class="required">*</span></label>
               <input class="form-input" type="email" id="femail" name="email" placeholder="example@mail.com" required>
             </div>
+          </div>
+          <div class="form-row">
             <div class="form-group">
-              <label class="form-label" for="phone">電話番号</label>
+              <label class="form-label" for="fcompany">会社名 <span class="form-optional">任意</span></label>
+              <input class="form-input" type="text" id="fcompany" name="company" placeholder="株式会社〇〇">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="phone">電話番号 <span class="form-optional">任意</span></label>
               <input class="form-input" type="tel" id="phone" name="phone" placeholder="090-0000-0000">
             </div>
           </div>
@@ -3487,11 +815,15 @@ body::before {
             </div>
           </div>
           <div class="form-group">
-            <label class="form-label" for="message">お悩み・ご相談内容</label>
-            <textarea class="form-input form-textarea" id="message" name="message" rows="4" placeholder="現在の状況やご相談内容をご自由にお書きください。"></textarea>
+            <label class="form-label" for="message">お悩み・ご相談内容 <span class="form-optional">任意</span></label>
+            <textarea class="form-input form-textarea" id="message" name="message" rows="4" placeholder="現在の状況やご相談内容をご自由にお書きください。何も決まっていない段階でも構いません。"></textarea>
           </div>
           <button type="submit" class="btn-primary form-submit">送信する →</button>
           <p class="form-note">送信後、担当者より1〜2営業日以内にご連絡いたします。</p>
+          <p class="form-legal">
+            送信をもって<a href="https://www.fuku-kita.jp/privacy-policy/" target="_blank" rel="noopener">プライバシーポリシー</a>に同意いただいたものとみなします。<br>
+            お預かりした個人情報は、ご相談への対応以外の目的では利用いたしません。
+          </p>
         </form>
         <div id="form-success" style="display:none;" class="form-success-msg">
           <div class="success-icon">✓</div>
@@ -3502,361 +834,54 @@ body::before {
     </div>
   </div>
 </section>
-<style>
-/* ===== CONTACT FORM ===== */
-.contact-form-wrap {
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(91,132,196,0.2);
-  border-radius: var(--r-lg);
-  padding: 52px 56px;
-  max-width: 780px;
-  margin: 0 auto;
-  text-align: left;
-  backdrop-filter: blur(8px);
-}
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  margin-bottom: 20px;
-}
-.form-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 20px; }
-.form-row .form-group { margin-bottom: 0; }
-.form-label {
-  font-size: 0.8125rem;
-  font-weight: 600;
-  color: rgba(255,255,255,0.75);
-  letter-spacing: 0.06em;
-}
-.required { color: var(--gold); margin-left: 2px; }
-.form-input {
-  background: rgba(255,255,255,0.07);
-  border: 1px solid rgba(91,132,196,0.25);
-  border-radius: var(--r-sm);
-  padding: 12px 16px;
-  font-size: 1rem;
-  color: var(--white);
-  font-family: var(--sans);
-  transition: border-color 0.2s, background 0.2s;
-  outline: none;
-  width: 100%;
-}
-.form-input::placeholder { color: rgba(255,255,255,0.45); }
-.form-input:focus {
-  border-color: var(--blue-light);
-  background: rgba(255,255,255,0.1);
-}
-.form-textarea { resize: vertical; min-height: 120px; }
-.form-radio-group {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 12px;
-}
-.form-radio { cursor: pointer; }
-.form-radio input { display: none; }
-.radio-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 20px 12px;
-  border: 1.5px solid rgba(91,132,196,0.2);
-  border-radius: var(--r-md);
-  background: rgba(255,255,255,0.04);
-  transition: all 0.2s;
-  cursor: pointer;
-  gap: 6px;
-}
-.radio-box:hover {
-  border-color: var(--blue-light);
-  background: rgba(91,132,196,0.1);
-}
-.form-radio input:checked + .radio-box {
-  border-color: var(--gold);
-  background: rgba(195,155,63,0.08);
-}
-.radio-label {
-  font-size: 0.875rem;
-  font-weight: 600;
-  color: rgba(255,255,255,0.8);
-  line-height: 1.4;
-}
-.radio-label small {
-  display: block;
-  font-size: 0.75rem;
-  font-weight: 400;
-  color: rgba(255,255,255,0.62);
-  margin-top: 2px;
-}
-.form-submit {
-  width: 100%;
-  margin-top: 8px;
-  padding: 18px;
-  font-size: 1rem;
-  letter-spacing: 0.1em;
-  border: none;
-  cursor: pointer;
-  border-radius: var(--r-sm);
-  justify-content: center;
-}
-.form-note {
-  text-align: center;
-  font-size: 0.875rem;
-  color: rgba(255,255,255,0.65);
-  margin-top: 16px;
-  letter-spacing: 0.04em;
-}
-.form-success-msg {
-  text-align: center;
-  padding: 60px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 16px;
-}
-.success-icon {
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  background: rgba(91,132,196,0.15);
-  border: 2px solid var(--blue-light);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  color: var(--blue-light);
-}
-.form-success-msg h3 {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--white);
-  letter-spacing: 0.04em;
-}
-.form-success-msg p {
-  font-size: 0.9375rem;
-  color: rgba(255,255,255,0.7);
-  line-height: 1.8;
-}
-@media (max-width: 900px) {
-  .contact-form-wrap { padding: 32px 24px; }
-  .form-row { grid-template-columns: 1fr; }
-  .form-radio-group { grid-template-columns: 1fr; }
-}
-</style>
+
+<!-- パートナー募集への導線 -->
+<section class="crosslink">
+  <div class="container">
+    <div class="crosslink-card reveal">
+      <div class="crosslink-body">
+        <p class="crosslink-label">FOR SALES PROFESSIONALS</p>
+        <p class="crosslink-title serif">経営者を「支える側」になる、という選択。</p>
+        <p class="crosslink-desc">営業・金融・士業のご経験を活かし、認定パートナーとして経営者に伴走する道もあります。初期投資ゼロ、知識はAIが担当。詳しくは専用ページをご覧ください。</p>
+      </div>
+      <a href="partner.html" class="crosslink-btn">認定パートナー募集を見る <span class="branch-arrow">→</span></a>
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="container">
     <div class="footer-inner">
       <div class="footer-brand">
         <p class="footer-logo">Tsugu <span>Ai</span> -<span>継</span>-</p>
-        <p class="footer-tagline serif">日本の中小企業を、次の世代へ。</p>
+        <p class="footer-tagline serif">その会社の物語を、まだ、終わらせない。</p>
       </div>
       <ul class="footer-links">
+        <li><a href="#problem">課題</a></li>
         <li><a href="#service">プロダクト</a></li>
-        <li><a href="#how">成長モデル</a></li>
+        <li><a href="#check">承継リスク診断</a></li>
         <li><a href="#pricing">料金</a></li>
-        <li><a href="#consultant">パートナー参加</a></li>
-        <li><a href="#partner-faq">よくあるご質問</a></li>
+        <li><a href="#ceo">代表メッセージ</a></li>
+        <li><a href="#faq">よくある質問</a></li>
+        <li><a href="#company">会社情報</a></li>
+        <li><a href="partner.html">パートナー募集</a></li>
         <li><a href="#contact">お問い合わせ</a></li>
-        <li><a href="https://www.fuku-kita.jp/">福來HP</a></li>
       </ul>
+    </div>
+    <div class="footer-legal">
+      <a href="https://www.fuku-kita.jp/privacy-policy/" target="_blank" rel="noopener">プライバシーポリシー</a>
+      <a href="tokushoho.html">特定商取引法に基づく表記</a>
+      <a href="https://www.fuku-kita.jp/" target="_blank" rel="noopener">運営会社（株式会社福來）</a>
+      <a href="tel:0825482224">082-548-2224</a>
     </div>
     <div class="footer-bottom">
       <p class="footer-copy">© 2026 株式会社福來 All Rights Reserved.</p>
-      <p class="footer-copy">広島市中区西白島町</p>
+      <p class="footer-copy">広島市中区西白島町18-6-203号</p>
     </div>
   </div>
 </footer>
 
-<script>
-// ===== MOBILE MENU TOGGLE =====
-(function() {
-  const toggle = document.getElementById('navToggle');
-  const menu = document.getElementById('mobileMenu');
-  const closeBtn = document.getElementById('mobileMenuClose');
-  const overlay = document.getElementById('mobileMenuOverlay');
-  if (!toggle || !menu) return;
-
-  function closeMenu() {
-    toggle.classList.remove('is-open');
-    menu.classList.remove('is-open');
-    if (overlay) overlay.classList.remove('is-open');
-    document.body.classList.remove('menu-open');
-    toggle.setAttribute('aria-expanded', 'false');
-    menu.setAttribute('aria-hidden', 'true');
-  }
-  function openMenu() {
-    toggle.classList.add('is-open');
-    menu.classList.add('is-open');
-    if (overlay) overlay.classList.add('is-open');
-    document.body.classList.add('menu-open');
-    toggle.setAttribute('aria-expanded', 'true');
-    menu.setAttribute('aria-hidden', 'false');
-  }
-  toggle.addEventListener('click', function() {
-    menu.classList.contains('is-open') ? closeMenu() : openMenu();
-  });
-  if (closeBtn) closeBtn.addEventListener('click', closeMenu);
-  if (overlay) overlay.addEventListener('click', closeMenu);
-  menu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape' && menu.classList.contains('is-open')) closeMenu();
-  });
-})();
-
-// ===== CONTACT FORM SUBMIT =====
-async function handleSubmit(e) {
-  e.preventDefault();
-  const form = e.target;
-  const submitBtn = form.querySelector('.form-submit');
-  submitBtn.textContent = '送信中...';
-  submitBtn.disabled = true;
-  const formData = new FormData(form);
-  try {
-    const response = await fetch('https://formspree.io/f/mrejeqej', {
-      method: 'POST',
-      body: formData,
-      headers: { 'Accept': 'application/json' }
-    });
-    if (response.ok) {
-      form.style.display = 'none';
-      document.getElementById('form-success').style.display = 'flex';
-    } else {
-      alert('送信に失敗しました。入力内容をご確認ください。');
-      submitBtn.textContent = '送信する →';
-      submitBtn.disabled = false;
-    }
-  } catch (error) {
-    alert('通信エラーが発生しました。インターネット接続をご確認ください。');
-    submitBtn.textContent = '送信する →';
-    submitBtn.disabled = false;
-  }
-}
-
-// ===== NAV SCROLL =====
-const nav = document.getElementById('main-nav');
-window.addEventListener('scroll', () => {
-  nav.classList.toggle('scrolled', window.scrollY > 60);
-});
-
-// ===== SCROLL REVEAL（フェイルセーフ付き） =====
-(function() {
-  const revealEls = document.querySelectorAll('.reveal');
-  function revealAll() { revealEls.forEach(el => el.classList.add('revealed')); }
-
-  if (!('IntersectionObserver' in window)) { revealAll(); return; }
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('revealed');
-    });
-  }, { threshold: 0.08, rootMargin: '0px 0px -8% 0px' });
-  revealEls.forEach(el => observer.observe(el));
-
-  // iframe埋め込み等で発火しない場合に備え、読み込み後に全表示
-  function failSafe() { setTimeout(revealAll, 2500); }
-  if (document.readyState === 'complete') failSafe();
-  else window.addEventListener('load', failSafe);
-})();
-
-// ===== カウントアップ（統計数字） =====
-(function() {
-  const els = document.querySelectorAll('[data-count]');
-  if (!els.length) return;
-  function animate(el) {
-    const target = parseInt(el.getAttribute('data-count'), 10);
-    const dur = 1600;
-    const start = performance.now();
-    function tick(now) {
-      const p = Math.min((now - start) / dur, 1);
-      const eased = 1 - Math.pow(1 - p, 3);
-      el.textContent = Math.round(target * eased);
-      if (p < 1) requestAnimationFrame(tick);
-    }
-    requestAnimationFrame(tick);
-  }
-  if (!('IntersectionObserver' in window)) {
-    els.forEach(el => el.textContent = el.getAttribute('data-count'));
-    return;
-  }
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        animate(entry.target);
-        obs.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.4 });
-  els.forEach(el => obs.observe(el));
-})();
-
-// ===== 結びのSVG描画（第三章） =====
-(function() {
-  const svg = document.getElementById('convSvg');
-  if (!svg) return;
-  if (!('IntersectionObserver' in window)) { svg.classList.add('drawn'); return; }
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        svg.classList.add('drawn');
-        obs.disconnect();
-      }
-    });
-  }, { threshold: 0.3 });
-  obs.observe(svg);
-})();
-
-// ===== 糸ナビ：進捗と現在章 =====
-(function() {
-  const progress = document.getElementById('threadProgress');
-  if (!progress) return;
-  const knots = document.querySelectorAll('.st-knots a');
-  const sections = ['top', 'story', 'problem', 'solution', 'contact']
-    .map(id => document.getElementById(id))
-    .filter(Boolean);
-
-  function update() {
-    const doc = document.documentElement;
-    const max = doc.scrollHeight - window.innerHeight;
-    const p = max > 0 ? (window.scrollY / max) * 100 : 0;
-    progress.style.height = p + '%';
-
-    // ヒーロー上では白系配色に
-    document.body.classList.toggle('st-hero-on', window.scrollY < window.innerHeight * 0.7);
-
-    // 現在の章をハイライト
-    let current = sections[0];
-    for (const sec of sections) {
-      if (sec.getBoundingClientRect().top <= window.innerHeight * 0.45) current = sec;
-    }
-    knots.forEach(a => a.classList.toggle('is-active', a.getAttribute('data-knot') === current.id));
-  }
-  window.addEventListener('scroll', update, { passive: true });
-  window.addEventListener('resize', update);
-  update();
-})();
-
-// ===== パートナーCTA: フォームの「パートナー参加」を自動選択 =====
-document.querySelectorAll('.js-partner-cta').forEach(function(btn) {
-  btn.addEventListener('click', function() {
-    var radio = document.querySelector('input[name="inquiry_type"][value="認定パートナーへの参加"]');
-    if (radio) radio.checked = true;
-  });
-});
-
-// ===== SMOOTH ANCHOR SCROLL =====
-document.querySelectorAll('a[href^="#"]').forEach(a => {
-  a.addEventListener('click', e => {
-    const id = a.getAttribute('href').slice(1);
-    const target = document.getElementById(id);
-    if (target) {
-      e.preventDefault();
-      const offset = target.getBoundingClientRect().top + window.scrollY - 80;
-      window.scrollTo({ top: offset, behavior: 'smooth' });
-    }
-  });
-});
-</script>
+<script src="app.js"></script>
 </body>
 </html>
