@@ -3115,3 +3115,57 @@ body::before {
   .pt-hero-point { display: flex; align-items: baseline; gap: 12px; padding: 14px 18px; }
   .pt-hero-point-num { margin-bottom: 0; font-size: 1.25rem; }
 }
+
+/* =====================================================
+   視認性（コントラスト）改善
+   WCAG AA: 通常文字 4.5:1 / 大文字・太字 3:1 を満たす
+   ===================================================== */
+
+/* 代表メッセージ欄は暗背景。明色セクション用の文字色を打ち消す */
+.section-ceo .st-ch-title { color: var(--white-pure); }
+.section-ceo .st-ch-sub { color: rgba(255,255,255,0.68); }
+.section-ceo .st-ch-num { color: var(--gold-light); }
+.section-ceo .st-ch-num::after {
+  background: linear-gradient(to bottom, var(--gold), transparent);
+}
+
+/* 明背景のセクションラベル：スカイ→ブルーへ濃く */
+.section-label { color: var(--blue-bright); }
+.section-label::before { background: var(--blue-bright); }
+
+/* 暗背景のセクションラベル・フェーズ表記：ゴールドを明るく */
+.section-crisis .section-label,
+.section-how .section-label,
+.section-company .section-label,
+.section-cta .section-label,
+.section-ceo .section-label { color: var(--gold-light); }
+.section-crisis .section-label::before,
+.section-how .section-label::before,
+.section-company .section-label::before,
+.section-cta .section-label::before,
+.section-ceo .section-label::before { background: var(--gold-light); }
+.how-step-phase { color: var(--gold-light); }
+
+/* ヒーローの語義タグ：暗背景で読めるよう明度を上げる */
+.hero-meaning-item strong { color: #A8C6E4; }
+
+/* 明背景に置くゴールド文字は濃色版を使う */
+.pricing-plan,
+.st-problem-sell .st-problem-tag { color: #8A6A1E; }
+.st-problem-sell .st-problem-tag { border-bottom-color: rgba(138,106,30,0.45); }
+
+/* 暗背景の小さな補足文：不透明度を上げる */
+.st-crisis-src { color: rgba(255,255,255,0.62); }
+.footer-copy { color: rgba(255,255,255,0.58); }
+.hero-stat-label,
+.st-stat-label { color: rgba(255,255,255,0.72); }
+.pn-cta-band .pn-cta-sub { color: rgba(255,255,255,0.78); }
+.cta-band-note { color: rgba(255,255,255,0.7); }
+.footer-tagline { color: rgba(255,255,255,0.68); }
+.footer-links a { color: rgba(255,255,255,0.72); }
+.footer-legal a { color: rgba(255,255,255,0.7); }
+
+/* 報酬カードの背景を濃くし、ゴールド文字のコントラストを確保 */
+.consultant-income {
+  background: linear-gradient(135deg, var(--ink) 0%, var(--ink-mid) 100%);
+}
