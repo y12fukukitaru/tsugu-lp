@@ -3263,3 +3263,33 @@ body::before {
   .footer-nav { gap: 24px 16px; }
   .footer-col a { white-space: normal; }
 }
+
+/* =====================================================
+   二次CTA（.btn-ghost）を枠線付きボタンに
+   枠なしのテキストリンクだったため、押せることが
+   伝わっていなかった問題への対処
+   ===================================================== */
+.btn-ghost {
+  padding: 16.5px 30px;
+  border: 1.5px solid rgba(255,255,255,0.55);
+  border-radius: var(--r-sm);
+  background: rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.95);
+  font-weight: 700;
+  font-size: 1rem;
+  transition: border-color 0.2s, color 0.2s, background 0.2s, transform 0.15s;
+}
+.btn-ghost:hover {
+  border-color: var(--gold);
+  color: var(--gold-light);
+  background: rgba(195,155,63,0.14);
+  transform: translateY(-1px);
+}
+.btn-ghost:active { transform: translateY(0); }
+
+/* モバイルは主ボタンと同じ幅に揃えてタップしやすくする */
+@media (max-width: 900px) {
+  .hero-actions { align-items: stretch; }
+  .hero-actions .btn-primary,
+  .hero-actions .btn-ghost { justify-content: center; }
+}
