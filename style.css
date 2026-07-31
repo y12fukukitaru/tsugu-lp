@@ -3293,3 +3293,33 @@ body::before {
   .hero-actions .btn-primary,
   .hero-actions .btn-ghost { justify-content: center; }
 }
+
+/* =====================================================
+   日本語の可読性：折り返しを文節の切れ目で行う
+   「〜聴け／るのは」のような不自然な位置での改行を防ぐ
+   （word-break: auto-phrase 非対応ブラウザでは無視される）
+   ===================================================== */
+h1, h2, h3, h4,
+p, li, dd, dt, summary, figcaption,
+.st-hero-copy, .st-hero-title, .pt-hero-title, .pt-hero-copy,
+.cta-band-lead, .cta-band-sub, .st-conv-close, .st-conclusion,
+.st-lead, .check-q-text, .pn-hook-item, .pn-hook-lead {
+  line-break: strict;
+  word-break: auto-phrase;
+  overflow-wrap: break-word;
+}
+/* 短い見出し・ラベルは折り返さない */
+.footer-col a,
+.nav-links a,
+.trust-item,
+.st-problem-tag,
+.pt-hero-point-num {
+  word-break: keep-all;
+}
+
+/* 会社情報：狭い画面では項目名を上に置いて値の幅を確保 */
+@media (max-width: 600px) {
+  .company-row { flex-direction: column; gap: 6px; }
+  .company-key { width: auto; }
+  .company-val { overflow-wrap: break-word; }
+}
