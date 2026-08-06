@@ -3338,3 +3338,15 @@ p, li, dd, dt, summary, figcaption,
   .pt-hero-point-label { line-height: 1.7; }
   .pt-hero-copy { line-height: 2.05; }
 }
+
+/* スマホではボタンの左右余白と字送りを詰め、
+   長めのラベルでも1行に収まるようにする */
+@media (max-width: 480px) {
+  .btn-primary,
+  .btn-ghost,
+  .pricing-btn {
+    padding-left: 20px;
+    padding-right: 20px;
+    letter-spacing: 0.03em;
+  }
+}
