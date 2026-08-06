@@ -3350,3 +3350,23 @@ p, li, dd, dt, summary, figcaption,
     letter-spacing: 0.03em;
   }
 }
+
+/* 主要CTA：中央揃えの大きめボタン */
+.btn-lead {
+  display: flex;
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  padding: 22px 28px;
+  font-size: 1.0625rem;
+  line-height: 1.4;
+}
+@media (max-width: 480px) {
+  .btn-lead { padding: 20px 16px; font-size: 1rem; }
+}
+
+/* 極小画面のみ有効な改行（長いCTAを読点で区切る） */
+.xs-br { display: none; }
+@media (max-width: 440px) { .xs-br { display: inline; } }
