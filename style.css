@@ -3323,3 +3323,18 @@ p, li, dd, dt, summary, figcaption,
   .company-key { width: auto; }
   .company-val { overflow-wrap: break-word; }
 }
+
+/* パートナーヒーローの3語カード：スマホで説明文の開始位置を揃える
+   （「変える」3字と「築く」2字で左端がズレていた問題への対処） */
+@media (max-width: 768px) {
+  .pt-hero-point {
+    display: grid;
+    grid-template-columns: 4.2rem 1fr;
+    align-items: baseline;
+    gap: 14px;
+    padding: 15px 18px;
+  }
+  .pt-hero-point-num { margin-bottom: 0; font-size: 1.25rem; }
+  .pt-hero-point-label { line-height: 1.7; }
+  .pt-hero-copy { line-height: 2.05; }
+}
