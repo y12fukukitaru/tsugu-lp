@@ -3460,3 +3460,19 @@ p, li, dd, dt, summary, figcaption,
   0%   { opacity: 0.9; transform: scale(0.7); }
   100% { opacity: 0;   transform: scale(1.85); }
 }
+
+/* ---- 結びの図：スマホでの見え方を強化 ----
+   SVGは画面幅に合わせて縮小されるため、線幅も同じ比率で細くなる。
+   デスクトップで約2.3pxに見える太さを各幅で保つよう段階的に太くする。 */
+@media (max-width: 900px) {
+  .st-conv .st-p-left,
+  .st-conv .st-p-right { stroke-width: 3.2; }
+  .st-conv-knot-circle { stroke-width: 2.4; }
+  .st-conv-knot-pulse { stroke-width: 2.4; }
+}
+@media (max-width: 560px) {
+  .st-conv .st-p-left,
+  .st-conv .st-p-right { stroke-width: 5.4; }
+  .st-conv-knot-circle { stroke-width: 4; }
+  .st-conv-knot-pulse { stroke-width: 4; }
+}

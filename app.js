@@ -137,13 +137,20 @@ async function handleSubmit(e) {
   }, { threshold: 0.3 });
   obs.observe(svg);
 
-  // フェイルセーフ：iframe埋め込み等で監視が発火しない場合、
-  // 結び目が隠れたままにならないよう一定時間後に強制的に表示する
-  function failSafe() {
-    setTimeout(function () { svg.classList.add('drawn'); }, 4000);
+  // フェイルセーフ：iframe埋め込み等で監視が発火しない場合に備え、
+  // スクロール時にも画面内に入ったかを自前で判定する。
+  // （時間経過だけで発火させると、利用者が図に到達する前に
+  //   アニメーションが終わってしまうため条件付きにする）
+  function checkInView() {
+    if (svg.classList.contains('drawn')) return;
+    var r = svg.getBoundingClientRect();
+    if (r.top < window.innerHeight * 0.85 && r.bottom > 0) {
+      svg.classList.add('drawn');
+      obs.disconnect();
+      window.removeEventListener('scroll', checkInView);
+    }
   }
-  if (document.readyState === 'complete') failSafe();
-  else window.addEventListener('load', failSafe);
+  window.addEventListener('scroll', checkInView, { passive: true });
 })();
 
 // ===== 糸ナビ：進捗と現在章 =====
