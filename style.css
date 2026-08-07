@@ -3481,3 +3481,8 @@ p, li, dd, dt, summary, figcaption,
 @media (max-width: 768px) {
   .fde-explainer-title { font-size: 1.75rem; }
 }
+
+/* 「継」を円の中心に自動で揃える。
+   従来は y に固定値を置いていたため、画面幅で文字サイズが変わると
+   中心からズレていた。dominant-baseline で文字サイズに依存しなくする。 */
+.st-conv-knot-kanji { dominant-baseline: central; }
