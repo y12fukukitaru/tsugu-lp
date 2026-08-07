@@ -3414,3 +3414,49 @@ p, li, dd, dt, summary, figcaption,
   .st-conv-knot-kanji { font-size: 52px; }
   .st-conv-brand { font-size: 34px; }
 }
+
+/* ---- 結びの図：左右同時に伸び、到達した瞬間に「結ばれる」 ---- */
+/* 左右の線は遅延なしで同時に描画し、同時に中央へ到達させる */
+.st-conv .st-path {
+  transition: stroke-dashoffset 1.9s cubic-bezier(0.33, 0, 0.2, 1);
+}
+.st-conv .st-p-right { transition-delay: 0s; }
+
+/* 結び目は線が届くまで隠しておき、到達に合わせて現れる */
+.st-conv-knot-circle,
+.st-conv-knot-kanji {
+  opacity: 0;
+  transform: scale(0.6);
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: opacity 0.5s ease-out, transform 0.6s cubic-bezier(0.34, 1.4, 0.64, 1);
+  transition-delay: 1.75s;
+}
+.st-conv.drawn .st-conv-knot-circle,
+.st-conv.drawn .st-conv-knot-kanji {
+  opacity: 1;
+  transform: scale(1);
+}
+.st-conv-brand {
+  opacity: 0;
+  transition: opacity 0.7s ease-out;
+  transition-delay: 2.15s;
+}
+.st-conv.drawn .st-conv-brand { opacity: 1; }
+
+/* 結ばれた瞬間の波紋 */
+.st-conv-knot-pulse {
+  fill: none;
+  stroke: var(--gold);
+  stroke-width: 1.5;
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.st-conv.drawn .st-conv-knot-pulse {
+  animation: stKnotPulse 1.5s ease-out 1.8s 1 both;
+}
+@keyframes stKnotPulse {
+  0%   { opacity: 0.9; transform: scale(0.7); }
+  100% { opacity: 0;   transform: scale(1.85); }
+}

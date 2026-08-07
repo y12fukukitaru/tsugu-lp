@@ -136,6 +136,14 @@ async function handleSubmit(e) {
     });
   }, { threshold: 0.3 });
   obs.observe(svg);
+
+  // フェイルセーフ：iframe埋め込み等で監視が発火しない場合、
+  // 結び目が隠れたままにならないよう一定時間後に強制的に表示する
+  function failSafe() {
+    setTimeout(function () { svg.classList.add('drawn'); }, 4000);
+  }
+  if (document.readyState === 'complete') failSafe();
+  else window.addEventListener('load', failSafe);
 })();
 
 // ===== 糸ナビ：進捗と現在章 =====
