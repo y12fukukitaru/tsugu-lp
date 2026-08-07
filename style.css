@@ -3476,3 +3476,8 @@ p, li, dd, dt, summary, figcaption,
   .st-conv-knot-circle { stroke-width: 4; }
   .st-conv-knot-pulse { stroke-width: 4; }
 }
+
+/* 「認定パートナーとは。」がカード内幅に収まらず句点だけ折り返していたため縮小 */
+@media (max-width: 768px) {
+  .fde-explainer-title { font-size: 1.75rem; }
+}
