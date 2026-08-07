@@ -313,9 +313,12 @@
     <div class="st-conv-wrap reveal">
       <svg class="st-conv" id="convSvg" viewBox="0 0 900 340" aria-label="営業のプロと中小企業経営者を、継が結ぶ図">
         <defs>
-          <linearGradient id="stJoinGrad" x1="0" y1="0" x2="1" y2="0">
+          <!-- 結合線は水平でbboxの高さが0になるため、座標指定方式にする
+               （objectBoundingBox方式では描画されない） -->
+          <linearGradient id="stJoinGrad" gradientUnits="userSpaceOnUse" x1="440" y1="169" x2="830" y2="169">
             <stop offset="0%" stop-color="#5B84C4"/>
-            <stop offset="100%" stop-color="#C39B3F"/>
+            <stop offset="55%" stop-color="#C39B3F"/>
+            <stop offset="100%" stop-color="#D9B863"/>
           </linearGradient>
         </defs>
         <text class="st-conv-label" x="36" y="66">営業のプロ ─ 安定という土台を</text>
