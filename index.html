@@ -311,23 +311,21 @@
     </div>
 
     <div class="st-conv-wrap reveal">
-      <svg class="st-conv" id="convSvg" viewBox="0 0 900 340" aria-label="営業のプロと中小企業経営者を、継が結ぶ図">
-        <defs>
-          <!-- 結合線は水平でbboxの高さが0になるため、座標指定方式にする
-               （objectBoundingBox方式では描画されない） -->
-          <linearGradient id="stJoinGrad" gradientUnits="userSpaceOnUse" x1="440" y1="169" x2="830" y2="169">
-            <stop offset="0%" stop-color="#5B84C4"/>
-            <stop offset="55%" stop-color="#C39B3F"/>
-            <stop offset="100%" stop-color="#D9B863"/>
-          </linearGradient>
-        </defs>
-        <text class="st-conv-label" x="36" y="66">営業のプロ ─ 安定という土台を</text>
-        <text class="st-conv-label" x="36" y="292">中小企業経営者 ─ 伴走という安心を</text>
-        <path pathLength="1" class="st-path st-p-sell" d="M36,84 C220,84 300,168 440,168"/>
-        <path pathLength="1" class="st-path st-p-buy" d="M36,258 C220,258 300,172 440,170"/>
-        <path pathLength="1" class="st-path st-p-join" d="M440,169 C560,169 610,169 830,169"/>
-        <circle class="st-conv-knot-circle" cx="690" cy="169" r="30"/>
-        <text class="st-conv-knot-kanji" x="675" y="180">継</text>
+      <svg class="st-conv" id="convSvg" viewBox="0 0 900 300" aria-label="左の認定パートナーと右の経営者を、中央のTsugu Ai -継- が結ぶ図">
+        <!-- 左：認定パートナー -->
+        <text class="st-conv-name" x="40" y="56">認定パートナー</text>
+        <text class="st-conv-label" x="40" y="82">営業のプロが、支える側へ</text>
+        <path pathLength="1" class="st-path st-p-left" d="M40,108 C210,108 300,168 396,168"/>
+
+        <!-- 右：経営者 -->
+        <text class="st-conv-name" x="860" y="56" text-anchor="end">経営者</text>
+        <text class="st-conv-label" x="860" y="82" text-anchor="end">会社を、次の世代へ</text>
+        <path pathLength="1" class="st-path st-p-right" d="M860,108 C690,108 600,168 504,168"/>
+
+        <!-- 中央：結び目 -->
+        <circle class="st-conv-knot-circle" cx="450" cy="168" r="46"/>
+        <text class="st-conv-knot-kanji" x="450" y="182" text-anchor="middle">継</text>
+        <text class="st-conv-brand" x="450" y="256" text-anchor="middle">Tsugu Ai -継-</text>
       </svg>
       <p class="st-conv-close reveal reveal-delay-2">挑む人に<em>安定</em>を。続けたい会社に<em>未来</em>を。<br>その両方を、AIと人の力で。</p>
     </div>

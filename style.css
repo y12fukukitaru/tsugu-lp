@@ -3370,3 +3370,47 @@ p, li, dd, dt, summary, figcaption,
 /* 極小画面のみ有効な改行（長いCTAを読点で区切る） */
 .xs-br { display: none; }
 @media (max-width: 440px) { .xs-br { display: inline; } }
+
+/* =====================================================
+   結びの図：左（認定パートナー）と右（経営者）が
+   中央の Tsugu Ai -継- で結ばれる構成
+   ===================================================== */
+.st-conv .st-p-left  { stroke: var(--gold); stroke-width: 2.4; }
+.st-conv .st-p-right { stroke: var(--blue-light); stroke-width: 2.4; transition-delay: 0.25s; }
+
+.st-conv-name {
+  font-family: var(--serif);
+  font-size: 21px;
+  font-weight: 600;
+  fill: var(--white-pure);
+  letter-spacing: 0.06em;
+}
+.st-conv-label {
+  font-family: var(--sans);
+  font-size: 13.5px;
+  fill: rgba(255,255,255,0.72);
+  letter-spacing: 0.06em;
+}
+.st-conv-knot-circle { fill: rgba(195,155,63,0.14); stroke: var(--gold); stroke-width: 1.5; }
+.st-conv-knot-kanji { font-family: var(--serif); font-size: 38px; font-weight: 700; fill: var(--gold); }
+.st-conv-brand {
+  font-family: var(--serif);
+  font-size: 20px;
+  font-weight: 600;
+  fill: var(--gold-light);
+  letter-spacing: 0.1em;
+}
+
+/* SVGは横幅に合わせて縮小されるため、狭い画面では文字を大きめに指定する */
+@media (max-width: 900px) {
+  .st-conv-name { font-size: 34px; }
+  .st-conv-label { font-size: 22px; }
+  .st-conv-knot-kanji { font-size: 46px; }
+  .st-conv-brand { font-size: 30px; }
+}
+@media (max-width: 560px) {
+  .st-conv-name { font-size: 40px; }
+  .st-conv-label { display: none; }
+  .st-conv-knot-kanji { font-size: 52px; }
+  .st-conv-brand { font-size: 34px; }
+}
