@@ -3486,3 +3486,126 @@ p, li, dd, dt, summary, figcaption,
    従来は y に固定値を置いていたため、画面幅で文字サイズが変わると
    中心からズレていた。dominant-baseline で文字サイズに依存しなくする。 */
 .st-conv-knot-kanji { dominant-baseline: central; }
+
+/* =====================================================
+   AIエージェントによる支援ブロック（参入障壁の低さを示す）
+   ===================================================== */
+.ai-support {
+  max-width: 1000px;
+  margin: 0 auto 80px;
+  padding: 56px 56px 48px;
+  border-radius: 24px;
+  background: linear-gradient(160deg, var(--ink) 0%, var(--ink-light) 100%);
+  border: 1px solid rgba(91,132,196,0.4);
+  box-shadow: 0 30px 60px rgba(14,27,51,0.18);
+}
+.ai-support-head { text-align: center; margin-bottom: 40px; }
+.ai-support-eyebrow {
+  font-size: 0.8125rem;
+  letter-spacing: 0.22em;
+  color: var(--blue-light);
+  font-weight: 700;
+  margin: 0 0 12px;
+}
+.ai-support-title {
+  font-size: clamp(1.5rem, 2.8vw, 2.25rem);
+  font-weight: 600;
+  color: var(--white-pure);
+  line-height: 1.55;
+  letter-spacing: 0.04em;
+  margin: 0 0 22px;
+}
+.ai-support-title em {
+  font-style: normal;
+  color: var(--blue-light);
+  text-emphasis: filled sesame var(--blue-light);
+  -webkit-text-emphasis: filled sesame var(--blue-light);
+}
+.ai-support-lead {
+  font-size: 1.0625rem;
+  color: rgba(255,255,255,0.88);
+  line-height: 2;
+  margin: 0;
+  text-align: left;
+  max-width: 720px;
+  margin-inline: auto;
+}
+.ai-support-lead strong { color: var(--gold-light); }
+
+.ai-support-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+.ai-support-item {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-left: 3px solid var(--blue-light);
+  border-radius: var(--r-md);
+  padding: 22px 24px;
+}
+.ai-support-when {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--blue-light);
+  margin: 0 0 10px;
+}
+.ai-support-what {
+  font-size: 0.9375rem;
+  color: rgba(255,255,255,0.85);
+  line-height: 1.85;
+  margin: 0;
+}
+.ai-support-close {
+  margin: 36px 0 0;
+  text-align: center;
+  font-family: var(--serif);
+  font-size: clamp(1.0625rem, 1.9vw, 1.3125rem);
+  color: rgba(255,255,255,0.9);
+  line-height: 2;
+  letter-spacing: 0.04em;
+}
+.ai-support-close em {
+  font-style: normal;
+  color: var(--gold-light);
+  font-weight: 600;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 3px;
+}
+@media (max-width: 768px) {
+  .ai-support {
+    padding: 36px 22px 32px;
+    margin-bottom: 48px;
+    border-radius: 18px;
+  }
+  .ai-support-head { margin-bottom: 28px; }
+  .ai-support-lead { font-size: 0.9375rem; line-height: 1.95; }
+  .ai-support-grid { grid-template-columns: 1fr; gap: 12px; }
+  .ai-support-item { padding: 18px 20px; }
+  .ai-support-close { margin-top: 28px; line-height: 1.95; }
+}
+
+/* ヒーロー：AI代行による参入しやすさの注記 */
+.pt-hero-note {
+  margin: 18px 0 40px;
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.82);
+  line-height: 1.9;
+  letter-spacing: 0.04em;
+  padding-left: 14px;
+  border-left: 2px solid var(--blue-light);
+}
+@media (max-width: 768px) {
+  .pt-hero-note { margin: 14px 0 32px; font-size: 0.8125rem; }
+}
+
+/* AI支援ブロック：暗背景でスカイブルーが不足するため明度を上げる */
+.ai-support-eyebrow,
+.ai-support-when { color: #A8C6E4; }
+.ai-support-title em {
+  color: #A8C6E4;
+  text-emphasis-color: #A8C6E4;
+  -webkit-text-emphasis-color: #A8C6E4;
+}
+.ai-support-item { border-left-color: #A8C6E4; }
