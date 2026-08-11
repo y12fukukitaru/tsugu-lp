@@ -3819,3 +3819,14 @@ p, li, dd, dt, summary, figcaption,
   background: rgba(195,155,63,0.14);
   color: #E4CE95;
 }
+
+/* 特典カードを料金セクション（明背景）内へ移設したため、
+   カード自体を暗色にして白文字・金アクセントが成立するようにする */
+.offer-card {
+  background: linear-gradient(150deg, var(--ink) 0%, var(--ink-light) 100%);
+  box-shadow: 0 24px 60px rgba(14,27,51,0.16);
+  padding: 36px 40px 32px;
+}
+@media (max-width: 768px) {
+  .offer-card { padding: 26px 20px 24px; }
+}
