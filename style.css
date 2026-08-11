@@ -3609,3 +3609,97 @@ p, li, dd, dt, summary, figcaption,
   -webkit-text-emphasis-color: #A8C6E4;
 }
 .ai-support-item { border-left-color: #A8C6E4; }
+
+/* =====================================================
+   年内登録特典バンド（パートナーページ）
+   ===================================================== */
+.offer-band {
+  background: linear-gradient(165deg, #0A1428 0%, var(--ink) 100%);
+  padding: 0 0 64px;
+}
+.offer-card {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 48px 36px;
+  border-radius: 20px;
+  background: linear-gradient(150deg, rgba(195,155,63,0.16) 0%, rgba(195,155,63,0.05) 100%);
+  border: 1px solid var(--gold);
+  text-align: center;
+}
+.offer-badge {
+  display: inline-block;
+  margin: 0 0 18px;
+  padding: 7px 20px;
+  border-radius: 100px;
+  background: var(--gold);
+  color: var(--ink);
+  font-size: 0.78125rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+}
+.offer-title {
+  font-size: clamp(1.375rem, 2.6vw, 2rem);
+  font-weight: 600;
+  color: var(--white-pure);
+  line-height: 1.7;
+  letter-spacing: 0.04em;
+  margin: 0 0 20px;
+}
+.offer-title em {
+  font-style: normal;
+  color: var(--gold-light);
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 3px;
+}
+.offer-body {
+  font-size: 0.9375rem;
+  color: rgba(255,255,255,0.88);
+  line-height: 2;
+  margin: 0 0 28px;
+  text-align: left;
+  max-width: 680px;
+  margin-inline: auto;
+}
+.offer-body strong { color: var(--gold-light); }
+.offer-meta {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+.offer-meta-item {
+  background: rgba(14,27,51,0.55);
+  border: 1px solid rgba(195,155,63,0.35);
+  border-radius: var(--r-md);
+  padding: 14px 26px;
+  min-width: 220px;
+}
+.offer-meta-label {
+  display: block;
+  font-size: 0.71875rem;
+  color: var(--gold-light);
+  letter-spacing: 0.1em;
+  margin-bottom: 6px;
+}
+.offer-meta-value {
+  display: block;
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--white-pure);
+  letter-spacing: 0.04em;
+}
+.offer-note {
+  margin: 0;
+  font-size: 0.78125rem;
+  color: rgba(255,255,255,0.68);
+  line-height: 1.7;
+}
+@media (max-width: 768px) {
+  .offer-band { padding-bottom: 40px; }
+  .offer-card { padding: 28px 20px 24px; border-radius: 16px; }
+  .offer-body { font-size: 0.875rem; line-height: 1.95; margin-bottom: 22px; }
+  .offer-meta { flex-direction: column; gap: 10px; }
+  .offer-meta-item { min-width: 0; padding: 12px 18px; }
+}
