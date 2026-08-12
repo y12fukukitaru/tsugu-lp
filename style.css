@@ -3830,3 +3830,31 @@ p, li, dd, dt, summary, figcaption,
 @media (max-width: 768px) {
   .offer-card { padding: 26px 20px 24px; }
 }
+
+/* =====================================================
+   パートナーページのヒーロー
+   顧客ページと同じ「右側・縦書き見出し」構成に合わせる。
+   統計欄がないぶんの余白調整と、3項目カードの幅確保を行う。
+   ===================================================== */
+.st-hero.is-partner { min-height: auto; }
+.st-hero.is-partner .st-hero-inner {
+  padding: 150px 48px 110px;
+  align-items: center;
+}
+/* 3項目カードが入るぶん、左カラムを広めに取る */
+.st-hero.is-partner .st-hero-left { max-width: 640px; }
+.st-hero.is-partner .st-hero-copy { margin-bottom: 32px; }
+.st-hero.is-partner .pt-hero-points { margin-bottom: 0; }
+
+/* 強調部は従来どおり金色。傍点も金で揃える */
+.st-hero-title .pt-accent { color: var(--gold); }
+
+@media (max-width: 900px) {
+  .st-hero.is-partner .st-hero-inner {
+    padding: 120px 20px 72px;   /* 統計欄がないため下余白を詰める */
+  }
+  .st-hero.is-partner .st-hero-left { max-width: 100%; }
+}
+@media (max-width: 480px) {
+  .st-hero.is-partner .st-hero-inner { padding: 104px 16px 60px; }
+}
