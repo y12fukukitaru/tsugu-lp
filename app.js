@@ -269,6 +269,25 @@ async function handleSubmit(e) {
   }
 })();
 
+// ===== 年内登録特典：申込期限までの残日数 =====
+// 期限を過ぎたら自動的に非表示になるため、あとから消し忘れる心配がない。
+(function () {
+  var el = document.getElementById('offerCountdown');
+  if (!el) return;
+  // 日付どうしの差で数える（時刻の影響を受けないようにする）
+  var deadline = new Date(2026, 11, 31);            // 2026-12-31（この日まで受付）
+  var n = new Date();
+  var today = new Date(n.getFullYear(), n.getMonth(), n.getDate());
+  var days = Math.round((deadline - today) / 86400000);
+  if (days < 0) return;               // 期限切れ：何も表示しない
+  if (days === 0) {
+    el.innerHTML = 'お申し込みは<strong>本日まで</strong>です';
+  } else {
+    el.innerHTML = 'お申し込み期限まで、あと<strong>' + days + '</strong>日';
+  }
+  el.hidden = false;
+})();
+
 // ===== ページ内アンカーのスムーススクロール =====
 document.querySelectorAll('a[href^="#"]').forEach(function (a) {
   a.addEventListener('click', function (e) {

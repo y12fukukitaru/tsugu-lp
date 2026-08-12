@@ -458,24 +458,41 @@
       </div>
 
       <!-- 年内登録特典 -->
-      <div class="offer-card reveal" style="margin-top:32px;">
+      <div class="offer-card reveal" id="offerCard">
         <p class="offer-badge">2026年内ご登録の方限定</p>
-        <h2 class="offer-title serif">1社目の顧問契約が決まるまで、<br><em>月額利用料はいただきません。</em></h2>
+        <h2 class="offer-title serif">1社目の顧問契約が<br class="sp-only">決まるまで、<br><em>月額利用料は０円。</em></h2>
+
+        <div class="offer-price">
+          <div class="offer-price-col">
+            <span class="offer-price-label">通常</span>
+            <span class="offer-price-old">月額 3,000円〜</span>
+          </div>
+          <span class="offer-price-arrow" aria-hidden="true">→</span>
+          <div class="offer-price-col is-free">
+            <span class="offer-price-label">1社目の契約まで</span>
+            <span class="offer-price-new">0<small>円</small></span>
+          </div>
+        </div>
+
         <p class="offer-body">
-          上記の月額3,000円からの利用料を、<strong>初めての顧問契約が成立するまで免除</strong>します。<br>
-          顧問料が入り始めてから、そこにかかる手数料としてお支払いいただく形になるため、<br>
-          <strong>ご自身の持ち出しは実質ありません。</strong>
+          顧問料が入り始めてから、その手数料としてお支払いいただきます。<br>
+          つまり<strong>収入が立つ前に、あなたが負担するものはありません。</strong>
         </p>
+
         <div class="offer-meta">
           <div class="offer-meta-item">
             <span class="offer-meta-label">プラットフォーム運用開始</span>
             <span class="offer-meta-value">2026年9月12日</span>
           </div>
           <div class="offer-meta-item">
-            <span class="offer-meta-label">特典の対象</span>
-            <span class="offer-meta-value">2026年12月31日までのご登録</span>
+            <span class="offer-meta-label">お申し込み期限</span>
+            <span class="offer-meta-value">2026年12月31日</span>
           </div>
         </div>
+
+        <p class="offer-countdown" id="offerCountdown" hidden></p>
+
+        <a href="#contact" class="btn-primary offer-cta js-partner-cta">この特典について相談する <span class="btn-arrow">→</span></a>
         <p class="offer-note">※ 初期登録料・研修・認定試験は、期間を問わず無料です。</p>
       </div>
 
