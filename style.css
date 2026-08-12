@@ -3988,3 +3988,19 @@ p, li, dd, dt, summary, figcaption,
   .offer-countdown strong { font-size: 1.5rem; }
   .offer-cta { font-size: 1rem; padding: 17px 20px; }
 }
+
+/* =====================================================
+   傍点の統一ルール
+   暗い背景の強調は「点＝色つき／文字＝白」に揃える。
+   点の色（text-emphasis-color）は各所の指定をそのまま活かすため、
+   ここでは color だけを上書きする。
+   ※ 明るい背景の .st-lead em / .st-conclusion em は
+     もともと本文と同じ濃紺なので対象外（白にすると読めなくなる）。
+   ===================================================== */
+.st-hero-title .pt-accent,   /* パートナーLP ヒーロー「私たちが変える」 */
+.st-story-body em,           /* 第一章の強調 */
+.ceo-body em,                /* CEOメッセージの強調 */
+.barrier-em,                 /* 4つの壁 */
+.ai-support-title em {       /* AI支援ブロック「一人ではありません」 */
+  color: var(--white-pure);
+}
