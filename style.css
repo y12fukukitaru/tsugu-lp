@@ -4272,3 +4272,15 @@ p, li, dd, dt, summary, figcaption,
   .mobile-menu-nav a b { font-size: 1.0625rem; }
   .mobile-menu-foot { padding-top: 26px; }
 }
+
+/* =====================================================
+   追従CTA：電話ボタンから番号表記を外す
+   タップすれば発信されるため番号の表示は不要。
+   文字が1行に収まるよう左右の比率も調整する。
+   ===================================================== */
+.sticky-cta-main { flex: 1 1 58%; }
+.sticky-cta-tel {
+  flex: 1 1 42%;
+  font-size: 0.9375rem;
+  white-space: nowrap;
+}
