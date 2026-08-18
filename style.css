@@ -4059,3 +4059,220 @@ p, li, dd, dt, summary, figcaption,
 
 /* オーバーレイも実際の表示高さに合わせる */
 .mobile-menu-overlay { height: 100vh; height: 100dvh; }
+
+/* =====================================================
+   モバイルメニュー：福來HPのドロワーと同じ仕様に統一
+   全画面／紋＋英字タグ／連番＋和文＋英文の一覧／
+   下部にゴールドCTAと会社情報。配色は Tsugu のコーポレートカラー。
+   ===================================================== */
+.mobile-menu {
+  /* 右からのスライドではなく、全画面を下から開く */
+  top: 0; left: 0; right: auto;
+  width: 100%;
+  max-width: none;
+  height: 100vh;
+  height: 100dvh;
+  display: block;
+  padding: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  background:
+    radial-gradient(90vw 60vh at 80% 4%, rgba(195,155,63,0.14), rgba(0,0,0,0) 62%),
+    linear-gradient(170deg, #0A1526 0%, var(--ink) 55%, var(--ink-light) 100%);
+  box-shadow: none;
+  transform: none;
+  /* 背景が不透明になったので不要。付いたままだと閉じるボタンの
+     position:fixed がドロワー基準になり、一緒にスクロールしてしまう */
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  clip-path: inset(0 0 100% 0);
+  visibility: hidden;
+  transition: clip-path 0.72s cubic-bezier(0.19,1,0.22,1), visibility 0s linear 0.72s;
+}
+.mobile-menu.is-open {
+  transform: none;
+  clip-path: inset(0 0 0 0);
+  visibility: visible;
+  transition: clip-path 0.72s cubic-bezier(0.19,1,0.22,1), visibility 0s;
+}
+/* 全画面なので背面のオーバーレイは不要 */
+.mobile-menu-overlay { display: none; }
+
+.mobile-menu-inner {
+  /* 高さは中身なりに伸ばす。伸びたぶんはドロワー全体をスクロールして読む */
+  display: block;
+  padding: 92px 30px calc(40px + env(safe-area-inset-bottom));
+}
+
+/* 閉じるボタン：福來HPと同じ角丸なしの正方形。
+   ドロワー自体がスクロールするため fixed にして常に押せる位置に置く */
+.mobile-menu-close {
+  position: fixed;
+  top: 16px;
+  right: 18px;
+  width: 46px;
+  height: 46px;
+  border-radius: 2px;
+  background: transparent;
+  border: 0.8px solid rgba(217,184,99,0.28);
+  z-index: 2;
+}
+.mobile-menu-close:hover { background: rgba(255,255,255,0.06); }
+.mobile-menu-close-bar { width: 17px; background: var(--gold-light); }
+
+/* 紋（継）と英字タグ */
+.mobile-menu-mon {
+  width: 62px;
+  height: 62px;
+  margin: 0 auto;
+  border-radius: 50%;
+  background: #F7F3EA;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 62px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+}
+.mobile-menu-tag {
+  margin: 14px 0 28px;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  color: var(--gold-light);
+}
+
+/* 連番＋和文＋英文の一覧 */
+/* ヘッダー用の共通 nav ルール（position:fixed / display:flex / padding）を
+   打ち消す。打ち消さないとドロワー内の一覧が画面上部に貼り付いてしまう。 */
+.mobile-menu-nav {
+  position: static;
+  top: auto; left: auto; right: auto;
+  z-index: auto;
+  display: block;
+  padding: 0;
+  transition: none;
+  border-top: 0.8px solid rgba(217,184,99,0.22);
+}
+.mobile-menu-nav a {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 17px 4px;
+  line-height: 1.45;   /* 本文の行間のままだと行が間延びする */
+  border-bottom: 0.8px solid rgba(217,184,99,0.22);
+  color: var(--white-pure);
+  text-decoration: none;
+  transition: background 0.2s, padding-left 0.2s;
+}
+.mobile-menu-nav a:hover { background: rgba(255,255,255,0.05); padding-left: 10px; }
+.mobile-menu-nav a i {
+  flex: 0 0 28px;
+  font-style: normal;
+  font-size: 0.8125rem;
+  letter-spacing: 0.06em;
+  color: var(--gold-light);
+}
+.mobile-menu-nav a b {
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--white-pure);
+  white-space: nowrap;   /* 項目名は必ず1行に収める */
+}
+.mobile-menu-nav a small {
+  margin-left: auto;
+  font-family: var(--serif);
+  font-size: 0.75rem;
+  letter-spacing: 0.16em;
+  color: rgba(255,255,255,0.66);
+  white-space: nowrap;
+}
+
+/* 一覧の登場アニメーション（上から順に） */
+@keyframes mmIn { to { opacity: 1; transform: none; } }
+.mobile-menu-nav a { opacity: 0; transform: translateY(14px); }
+.mobile-menu.is-open .mobile-menu-nav a {
+  animation: mmIn 0.6s cubic-bezier(0.19,1,0.22,1) forwards;
+}
+.mobile-menu.is-open .mobile-menu-nav a:nth-child(1)  { animation-delay: 0.22s; }
+.mobile-menu.is-open .mobile-menu-nav a:nth-child(2)  { animation-delay: 0.28s; }
+.mobile-menu.is-open .mobile-menu-nav a:nth-child(3)  { animation-delay: 0.34s; }
+.mobile-menu.is-open .mobile-menu-nav a:nth-child(4)  { animation-delay: 0.40s; }
+.mobile-menu.is-open .mobile-menu-nav a:nth-child(5)  { animation-delay: 0.46s; }
+.mobile-menu.is-open .mobile-menu-nav a:nth-child(6)  { animation-delay: 0.52s; }
+.mobile-menu.is-open .mobile-menu-nav a:nth-child(7)  { animation-delay: 0.58s; }
+.mobile-menu.is-open .mobile-menu-nav a:nth-child(8)  { animation-delay: 0.64s; }
+.mobile-menu.is-open .mobile-menu-nav a:nth-child(9)  { animation-delay: 0.70s; }
+.mobile-menu.is-open .mobile-menu-nav a:nth-child(10) { animation-delay: 0.76s; }
+.mobile-menu.is-open .mobile-menu-nav a:nth-child(11) { animation-delay: 0.82s; }
+@media (prefers-reduced-motion: reduce) {
+  .mobile-menu, .mobile-menu.is-open { transition: none; }
+  .mobile-menu-nav a { opacity: 1; transform: none; animation: none !important; }
+}
+
+/* 下部：ゴールドCTAと会社情報 */
+.mobile-menu-foot {
+  margin-top: 0;
+  padding-top: 34px;
+  border-top: none;
+}
+.mobile-menu-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 16px 24px;
+  margin: 0;
+  background: var(--gold);
+  color: var(--ink) !important;
+  border-radius: 2px;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-align: center;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.mobile-menu-cta:hover { background: var(--gold-light); }
+.mobile-menu-ar { font-weight: 400; }
+.mobile-menu-info {
+  margin: 22px 0 0;
+  text-align: center;
+  font-size: 0.8125rem;
+  line-height: 2;
+  letter-spacing: 0.06em;
+  color: rgba(255,255,255,0.7);
+}
+.mobile-menu-info a { color: inherit; text-decoration: none; }
+
+/* 幅の狭い端末では和文・英字と余白を詰めて1行に収める */
+@media (max-width: 390px) {
+  .mobile-menu-inner { padding-left: 22px; padding-right: 22px; }
+  .mobile-menu-nav a { gap: 12px; }
+  .mobile-menu-nav a b { font-size: 1.0625rem; letter-spacing: 0.06em; }
+  .mobile-menu-nav a small { font-size: 0.6875rem; letter-spacing: 0.1em; }
+}
+
+/* 最も狭い端末（320px 相当）向けの追い込み */
+@media (max-width: 340px) {
+  .mobile-menu-inner { padding-left: 18px; padding-right: 18px; }
+  .mobile-menu-nav a { gap: 10px; }
+  .mobile-menu-nav a i { flex-basis: 24px; }
+  .mobile-menu-nav a small { font-size: 0.625rem; letter-spacing: 0.06em; }
+}
+
+/* 画面が低い端末では余白を詰める */
+@media (max-height: 700px) {
+  .mobile-menu-inner { padding-top: 84px; }
+  .mobile-menu-mon { width: 52px; height: 52px; line-height: 52px; font-size: 1.75rem; }
+  .mobile-menu-tag { margin: 12px 0 20px; }
+  .mobile-menu-nav a { padding: 14px 4px; }
+  .mobile-menu-nav a b { font-size: 1.0625rem; }
+  .mobile-menu-foot { padding-top: 26px; }
+}
