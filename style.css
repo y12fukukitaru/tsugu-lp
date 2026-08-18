@@ -4004,3 +4004,58 @@ p, li, dd, dt, summary, figcaption,
 .ai-support-title em {       /* AI支援ブロック「一人ではありません」 */
   color: var(--white-pure);
 }
+
+/* =====================================================
+   モバイルメニュー：下端が見切れる問題の修正
+   ・iOS Safari は 100vh がツールバー込みの高さになるため
+     実際に見えている高さ（100dvh）を使う
+   ・項目が入りきらない端末ではリスト部分だけをスクロールさせる
+   ・CTA はスクロールの外に固定し、常に押せる状態にする
+   ・ホームバー（下端）にかからないよう safe-area を確保
+   ===================================================== */
+.mobile-menu {
+  height: 100vh;            /* 未対応ブラウザ向けのフォールバック */
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;         /* パネル自体は動かさない */
+  padding: 78px 22px calc(20px + env(safe-area-inset-bottom));
+}
+.mobile-menu-list {
+  flex: 1 1 auto;
+  min-height: 0;            /* flex 内でスクロールを効かせるために必要 */
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  gap: 2px;
+  /* スクロールバーが出ても文字に重ならないように */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255,255,255,0.25) transparent;
+}
+.mobile-menu-list::-webkit-scrollbar { width: 4px; }
+.mobile-menu-list::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.25);
+  border-radius: 2px;
+}
+.mobile-menu-link { padding: 13px 18px; }
+
+/* CTA はリストの外。常に最下部に表示し続ける */
+.mobile-menu-foot {
+  flex: 0 0 auto;
+  padding-top: 14px;
+  margin-top: 4px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+.mobile-menu-foot .mobile-menu-cta {
+  margin-top: 0;
+  padding: 15px 18px;
+}
+
+/* 画面が低い端末では余白をさらに詰める */
+@media (max-height: 700px) {
+  .mobile-menu { padding-top: 68px; }
+  .mobile-menu-link { padding: 11px 18px; font-size: 0.9375rem; }
+}
+
+/* オーバーレイも実際の表示高さに合わせる */
+.mobile-menu-overlay { height: 100vh; height: 100dvh; }
