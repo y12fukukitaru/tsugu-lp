@@ -4121,19 +4121,15 @@ p, li, dd, dt, summary, figcaption,
 .mobile-menu-close:hover { background: rgba(255,255,255,0.06); }
 .mobile-menu-close-bar { width: 17px; background: var(--gold-light); }
 
-/* 紋（継）と英字タグ */
+/* 紋（AIエージェントのアイコン）と英字タグ */
 .mobile-menu-mon {
-  width: 62px;
-  height: 62px;
+  display: block;
+  width: 76px;   /* 「継」の一文字より絵の情報量が多いぶん、少し大きく取る */
+  height: 76px;
   margin: 0 auto;
   border-radius: 50%;
-  background: #F7F3EA;
-  color: var(--ink);
-  font-family: var(--serif);
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 62px;
-  text-align: center;
+  /* 画像自身の金のリングが枠に見えるよう、円に切り抜いて表示する */
+  object-fit: cover;
   box-shadow: 0 8px 24px rgba(0,0,0,0.35);
 }
 .mobile-menu-tag {
@@ -4270,7 +4266,7 @@ p, li, dd, dt, summary, figcaption,
 /* 画面が低い端末では余白を詰める */
 @media (max-height: 700px) {
   .mobile-menu-inner { padding-top: 84px; }
-  .mobile-menu-mon { width: 52px; height: 52px; line-height: 52px; font-size: 1.75rem; }
+  .mobile-menu-mon { width: 64px; height: 64px; }
   .mobile-menu-tag { margin: 12px 0 20px; }
   .mobile-menu-nav a { padding: 14px 4px; }
   .mobile-menu-nav a b { font-size: 1.0625rem; }
