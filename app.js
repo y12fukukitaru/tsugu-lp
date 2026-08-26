@@ -209,6 +209,10 @@ async function handleSubmit(e) {
   document.querySelectorAll('.js-partner-cta').forEach(function (btn) {
     btn.addEventListener('click', function () { select('認定パートナーへの参加'); });
   });
+  // 法人（エンタープライズ・パートナー）向けCTAを押したとき
+  document.querySelectorAll('.js-enterprise-cta').forEach(function (btn) {
+    btn.addEventListener('click', function () { select('法人でのご参加（エンタープライズ・パートナー）'); });
+  });
   // ページ全体の既定値（partner.html で data-default-inquiry を指定）
   var def = document.body.getAttribute('data-default-inquiry');
   if (def) select(def);

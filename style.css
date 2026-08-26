@@ -4443,3 +4443,12 @@ p, li, dd, dt, summary, figcaption,
   .ep-note { padding: 18px 18px; }
   .ep-note-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+
+/* =====================================================
+   相談種別：選択肢が4つになったため2列に
+   3列のままだと4つ目だけが2行目に残って落ち着かない。
+   ===================================================== */
+.form-radio-group { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 560px) {
+  .form-radio-group { grid-template-columns: 1fr; }
+}
