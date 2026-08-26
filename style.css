@@ -4284,3 +4284,162 @@ p, li, dd, dt, summary, figcaption,
   font-size: 0.9375rem;
   white-space: nowrap;
 }
+
+/* =====================================================
+   エンタープライズ・パートナー（法人でのご参加）
+   4階層制度の下に置き、個人向けとの違いが分かるよう
+   白地のカードで囲って一段別の話であることを示す。
+   ===================================================== */
+.ep-block {
+  margin-top: 56px;
+  padding: 44px 44px 40px;
+  background: var(--white-pure);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--gold);
+  border-radius: var(--r-lg);
+  box-shadow: 0 24px 60px rgba(14,27,51,0.07);
+}
+.ep-eyebrow {
+  font-size: 0.8125rem;
+  letter-spacing: 0.1em;
+  color: #8A6A1E;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 0 10px;
+}
+.ep-title {
+  font-size: clamp(1.375rem, 2.6vw, 1.875rem);
+  font-weight: 600;
+  color: var(--text-main);
+  text-align: center;
+  letter-spacing: 0.04em;
+  margin: 0 0 14px;
+}
+.ep-lead {
+  font-size: 0.9375rem;
+  color: var(--text-mid);
+  line-height: 2;
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 34px;
+  word-break: auto-phrase;
+  line-break: strict;
+}
+.ep-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-bottom: 28px;
+}
+.ep-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 26px 28px;
+}
+.ep-card-tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #8A6A1E;
+  background: var(--gold-pale);
+  border-radius: 4px;
+  padding: 4px 10px;
+  margin: 0 0 10px;
+}
+.ep-card-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-main);
+  letter-spacing: 0.04em;
+  margin: 0 0 12px;
+}
+.ep-card-desc {
+  font-size: 0.875rem;
+  color: var(--text-mid);
+  line-height: 1.95;
+  margin: 0 0 16px;
+  word-break: auto-phrase;
+  line-break: strict;
+}
+.ep-card-desc strong { color: var(--text-main); }
+.ep-card-list { list-style: none; margin: 0; padding: 0; }
+.ep-card-list li {
+  position: relative;
+  padding-left: 18px;
+  font-size: 0.8125rem;
+  color: var(--text-mid);
+  line-height: 1.9;
+}
+.ep-card-list li::before {
+  content: '';
+  position: absolute;
+  left: 2px; top: 0.78em;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+}
+
+.ep-note {
+  background: var(--gold-pale);
+  border: 1px solid rgba(195,155,63,0.3);
+  border-radius: var(--r-md);
+  padding: 22px 26px;
+  margin-bottom: 28px;
+}
+.ep-note-title {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #71561A;
+  margin: 0 0 14px;
+}
+.ep-note-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+}
+.ep-note-item {
+  background: var(--white-pure);
+  border-radius: 8px;
+  padding: 12px 14px;
+  text-align: center;
+}
+.ep-note-item span {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--text-mid);
+  margin-bottom: 4px;
+}
+.ep-note-item strong {
+  font-family: var(--serif);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+.ep-note-foot {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  line-height: 1.8;
+  margin: 14px 0 0;
+  word-break: auto-phrase;
+  line-break: strict;
+}
+.ep-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .ep-block { padding: 30px 20px 28px; }
+  .ep-lead { font-size: 0.875rem; text-align: left; margin-bottom: 26px; }
+  .ep-grid { grid-template-columns: 1fr; gap: 16px; }
+  .ep-card { padding: 22px 20px; }
+  .ep-note { padding: 18px 18px; }
+  .ep-note-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
