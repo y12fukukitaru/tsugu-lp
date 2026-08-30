@@ -4788,3 +4788,32 @@ p, li, dd, dt, summary, figcaption,
   background: var(--gold);
   color: var(--white-pure);
 }
+
+/* =====================================================
+   電話導線を途中から外したことに伴う調整
+   問い合わせはメールに一本化し、電話番号はフッターと
+   会社概要（法定表示に準ずる記載）にのみ残す。
+   ===================================================== */
+/* 追従CTAが1つになったので横幅いっぱいに */
+.sticky-cta-main { flex: 1 1 100%; }
+
+/* 中間CTAバンドのボタンが1つになった分、中央で据わるように */
+.cta-band-actions:has(> :only-child) { justify-content: center; }
+
+/* 枠線だけのボタン（旧 .cta-tel-inline の見た目を、電話以外にも使えるよう分離） */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1.5px solid rgba(255,255,255,0.3);
+  color: var(--white);
+  border-radius: var(--r-sm);
+  padding: 16px 28px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+@media (max-width: 768px) {
+  .cta-band-actions .btn-outline { width: 100%; justify-content: center; }
+}
