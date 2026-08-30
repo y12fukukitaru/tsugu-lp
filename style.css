@@ -4817,3 +4817,14 @@ p, li, dd, dt, summary, figcaption,
 @media (max-width: 768px) {
   .cta-band-actions .btn-outline { width: 100%; justify-content: center; }
 }
+
+/* ヘッダー内で「別のページへ渡る入口」は枠で囲って区別する。
+   同じページ内の見出しへのリンクと、他ページへの入口が並ぶため。
+   （旧 .nav-owner を、経営者以外にも使えるよう .nav-boxed に改名） */
+.nav-boxed {
+  padding: 7px 14px;
+  border: 1px solid rgba(255,255,255,0.32);
+  border-radius: var(--r-sm);
+  transition: border-color 0.2s, color 0.2s;
+}
+.nav-boxed:hover { border-color: var(--gold); color: var(--gold); }
