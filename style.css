@@ -4751,3 +4751,9 @@ p, li, dd, dt, summary, figcaption,
   .hero-actions .btn-primary,
   .hero-actions .btn-ghost { padding-left: 22px; padding-right: 22px; }
 }
+
+/* 立場の2枚は対等な選択肢なので、どちらも金枠で囲う。
+   選択中は枠を濃くし、影と紋の塗りで区別する。 */
+.stance-btn { border-color: rgba(195,155,63,0.62); }
+.stance-btn:hover { border-color: rgba(195,155,63,0.85); }
+.stance-btn.is-active { border-color: var(--gold); }
