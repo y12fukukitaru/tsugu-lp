@@ -4765,3 +4765,26 @@ p, li, dd, dt, summary, figcaption,
   border-color: rgba(195,155,63,0.62);
   box-shadow: none;
 }
+
+/* 紋の塗りはマウスを置いたときだけ。
+   既定（選択中も含む）は白地に金の線、ホバー中だけ金地に白抜きにする。
+   .is-active より詳細度を上げないと打ち消せないため、両方を並べて指定する。 */
+.stance-btn .stance-btn-kanji,
+.stance-btn.is-active .stance-btn-kanji {
+  background: transparent;
+  color: var(--gold);
+}
+/* 指で触る端末はホバーが残るため、マウスがある環境だけに効かせる */
+@media (hover: hover) {
+  .stance-btn:hover .stance-btn-kanji,
+  .stance-btn.is-active:hover .stance-btn-kanji {
+    background: var(--gold);
+    color: var(--white-pure);
+  }
+}
+/* キーボード操作でも同じ見え方にする */
+.stance-btn:focus-visible .stance-btn-kanji,
+.stance-btn.is-active:focus-visible .stance-btn-kanji {
+  background: var(--gold);
+  color: var(--white-pure);
+}
