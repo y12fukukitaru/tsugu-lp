@@ -4757,3 +4757,11 @@ p, li, dd, dt, summary, figcaption,
 .stance-btn { border-color: rgba(195,155,63,0.62); }
 .stance-btn:hover { border-color: rgba(195,155,63,0.85); }
 .stance-btn.is-active { border-color: var(--gold); }
+
+/* 枠は左右で完全に同じにする。
+   選択中に外側の輪と影を足していたぶん、枠が二重に見えて仕様が違って見えていた。
+   選択の区別は紋の塗り分けだけで行う。 */
+.stance-btn.is-active {
+  border-color: rgba(195,155,63,0.62);
+  box-shadow: none;
+}
