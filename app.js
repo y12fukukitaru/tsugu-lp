@@ -292,6 +292,46 @@ async function handleSubmit(e) {
   el.hidden = false;
 })();
 
+// ===== 経営者ページ：立場の選択（買い手／売り手） =====
+// 選んだ側のストーリーだけを表示する。URLに #grow / #succeed が付いていれば
+// その立場で開く。トップページから「買い手の話を読む」で飛んできたときに使う。
+(function () {
+  var picker = document.querySelector('.stance-picker');
+  if (!picker) return;
+  var btns = picker.querySelectorAll('.stance-btn');
+  var panes = document.querySelectorAll('[data-stance-pane]');
+
+  function apply(stance, scroll) {
+    btns.forEach(function (b) {
+      var on = b.getAttribute('data-stance') === stance;
+      b.classList.toggle('is-active', on);
+      b.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    panes.forEach(function (p) {
+      var on = p.getAttribute('data-stance-pane') === stance;
+      p.hidden = !on;
+      // 表示に切り替わった側は、出現アニメーションを効かせ直す
+      if (on) p.querySelectorAll('.reveal').forEach(function (el) { el.classList.add('revealed'); });
+    });
+    if (scroll) {
+      var shown = document.querySelector('[data-stance-pane="' + stance + '"]:not([hidden])');
+      if (shown) {
+        window.scrollTo({
+          top: shown.getBoundingClientRect().top + window.scrollY - 70,
+          behavior: 'smooth'
+        });
+      }
+    }
+  }
+
+  btns.forEach(function (b) {
+    b.addEventListener('click', function () { apply(b.getAttribute('data-stance'), true); });
+  });
+
+  var hash = (location.hash || '').replace('#', '');
+  if (hash === 'grow' || hash === 'succeed') apply(hash, false);
+})();
+
 // ===== ページ内アンカーのスムーススクロール =====
 document.querySelectorAll('a[href^="#"]').forEach(function (a) {
   a.addEventListener('click', function (e) {
