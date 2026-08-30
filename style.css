@@ -4700,3 +4700,54 @@ p, li, dd, dt, summary, figcaption,
   .crosslink-grid { grid-template-columns: 1fr; gap: 16px; }
   .crosslink-card { padding: 26px 22px 54px; }
 }
+
+/* =====================================================
+   引用ブロック：訴求の直前に置く一行
+   物語を読み終えた読者に、何が変わるのかを短く言い切る。
+   ===================================================== */
+.pullquote {
+  max-width: 880px;
+  margin: 0 auto 48px;
+  padding: 0 0 0 28px;
+  border-left: 3px solid var(--gold);
+  text-align: left;
+}
+.pullquote-text {
+  font-family: var(--serif);
+  font-size: clamp(1.375rem, 2.9vw, 2.125rem);
+  font-weight: 600;
+  color: var(--text-main);
+  line-height: 1.85;
+  letter-spacing: 0.05em;
+  margin: 0 0 16px;
+  word-break: auto-phrase;
+  line-break: strict;
+}
+.pullquote-note {
+  font-size: 0.9375rem;
+  color: var(--text-mid);
+  line-height: 2;
+  letter-spacing: 0.03em;
+  margin: 0;
+  word-break: auto-phrase;
+  line-break: strict;
+}
+
+/* ヒーローのボタンは文言が長くなったため、余裕があるうちは1行に保つ */
+.hero-actions .btn-primary,
+.hero-actions .btn-ghost { white-space: nowrap; }
+
+@media (max-width: 900px) {
+  .pullquote { margin-bottom: 34px; padding-left: 18px; }
+  .hero-actions .btn-primary,
+  .hero-actions .btn-ghost { white-space: normal; }
+}
+
+/* ボタンの文言が2行になっても、矢印は文字の横に置いたままにする */
+.btn-label { display: block; }
+.hero-actions .btn-primary,
+.hero-actions .btn-ghost { flex-wrap: nowrap; }
+@media (max-width: 900px) {
+  .hero-actions .btn-primary,
+  .hero-actions .btn-ghost { padding-left: 22px; padding-right: 22px; }
+}
