@@ -1,0 +1,186 @@
+/* =====================================================
+   法務ページ共通スタイル
+   プライバシーポリシー／特定商取引法に基づく表記／
+   中小M&Aガイドライン遵守の宣言 の3ページで使う。
+   本編（style.css）は重いので、読み物として軽く開ける
+   独立したスタイルにしている。配色はLPと同じ。
+   ===================================================== */
+:root{
+  --ink:#0E1B33;
+  --ink-light:#1E3A66;
+  --gold:#C39B3F;
+  --gold-deep:#8A6A1E;
+  --gold-pale:#F7F2E4;
+  --text:#18202E;
+  --text-mid:#4E5866;
+  --text-light:#7A8494;
+  --line:#E2E7EF;
+  --surface:#F5F7FA;
+  --white:#FFFFFF;
+  --serif:'Shippori Mincho B1','Noto Serif JP',serif;
+  --sans:'Noto Sans JP','Hiragino Kaku Gothic ProN','Yu Gothic',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:var(--sans);
+  color:var(--text);
+  line-height:2;
+  background:var(--white);
+  -webkit-text-size-adjust:100%;
+}
+.serif{font-family:var(--serif);}
+a{color:#2C5DA8;}
+a:hover{color:var(--gold-deep);}
+
+/* ---- ヘッダー ---- */
+.lg-head{
+  background:var(--ink);
+  position:sticky; top:0; z-index:10;
+}
+.lg-head-inner{
+  max-width:880px; margin:0 auto;
+  padding:16px 20px;
+  display:flex; align-items:center; justify-content:space-between; gap:16px;
+}
+.lg-logo{
+  font-family:var(--serif);
+  font-size:1.25rem; font-weight:600;
+  color:var(--white); text-decoration:none;
+  letter-spacing:.06em;
+}
+.lg-logo span{color:var(--gold);}
+.lg-back{
+  font-size:.8125rem; font-weight:700;
+  color:rgba(255,255,255,.85); text-decoration:none;
+  border:1px solid rgba(255,255,255,.32);
+  border-radius:4px; padding:7px 14px;
+  white-space:nowrap;
+  transition:border-color .2s,color .2s;
+}
+.lg-back:hover{border-color:var(--gold); color:var(--gold);}
+
+/* ---- 本文 ---- */
+.lg-wrap{max-width:880px; margin:0 auto; padding:56px 20px 72px;}
+.lg-eyebrow{
+  font-size:.75rem; font-weight:700; letter-spacing:.22em;
+  color:var(--gold-deep); margin-bottom:10px;
+}
+.lg-title{
+  font-size:clamp(1.5rem,4vw,2.125rem);
+  font-weight:600; color:var(--ink);
+  letter-spacing:.04em; line-height:1.6;
+  padding-bottom:20px; margin-bottom:28px;
+  border-bottom:2px solid var(--ink);
+}
+.lg-lead{
+  font-size:.9375rem; color:var(--text-mid);
+  margin-bottom:40px;
+  word-break:auto-phrase; line-break:strict;
+}
+.lg-sec{margin-bottom:36px;}
+.lg-h2{
+  font-family:var(--serif);
+  font-size:1.125rem; font-weight:700; color:var(--ink);
+  letter-spacing:.04em;
+  padding-left:14px; margin-bottom:12px;
+  border-left:3px solid var(--gold);
+  line-height:1.7;
+}
+.lg-h3{
+  font-size:.9375rem; font-weight:700; color:var(--ink-light);
+  margin:22px 0 8px;
+}
+.lg-sec p{font-size:.9375rem; word-break:auto-phrase; line-break:strict;}
+.lg-sec p + p{margin-top:10px;}
+.lg-note{font-size:.8125rem; color:var(--text-light); line-height:1.9;}
+
+.lg-list{list-style:none; margin:10px 0 0;}
+.lg-list li{
+  position:relative; padding-left:20px;
+  font-size:.9375rem;
+  word-break:auto-phrase; line-break:strict;
+}
+.lg-list li::before{
+  content:''; position:absolute; left:4px; top:.92em;
+  width:6px; height:6px; border-radius:50%; background:var(--gold);
+}
+.lg-list--num{counter-reset:n;}
+.lg-list--num li{padding-left:30px;}
+.lg-list--num li::before{
+  counter-increment:n; content:counter(n);
+  width:auto; height:auto; border-radius:0; background:none;
+  top:0; left:2px;
+  font-size:.8125rem; font-weight:700; color:var(--gold-deep);
+}
+
+.lg-box{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:10px;
+  padding:20px 24px; margin-top:14px;
+}
+.lg-box p{font-size:.9375rem; margin:0;}
+
+/* ---- 表 ---- */
+.lg-table{
+  width:100%; border-collapse:collapse;
+  margin:8px 0 28px; font-size:.9375rem;
+}
+.lg-table th,.lg-table td{
+  border:1px solid var(--line);
+  padding:14px 16px; vertical-align:top; text-align:left;
+  word-break:auto-phrase; line-break:strict;
+}
+.lg-table th{
+  background:var(--surface); color:var(--ink-light);
+  width:220px; font-weight:700;
+}
+.lg-table td p{margin-bottom:6px;}
+.lg-table td p:last-child{margin-bottom:0;}
+.lg-cat{
+  display:block; font-weight:700; color:var(--ink-light);
+  margin-top:14px;
+}
+.lg-table td .lg-cat:first-child{margin-top:0;}
+.lg-sub{font-size:.8125rem; color:var(--text-light); line-height:1.8;}
+
+/* ---- 締め ---- */
+.lg-date{
+  font-size:.8125rem; color:var(--text-light);
+  padding-top:20px; margin-top:8px;
+  border-top:1px solid var(--line);
+}
+.lg-links{
+  display:flex; flex-wrap:wrap; gap:10px 24px;
+  margin-top:32px; padding-top:22px;
+  border-top:1px solid var(--line);
+  font-size:.875rem;
+}
+.lg-foot{
+  background:var(--ink); color:rgba(255,255,255,.7);
+  text-align:center; padding:26px 20px;
+  font-size:.8125rem; line-height:1.9;
+}
+
+@media(max-width:640px){
+  .lg-wrap{padding:36px 18px 56px;}
+  .lg-title{margin-bottom:22px;}
+  .lg-lead{margin-bottom:30px;}
+  .lg-sec{margin-bottom:28px;}
+  /* 表はスマホでは縦積みにして、見出しと中身を上下に並べる */
+  .lg-table,.lg-table tbody,.lg-table tr,.lg-table th,.lg-table td{display:block; width:100%;}
+  .lg-table tr{border:1px solid var(--line); border-radius:8px; margin-bottom:12px; overflow:hidden;}
+  .lg-table th,.lg-table td{border:none;}
+  .lg-table th{padding:10px 14px; font-size:.8125rem;}
+  .lg-table td{padding:12px 14px; font-size:.875rem;}
+  .lg-links{gap:8px 18px;}
+}
+
+/* 遵守の宣言：(1)〜(17) や ①②③ の補足行 */
+.lg-sub-item{
+  font-size:.875rem; color:var(--text-mid);
+  padding-left:20px; margin:6px 0;
+  border-left:2px solid var(--line);
+  word-break:auto-phrase; line-break:strict;
+}
+.lg-decl .lg-h2:first-of-type{margin-top:0;}
