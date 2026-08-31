@@ -184,3 +184,9 @@ a:hover{color:var(--gold-deep);}
   word-break:auto-phrase; line-break:strict;
 }
 .lg-decl .lg-h2:first-of-type{margin-top:0;}
+/* 遵守の宣言の差出人名。宣言書らしく右に寄せる */
+.lg-sign{
+  margin-top:32px; text-align:right;
+  font-family:var(--serif); font-size:1.0625rem; font-weight:700;
+  color:var(--ink); letter-spacing:.06em;
+}
