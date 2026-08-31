@@ -362,6 +362,380 @@
 
     <div class="st-conv-wrap reveal">
       <svg class="st-conv" id="convSvg" viewBox="0 0 900 300" aria-label="左の認定パートナーと右の経営者を、中央のTsuguAi -継- が結ぶ図">
+        <defs>
+          <!-- 左のパートナー側の金から、右の経営者側の青へ。
+               面全体がこの一枚のグラデーションを共有する -->
+          <linearGradient id="stFieldGrad" gradientUnits="userSpaceOnUse" x1="-270" y1="0" x2="1170" y2="0">
+            <stop offset="0"    stop-color="#C39B3F"/>
+            <stop offset="0.34" stop-color="#C39B3F"/>
+            <stop offset="0.5"  stop-color="#7E8FB4"/>
+            <stop offset="0.66" stop-color="#5B8FD6"/>
+            <stop offset="1"    stop-color="#5B8FD6"/>
+          </linearGradient>
+          <!-- 面を抜く濃度。二重に効かせる。
+               外側：枠の縁で断ち切らず、遠くへ向かって薄れさせる（世界が続いて見えるように）
+               内側：中心の「継」とブランド名にかかる分だけ、丸く抜く -->
+          <radialGradient id="stFieldVignette" gradientUnits="userSpaceOnUse"
+                          cx="450" cy="168" r="850"
+                          gradientTransform="translate(450,168) scale(1,0.3333) translate(-450,-168)">
+            <stop offset="0"    stop-color="#fff"/>
+            <stop offset="0.35" stop-color="#fff"/>
+            <stop offset="1"   stop-color="#000"/>
+          </radialGradient>
+          <radialGradient id="stFieldCore">
+            <stop offset="0"    stop-color="#000" stop-opacity="1"/>
+            <stop offset="0.45" stop-color="#000" stop-opacity="1"/>
+            <stop offset="1"    stop-color="#000" stop-opacity="0"/>
+          </radialGradient>
+          <mask id="stFieldMask" maskUnits="userSpaceOnUse" x="-500" y="-300" width="2100" height="1100">
+            <rect x="-500" y="-300" width="2100" height="1100" fill="url(#stFieldVignette)"/>
+            <ellipse cx="450" cy="205" rx="255" ry="152" fill="url(#stFieldCore)"/>
+          </mask>
+        </defs>
+
+        <!-- 面：点がつながって世界になる。中央の「継」から外へ順に現れる -->
+        <g class="st-field" mask="url(#stFieldMask)" aria-hidden="true">
+          <g class="st-fd-faces">
+            <path class="st-fd-face" style="--d:1.24s" d="M-344.8,-119.4L-238,-145.3L-185.4,12.1Z"/>
+            <path class="st-fd-face" style="--d:1.27s" d="M-344.8,-119.4L-185.4,12.1L-372.3,-25.1Z"/>
+            <path class="st-fd-face" style="--d:1.15s" d="M-238,-145.3L-43.3,-128.5L-185.4,12.1Z"/>
+            <path class="st-fd-face" style="--d:1.08s" d="M-43.3,-128.5L-16,-21.4L-185.4,12.1Z"/>
+            <path class="st-fd-face" style="--d:0.98s" d="M-43.3,-128.5L98.9,-136.2L115.1,-24.2Z"/>
+            <path class="st-fd-face" style="--d:1s" d="M-43.3,-128.5L115.1,-24.2L-16,-21.4Z"/>
+            <path class="st-fd-face" style="--d:0.91s" d="M98.9,-136.2L282,-135.9L115.1,-24.2Z"/>
+            <path class="st-fd-face" style="--d:0.83s" d="M282,-135.9L302.6,-2.1L115.1,-24.2Z"/>
+            <path class="st-fd-face" style="--d:0.79s" d="M282,-135.9L483.5,-137.4L483.7,-15.6Z"/>
+            <path class="st-fd-face" style="--d:0.77s" d="M282,-135.9L483.7,-15.6L302.6,-2.1Z"/>
+            <path class="st-fd-face" style="--d:0.8s" d="M483.5,-137.4L590.6,-119.9L483.7,-15.6Z"/>
+            <path class="st-fd-face" style="--d:0.77s" d="M590.6,-119.9L613.2,-0.9L483.7,-15.6Z"/>
+            <path class="st-fd-face" style="--d:0.89s" d="M590.6,-119.9L818.5,-140.9L753.2,3.1Z"/>
+            <path class="st-fd-face" style="--d:0.82s" d="M590.6,-119.9L753.2,3.1L613.2,-0.9Z"/>
+            <path class="st-fd-face" style="--d:0.97s" d="M818.5,-140.9L946.4,-106.6L753.2,3.1Z"/>
+            <path class="st-fd-face" style="--d:0.98s" d="M946.4,-106.6L915.4,-10.4L753.2,3.1Z"/>
+            <path class="st-fd-face st-fd-far" style="--d:1.15s" d="M946.4,-106.6L1123.2,-103.5L1083.7,-40.6Z"/>
+            <path class="st-fd-face" style="--d:1.08s" d="M946.4,-106.6L1083.7,-40.6L915.4,-10.4Z"/>
+            <path class="st-fd-face st-fd-far" style="--d:1.24s" d="M1123.2,-103.5L1267.6,-116.5L1083.7,-40.6Z"/>
+            <path class="st-fd-face st-fd-far" style="--d:1.28s" d="M1267.6,-116.5L1307.1,9.4L1083.7,-40.6Z"/>
+            <path class="st-fd-face" style="--d:1.27s" d="M-372.3,-25.1L-185.4,12.1L-396.6,84.2Z"/>
+            <path class="st-fd-face" style="--d:1.21s" d="M-185.4,12.1L-200.7,126L-396.6,84.2Z"/>
+            <path class="st-fd-face" style="--d:1.05s" d="M-185.4,12.1L-16,-21.4L-28.8,113.8Z"/>
+            <path class="st-fd-face" style="--d:1.1s" d="M-185.4,12.1L-28.8,113.8L-200.7,126Z"/>
+            <path class="st-fd-face" style="--d:0.96s" d="M-16,-21.4L115.1,-24.2L-28.8,113.8Z"/>
+            <path class="st-fd-face" style="--d:0.91s" d="M115.1,-24.2L129.2,127.2L-28.8,113.8Z"/>
+            <path class="st-fd-face" style="--d:0.79s" d="M115.1,-24.2L302.6,-2.1L262.2,111.3Z"/>
+            <path class="st-fd-face" style="--d:0.82s" d="M115.1,-24.2L262.2,111.3L129.2,127.2Z"/>
+            <path class="st-fd-face" style="--d:0.71s" d="M302.6,-2.1L483.7,-15.6L262.2,111.3Z"/>
+            <path class="st-fd-face" style="--d:0.66s" d="M483.7,-15.6L417.5,88.3L262.2,111.3Z"/>
+            <path class="st-fd-face" style="--d:0.72s" d="M483.7,-15.6L613.2,-0.9L582.4,86.5Z"/>
+            <path class="st-fd-face" style="--d:0.66s" d="M483.7,-15.6L582.4,86.5L417.5,88.3Z"/>
+            <path class="st-fd-face" style="--d:0.77s" d="M613.2,-0.9L753.2,3.1L582.4,86.5Z"/>
+            <path class="st-fd-face" style="--d:0.8s" d="M753.2,3.1L773.5,75.7L582.4,86.5Z"/>
+            <path class="st-fd-face" style="--d:0.95s" d="M753.2,3.1L915.4,-10.4L912.9,119Z"/>
+            <path class="st-fd-face" style="--d:0.9s" d="M753.2,3.1L912.9,119L773.5,75.7Z"/>
+            <path class="st-fd-face" style="--d:1.05s" d="M915.4,-10.4L1083.7,-40.6L912.9,119Z"/>
+            <path class="st-fd-face" style="--d:1.11s" d="M1083.7,-40.6L1138,89.7L912.9,119Z"/>
+            <path class="st-fd-face st-fd-far" style="--d:1.28s" d="M1083.7,-40.6L1307.1,9.4L1293.7,100.6Z"/>
+            <path class="st-fd-face st-fd-far" style="--d:1.22s" d="M1083.7,-40.6L1293.7,100.6L1138,89.7Z"/>
+            <path class="st-fd-face" style="--d:1.22s" d="M-396.6,84.2L-200.7,126L-243.6,203.7Z"/>
+            <path class="st-fd-face st-fd-far" style="--d:1.27s" d="M-396.6,84.2L-243.6,203.7L-356.6,207.4Z"/>
+            <path class="st-fd-face" style="--d:1.11s" d="M-200.7,126L-28.8,113.8L-243.6,203.7Z"/>
+            <path class="st-fd-face" style="--d:1.06s" d="M-28.8,113.8L-34.1,225.1L-243.6,203.7Z"/>
+            <path class="st-fd-face" style="--d:0.89s" d="M-28.8,113.8L129.2,127.2L151.2,230.9Z"/>
+            <path class="st-fd-face" style="--d:0.94s" d="M-28.8,113.8L151.2,230.9L-34.1,225.1Z"/>
+            <path class="st-fd-face" style="--d:0.8s" d="M129.2,127.2L262.2,111.3L151.2,230.9Z"/>
+            <path class="st-fd-face" style="--d:0.76s" d="M262.2,111.3L260.7,227.1L151.2,230.9Z"/>
+            <path class="st-fd-face" style="--d:0.64s" d="M262.2,111.3L417.5,88.3L414.9,191.5Z"/>
+            <path class="st-fd-face" style="--d:0.68s" d="M262.2,111.3L414.9,191.5L260.7,227.1Z"/>
+            <path class="st-fd-face" style="--d:0.6s" d="M417.5,88.3L582.4,86.5L414.9,191.5Z"/>
+            <path class="st-fd-face" style="--d:0.63s" d="M582.4,86.5L610.2,219L414.9,191.5Z"/>
+            <path class="st-fd-face" style="--d:0.8s" d="M582.4,86.5L773.5,75.7L797.4,223.8Z"/>
+            <path class="st-fd-face" style="--d:0.75s" d="M582.4,86.5L797.4,223.8L610.2,219Z"/>
+            <path class="st-fd-face" style="--d:0.9s" d="M773.5,75.7L912.9,119L797.4,223.8Z"/>
+            <path class="st-fd-face" style="--d:0.95s" d="M912.9,119L935.7,230.3L797.4,223.8Z"/>
+            <path class="st-fd-face" style="--d:1.12s" d="M912.9,119L1138,89.7L1143.4,192.6Z"/>
+            <path class="st-fd-face" style="--d:1.05s" d="M912.9,119L1143.4,192.6L935.7,230.3Z"/>
+            <path class="st-fd-face st-fd-far" style="--d:1.23s" d="M1138,89.7L1293.7,100.6L1143.4,192.6Z"/>
+            <path class="st-fd-face st-fd-far" style="--d:1.27s" d="M1293.7,100.6L1267.1,216.6L1143.4,192.6Z"/>
+            <path class="st-fd-face st-fd-far" style="--d:1.26s" d="M-356.6,207.4L-243.6,203.7L-342.2,331.2Z"/>
+            <path class="st-fd-face" style="--d:1.21s" d="M-243.6,203.7L-202.9,332.6L-342.2,331.2Z"/>
+            <path class="st-fd-face" style="--d:1.07s" d="M-243.6,203.7L-34.1,225.1L-35.9,355Z"/>
+            <path class="st-fd-face" style="--d:1.12s" d="M-243.6,203.7L-35.9,355L-202.9,332.6Z"/>
+            <path class="st-fd-face" style="--d:0.95s" d="M-34.1,225.1L151.2,230.9L-35.9,355Z"/>
+            <path class="st-fd-face" style="--d:0.92s" d="M151.2,230.9L92.5,351.8L-35.9,355Z"/>
+            <path class="st-fd-face" style="--d:0.77s" d="M151.2,230.9L260.7,227.1L285.9,311.2Z"/>
+            <path class="st-fd-face" style="--d:0.83s" d="M151.2,230.9L285.9,311.2L92.5,351.8Z"/>
+            <path class="st-fd-face" style="--d:0.69s" d="M260.7,227.1L414.9,191.5L285.9,311.2Z"/>
+            <path class="st-fd-face" style="--d:0.67s" d="M414.9,191.5L438.2,323.5L285.9,311.2Z"/>
+            <path class="st-fd-face" style="--d:0.67s" d="M414.9,191.5L610.2,219L620.8,348.7Z"/>
+            <path class="st-fd-face" style="--d:0.67s" d="M414.9,191.5L620.8,348.7L438.2,323.5Z"/>
+            <path class="st-fd-face" style="--d:0.78s" d="M610.2,219L797.4,223.8L620.8,348.7Z"/>
+            <path class="st-fd-face" style="--d:0.83s" d="M797.4,223.8L765.2,325.5L620.8,348.7Z"/>
+            <path class="st-fd-face" style="--d:0.97s" d="M797.4,223.8L935.7,230.3L944.1,348.2Z"/>
+            <path class="st-fd-face" style="--d:0.92s" d="M797.4,223.8L944.1,348.2L765.2,325.5Z"/>
+            <path class="st-fd-face" style="--d:1.07s" d="M935.7,230.3L1143.4,192.6L944.1,348.2Z"/>
+            <path class="st-fd-face" style="--d:1.14s" d="M1143.4,192.6L1139.3,360.5L944.1,348.2Z"/>
+            <path class="st-fd-face st-fd-far" style="--d:1.27s" d="M1143.4,192.6L1267.1,216.6L1285,341.5Z"/>
+            <path class="st-fd-face st-fd-far" style="--d:1.24s" d="M1143.4,192.6L1285,341.5L1139.3,360.5Z"/>
+            <path class="st-fd-face" style="--d:1.23s" d="M-342.2,331.2L-202.9,332.6L-239.6,446.5Z"/>
+            <path class="st-fd-face st-fd-far" style="--d:1.28s" d="M-342.2,331.2L-239.6,446.5L-344.8,467.3Z"/>
+            <path class="st-fd-face" style="--d:1.14s" d="M-202.9,332.6L-35.9,355L-239.6,446.5Z"/>
+            <path class="st-fd-face" style="--d:1.11s" d="M-35.9,355L-40.2,431.4L-239.6,446.5Z"/>
+            <path class="st-fd-face" style="--d:0.96s" d="M-35.9,355L92.5,351.8L147.6,473.2Z"/>
+            <path class="st-fd-face" style="--d:1s" d="M-35.9,355L147.6,473.2L-40.2,431.4Z"/>
+            <path class="st-fd-face" style="--d:0.87s" d="M92.5,351.8L285.9,311.2L147.6,473.2Z"/>
+            <path class="st-fd-face" style="--d:0.84s" d="M285.9,311.2L290.7,448.3L147.6,473.2Z"/>
+            <path class="st-fd-face" style="--d:0.73s" d="M285.9,311.2L438.2,323.5L417.8,425.1Z"/>
+            <path class="st-fd-face" style="--d:0.78s" d="M285.9,311.2L417.8,425.1L290.7,448.3Z"/>
+            <path class="st-fd-face" style="--d:0.74s" d="M438.2,323.5L620.8,348.7L417.8,425.1Z"/>
+            <path class="st-fd-face" style="--d:0.79s" d="M620.8,348.7L648.4,448.2L417.8,425.1Z"/>
+            <path class="st-fd-face" style="--d:0.87s" d="M620.8,348.7L765.2,325.5L811.5,463Z"/>
+            <path class="st-fd-face" style="--d:0.87s" d="M620.8,348.7L811.5,463L648.4,448.2Z"/>
+            <path class="st-fd-face" style="--d:0.96s" d="M765.2,325.5L944.1,348.2L811.5,463Z"/>
+            <path class="st-fd-face" style="--d:1.04s" d="M944.1,348.2L980.3,470.3L811.5,463Z"/>
+            <path class="st-fd-face" style="--d:1.14s" d="M944.1,348.2L1139.3,360.5L1100.8,439.3Z"/>
+            <path class="st-fd-face" style="--d:1.11s" d="M944.1,348.2L1100.8,439.3L980.3,470.3Z"/>
+            <path class="st-fd-face st-fd-far" style="--d:1.24s" d="M1139.3,360.5L1285,341.5L1100.8,439.3Z"/>
+            <path class="st-fd-face st-fd-far" style="--d:1.28s" d="M1285,341.5L1243.1,474.7L1100.8,439.3Z"/>
+          </g>
+          <g class="st-fd-edges">
+            <line class="st-fd-edge st-fd-far" style="--d:0.84s" x1="-344.8" y1="-119.4" x2="-238" y2="-145.3"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.88s" x1="-344.8" y1="-119.4" x2="-372.3" y2="-25.1"/>
+            <line class="st-fd-edge" style="--d:0.8s" x1="-344.8" y1="-119.4" x2="-185.4" y2="12.1"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.73s" x1="-238" y1="-145.3" x2="-43.3" y2="-128.5"/>
+            <line class="st-fd-edge" style="--d:0.76s" x1="-238" y1="-145.3" x2="-185.4" y2="12.1"/>
+            <line class="st-fd-edge" style="--d:0.69s" x1="-43.3" y1="-128.5" x2="-185.4" y2="12.1"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.62s" x1="-43.3" y1="-128.5" x2="98.9" y2="-136.2"/>
+            <line class="st-fd-edge" style="--d:0.63s" x1="-43.3" y1="-128.5" x2="-16" y2="-21.4"/>
+            <line class="st-fd-edge" style="--d:0.59s" x1="-43.3" y1="-128.5" x2="115.1" y2="-24.2"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.52s" x1="98.9" y1="-136.2" x2="282" y2="-135.9"/>
+            <line class="st-fd-edge" style="--d:0.54s" x1="98.9" y1="-136.2" x2="115.1" y2="-24.2"/>
+            <line class="st-fd-edge" style="--d:0.48s" x1="282" y1="-135.9" x2="115.1" y2="-24.2"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.45s" x1="282" y1="-135.9" x2="483.5" y2="-137.4"/>
+            <line class="st-fd-edge" style="--d:0.43s" x1="282" y1="-135.9" x2="302.6" y2="-2.1"/>
+            <line class="st-fd-edge" style="--d:0.4s" x1="282" y1="-135.9" x2="483.7" y2="-15.6"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.45s" x1="483.5" y1="-137.4" x2="590.6" y2="-119.9"/>
+            <line class="st-fd-edge" style="--d:0.4s" x1="483.5" y1="-137.4" x2="483.7" y2="-15.6"/>
+            <line class="st-fd-edge" style="--d:0.4s" x1="590.6" y1="-119.9" x2="483.7" y2="-15.6"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.51s" x1="590.6" y1="-119.9" x2="818.5" y2="-140.9"/>
+            <line class="st-fd-edge" style="--d:0.42s" x1="590.6" y1="-119.9" x2="613.2" y2="-0.9"/>
+            <line class="st-fd-edge" style="--d:0.45s" x1="590.6" y1="-119.9" x2="753.2" y2="3.1"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.62s" x1="818.5" y1="-140.9" x2="946.4" y2="-106.6"/>
+            <line class="st-fd-edge" style="--d:0.53s" x1="818.5" y1="-140.9" x2="753.2" y2="3.1"/>
+            <line class="st-fd-edge" style="--d:0.57s" x1="946.4" y1="-106.6" x2="753.2" y2="3.1"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.72s" x1="946.4" y1="-106.6" x2="1123.2" y2="-103.5"/>
+            <line class="st-fd-edge" style="--d:0.63s" x1="946.4" y1="-106.6" x2="915.4" y2="-10.4"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.69s" x1="946.4" y1="-106.6" x2="1083.7" y2="-40.6"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.84s" x1="1123.2" y1="-103.5" x2="1267.6" y2="-116.5"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.76s" x1="1123.2" y1="-103.5" x2="1083.7" y2="-40.6"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.82s" x1="1267.6" y1="-116.5" x2="1083.7" y2="-40.6"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.9s" x1="1267.6" y1="-116.5" x2="1307.1" y2="9.4"/>
+            <line class="st-fd-edge" style="--d:0.8s" x1="-372.3" y1="-25.1" x2="-185.4" y2="12.1"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.88s" x1="-372.3" y1="-25.1" x2="-396.6" y2="84.2"/>
+            <line class="st-fd-edge" style="--d:0.8s" x1="-185.4" y1="12.1" x2="-396.6" y2="84.2"/>
+            <line class="st-fd-edge" style="--d:0.66s" x1="-185.4" y1="12.1" x2="-16" y2="-21.4"/>
+            <line class="st-fd-edge" style="--d:0.72s" x1="-185.4" y1="12.1" x2="-200.7" y2="126"/>
+            <line class="st-fd-edge" style="--d:0.66s" x1="-185.4" y1="12.1" x2="-28.8" y2="113.8"/>
+            <line class="st-fd-edge" style="--d:0.56s" x1="-16" y1="-21.4" x2="115.1" y2="-24.2"/>
+            <line class="st-fd-edge" style="--d:0.59s" x1="-16" y1="-21.4" x2="-28.8" y2="113.8"/>
+            <line class="st-fd-edge" style="--d:0.54s" x1="115.1" y1="-24.2" x2="-28.8" y2="113.8"/>
+            <line class="st-fd-edge" style="--d:0.44s" x1="115.1" y1="-24.2" x2="302.6" y2="-2.1"/>
+            <line class="st-fd-edge" style="--d:0.48s" x1="115.1" y1="-24.2" x2="129.2" y2="127.2"/>
+            <line class="st-fd-edge" style="--d:0.43s" x1="115.1" y1="-24.2" x2="262.2" y2="111.3"/>
+            <line class="st-fd-edge" style="--d:0.35s" x1="302.6" y1="-2.1" x2="483.7" y2="-15.6"/>
+            <line class="st-fd-edge" style="--d:0.36s" x1="302.6" y1="-2.1" x2="262.2" y2="111.3"/>
+            <line class="st-fd-edge" style="--d:0.31s" x1="483.7" y1="-15.6" x2="262.2" y2="111.3"/>
+            <line class="st-fd-edge" style="--d:0.36s" x1="483.7" y1="-15.6" x2="613.2" y2="-0.9"/>
+            <line class="st-fd-edge" style="--d:0.31s" x1="483.7" y1="-15.6" x2="417.5" y2="88.3"/>
+            <line class="st-fd-edge" style="--d:0.33s" x1="483.7" y1="-15.6" x2="582.4" y2="86.5"/>
+            <line class="st-fd-edge" style="--d:0.43s" x1="613.2" y1="-0.9" x2="753.2" y2="3.1"/>
+            <line class="st-fd-edge" style="--d:0.36s" x1="613.2" y1="-0.9" x2="582.4" y2="86.5"/>
+            <line class="st-fd-edge" style="--d:0.4s" x1="753.2" y1="3.1" x2="582.4" y2="86.5"/>
+            <line class="st-fd-edge" style="--d:0.54s" x1="753.2" y1="3.1" x2="915.4" y2="-10.4"/>
+            <line class="st-fd-edge" style="--d:0.47s" x1="753.2" y1="3.1" x2="773.5" y2="75.7"/>
+            <line class="st-fd-edge" style="--d:0.52s" x1="753.2" y1="3.1" x2="912.9" y2="119"/>
+            <line class="st-fd-edge" style="--d:0.67s" x1="915.4" y1="-10.4" x2="1083.7" y2="-40.6"/>
+            <line class="st-fd-edge" style="--d:0.58s" x1="915.4" y1="-10.4" x2="912.9" y2="119"/>
+            <line class="st-fd-edge" style="--d:0.65s" x1="1083.7" y1="-40.6" x2="912.9" y2="119"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.82s" x1="1083.7" y1="-40.6" x2="1307.1" y2="9.4"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.74s" x1="1083.7" y1="-40.6" x2="1138" y2="89.7"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.8s" x1="1083.7" y1="-40.6" x2="1293.7" y2="100.6"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.89s" x1="1307.1" y1="9.4" x2="1293.7" y2="100.6"/>
+            <line class="st-fd-edge" style="--d:0.8s" x1="-396.6" y1="84.2" x2="-200.7" y2="126"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.86s" x1="-396.6" y1="84.2" x2="-356.6" y2="207.4"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.82s" x1="-396.6" y1="84.2" x2="-243.6" y2="203.7"/>
+            <line class="st-fd-edge" style="--d:0.66s" x1="-200.7" y1="126" x2="-28.8" y2="113.8"/>
+            <line class="st-fd-edge" style="--d:0.74s" x1="-200.7" y1="126" x2="-243.6" y2="203.7"/>
+            <line class="st-fd-edge" style="--d:0.67s" x1="-28.8" y1="113.8" x2="-243.6" y2="203.7"/>
+            <line class="st-fd-edge" style="--d:0.52s" x1="-28.8" y1="113.8" x2="129.2" y2="127.2"/>
+            <line class="st-fd-edge" style="--d:0.59s" x1="-28.8" y1="113.8" x2="-34.1" y2="225.1"/>
+            <line class="st-fd-edge" style="--d:0.51s" x1="-28.8" y1="113.8" x2="151.2" y2="230.9"/>
+            <line class="st-fd-edge" style="--d:0.41s" x1="129.2" y1="127.2" x2="262.2" y2="111.3"/>
+            <line class="st-fd-edge" style="--d:0.45s" x1="129.2" y1="127.2" x2="151.2" y2="230.9"/>
+            <line class="st-fd-edge" style="--d:0.4s" x1="262.2" y1="111.3" x2="151.2" y2="230.9"/>
+            <line class="st-fd-edge" style="--d:0.3s" x1="262.2" y1="111.3" x2="417.5" y2="88.3"/>
+            <line class="st-fd-edge" style="--d:0.35s" x1="262.2" y1="111.3" x2="260.7" y2="227.1"/>
+            <line class="st-fd-edge" style="--d:0.29s" x1="262.2" y1="111.3" x2="414.9" y2="191.5"/>
+            <line class="st-fd-edge" style="--d:0.28s" x1="417.5" y1="88.3" x2="582.4" y2="86.5"/>
+            <line class="st-fd-edge" style="--d:0.24s" x1="417.5" y1="88.3" x2="414.9" y2="191.5"/>
+            <line class="st-fd-edge" style="--d:0.25s" x1="582.4" y1="86.5" x2="414.9" y2="191.5"/>
+            <line class="st-fd-edge" style="--d:0.4s" x1="582.4" y1="86.5" x2="773.5" y2="75.7"/>
+            <line class="st-fd-edge" style="--d:0.32s" x1="582.4" y1="86.5" x2="610.2" y2="219"/>
+            <line class="st-fd-edge" style="--d:0.39s" x1="582.4" y1="86.5" x2="797.4" y2="223.8"/>
+            <line class="st-fd-edge" style="--d:0.52s" x1="773.5" y1="75.7" x2="912.9" y2="119"/>
+            <line class="st-fd-edge" style="--d:0.47s" x1="773.5" y1="75.7" x2="797.4" y2="223.8"/>
+            <line class="st-fd-edge" style="--d:0.53s" x1="912.9" y1="119" x2="797.4" y2="223.8"/>
+            <line class="st-fd-edge" style="--d:0.66s" x1="912.9" y1="119" x2="1138" y2="89.7"/>
+            <line class="st-fd-edge" style="--d:0.58s" x1="912.9" y1="119" x2="935.7" y2="230.3"/>
+            <line class="st-fd-edge" style="--d:0.66s" x1="912.9" y1="119" x2="1143.4" y2="192.6"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.82s" x1="1138" y1="89.7" x2="1293.7" y2="100.6"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.76s" x1="1138" y1="89.7" x2="1143.4" y2="192.6"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.82s" x1="1293.7" y1="100.6" x2="1143.4" y2="192.6"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.87s" x1="1293.7" y1="100.6" x2="1267.1" y2="216.6"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.8s" x1="-356.6" y1="207.4" x2="-243.6" y2="203.7"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.85s" x1="-356.6" y1="207.4" x2="-342.2" y2="331.2"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.8s" x1="-243.6" y1="203.7" x2="-342.2" y2="331.2"/>
+            <line class="st-fd-edge" style="--d:0.67s" x1="-243.6" y1="203.7" x2="-34.1" y2="225.1"/>
+            <line class="st-fd-edge" style="--d:0.75s" x1="-243.6" y1="203.7" x2="-202.9" y2="332.6"/>
+            <line class="st-fd-edge" style="--d:0.68s" x1="-243.6" y1="203.7" x2="-35.9" y2="355"/>
+            <line class="st-fd-edge" style="--d:0.52s" x1="-34.1" y1="225.1" x2="151.2" y2="230.9"/>
+            <line class="st-fd-edge" style="--d:0.6s" x1="-34.1" y1="225.1" x2="-35.9" y2="355"/>
+            <line class="st-fd-edge" style="--d:0.53s" x1="151.2" y1="230.9" x2="-35.9" y2="355"/>
+            <line class="st-fd-edge" style="--d:0.4s" x1="151.2" y1="230.9" x2="260.7" y2="227.1"/>
+            <line class="st-fd-edge" style="--d:0.48s" x1="151.2" y1="230.9" x2="92.5" y2="351.8"/>
+            <line class="st-fd-edge" style="--d:0.4s" x1="151.2" y1="230.9" x2="285.9" y2="311.2"/>
+            <line class="st-fd-edge" style="--d:0.3s" x1="260.7" y1="227.1" x2="414.9" y2="191.5"/>
+            <line class="st-fd-edge" style="--d:0.36s" x1="260.7" y1="227.1" x2="285.9" y2="311.2"/>
+            <line class="st-fd-edge" style="--d:0.3s" x1="414.9" y1="191.5" x2="285.9" y2="311.2"/>
+            <line class="st-fd-edge" style="--d:0.26s" x1="414.9" y1="191.5" x2="610.2" y2="219"/>
+            <line class="st-fd-edge" style="--d:0.27s" x1="414.9" y1="191.5" x2="438.2" y2="323.5"/>
+            <line class="st-fd-edge" style="--d:0.3s" x1="414.9" y1="191.5" x2="620.8" y2="348.7"/>
+            <line class="st-fd-edge" style="--d:0.41s" x1="610.2" y1="219" x2="797.4" y2="223.8"/>
+            <line class="st-fd-edge" style="--d:0.36s" x1="610.2" y1="219" x2="620.8" y2="348.7"/>
+            <line class="st-fd-edge" style="--d:0.43s" x1="797.4" y1="223.8" x2="620.8" y2="348.7"/>
+            <line class="st-fd-edge" style="--d:0.54s" x1="797.4" y1="223.8" x2="935.7" y2="230.3"/>
+            <line class="st-fd-edge" style="--d:0.48s" x1="797.4" y1="223.8" x2="765.2" y2="325.5"/>
+            <line class="st-fd-edge" style="--d:0.55s" x1="797.4" y1="223.8" x2="944.1" y2="348.2"/>
+            <line class="st-fd-edge" style="--d:0.67s" x1="935.7" y1="230.3" x2="1143.4" y2="192.6"/>
+            <line class="st-fd-edge" style="--d:0.61s" x1="935.7" y1="230.3" x2="944.1" y2="348.2"/>
+            <line class="st-fd-edge" style="--d:0.68s" x1="1143.4" y1="192.6" x2="944.1" y2="348.2"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.81s" x1="1143.4" y1="192.6" x2="1267.1" y2="216.6"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.76s" x1="1143.4" y1="192.6" x2="1139.3" y2="360.5"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.82s" x1="1143.4" y1="192.6" x2="1285" y2="341.5"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.87s" x1="1267.1" y1="216.6" x2="1285" y2="341.5"/>
+            <line class="st-fd-edge" style="--d:0.8s" x1="-342.2" y1="331.2" x2="-202.9" y2="332.6"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.86s" x1="-342.2" y1="331.2" x2="-344.8" y2="467.3"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.82s" x1="-342.2" y1="331.2" x2="-239.6" y2="446.5"/>
+            <line class="st-fd-edge" style="--d:0.68s" x1="-202.9" y1="332.6" x2="-35.9" y2="355"/>
+            <line class="st-fd-edge" style="--d:0.77s" x1="-202.9" y1="332.6" x2="-239.6" y2="446.5"/>
+            <line class="st-fd-edge" style="--d:0.71s" x1="-35.9" y1="355" x2="-239.6" y2="446.5"/>
+            <line class="st-fd-edge" style="--d:0.57s" x1="-35.9" y1="355" x2="92.5" y2="351.8"/>
+            <line class="st-fd-edge" style="--d:0.63s" x1="-35.9" y1="355" x2="-40.2" y2="431.4"/>
+            <line class="st-fd-edge" style="--d:0.57s" x1="-35.9" y1="355" x2="147.6" y2="473.2"/>
+            <line class="st-fd-edge" style="--d:0.45s" x1="92.5" y1="351.8" x2="285.9" y2="311.2"/>
+            <line class="st-fd-edge" style="--d:0.53s" x1="92.5" y1="351.8" x2="147.6" y2="473.2"/>
+            <line class="st-fd-edge" style="--d:0.46s" x1="285.9" y1="311.2" x2="147.6" y2="473.2"/>
+            <line class="st-fd-edge" style="--d:0.34s" x1="285.9" y1="311.2" x2="438.2" y2="323.5"/>
+            <line class="st-fd-edge" style="--d:0.41s" x1="285.9" y1="311.2" x2="290.7" y2="448.3"/>
+            <line class="st-fd-edge" style="--d:0.38s" x1="285.9" y1="311.2" x2="417.8" y2="425.1"/>
+            <line class="st-fd-edge" style="--d:0.35s" x1="438.2" y1="323.5" x2="620.8" y2="348.7"/>
+            <line class="st-fd-edge" style="--d:0.37s" x1="438.2" y1="323.5" x2="417.8" y2="425.1"/>
+            <line class="st-fd-edge" style="--d:0.38s" x1="620.8" y1="348.7" x2="417.8" y2="425.1"/>
+            <line class="st-fd-edge" style="--d:0.44s" x1="620.8" y1="348.7" x2="765.2" y2="325.5"/>
+            <line class="st-fd-edge" style="--d:0.44s" x1="620.8" y1="348.7" x2="648.4" y2="448.2"/>
+            <line class="st-fd-edge" style="--d:0.49s" x1="620.8" y1="348.7" x2="811.5" y2="463"/>
+            <line class="st-fd-edge" style="--d:0.55s" x1="765.2" y1="325.5" x2="944.1" y2="348.2"/>
+            <line class="st-fd-edge" style="--d:0.53s" x1="765.2" y1="325.5" x2="811.5" y2="463"/>
+            <line class="st-fd-edge" style="--d:0.59s" x1="944.1" y1="348.2" x2="811.5" y2="463"/>
+            <line class="st-fd-edge" style="--d:0.7s" x1="944.1" y1="348.2" x2="1139.3" y2="360.5"/>
+            <line class="st-fd-edge" style="--d:0.65s" x1="944.1" y1="348.2" x2="980.3" y2="470.3"/>
+            <line class="st-fd-edge" style="--d:0.69s" x1="944.1" y1="348.2" x2="1100.8" y2="439.3"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.83s" x1="1139.3" y1="360.5" x2="1285" y2="341.5"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.77s" x1="1139.3" y1="360.5" x2="1100.8" y2="439.3"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.82s" x1="1285" y1="341.5" x2="1100.8" y2="439.3"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.88s" x1="1285" y1="341.5" x2="1243.1" y2="474.7"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.84s" x1="-344.8" y1="467.3" x2="-239.6" y2="446.5"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.72s" x1="-239.6" y1="446.5" x2="-40.2" y2="431.4"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.59s" x1="-40.2" y1="431.4" x2="147.6" y2="473.2"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.5s" x1="147.6" y1="473.2" x2="290.7" y2="448.3"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.43s" x1="290.7" y1="448.3" x2="417.8" y2="425.1"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.43s" x1="417.8" y1="425.1" x2="648.4" y2="448.2"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.52s" x1="648.4" y1="448.2" x2="811.5" y2="463"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.63s" x1="811.5" y1="463" x2="980.3" y2="470.3"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.73s" x1="980.3" y1="470.3" x2="1100.8" y2="439.3"/>
+            <line class="st-fd-edge st-fd-far" style="--d:0.82s" x1="1100.8" y1="439.3" x2="1243.1" y2="474.7"/>
+          </g>
+          <g class="st-fd-nodes">
+            <circle class="st-fd-node" style="--d:0.08s" cx="414.9" cy="191.5" r="4.2"/>
+            <circle class="st-fd-node" style="--d:0.11s" cx="417.5" cy="88.3" r="4.2"/>
+            <circle class="st-fd-node" style="--d:0.16s" cx="582.4" cy="86.5" r="4.2"/>
+            <circle class="st-fd-node" style="--d:0.16s" cx="438.2" cy="323.5" r="4.2"/>
+            <circle class="st-fd-node" style="--d:0.17s" cx="610.2" cy="219" r="4.2"/>
+            <circle class="st-fd-node" style="--d:0.18s" cx="483.7" cy="-15.6" r="4.2"/>
+            <circle class="st-fd-node" style="--d:0.19s" cx="262.2" cy="111.3" r="4.2"/>
+            <circle class="st-fd-node" style="--d:0.19s" cx="260.7" cy="227.1" r="4.2"/>
+            <circle class="st-fd-node" style="--d:0.2s" cx="285.9" cy="311.2" r="4.2"/>
+            <circle class="st-fd-node" style="--d:0.2s" cx="302.6" cy="-2.1" r="4.2"/>
+            <circle class="st-fd-node" style="--d:0.21s" cx="613.2" cy="-0.9" r="4.2"/>
+            <circle class="st-fd-node" style="--d:0.22s" cx="620.8" cy="348.7" r="4.2"/>
+            <circle class="st-fd-node st-fd-far" style="--d:0.23s" cx="417.8" cy="425.1" r="4.2"/>
+            <circle class="st-fd-node" style="--d:0.26s" cx="151.2" cy="230.9" r="4.2"/>
+            <circle class="st-fd-node st-fd-far" style="--d:0.26s" cx="483.5" cy="-137.4" r="4.2"/>
+            <circle class="st-fd-node st-fd-far" style="--d:0.27s" cx="590.6" cy="-119.9" r="4.2"/>
+            <circle class="st-fd-node st-fd-far" style="--d:0.27s" cx="290.7" cy="448.3" r="4.2"/>
+            <circle class="st-fd-node" style="--d:0.27s" cx="129.2" cy="127.2" r="4.2"/>
+            <circle class="st-fd-node" style="--d:0.28s" cx="773.5" cy="75.7" r="4.2"/>
+            <circle class="st-fd-node st-fd-far" style="--d:0.29s" cx="648.4" cy="448.2" r="4.2"/>
+            <circle class="st-fd-node" style="--d:0.29s" cx="753.2" cy="3.1" r="4.2"/>
+            <circle class="st-fd-node st-fd-far" style="--d:0.29s" cx="282" cy="-135.9" r="4.2"/>
+            <circle class="st-fd-node" style="--d:0.29s" cx="797.4" cy="223.8" r="4.2"/>
+            <circle class="st-fd-node" style="--d:0.29s" cx="765.2" cy="325.5" r="4.2"/>
+            <circle class="st-fd-node" style="--d:0.32s" cx="115.1" cy="-24.2" r="4.2"/>
+            <circle class="st-fd-node" style="--d:0.33s" cx="92.5" cy="351.8" r="4.2"/>
+            <circle class="st-fd-node st-fd-far" style="--d:0.35s" cx="147.6" cy="473.2" r="4.2"/>
+            <circle class="st-fd-node st-fd-far" style="--d:0.37s" cx="98.9" cy="-136.2" r="4.2"/>
+            <circle class="st-fd-node" style="--d:0.37s" cx="912.9" cy="119" r="4.2"/>
+            <circle class="st-fd-node st-fd-far" style="--d:0.37s" cx="811.5" cy="463" r="4.2"/>
+            <circle class="st-fd-node st-fd-far" style="--d:0.38s" cx="818.5" cy="-140.9" r="4.2"/>
+            <circle class="st-fd-node" style="--d:0.38s" cx="-28.8" cy="113.8" r="4.2"/>
+            <circle class="st-fd-node" style="--d:0.39s" cx="-34.1" cy="225.1" r="4.2"/>
+            <circle class="st-fd-node" style="--d:0.39s" cx="935.7" cy="230.3" r="4.2"/>
+            <circle class="st-fd-node" style="--d:0.39s" cx="915.4" cy="-10.4" r="4.2"/>
+            <circle class="st-fd-node" style="--d:0.4s" cx="-16" cy="-21.4" r="4.2"/>
+            <circle class="st-fd-node" style="--d:0.41s" cx="-35.9" cy="355" r="4.2"/>
+            <circle class="st-fd-node" style="--d:0.41s" cx="944.1" cy="348.2" r="4.2"/>
+            <circle class="st-fd-node st-fd-far" style="--d:0.43s" cx="-40.2" cy="431.4" r="4.2"/>
+            <circle class="st-fd-node st-fd-far" style="--d:0.44s" cx="946.4" cy="-106.6" r="4.2"/>
+            <circle class="st-fd-node st-fd-far" style="--d:0.45s" cx="-43.3" cy="-128.5" r="4.2"/>
+            <circle class="st-fd-node st-fd-far" style="--d:0.47s" cx="980.3" cy="470.3" r="4.2"/>
+            <circle class="st-fd-node" style="--d:0.5s" cx="-200.7" cy="126" r="4.2"/>
+            <circle class="st-fd-node" style="--d:0.5s" cx="-185.4" cy="12.1" r="4.2"/>
+            <circle class="st-fd-node st-fd-far" style="--d:0.51s" cx="1083.7" cy="-40.6" r="4.2"/>
+            <circle class="st-fd-node" style="--d:0.51s" cx="-202.9" cy="332.6" r="4.2"/>
+            <circle class="st-fd-node st-fd-far" style="--d:0.53s" cx="1138" cy="89.7" r="4.2"/>
+            <circle class="st-fd-node st-fd-far" style="--d:0.53s" cx="1143.4" cy="192.6" r="4.2"/>
+            <circle class="st-fd-node st-fd-far" style="--d:0.53s" cx="-243.6" cy="203.7" r="4.2"/>
+            <circle class="st-fd-node st-fd-far" style="--d:0.54s" cx="1100.8" cy="439.3" r="4.2"/>
+            <circle class="st-fd-node st-fd-far" style="--d:0.54s" cx="1139.3" cy="360.5" r="4.2"/>
+            <circle class="st-fd-node st-fd-far" style="--d:0.55s" cx="1123.2" cy="-103.5" r="4.2"/>
+            <circle class="st-fd-node st-fd-far" style="--d:0.56s" cx="-239.6" cy="446.5" r="4.2"/>
+            <circle class="st-fd-node st-fd-far" style="--d:0.57s" cx="-238" cy="-145.3" r="4.2"/>
+            <circle class="st-fd-node st-fd-far" style="--d:0.61s" cx="-356.6" cy="207.4" r="4.2"/>
+            <circle class="st-fd-node st-fd-far" style="--d:0.61s" cx="-342.2" cy="331.2" r="4.2"/>
+            <circle class="st-fd-node st-fd-far" style="--d:0.61s" cx="1267.1" cy="216.6" r="4.2"/>
+            <circle class="st-fd-node st-fd-far" style="--d:0.63s" cx="-372.3" cy="-25.1" r="4.2"/>
+            <circle class="st-fd-node st-fd-far" style="--d:0.63s" cx="-344.8" cy="-119.4" r="4.2"/>
+            <circle class="st-fd-node st-fd-far" style="--d:0.63s" cx="1293.7" cy="100.6" r="4.2"/>
+            <circle class="st-fd-node st-fd-far" style="--d:0.63s" cx="-344.8" cy="467.3" r="4.2"/>
+            <circle class="st-fd-node st-fd-far" style="--d:0.64s" cx="1243.1" cy="474.7" r="4.2"/>
+            <circle class="st-fd-node st-fd-far" style="--d:0.64s" cx="-396.6" cy="84.2" r="4.2"/>
+            <circle class="st-fd-node st-fd-far" style="--d:0.64s" cx="1285" cy="341.5" r="4.2"/>
+            <circle class="st-fd-node st-fd-far" style="--d:0.65s" cx="1267.6" cy="-116.5" r="4.2"/>
+            <circle class="st-fd-node st-fd-far" style="--d:0.65s" cx="1307.1" cy="9.4" r="4.2"/>
+          </g>
+        </g>
+        </g>
+        </g>
+
         <!-- 左：認定パートナー -->
         <text class="st-conv-name" x="40" y="56">認定パートナー</text>
         <text class="st-conv-label" x="40" y="82">営業のプロが、支える側へ</text>

@@ -4828,3 +4828,65 @@ p, li, dd, dt, summary, figcaption,
   transition: border-color 0.2s, color 0.2s;
 }
 .nav-boxed:hover { border-color: var(--gold); color: var(--gold); }
+
+/* =========================================================
+   結びの図の続き：点が線になり、線が面になる
+   二点が「継」で結ばれたあと、視野がゆっくり退いて、
+   同じ結びが無数に広がっていたことが見えてくる。
+   面は中央から外へ順に満ちていく。
+   ========================================================= */
+
+/* 視野が退くあいだ、図全体の縦横比は変えない。
+   viewBox は app.js が書き換えるので、ここでは比率だけ固定しておく。 */
+.st-conv { aspect-ratio: 3 / 1; }
+
+/* 世界が広がると、最初の二人は「そのうちの一組」になる。
+   名前は消さず、静かに退かせる。 */
+.st-conv-name,
+.st-conv-label {
+  transition: opacity 1.4s ease-out;
+  transition-delay: 2.7s;
+}
+.st-conv.widened .st-conv-name { opacity: 0.64; }
+.st-conv.widened .st-conv-label { opacity: 0.46; }
+
+/* ---- 点 ---- */
+.st-fd-node {
+  fill: url(#stFieldGrad);
+  opacity: 0;
+  transition: opacity 0.7s ease-out;
+  transition-delay: var(--d, 0s);
+}
+.st-conv.widened .st-fd-node { opacity: 0.95; }
+
+/* ---- 線 ---- */
+.st-fd-edge {
+  stroke: url(#stFieldGrad);
+  stroke-width: 1;
+  opacity: 0;
+  transition: opacity 0.9s ease-out;
+  transition-delay: var(--d, 0s);
+}
+.st-conv.widened .st-fd-edge { opacity: 0.48; }
+
+/* ---- 面 ---- */
+.st-fd-face {
+  fill: url(#stFieldGrad);
+  opacity: 0;
+  transition: opacity 1.2s ease-out;
+  transition-delay: var(--d, 0s);
+}
+.st-conv.widened .st-fd-face { opacity: 0.36; }
+
+/* 枠の外にはみ出す分。世界が縁で終わっていないことを示すためのもので、
+   画面が狭いときは描いても見えないので落とす。 */
+@media (max-width: 640px) {
+  .st-fd-far { display: none; }
+  .st-fd-node { r: 5.4; }
+}
+
+/* 動きを控えたい設定のときは、広がった状態を最初から見せる */
+@media (prefers-reduced-motion: reduce) {
+  .st-conv-name, .st-conv-label,
+  .st-fd-node, .st-fd-edge, .st-fd-face { transition: none; }
+}

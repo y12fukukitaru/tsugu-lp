@@ -153,6 +153,73 @@ async function handleSubmit(e) {
   window.addEventListener('scroll', checkInView, { passive: true });
 })();
 
+// ===== 結びのあと：視野が退き、点が面になる =====
+// 二点が「継」で結ばれたところで終わらせず、視野をゆっくり引く。
+// 同じ結びがそこら中にあったことが見えてきて、面になる。
+(function () {
+  var svg = document.getElementById('convSvg');
+  if (!svg || !svg.querySelector('.st-field')) return;
+
+  var FROM = { x: 0, y: 0, w: 900, h: 300 };
+  // 「継」を中心に、縦横比 3:1 を保ったまま引く。
+  // 画面が狭いと引きすぎて字が読めなくなるので、引く量を抑える。
+  var narrow = window.matchMedia && window.matchMedia('(max-width: 640px)').matches;
+  var K = narrow ? 1.3 : 1.6;
+  var TO = {
+    x: 450 - 900 * K / 2,
+    y: 168 - 300 * K / 2,
+    w: 900 * K,
+    h: 300 * K
+  };
+  // 面を遠くへ溶かす半径も、引く量に合わせる。
+  // ここが合っていないと、面が図の縁で四角く断ち切られて見える。
+  var fade = document.getElementById('stFieldVignette');
+  if (fade) fade.setAttribute('r', String(Math.round(900 * K / 2 / 0.91)));
+
+  var WAIT = 2200;   // 結び目が現れ、ブランド名が出そろうのを待つ
+  var SPAN = 2400;   // 引ききるまで
+
+  var still = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function set(v) {
+    svg.setAttribute('viewBox', v.x.toFixed(1) + ' ' + v.y.toFixed(1) + ' ' + v.w.toFixed(1) + ' ' + v.h.toFixed(1));
+  }
+
+  function widen() {
+    svg.classList.add('widened');
+    if (still) { set(TO); return; }
+    var t0 = null;
+    function step(now) {
+      if (t0 === null) t0 = now;
+      var k = Math.min(1, (now - t0) / SPAN);
+      var e = 1 - Math.pow(1 - k, 3); // 最後にゆっくり止まる
+      set({
+        x: FROM.x + (TO.x - FROM.x) * e,
+        y: FROM.y + (TO.y - FROM.y) * e,
+        w: FROM.w + (TO.w - FROM.w) * e,
+        h: FROM.h + (TO.h - FROM.h) * e
+      });
+      if (k < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  // 線が描かれ始めた（drawn が付いた）のを見てから数える
+  var started = false;
+  function watch() {
+    if (started || !svg.classList.contains('drawn')) return;
+    started = true;
+    setTimeout(widen, still ? 0 : WAIT);
+  }
+  if (window.MutationObserver) {
+    var mo = new MutationObserver(function () { watch(); if (started) mo.disconnect(); });
+    mo.observe(svg, { attributes: true, attributeFilter: ['class'] });
+  }
+  watch();
+  // MutationObserver が使えない場合の保険
+  var poll = setInterval(function () { watch(); if (started) clearInterval(poll); }, 400);
+})();
+
 // ===== 糸ナビ：進捗と現在章 =====
 (function () {
   var progress = document.getElementById('threadProgress');
