@@ -324,12 +324,55 @@ async function handleSubmit(e) {
     }
   }
 
+  // どちらの立場を見ていたかを、問い合わせと一緒に記録する。
+  // このページはパートナーが顧客に見せる想定なので、
+  // 相手が買い手・売り手のどちらとして読んでいたかが後の対応で効く。
+  function remember(stance) {
+    var f = document.querySelector('[name="見ていた立場"]');
+    if (f) f.value = stance === 'grow' ? '買いたい・伸ばしたい' : '継ぎたい・譲りたい';
+  }
+
   btns.forEach(function (b) {
-    b.addEventListener('click', function () { apply(b.getAttribute('data-stance'), true); });
+    b.addEventListener('click', function () {
+      var s = b.getAttribute('data-stance');
+      apply(s, true);
+      remember(s);
+    });
   });
 
   var hash = (location.hash || '').replace('#', '');
-  if (hash === 'grow' || hash === 'succeed') apply(hash, false);
+  if (hash === 'grow' || hash === 'succeed') { apply(hash, false); remember(hash); }
+})();
+
+// ===== 何をきっかけに来たかを記録する =====
+// 勉強会の配布物やQRコードには ?src=... を付けた URL を刷る。
+// その印はページを移っても消えないよう、タブの間だけ持ち回る。
+(function () {
+  var fields = document.querySelectorAll('[name="きっかけ"]');
+  if (!fields.length) return;
+
+  var KEY = 'tsugu-src';
+  var q = new URLSearchParams(location.search);
+  var src = q.get('src') || q.get('utm_source') || '';
+  var campaign = q.get('utm_campaign') || '';
+  if (campaign) src = src ? src + ' / ' + campaign : campaign;
+
+  if (src) {
+    try { sessionStorage.setItem(KEY, src); } catch (e) { /* 保存できなくても続行 */ }
+  } else {
+    try { src = sessionStorage.getItem(KEY) || ''; } catch (e) { src = ''; }
+  }
+
+  var value;
+  if (src) {
+    value = src;
+  } else if (document.referrer && document.referrer.indexOf(location.host) === -1) {
+    value = 'リンク元: ' + document.referrer;
+  } else {
+    value = '直接アクセス（URL入力・ブックマーク・検索など）';
+  }
+
+  fields.forEach(function (f) { f.value = value; });
 })();
 
 // ===== ページ内アンカーのスムーススクロール =====

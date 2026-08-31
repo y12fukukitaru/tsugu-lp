@@ -728,6 +728,14 @@
 
       <div class="contact-form-wrap reveal reveal-delay-1">
         <form id="contact-form" onsubmit="handleSubmit(event)" action="https://formspree.io/f/mrejeqej" method="POST">
+          <!-- 以下は画面に出ない記録用の項目。どのページから、何をきっかけに
+               送信されたのかを問い合わせメールに残す。値は app.js が入れる。 -->
+          <input type="hidden" name="送信元ページ" value="パートナー募集">
+          <input type="hidden" name="きっかけ" value="">
+          <input type="hidden" name="_subject" value="【パートナー募集】TsuguAi LP からのお問い合わせ">
+          <!-- ボット除けの空欄。人には見えないので、埋まっていれば機械と判断される。 -->
+          <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true"
+                 style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
           <div class="form-row">
             <div class="form-group">
               <label class="form-label" for="fname">お名前 <span class="required">*</span></label>
