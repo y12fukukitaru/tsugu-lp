@@ -4890,3 +4890,38 @@ p, li, dd, dt, summary, figcaption,
   .st-conv-name, .st-conv-label,
   .st-fd-node, .st-fd-edge, .st-fd-face { transition: none; }
 }
+
+/* 面が満ちきったところに、一行だけ添える。
+   締めの文（.st-conv-close）より前に出るが、主役は締めの文なので
+   一段小さく、金寄りの色で静かに置く。 */
+.st-field-note {
+  text-align: center;
+  font-family: var(--serif);
+  font-size: clamp(1rem, 1.55vw, 1.1875rem);
+  color: rgba(255,255,255,0.72);
+  letter-spacing: 0.12em;
+  line-height: 2;
+  margin: 26px 0 0;
+  line-break: strict;
+  word-break: auto-phrase;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 1.1s ease-out, transform 1.1s ease-out;
+  transition-delay: 2.2s;   /* 面が出そろってから */
+}
+.st-field-note em {
+  font-style: normal;
+  color: var(--gold-light);
+  font-size: 1.18em;
+  letter-spacing: 0.06em;
+}
+.st-conv.widened ~ .st-field-note {
+  opacity: 1;
+  transform: none;
+}
+@media (max-width: 640px) {
+  .st-field-note { margin-top: 20px; letter-spacing: 0.08em; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .st-field-note { transition: none; transform: none; }
+}
