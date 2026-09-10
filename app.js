@@ -173,8 +173,17 @@ async function handleSubmit(e) {
   };
   // 面を遠くへ溶かす半径も、引く量に合わせる。
   // ここが合っていないと、面が図の縁で四角く断ち切られて見える。
+  //
+  //  以前は 0.91 で「割って」いた。半径のほうが viewBox の半幅より
+  //  大きくなる置き方で、縁にはまだ1割ほど濃さが残っていた。SVGは
+  //  viewBox の外を切り落とすので、その残りがそのまま断面になり、
+  //  左右に縦の線が立って見えていた。
+  //
+  //  掛ける側に変えて、枠の内側で溶かしきる。縁に届く前に 0 になるので
+  //  切り口が生まれない。縦横とも同じ比で縮むので、面ぜんたいが
+  //  閉じた楕円として見える。0.96 は「切れず、かつ縮んで見えない」ところ。
   var fade = document.getElementById('stFieldVignette');
-  if (fade) fade.setAttribute('r', String(Math.round(900 * K / 2 / 0.91)));
+  if (fade) fade.setAttribute('r', String(Math.round(900 * K / 2 * 0.96)));
 
   var WAIT = 2200;   // 結び目が現れ、ブランド名が出そろうのを待つ
   var SPAN = 2400;   // 引ききるまで
