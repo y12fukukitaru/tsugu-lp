@@ -4925,3 +4925,27 @@ p, li, dd, dt, summary, figcaption,
 @media (prefers-reduced-motion: reduce) {
   .st-field-note { transition: none; transform: none; }
 }
+
+/* 呼びかけの締めに置く志の一行。
+   ヒーローから降ろした「この国の営業を、私たちが変える。」の置き場所。
+   直前の締め文より主張を弱め、署名のように置く。 */
+.pt-creed {
+  text-align: center;
+  font-family: var(--serif);
+  font-size: clamp(1.0625rem, 1.7vw, 1.375rem);
+  color: rgba(255,255,255,0.78);
+  letter-spacing: 0.14em;
+  line-height: 1.9;
+  margin: 28px 0 0;
+  padding-top: 24px;
+  border-top: 1px solid rgba(195,155,63,0.28);
+  max-width: 620px;
+  margin-inline: auto;
+}
+.pt-creed em {
+  font-style: normal;
+  color: var(--gold-light);
+}
+@media (max-width: 640px) {
+  .pt-creed { margin-top: 22px; padding-top: 20px; letter-spacing: 0.08em; }
+}
